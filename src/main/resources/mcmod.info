@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "hyxcate",
+    "name": "Hyxcate",
+    "description": "Sky events and meteors for 1.12.2!",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/Elite-Modding-Team/Hyxcate",
+    "authorList": [
+      "IcarussOne",
+      "ACGaming"
+    ],
+    "credits": "\n Ellpack - Originally creating Nyx \n AlexDGr8r - Originally creating Falling Meteors",
+    "logoFile": ""
+  }
+]
