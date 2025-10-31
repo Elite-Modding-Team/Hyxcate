@@ -55,6 +55,11 @@ public class NyxToolBeamSword extends NyxItemSword {
     }
 
     @Override
+    public boolean isDamageable() {
+        return false;
+    }
+
+    @Override
     public void setDamage(ItemStack stack, int damage) {
         // Unbreakable
     }

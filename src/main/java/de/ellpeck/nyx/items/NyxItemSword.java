@@ -71,9 +71,8 @@ public class NyxItemSword extends ItemSword {
 
     @Override
     public boolean isDamageable() {
-        return this != NyxItems.solarSword && this != NyxItems.celestialWarhammer && this != NyxItems.tektiteGreatsword && !(this instanceof NyxToolBeamSword) && super.isDamageable();
+        return this != NyxItems.solarSword && this != NyxItems.celestialWarhammer && this != NyxItems.tektiteGreatsword && super.isDamageable();
     }
-
 
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
         if (this == NyxItems.frezariteSword) {
