@@ -1,0 +1,10 @@
+{
+  "package": "de.ellpeck.nyx.mixin.client",
+  "refmap": "mixins.nyx.refmap.json",
+  "client": [
+    "NyxCloudColorMixin",
+    "NyxRenderSkyMixin",
+    "NyxSkyColorMixin",
+    "NyxSunBrightnessBodyMixin"
+  ]
+}

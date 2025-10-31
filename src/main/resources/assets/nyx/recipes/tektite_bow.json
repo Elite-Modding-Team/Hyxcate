@@ -1,0 +1,30 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "morebows"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "TTT",
+    "OBO",
+    "TTT"
+  ],
+  "key": {
+    "B": {
+      "item": "morebows:diamond_bow",
+      "data": 32767
+    },
+    "T": {
+      "item": "nyx:tektite_gem_cluster"
+    },
+    "O": {
+      "type": "forge:ore_dict",
+      "ore": "obsidian"
+    }
+  },
+  "result": {
+    "item": "nyx:tektite_bow"
+  }
+}

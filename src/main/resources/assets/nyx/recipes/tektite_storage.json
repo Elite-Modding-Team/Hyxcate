@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "nyx:tektite_gem_cluster"
+    }
+  },
+  "result": {
+    "item": "nyx:tektite_block"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "nyx:meteorite_block"
+    }
+  ],
+  "result": {
+    "item": "nyx:meteorite_ingot",
+    "count": 9
+  }
+}

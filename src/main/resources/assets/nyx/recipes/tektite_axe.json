@@ -1,0 +1,20 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "XX",
+    "X#",
+    " #"
+  ],
+  "key": {
+    "#": {
+      "type": "forge:ore_dict",
+      "ore": "obsidian"
+    },
+    "X": {
+      "item": "nyx:tektite_gem_cluster"
+    }
+  },
+  "result": {
+    "item": "nyx:tektite_axe"
+  }
+}

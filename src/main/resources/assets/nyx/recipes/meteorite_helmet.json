@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "XXX",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "nyx:meteorite_ingot"
+    }
+  },
+  "result": {
+    "item": "nyx:meteorite_helmet"
+  }
+}

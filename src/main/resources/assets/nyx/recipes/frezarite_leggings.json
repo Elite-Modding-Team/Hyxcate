@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "XXX",
+    "X X",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "nyx:frezarite_ingot"
+    }
+  },
+  "result": {
+    "item": "nyx:frezarite_leggings"
+  }
+}

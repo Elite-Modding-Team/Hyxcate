@@ -1,0 +1,27 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "STS",
+    "CGC",
+    "STS"
+  ],
+  "key": {
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "ingotStarsteel"
+    },
+    "T": {
+      "item": "nyx:tektite_gem_cluster"
+    },
+    "C": {
+      "item": "nyx:cyber_crystal"
+    },
+    "G": {
+      "type": "forge:ore_dict",
+      "ore": "ingotStarglass"
+    }
+  },
+  "result": {
+    "item": "nyx:cyber_power_cell"
+  }
+}

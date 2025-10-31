@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "nyx:frezarite_block"
+    }
+  ],
+  "result": {
+    "item": "nyx:frezarite_ingot",
+    "count": 9
+  }
+}

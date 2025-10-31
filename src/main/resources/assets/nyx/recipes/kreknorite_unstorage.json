@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "nyx:kreknorite_block"
+    }
+  ],
+  "result": {
+    "item": "nyx:kreknorite_ingot",
+    "count": 9
+  }
+}

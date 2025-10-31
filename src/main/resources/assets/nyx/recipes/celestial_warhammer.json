@@ -1,0 +1,27 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "CEC",
+    "BSB",
+    " S "
+  ],
+  "key": {
+    "B": {
+      "type": "forge:ore_dict",
+      "ore": "blockStar"
+    },
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "ingotStarsteel"
+    },
+    "C": {
+      "item": "nyx:cyber_crystal"
+    },
+    "E": {
+      "item": "nyx:celestial_emblem"
+    }
+  },
+  "result": {
+    "item": "nyx:celestial_warhammer"
+  }
+}

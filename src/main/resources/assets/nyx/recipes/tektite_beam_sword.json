@@ -1,0 +1,33 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "hexxitgear"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "E#E",
+    "ECE",
+    "ESE"
+  ],
+  "key": {
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "ingotStarsteel"
+    },
+    "C": {
+      "item": "nyx:cyber_power_cell"
+    },
+    "#": {
+      "type": "forge:ore_dict",
+      "ore": "gemTektite"
+    },
+    "E": {
+      "item": "hexxitgear:hexical_essence"
+    }
+  },
+  "result": {
+    "item": "nyx:tektite_beam_sword"
+  }
+}

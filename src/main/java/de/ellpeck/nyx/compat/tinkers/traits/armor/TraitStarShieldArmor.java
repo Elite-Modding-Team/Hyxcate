@@ -1,0 +1,39 @@
+package de.ellpeck.nyx.compat.tinkers.traits.armor;
+
+import c4.conarm.lib.traits.AbstractArmorTrait;
+import de.ellpeck.nyx.Nyx;
+import de.ellpeck.nyx.sound.NyxSoundEvents;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
+import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundCategory;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import slimeknights.tconstruct.shared.client.ParticleEffect;
+import slimeknights.tconstruct.tools.TinkerTools;
+
+public class TraitStarShieldArmor extends AbstractArmorTrait {
+    public TraitStarShieldArmor() {
+        super(Nyx.ID + "." + "star_shield", 0xDFCE62);
+    }
+
+    @Override
+    public float onDamaged(ItemStack armor, EntityPlayer player, DamageSource source, float damage, float newDamage, LivingDamageEvent event) {
+        if (random.nextInt(15) == 0) {
+            // Completely cancel out the damage
+            event.setCanceled(true);
+            player.world.playSound(null, player.getPosition(), NyxSoundEvents.powerup.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.2F / (player.world.rand.nextFloat() * 0.4F + 1.2F));
+
+            // Inflict Resistance III on the wielder (5 seconds)
+            if (!player.world.isRemote) {
+                if (player instanceof EntityPlayer) {
+                    player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 5 * 20, 2));
+                    TinkerTools.proxy.spawnEffectParticle(ParticleEffect.Type.HEART_ELECTRO, player, (int) damage);
+                }
+            }
+        }
+
+        return newDamage;
+    }
+}

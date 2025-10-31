@@ -1,0 +1,32 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "SFS",
+    "MAT",
+    "SKS"
+  ],
+  "key": {
+    "A": {
+      "item": "nyx:heros_broken_artifact"
+    },
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "ingotStarsteel"
+    },
+    "F": {
+      "item": "nyx:frezarite_block"
+    },
+    "M": {
+      "item": "nyx:meteorite_block"
+    },
+    "T": {
+      "item": "nyx:tektite_block"
+    },
+    "K": {
+      "item": "nyx:kreknorite_block"
+    }
+  },
+  "result": {
+    "item": "nyx:celestial_emblem"
+  }
+}

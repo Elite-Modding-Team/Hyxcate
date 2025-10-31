@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "GTG",
+    "TCT",
+    "GTG"
+  ],
+  "key": {
+    "G": {
+      "type": "forge:ore_dict",
+      "ore": "ingotStarglass"
+    },
+    "T": {
+      "item": "nyx:tektite_gem_cluster"
+    },
+    "C": {
+      "item": "minecraft:compass"
+    }
+  },
+  "result": {
+    "item": "nyx:meteor_detector"
+  }
+}

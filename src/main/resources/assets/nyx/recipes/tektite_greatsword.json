@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X",
+    "X",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "nyx:heros_broken_artifact"
+    },
+    "X": {
+      "item": "nyx:tektite_block"
+    }
+  },
+  "result": {
+    "item": "nyx:tektite_greatsword"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X X",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "nyx:kreknorite_ingot"
+    }
+  },
+  "result": {
+    "item": "nyx:kreknorite_boots"
+  }
+}

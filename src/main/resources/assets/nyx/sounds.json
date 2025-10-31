@@ -1,0 +1,156 @@
+{
+  "falling_star": {
+    "category": "ambient",
+    "sounds": [
+      "nyx:falling_star"
+    ]
+  },
+  "falling_star_impact": {
+    "category": "ambient",
+    "sounds": [
+      "nyx:falling_star_impact"
+    ]
+  },
+  "falling_meteor": {
+    "category": "ambient",
+    "sounds": [
+      "nyx:falling_meteor"
+    ]
+  },
+  "falling_meteor_impact": {
+    "category": "ambient",
+    "sounds": [
+      "nyx:falling_meteor_impact"
+    ]
+  },
+  "falling_meteor_impact_far": {
+    "category": "ambient",
+    "sounds": [
+      "nyx:falling_meteor_impact_far"
+    ]
+  },
+  "hammer_smash": {
+    "category": "player",
+    "sounds": [
+      "nyx:hammer_smash"
+    ]
+  },
+  "volcano": {
+    "category": "player",
+    "sounds": [
+      "nyx:volcano1",
+      "nyx:volcano2",
+      "nyx:volcano3"
+    ]
+  },
+  "glacier": {
+    "category": "player",
+    "sounds": [
+      "nyx:glacier"
+    ]
+  },
+  "stun": {
+    "category": "player",
+    "sounds": [
+      "nyx:stun1",
+      "nyx:stun2"
+    ]
+  },
+  "powerup": {
+    "category": "player",
+    "sounds": [
+      "nyx:powerup"
+    ]
+  },
+  "beam_sword_hit": {
+    "category": "player",
+    "sounds": [
+      "nyx:beam_sword_hit1",
+      "nyx:beam_sword_hit2"
+    ]
+  },
+  "beam_sword_swing": {
+    "category": "player",
+    "sounds": [
+      "nyx:beam_sword_swing1",
+      "nyx:beam_sword_swing2",
+      "nyx:beam_sword_swing3",
+      "nyx:beam_sword_swing4"
+    ]
+  },
+  "beam_sword_idle": {
+    "category": "player",
+    "sounds": [
+      "nyx:beam_sword_idle"
+    ]
+  },
+  "celestial_emblem": {
+    "category": "player",
+    "sounds": [
+      "nyx:celestial_emblem"
+    ]
+  },
+  "blood_moon_start": {
+    "category": "ambient",
+    "sounds": [
+      "nyx:events/blood_moon"
+    ]
+  },
+  "harvest_moon_start": {
+    "category": "ambient",
+    "sounds": [
+      "nyx:events/harvest_moon"
+    ]
+  },
+  "star_shower_start": {
+    "category": "ambient",
+    "sounds": [
+      "nyx:events/star_shower"
+    ]
+  },
+  "red_sun_start": {
+    "category": "ambient",
+    "sounds": [
+      "nyx:events/red_sun"
+    ]
+  },
+  "red_sun_start_special": {
+    "category": "ambient",
+    "sounds": [
+      "nyx:events/red_sun_special"
+    ]
+  },
+  "solar_eclipse_start": {
+    "category": "ambient",
+    "sounds": [
+      "nyx:events/solar_eclipse"
+    ]
+  },
+  "crystal_break": {
+    "category": "block",
+    "sounds": [
+      "nyx:blocks/crystal/break"
+    ]
+  },
+  "crystal_hit": {
+    "category": "block",
+    "sounds": [
+      "nyx:blocks/crystal/hit"
+    ]
+  },
+  "crystal_place": {
+    "category": "block",
+    "sounds": [
+      "nyx:blocks/crystal/place"
+    ]
+  },
+  "alien_kitty_idle": {
+    "category": "neutral",
+    "sounds": [
+      "nyx:alien_kitty_idle1",
+      "nyx:alien_kitty_idle2",
+      "nyx:alien_kitty_idle3",
+      "nyx:alien_kitty_idle4"
+    ]
+  }
+}

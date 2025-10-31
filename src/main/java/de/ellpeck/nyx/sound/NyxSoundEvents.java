@@ -1,0 +1,50 @@
+package de.ellpeck.nyx.sound;
+
+import de.ellpeck.nyx.Nyx;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
+
+public enum NyxSoundEvents {
+    fallingStar("falling_star"),
+    fallingStarImpact("falling_star_impact"),
+    fallingMeteor("falling_meteor"),
+    fallingMeteorImpact("falling_meteor_impact"),
+    fallingMeteorImpactFar("falling_meteor_impact_far"),
+    hammerSmash("hammer_smash"),
+    volcano("volcano"),
+    glacier("glacier"),
+    stun("stun"),
+    powerup("powerup"),
+    celestialEmblem("celestial_emblem"),
+    beamSwordIdle("beam_sword_idle"),
+    beamSwordSwing("beam_sword_swing"),
+    beamSwordHit("beam_sword_hit"),
+    alienKittyIdle("alien_kitty_idle"),
+
+    // Lunar Events
+    bloodMoonStart("blood_moon_start"),
+    harvestMoonStart("harvest_moon_start"),
+    starShowerStart("star_shower_start"),
+
+    // Solar Events
+    redSunStart("red_sun_start"),
+    redSunStartSpecial("red_sun_start_special"),
+    solarEclipseStart("solar_eclipse_start"),
+
+    // Blocks
+    crystalBreak("crystal_break"),
+    crystalHit("crystal_hit"),
+    crystalPlace("crystal_place");
+
+    private final SoundEvent soundEvent;
+
+    NyxSoundEvents(String path) {
+        ResourceLocation resourceLocation = new ResourceLocation(Nyx.ID, path);
+        this.soundEvent = new SoundEvent(resourceLocation);
+        this.soundEvent.setRegistryName(resourceLocation);
+    }
+
+    public SoundEvent getSoundEvent() {
+        return this.soundEvent;
+    }
+}
