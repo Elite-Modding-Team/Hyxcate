@@ -51,6 +51,11 @@ public class NyxEventStarShower extends NyxLunarEvent {
     public int getSkyColor() {
         return 0xdec25f;
     }
+    
+    @Override
+    public String getMoonTexture() {
+        return "starry_moon";
+    }
 
     @Override
     public void update(boolean lastDaytime) {

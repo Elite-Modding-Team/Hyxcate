@@ -74,7 +74,6 @@ public class NyxItemSword extends ItemSword {
         return this != NyxItems.celestialWarhammer && this != NyxItems.tektiteGreatsword && super.isDamageable();
     }
 
-
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
         if (this == NyxItems.frezariteSword) {
             target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.glacier.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 2.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));

@@ -8,7 +8,7 @@
 - Tektite Gem Clusters should be an additional drop rather than a replacement, this will prevent smelting enchantments from making it never drop
 - Make Tektite Gem Cluster texture animated
 - Update textures for regular tools, most ingots and most metal blocks
-- Update textures for special moons and suns, add texture for shooting stars moon
+- Update textures for special moons
 
 ## Future Updates
 
