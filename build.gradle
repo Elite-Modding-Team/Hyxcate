@@ -109,10 +109,6 @@ dependencies {
     // Had Enough Items
     implementation rfg.deobf('curse.maven:had-enough-items-557549:7057606')
 
-    // Mowzie's Mobs - LLibrary must be 1.7.9 or it'll crash during testing
-    implementation rfg.deobf('curse.maven:LLibrary-243298:2504999')
-    implementation rfg.deobf('curse.maven:MowziesMobs-250498:5218945')
-
     // Baubles
     implementation rfg.deobf('curse.maven:baubles-227083:2518667')
 

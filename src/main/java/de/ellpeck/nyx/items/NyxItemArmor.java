@@ -35,8 +35,7 @@ public class NyxItemArmor extends ItemArmor {
         ItemStack leggings = player.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
 
         // Meteorite (Any Piece) - Built-in Magnetization effect
-        if (boots.getItem() == NyxItems.meteoriteBoots || chestplate.getItem() == NyxItems.meteoriteChestplate || helmet.getItem() == NyxItems.meteoriteHelmet || leggings.getItem() == NyxItems.meteoriteLeggings ||
-                boots.getItem() == NyxItems.ancientMeteoriteBoots || chestplate.getItem() == NyxItems.ancientMeteoriteChestplate || helmet.getItem() == NyxItems.ancientMeteoriteHelmet || leggings.getItem() == NyxItems.ancientMeteoriteLeggings) {
+        if (boots.getItem() == NyxItems.meteoriteBoots || chestplate.getItem() == NyxItems.meteoriteChestplate || helmet.getItem() == NyxItems.meteoriteHelmet || leggings.getItem() == NyxItems.meteoriteLeggings) {
             // If an item with Magnetization exists, cancel out the armor's effect in favor of the leveled enchants
             if (NyxEvents.magnetizationLevel == 0) {
                 NyxEvents.pullItems(player, 4.0D, 0.0125F);
@@ -44,7 +43,7 @@ public class NyxItemArmor extends ItemArmor {
         }
 
         // Frezarite (Boots) - Built-in Frost Walker effect, Frost Walker enchantment will improve the effect
-        if (boots.getItem() == NyxItems.frezariteBoots || boots.getItem() == NyxItems.ancientFrezariteBoots) {
+        if (boots.getItem() == NyxItems.frezariteBoots) {
             if (!player.world.isRemote) {
                 boolean isLastOnGround = player.onGround;
 
@@ -56,29 +55,24 @@ public class NyxItemArmor extends ItemArmor {
 
         // Full set effects
         // Frezarite - Water Breathing
-        if ((boots.getItem() == NyxItems.frezariteBoots && chestplate.getItem() == NyxItems.frezariteChestplate && helmet.getItem() == NyxItems.frezariteHelmet && leggings.getItem() == NyxItems.frezariteLeggings) ||
-                (boots.getItem() == NyxItems.ancientFrezariteBoots && chestplate.getItem() == NyxItems.ancientFrezariteChestplate && helmet.getItem() == NyxItems.ancientFrezariteHelmet && leggings.getItem() == NyxItems.ancientFrezariteLeggings)) {
+        if ((boots.getItem() == NyxItems.frezariteBoots && chestplate.getItem() == NyxItems.frezariteChestplate && helmet.getItem() == NyxItems.frezariteHelmet && leggings.getItem() == NyxItems.frezariteLeggings)) {
 
             player.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 2, 0, true, false));
         }
 
         // Kreknorite - Fire Resistance
-        if ((boots.getItem() == NyxItems.kreknoriteBoots && chestplate.getItem() == NyxItems.kreknoriteChestplate && helmet.getItem() == NyxItems.kreknoriteHelmet && leggings.getItem() == NyxItems.kreknoriteLeggings) ||
-                boots.getItem() == NyxItems.ancientKreknoriteBoots && chestplate.getItem() == NyxItems.ancientKreknoriteChestplate && helmet.getItem() == NyxItems.ancientKreknoriteHelmet && leggings.getItem() == NyxItems.ancientKreknoriteLeggings) {
+        if ((boots.getItem() == NyxItems.kreknoriteBoots && chestplate.getItem() == NyxItems.kreknoriteChestplate && helmet.getItem() == NyxItems.kreknoriteHelmet && leggings.getItem() == NyxItems.kreknoriteLeggings)) {
             player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 2, 0, true, false));
         }
     }
 
     @Override
     public IRarity getForgeRarity(ItemStack stack) {
-        if (this == NyxItems.frezariteBoots || this == NyxItems.frezariteChestplate || this == NyxItems.frezariteHelmet || this == NyxItems.frezariteLeggings ||
-                this == NyxItems.ancientFrezariteBoots || this == NyxItems.ancientFrezariteChestplate || this == NyxItems.ancientFrezariteHelmet || this == NyxItems.ancientFrezariteLeggings) {
+        if (this == NyxItems.frezariteBoots || this == NyxItems.frezariteChestplate || this == NyxItems.frezariteHelmet || this == NyxItems.frezariteLeggings) {
             return EnumRarity.EPIC;
-        } else if (this == NyxItems.kreknoriteBoots || this == NyxItems.kreknoriteChestplate || this == NyxItems.kreknoriteHelmet || this == NyxItems.kreknoriteLeggings ||
-                this == NyxItems.ancientKreknoriteBoots || this == NyxItems.ancientKreknoriteChestplate || this == NyxItems.ancientKreknoriteHelmet || this == NyxItems.ancientKreknoriteLeggings) {
+        } else if (this == NyxItems.kreknoriteBoots || this == NyxItems.kreknoriteChestplate || this == NyxItems.kreknoriteHelmet || this == NyxItems.kreknoriteLeggings) {
             return EnumRarity.EPIC;
-        } else if (this == NyxItems.meteoriteBoots || this == NyxItems.meteoriteChestplate || this == NyxItems.meteoriteHelmet || this == NyxItems.meteoriteLeggings ||
-                this == NyxItems.ancientMeteoriteBoots || this == NyxItems.ancientMeteoriteChestplate || this == NyxItems.ancientMeteoriteHelmet || this == NyxItems.ancientMeteoriteLeggings) {
+        } else if (this == NyxItems.meteoriteBoots || this == NyxItems.meteoriteChestplate || this == NyxItems.meteoriteHelmet || this == NyxItems.meteoriteLeggings) {
             return EnumRarity.RARE;
         } else if (this == NyxItems.tektiteBoots || this == NyxItems.tektiteChestplate || this == NyxItems.tektiteHelmet || this == NyxItems.tektiteLeggings) {
             return EnumRarity.EPIC;
@@ -89,20 +83,17 @@ public class NyxItemArmor extends ItemArmor {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
-        if (this == NyxItems.frezariteBoots || this == NyxItems.frezariteChestplate || this == NyxItems.frezariteHelmet || this == NyxItems.frezariteLeggings ||
-                this == NyxItems.ancientFrezariteBoots || this == NyxItems.ancientFrezariteChestplate || this == NyxItems.ancientFrezariteHelmet || this == NyxItems.ancientFrezariteLeggings) {
+        if (this == NyxItems.frezariteBoots || this == NyxItems.frezariteChestplate || this == NyxItems.frezariteHelmet || this == NyxItems.frezariteLeggings) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.frezarite_armor"));
-        } else if (this == NyxItems.kreknoriteBoots || this == NyxItems.kreknoriteChestplate || this == NyxItems.kreknoriteHelmet || this == NyxItems.kreknoriteLeggings ||
-                this == NyxItems.ancientKreknoriteBoots || this == NyxItems.ancientKreknoriteChestplate || this == NyxItems.ancientKreknoriteHelmet || this == NyxItems.ancientKreknoriteLeggings) {
+        } else if (this == NyxItems.kreknoriteBoots || this == NyxItems.kreknoriteChestplate || this == NyxItems.kreknoriteHelmet || this == NyxItems.kreknoriteLeggings) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.kreknorite_armor"));
-        } else if (this == NyxItems.meteoriteBoots || this == NyxItems.meteoriteChestplate || this == NyxItems.meteoriteHelmet || this == NyxItems.meteoriteLeggings ||
-                this == NyxItems.ancientMeteoriteBoots || this == NyxItems.ancientMeteoriteChestplate || this == NyxItems.ancientMeteoriteHelmet || this == NyxItems.ancientMeteoriteLeggings) {
+        } else if (this == NyxItems.meteoriteBoots || this == NyxItems.meteoriteChestplate || this == NyxItems.meteoriteHelmet || this == NyxItems.meteoriteLeggings) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.meteorite_armor"));
         } else if (this == NyxItems.tektiteBoots || this == NyxItems.tektiteChestplate || this == NyxItems.tektiteHelmet || this == NyxItems.tektiteLeggings) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.tektite_armor"));
         }
 
-        if (this == NyxItems.frezariteBoots || this == NyxItems.ancientFrezariteBoots) {
+        if (this == NyxItems.frezariteBoots) {
             tooltip.add(I18n.format(""));
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.frezarite_boots"));
         }

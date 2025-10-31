@@ -49,7 +49,7 @@ public class NyxItemSword extends ItemSword {
                             }
                         }
                     }
-                } else if (this == NyxItems.kreknoriteSword || this == NyxItems.solarSword) {
+                } else if (this == NyxItems.kreknoriteSword) {
                     entity.world.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, entity.posX, entity.posY + 1.0D, entity.posZ, 0.0D, 0.0D, 0.0D);
 
                     for (Entity nearbyLivingEntity : target.world.getEntitiesWithinAABBExcludingEntity(player, target.getEntityBoundingBox().grow(1.5D, 1.5D, 1.5D))) {
@@ -71,8 +71,9 @@ public class NyxItemSword extends ItemSword {
 
     @Override
     public boolean isDamageable() {
-        return this != NyxItems.solarSword && this != NyxItems.celestialWarhammer && this != NyxItems.tektiteGreatsword && super.isDamageable();
+        return this != NyxItems.celestialWarhammer && this != NyxItems.tektiteGreatsword && super.isDamageable();
     }
+
 
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
         if (this == NyxItems.frezariteSword) {
@@ -90,7 +91,7 @@ public class NyxItemSword extends ItemSword {
                     nearbyLivingEntity.attackEntityFrom(DamageSource.causeMobDamage(attacker), this.getAttackDamage() + 4.0F);
                 }
             }
-        } else if (this == NyxItems.kreknoriteSword || this == NyxItems.solarSword) {
+        } else if (this == NyxItems.kreknoriteSword) {
             target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.volcano.getSoundEvent(), SoundCategory.PLAYERS, 1.25F, 1.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
 
             // Explosion deals AoE damage
@@ -113,7 +114,6 @@ public class NyxItemSword extends ItemSword {
             }
         }
 
-        if (this == NyxItems.solarSword) return true;
         if (this == NyxItems.celestialWarhammer) return true;
         if (this == NyxItems.tektiteGreatsword) return true;
         if (this instanceof NyxToolBeamSword) return true;

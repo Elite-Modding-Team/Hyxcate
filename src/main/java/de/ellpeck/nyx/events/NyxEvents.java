@@ -501,83 +501,6 @@ public final class NyxEvents {
         }
     }
 
-    @SubscribeEvent
-    public static void anvilRecipes(AnvilUpdateEvent event) {
-        ItemStack tool = event.getLeft();
-        ItemStack ench = event.getRight();
-        ItemStack outputStack = tool.copy();
-
-        // Conversion to the 1.5.2 designs of the meteor sets using fallen stars
-        // Meteorite
-        if (tool.getItem() == NyxItems.meteoriteHelmet && ench.getItem() == NyxItems.fallenStar) {
-            event.setCost(4);
-            event.setOutput(new ItemStack(NyxItems.ancientMeteoriteHelmet).copy());
-            event.getOutput().setTagCompound(outputStack.getTagCompound());
-            event.setMaterialCost(1);
-        } else if (tool.getItem() == NyxItems.meteoriteChestplate && ench.getItem() == NyxItems.fallenStar) {
-            event.setCost(4);
-            event.setOutput(new ItemStack(NyxItems.ancientMeteoriteChestplate).copy());
-            event.getOutput().setTagCompound(outputStack.getTagCompound());
-            event.setMaterialCost(1);
-        } else if (tool.getItem() == NyxItems.meteoriteLeggings && ench.getItem() == NyxItems.fallenStar) {
-            event.setCost(4);
-            event.setOutput(new ItemStack(NyxItems.ancientMeteoriteLeggings).copy());
-            event.getOutput().setTagCompound(outputStack.getTagCompound());
-            event.setMaterialCost(1);
-        } else if (tool.getItem() == NyxItems.meteoriteBoots && ench.getItem() == NyxItems.fallenStar) {
-            event.setCost(4);
-            event.setOutput(new ItemStack(NyxItems.ancientMeteoriteBoots).copy());
-            event.getOutput().setTagCompound(outputStack.getTagCompound());
-            event.setMaterialCost(1);
-        }
-
-        // Frezarite
-        else if (tool.getItem() == NyxItems.frezariteHelmet && ench.getItem() == NyxItems.fallenStar) {
-            event.setCost(4);
-            event.setOutput(new ItemStack(NyxItems.ancientFrezariteHelmet).copy());
-            event.getOutput().setTagCompound(outputStack.getTagCompound());
-            event.setMaterialCost(1);
-        } else if (tool.getItem() == NyxItems.frezariteChestplate && ench.getItem() == NyxItems.fallenStar) {
-            event.setCost(4);
-            event.setOutput(new ItemStack(NyxItems.ancientFrezariteChestplate).copy());
-            event.getOutput().setTagCompound(outputStack.getTagCompound());
-            event.setMaterialCost(1);
-        } else if (tool.getItem() == NyxItems.frezariteLeggings && ench.getItem() == NyxItems.fallenStar) {
-            event.setCost(4);
-            event.setOutput(new ItemStack(NyxItems.ancientFrezariteLeggings).copy());
-            event.getOutput().setTagCompound(outputStack.getTagCompound());
-            event.setMaterialCost(1);
-        } else if (tool.getItem() == NyxItems.frezariteBoots && ench.getItem() == NyxItems.fallenStar) {
-            event.setCost(4);
-            event.setOutput(new ItemStack(NyxItems.ancientFrezariteBoots).copy());
-            event.getOutput().setTagCompound(outputStack.getTagCompound());
-            event.setMaterialCost(1);
-        }
-
-        // Kreknorite
-        else if (tool.getItem() == NyxItems.kreknoriteHelmet && ench.getItem() == NyxItems.fallenStar) {
-            event.setCost(4);
-            event.setOutput(new ItemStack(NyxItems.ancientKreknoriteHelmet).copy());
-            event.getOutput().setTagCompound(outputStack.getTagCompound());
-            event.setMaterialCost(1);
-        } else if (tool.getItem() == NyxItems.kreknoriteChestplate && ench.getItem() == NyxItems.fallenStar) {
-            event.setCost(4);
-            event.setOutput(new ItemStack(NyxItems.ancientKreknoriteChestplate).copy());
-            event.getOutput().setTagCompound(outputStack.getTagCompound());
-            event.setMaterialCost(1);
-        } else if (tool.getItem() == NyxItems.kreknoriteLeggings && ench.getItem() == NyxItems.fallenStar) {
-            event.setCost(4);
-            event.setOutput(new ItemStack(NyxItems.ancientKreknoriteLeggings).copy());
-            event.getOutput().setTagCompound(outputStack.getTagCompound());
-            event.setMaterialCost(1);
-        } else if (tool.getItem() == NyxItems.kreknoriteBoots && ench.getItem() == NyxItems.fallenStar) {
-            event.setCost(4);
-            event.setOutput(new ItemStack(NyxItems.ancientKreknoriteBoots).copy());
-            event.getOutput().setTagCompound(outputStack.getTagCompound());
-            event.setMaterialCost(1);
-        }
-    }
-
     // Unbreaking still applies to items on anvils regardless of whether the items don't accept it in enchantment tables or not
     // This event should fix that
     @SubscribeEvent
@@ -586,8 +509,7 @@ public final class NyxEvents {
             return;
         }
 
-        if (event.getLeft().getItem() instanceof NyxToolBeamSword || event.getLeft().getItem() instanceof NyxToolCelestialWarhammer || event.getLeft().getItem() instanceof NyxToolLunarAxe ||
-                event.getLeft().getItem() instanceof NyxToolSolarSword || event.getLeft().getItem() instanceof NyxToolTektiteGreatsword) {
+        if (event.getLeft().getItem() instanceof NyxToolBeamSword || event.getLeft().getItem() instanceof NyxToolCelestialWarhammer || event.getLeft().getItem() instanceof NyxToolTektiteGreatsword) {
             if (EnchantmentHelper.getEnchantments(event.getRight()).keySet().stream().anyMatch(e -> e == Enchantments.UNBREAKING)) {
                 event.setCanceled(true);
             }

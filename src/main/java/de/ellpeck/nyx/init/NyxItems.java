@@ -2,7 +2,6 @@ package de.ellpeck.nyx.init;
 
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.items.*;
-import de.ellpeck.nyx.items.baubles.NyxBaubleEarthTrinket;
 import de.ellpeck.nyx.items.tools.*;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -14,7 +13,6 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -46,10 +44,6 @@ public class NyxItems {
     public static Item meteoriteChestplate;
     public static Item meteoriteLeggings;
     public static Item meteoriteBoots;
-    public static Item ancientMeteoriteHelmet;
-    public static Item ancientMeteoriteChestplate;
-    public static Item ancientMeteoriteLeggings;
-    public static Item ancientMeteoriteBoots;
     public static Item frezaritePickaxe;
     public static Item frezariteAxe;
     public static Item frezariteShovel;
@@ -59,10 +53,6 @@ public class NyxItems {
     public static Item frezariteChestplate;
     public static Item frezariteLeggings;
     public static Item frezariteBoots;
-    public static Item ancientFrezariteHelmet;
-    public static Item ancientFrezariteChestplate;
-    public static Item ancientFrezariteLeggings;
-    public static Item ancientFrezariteBoots;
     public static Item kreknoritePickaxe;
     public static Item kreknoriteAxe;
     public static Item kreknoriteShovel;
@@ -72,10 +62,6 @@ public class NyxItems {
     public static Item kreknoriteChestplate;
     public static Item kreknoriteLeggings;
     public static Item kreknoriteBoots;
-    public static Item ancientKreknoriteHelmet;
-    public static Item ancientKreknoriteChestplate;
-    public static Item ancientKreknoriteLeggings;
-    public static Item ancientKreknoriteBoots;
     public static Item meteorFinder;
     public static Item tektitePickaxe;
     public static Item tektiteAxe;
@@ -96,10 +82,6 @@ public class NyxItems {
     public static Item tektiteBeamSword;
     public static Item cyberCrystalBeamSword;
 
-    // Mod Integration
-    public static Item lunarAxe;
-    public static Item solarSword;
-    public static Item earthTrinket;
     public static Item.ToolMaterial meteoriteToolMaterial;
     public static ItemArmor.ArmorMaterial meteoriteArmorMaterial;
     public static ItemArmor.ArmorMaterial ancientMeteoriteArmorMaterial;
@@ -141,10 +123,6 @@ public class NyxItems {
         meteoriteChestplate = initItem(new NyxItemArmor(meteoriteArmorMaterial, 1, EntityEquipmentSlot.CHEST), "meteorite_chestplate");
         meteoriteLeggings = initItem(new NyxItemArmor(meteoriteArmorMaterial, 2, EntityEquipmentSlot.LEGS), "meteorite_leggings");
         meteoriteBoots = initItem(new NyxItemArmor(meteoriteArmorMaterial, 3, EntityEquipmentSlot.FEET), "meteorite_boots");
-        ancientMeteoriteHelmet = initItem(new NyxItemArmor(ancientMeteoriteArmorMaterial, 0, EntityEquipmentSlot.HEAD), "ancient_meteorite_helmet");
-        ancientMeteoriteChestplate = initItem(new NyxItemArmor(ancientMeteoriteArmorMaterial, 1, EntityEquipmentSlot.CHEST), "ancient_meteorite_chestplate");
-        ancientMeteoriteLeggings = initItem(new NyxItemArmor(ancientMeteoriteArmorMaterial, 2, EntityEquipmentSlot.LEGS), "ancient_meteorite_leggings");
-        ancientMeteoriteBoots = initItem(new NyxItemArmor(ancientMeteoriteArmorMaterial, 3, EntityEquipmentSlot.FEET), "ancient_meteorite_boots");
 
         frezaritePickaxe = initItem(new NyxItemPickaxe(frezariteToolMaterial), "frezarite_pickaxe");
         frezariteAxe = initItem(new NyxItemAxe(frezariteToolMaterial, 11.0F, 1.1F), "frezarite_axe");
@@ -155,10 +133,6 @@ public class NyxItems {
         frezariteChestplate = initItem(new NyxItemArmor(frezariteArmorMaterial, 1, EntityEquipmentSlot.CHEST), "frezarite_chestplate");
         frezariteLeggings = initItem(new NyxItemArmor(frezariteArmorMaterial, 2, EntityEquipmentSlot.LEGS), "frezarite_leggings");
         frezariteBoots = initItem(new NyxItemArmor(frezariteArmorMaterial, 3, EntityEquipmentSlot.FEET), "frezarite_boots");
-        ancientFrezariteHelmet = initItem(new NyxItemArmor(ancientFrezariteArmorMaterial, 0, EntityEquipmentSlot.HEAD), "ancient_frezarite_helmet");
-        ancientFrezariteChestplate = initItem(new NyxItemArmor(ancientFrezariteArmorMaterial, 1, EntityEquipmentSlot.CHEST), "ancient_frezarite_chestplate");
-        ancientFrezariteLeggings = initItem(new NyxItemArmor(ancientFrezariteArmorMaterial, 2, EntityEquipmentSlot.LEGS), "ancient_frezarite_leggings");
-        ancientFrezariteBoots = initItem(new NyxItemArmor(ancientFrezariteArmorMaterial, 3, EntityEquipmentSlot.FEET), "ancient_frezarite_boots");
 
         kreknoritePickaxe = initItem(new NyxItemPickaxe(kreknoriteToolMaterial), "kreknorite_pickaxe");
         kreknoriteAxe = initItem(new NyxItemAxe(kreknoriteToolMaterial, 11.0F, 1.1F), "kreknorite_axe");
@@ -169,10 +143,6 @@ public class NyxItems {
         kreknoriteChestplate = initItem(new NyxItemArmor(kreknoriteArmorMaterial, 1, EntityEquipmentSlot.CHEST), "kreknorite_chestplate");
         kreknoriteLeggings = initItem(new NyxItemArmor(kreknoriteArmorMaterial, 2, EntityEquipmentSlot.LEGS), "kreknorite_leggings");
         kreknoriteBoots = initItem(new NyxItemArmor(kreknoriteArmorMaterial, 3, EntityEquipmentSlot.FEET), "kreknorite_boots");
-        ancientKreknoriteHelmet = initItem(new NyxItemArmor(ancientKreknoriteArmorMaterial, 0, EntityEquipmentSlot.HEAD), "ancient_kreknorite_helmet");
-        ancientKreknoriteChestplate = initItem(new NyxItemArmor(ancientKreknoriteArmorMaterial, 1, EntityEquipmentSlot.CHEST), "ancient_kreknorite_chestplate");
-        ancientKreknoriteLeggings = initItem(new NyxItemArmor(ancientKreknoriteArmorMaterial, 2, EntityEquipmentSlot.LEGS), "ancient_kreknorite_leggings");
-        ancientKreknoriteBoots = initItem(new NyxItemArmor(ancientKreknoriteArmorMaterial, 3, EntityEquipmentSlot.FEET), "ancient_kreknorite_boots");
 
         tektitePickaxe = initItem(new NyxItemPickaxe(tektiteToolMaterial), "tektite_pickaxe");
         tektiteAxe = initItem(new NyxItemAxe(tektiteToolMaterial, 12, 1.2F), "tektite_axe");
@@ -193,17 +163,6 @@ public class NyxItems {
         kreknoriteBeamSword = initItem(new NyxToolBeamSword(beamSwordToolMaterial), "kreknorite_beam_sword");
         tektiteBeamSword = initItem(new NyxToolBeamSword(beamSwordToolMaterial), "tektite_beam_sword");
         cyberCrystalBeamSword = initItem(new NyxToolBeamSword(beamSwordToolMaterial), "cyber_crystal_beam_sword");
-
-        // Mod Integration
-        if (Loader.isModLoaded("mowziesmobs")) {
-            lunarAxe = initItem(new NyxToolLunarAxe(lunarAxeToolMaterial, 14.0F, 1.6F), "lunar_axe");
-            solarSword = initItem(new NyxToolSolarSword(solarSwordToolMaterial), "solar_sword");
-
-            // Special Mowzies' Mobs bauble
-            if (Loader.isModLoaded("baubles")) {
-                earthTrinket = initItem(new NyxBaubleEarthTrinket(), "earth_trinket");
-            }
-        }
 
         MOD_ITEMS.forEach(event.getRegistry()::register);
     }
