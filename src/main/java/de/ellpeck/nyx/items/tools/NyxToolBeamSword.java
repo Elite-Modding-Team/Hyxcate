@@ -55,6 +55,11 @@ public class NyxToolBeamSword extends NyxItemSword {
     }
 
     @Override
+    public void setDamage(ItemStack stack, int damage) {
+        // Unbreakable
+    }
+
+    @Override
     public boolean onEntitySwing(EntityLivingBase entityLiving, ItemStack stack) {
         if (stack.getItemDamage() < stack.getMaxDamage() && entityLiving instanceof EntityPlayer && ((EntityPlayer) entityLiving).getCooledAttackStrength(0) > 0.1F) {
             entityLiving.world.playSound(null, entityLiving.posX, entityLiving.posY, entityLiving.posZ, NyxSoundEvents.beamSwordSwing.getSoundEvent(), SoundCategory.PLAYERS, 0.5F, 1.5F / (entityLiving.world.rand.nextFloat() * 0.4F + 1.2F));
