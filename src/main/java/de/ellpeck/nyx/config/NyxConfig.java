@@ -74,7 +74,7 @@ public final class NyxConfig {
         mobDuplicationBlacklist = Sets.newHashSet(instance.get("general", "mobDuplicationBlacklist", new String[0], "The registry names of entities that should not be spawned during the full and blood moons. If isMobDuplicationWhitelist is true, this acts as a whitelist instead.").getStringList());
         isMobDuplicationWhitelist = instance.get("general", "isMobDuplicationWhitelist", false, "If the mobDuplicationBlacklist should act as a whitelist instead").getBoolean();
         eventTint = instance.get("general", "eventTint", true, "If moon and sun events should tint the sky").getBoolean();
-        eventNotifications = instance.get("general", "eventNotifications", true, "If moon events should be announced in chat when they start").getBoolean();
+        eventNotifications = instance.get("general", "eventNotifications", true, "If moon and sun events should be announced in chat when they start").getBoolean();
         specialMoonSleeping = instance.get("general", "specialMoonSleeping", false, "If sleeping is allowed during a special moon").getBoolean();
 
         fullMoon = instance.get("fullMoon", "fullMoon", true, "If the vanilla full moon should be considered a proper lunar event").getBoolean();
