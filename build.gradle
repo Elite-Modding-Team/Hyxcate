@@ -119,6 +119,9 @@ dependencies {
     // Construct's Armory
     implementation rfg.deobf('curse.maven:constructs-armory-287683:3174535')
 
+    // Astral Sorcery
+    implementation rfg.deobf('curse.maven:astral-sorcery-241721:3044416')
+
     if (project.use_mixins.toBoolean()) {
         // Change your mixin refmap name here:
         String mixin = modUtils.enableMixins('zone.rong:mixinbooter:10.7', "mixins.${project.mod_id}.refmap.json")

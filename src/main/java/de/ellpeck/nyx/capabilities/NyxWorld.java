@@ -1,5 +1,6 @@
 package de.ellpeck.nyx.capabilities;
 
+import de.ellpeck.nyx.compat.astralsorcery.AstralSorcery;
 import de.ellpeck.nyx.config.NyxConfig;
 import de.ellpeck.nyx.events.lunar.*;
 import de.ellpeck.nyx.events.solar.NyxEventRedSun;
@@ -24,6 +25,7 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.INBTSerializable;
+import net.minecraftforge.fml.common.Loader;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 import javax.annotation.Nonnull;
@@ -132,7 +134,7 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
             if (!this.world.isRemote) {
                 boolean isDirty = false;
 
-                if (this.currentLunarEvent == null) {
+                if (this.currentLunarEvent == null && (!Loader.isModLoaded("astralsorcery") || !AstralSorcery.isDayOfLunarEclipse(this.world))) {
                     if (this.forcedLunarEvent != null && this.forcedLunarEvent.shouldStart(this.wasDaytime)) {
                         this.currentLunarEvent = this.forcedLunarEvent;
                         this.forcedLunarEvent = null;
@@ -185,7 +187,7 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
             if (!this.world.isRemote) {
                 boolean isDirty = false;
 
-                if (this.currentSolarEvent == null) {
+                if (this.currentSolarEvent == null && (!Loader.isModLoaded("astralsorcery") || !AstralSorcery.isDayOfSolarEclipse(this.world))) {
                     if (this.forcedSolarEvent != null && this.forcedSolarEvent.shouldStart(this.wasNighttime)) {
                         this.currentSolarEvent = this.forcedSolarEvent;
                         this.forcedSolarEvent = null;
