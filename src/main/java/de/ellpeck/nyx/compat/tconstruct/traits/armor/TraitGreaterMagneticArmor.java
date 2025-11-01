@@ -1,4 +1,4 @@
-package de.ellpeck.nyx.compat.tinkers.traits.armor;
+package de.ellpeck.nyx.compat.tconstruct.traits.armor;
 
 import c4.conarm.lib.traits.AbstractArmorTraitLeveled;
 import de.ellpeck.nyx.Nyx;

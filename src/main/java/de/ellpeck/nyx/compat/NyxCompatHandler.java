@@ -1,8 +1,8 @@
 package de.ellpeck.nyx.compat;
 
 import de.ellpeck.nyx.Nyx;
-import de.ellpeck.nyx.compat.tinkers.ConstructsArmory;
-import de.ellpeck.nyx.compat.tinkers.TinkersConstruct;
+import de.ellpeck.nyx.compat.tconstruct.ConstructsArmory;
+import de.ellpeck.nyx.compat.tconstruct.TinkersConstruct;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 

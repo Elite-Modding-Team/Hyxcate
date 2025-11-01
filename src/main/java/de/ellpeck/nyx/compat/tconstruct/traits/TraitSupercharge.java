@@ -1,4 +1,4 @@
-package de.ellpeck.nyx.compat.tinkers.traits;
+package de.ellpeck.nyx.compat.tconstruct.traits;
 
 import de.ellpeck.nyx.Nyx;
 import net.minecraft.block.state.IBlockState;

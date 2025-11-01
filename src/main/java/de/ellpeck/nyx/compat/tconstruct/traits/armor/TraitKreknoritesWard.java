@@ -1,4 +1,4 @@
-package de.ellpeck.nyx.compat.tinkers.traits.armor;
+package de.ellpeck.nyx.compat.tconstruct.traits.armor;
 
 import c4.conarm.lib.traits.AbstractArmorTrait;
 import de.ellpeck.nyx.Nyx;
@@ -11,9 +11,9 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 
-public class TraitFrezaritesWard extends AbstractArmorTrait {
-    public TraitFrezaritesWard() {
-        super(Nyx.ID + "." + "frezarites_ward", 0x1AC5E1);
+public class TraitKreknoritesWard extends AbstractArmorTrait {
+    public TraitKreknoritesWard() {
+        super(Nyx.ID + "." + "kreknorites_ward", 0x8F0E0E);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class TraitFrezaritesWard extends AbstractArmorTrait {
         if (!player.world.isRemote) {
             if (trueSource instanceof EntityLivingBase) {
                 int level = 0;
-                PotionEffect potionEffect = ((EntityLivingBase) trueSource).getActivePotionEffect(MobEffects.SLOWNESS);
+                PotionEffect potionEffect = ((EntityLivingBase) trueSource).getActivePotionEffect(MobEffects.WITHER);
 
                 if (potionEffect != null) {
                     level = potionEffect.getAmplifier();
@@ -31,7 +31,8 @@ public class TraitFrezaritesWard extends AbstractArmorTrait {
 
                 level = Math.min(4, level + 1);
 
-                ((EntityLivingBase) trueSource).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 5 * 20, level));
+                ((EntityLivingBase) trueSource).addPotionEffect(new PotionEffect(MobEffects.WITHER, 5 * 20, level));
+                trueSource.setFire(level + 1);
             }
         }
 

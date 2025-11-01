@@ -1,7 +1,7 @@
-package de.ellpeck.nyx.compat.tinkers;
+package de.ellpeck.nyx.compat.tconstruct;
 
 import de.ellpeck.nyx.Nyx;
-import de.ellpeck.nyx.compat.tinkers.traits.*;
+import de.ellpeck.nyx.compat.tconstruct.traits.*;
 import de.ellpeck.nyx.init.NyxBlocks;
 import de.ellpeck.nyx.init.NyxItems;
 import net.minecraft.item.ItemBlock;

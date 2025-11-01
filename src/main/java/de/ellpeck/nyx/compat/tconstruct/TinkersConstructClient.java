@@ -1,4 +1,4 @@
-package de.ellpeck.nyx.compat.tinkers;
+package de.ellpeck.nyx.compat.tconstruct;
 
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.events.NyxClientEvents;

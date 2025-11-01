@@ -1,4 +1,4 @@
-package de.ellpeck.nyx.compat.tinkers.traits.armor;
+package de.ellpeck.nyx.compat.tconstruct.traits.armor;
 
 import c4.conarm.lib.traits.AbstractArmorTrait;
 import de.ellpeck.nyx.Nyx;
@@ -13,9 +13,9 @@ import slimeknights.tconstruct.common.Sounds;
 import slimeknights.tconstruct.shared.client.ParticleEffect;
 import slimeknights.tconstruct.tools.TinkerTools;
 
-public class TraitHyperchargeArmor extends AbstractArmorTrait {
-    public TraitHyperchargeArmor() {
-        super(Nyx.ID + "." + "hypercharge", 0xA36BB4);
+public class TraitSuperchargeArmor extends AbstractArmorTrait {
+    public TraitSuperchargeArmor() {
+        super(Nyx.ID + "." + "supercharge", 0xC82323);
     }
 
     @Override
@@ -23,10 +23,9 @@ public class TraitHyperchargeArmor extends AbstractArmorTrait {
         if (random.nextInt(15) == 0) {
             if (!player.world.isRemote) {
                 if (player instanceof EntityPlayer) {
-                    player.world.playSound(null, player.posX, player.posY, player.posZ, Sounds.shocking_discharge, SoundCategory.PLAYERS, 0.5F, 0.25F / (player.world.rand.nextFloat() * 0.4F + 1.2F));
-                    player.addPotionEffect(new PotionEffect(MobEffects.HASTE, 5 * 20, 3));
-                    player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 5 * 20, 3));
-                    player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 5 * 20, 1));
+                    player.world.playSound(null, player.posX, player.posY, player.posZ, Sounds.shocking_discharge, SoundCategory.PLAYERS, 0.5F, 0.5F / (player.world.rand.nextFloat() * 0.4F + 1.2F));
+                    player.addPotionEffect(new PotionEffect(MobEffects.HASTE, 5 * 20, 2));
+                    player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 5 * 20, 2));
                     TinkerTools.proxy.spawnEffectParticle(ParticleEffect.Type.HEART_ELECTRO, player, (int) damage);
                 }
             }

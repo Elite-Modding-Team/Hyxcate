@@ -1,9 +1,9 @@
-package de.ellpeck.nyx.compat.tinkers;
+package de.ellpeck.nyx.compat.tconstruct;
 
 import c4.conarm.common.armor.traits.ArmorTraits;
 import c4.conarm.lib.materials.*;
 import c4.conarm.lib.traits.AbstractArmorTrait;
-import de.ellpeck.nyx.compat.tinkers.traits.armor.*;
+import de.ellpeck.nyx.compat.tconstruct.traits.armor.*;
 import slimeknights.tconstruct.library.TinkerRegistry;
 
 public class ConstructsArmory {
