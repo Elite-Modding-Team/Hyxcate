@@ -213,12 +213,8 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
 
                 // send "I spawned" message
                 if (!this.disableMessage) {
-                    ITextComponent text = NyxConfig.meteorMessageVerbose ? new TextComponentTranslation("info." + Nyx.ID + ".meteor_verbose") : new TextComponentTranslation("info." + Nyx.ID + ".meteor");
-                    if (NyxConfig.meteorMessageVerbose)
-                        text.appendText(" " + this.posX + ", " + this.posY + ", " + this.posZ);
-                    text.setStyle(new Style().setColor(TextFormatting.GRAY).setItalic(true));
-
                     for (EntityPlayer player : this.world.playerEntities) {
+                        String msg;
                         SoundEvent sound;
                         float pitch = 2.0F / this.dataManager.get(SIZE);
                         float volume;
@@ -228,19 +224,33 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
                         }
                         float distSqrt = (float) Math.sqrt(dist);
                         if (dist <= 160 * 160) {
-                            if (NyxConfig.meteorMessage && dist > 16 * 16) player.sendMessage(text);
+                            msg = ".meteor";
                             sound = NyxSoundEvents.fallingMeteorImpact.getSoundEvent();
                             // close volume: 1.0F at 0 blocks -> 0.1F at 160 blocks (10 chunks)
                             volume = Math.max(0.1F, 1.0F - (distSqrt / 160.0F) * 0.9F);
                         } else {
+                            msg = ".meteor_far";
                             sound = NyxSoundEvents.fallingMeteorImpactFar.getSoundEvent();
                             // far volume: 1.0F at 160 blocks -> 0.1F at 512 blocks (32 chunks)
                             float farDist = distSqrt - 160.0F;
                             volume = Math.max(0.1F, 1.0F - (farDist / 352.0F) * 0.9F);
                         }
-
-                        if (player instanceof EntityPlayerMP && player.dimension == this.world.provider.getDimension())
+                        // play sound
+                        if (player instanceof EntityPlayerMP && player.dimension == this.world.provider.getDimension()) {
                             ((EntityPlayerMP) player).connection.sendPacket(new SPacketSoundEffect(sound, SoundCategory.AMBIENT, player.posX, player.posY, player.posZ, volume, pitch));
+                        }
+                        // send message
+                        if (NyxConfig.meteorMessage && dist > 16 * 16) {
+                            ITextComponent text;
+                            if (NyxConfig.meteorMessageVerbose) {
+                                text = new TextComponentTranslation("info." + Nyx.ID + ".meteor_verbose");
+                                text.appendText(" " + this.getPosition().getX() + ", " + this.getPosition().getY() + ", " + this.getPosition().getZ() + "!");
+                            } else {
+                                text = new TextComponentTranslation("info." + Nyx.ID + msg);
+                            }
+                            text.setStyle(new Style().setColor(TextFormatting.GRAY).setItalic(true));
+                            player.sendMessage(text);
+                        }
                     }
                 }
             } else {
