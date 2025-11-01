@@ -5,12 +5,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -50,13 +46,6 @@ public class NyxBlockMeteorRock extends Block {
         // Cooled rocks only have a 1/4 chance to drop their respective material.
         // Not affected by Fortune.
         return rand.nextInt(3) == 0 ? this.droppedItem.get() : null;
-    }
-
-    @Override
-    public void onEntityWalk(World world, BlockPos pos, Entity entity) {
-        if (!entity.isImmuneToFire() && entity instanceof EntityLivingBase && !EnchantmentHelper.hasFrostWalkerEnchantment((EntityLivingBase) entity))
-            entity.attackEntityFrom(DamageSource.HOT_FLOOR, 1);
-        super.onEntityWalk(world, pos, entity);
     }
 
     @Override

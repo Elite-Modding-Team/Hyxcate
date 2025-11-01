@@ -4,8 +4,12 @@ import de.ellpeck.nyx.init.NyxItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -38,6 +42,14 @@ public class NyxBlockMeteorRockHot extends NyxBlockMeteorRock {
         }
 
         return this.droppedItem.get();
+    }
+    
+    @Override
+    public void onEntityWalk(World world, BlockPos pos, Entity entity) {
+    	// Hot meteor rocks will always hurt you if you try walking on them
+        if (!entity.isImmuneToFire() && entity instanceof EntityLivingBase && !EnchantmentHelper.hasFrostWalkerEnchantment((EntityLivingBase) entity))
+            entity.attackEntityFrom(DamageSource.HOT_FLOOR, 1);
+        super.onEntityWalk(world, pos, entity);
     }
 
     @Override
