@@ -117,8 +117,8 @@ public final class NyxConfig {
         solarEclipse = new SolarEventConfig("solarEclipse", "solarEclipse", "Solar Eclipse", 0.05D);
 
         meteors = instance.get("meteors", "meteors", true, "If meteors falling from the sky should be enabled").getBoolean();
-        meteorMessage = instance.get("meteors", "meteorMessage", true, "If fallen meteors should send chat messages on impact").getBoolean();
-        meteorMessageVerbose = instance.get("meteors", "meteorMessageVerbose", false, "If the chat message for meteor impacts should include coordinates").getBoolean();
+        meteorMessage = instance.get("meteors", "meteorMessage", true, "If fallen meteors should be announced in chat on impact").getBoolean();
+        meteorMessageVerbose = instance.get("meteors", "meteorMessageVerbose", false, "If chat messages for meteor impacts should include coordinates").getBoolean();
         meteorChance = instance.get("meteors", "meteorChance", 1.875E-5D, "The chance of a meteor spawning every second, during the day").getDouble();
         meteorChanceNight = instance.get("meteors", "meteorChanceNight", 5.0E-5D, "The chance of a meteor spawning every second, during nighttime").getDouble();
         meteorGateDimension = instance.get("meteors", "meteorGateDimension", "the_nether", "The dimension that needs to be entered to increase the spawning of meteors").getString();
