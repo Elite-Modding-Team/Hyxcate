@@ -6,7 +6,6 @@
 - Should check which config options and misc features are worth keeping
 - Rebalance recipes for endgame content
 - Tektite Gem Clusters should be an additional drop rather than a replacement, this will prevent smelting enchantments from making it never drop
-- Make Tektite Gem Cluster texture animated
 - Update textures for regular tools, most ingots and most metal blocks
 - Update textures for special moons
 
