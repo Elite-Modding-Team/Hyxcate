@@ -4,9 +4,12 @@ import de.ellpeck.nyx.entities.NyxEntityFallingMeteor;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
-import net.minecraft.command.WrongUsageException;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
+
+import javax.annotation.Nullable;
+import java.util.Collections;
+import java.util.List;
 
 public class NyxCommandMeteor extends CommandBase {
     @Override
@@ -21,14 +24,13 @@ public class NyxCommandMeteor extends CommandBase {
 
     @Override
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
-        if (args.length != 0 && args.length != 2 && args.length != 3 && args.length != 4 && args.length != 5)
-            throw new WrongUsageException(this.getUsage(sender));
-
+        // set up defaults
         double x = sender.getPosition().getX();
         double z = sender.getPosition().getZ();
-        Integer size = null;
-        Integer type = null;
-        boolean homing = false;
+        int size = 2;
+        int type = 1;
+        boolean homing = true;
+        // parse arguments
         if (args.length >= 2) {
             x = parseDouble(x, args[0], false);
             z = parseDouble(z, args[1], false);
@@ -42,13 +44,23 @@ public class NyxCommandMeteor extends CommandBase {
                 }
             }
         }
-
+        // perform spawning
         BlockPos pos = new BlockPos(x, 0, z);
         NyxEntityFallingMeteor meteor = NyxEntityFallingMeteor.spawn(sender.getEntityWorld(), pos);
-        if (size != null) meteor.getDataManager().set(NyxEntityFallingMeteor.SIZE, size);
-        if (type != null) meteor.getDataManager().set(NyxEntityFallingMeteor.TYPE, type);
+        meteor.getDataManager().set(NyxEntityFallingMeteor.SIZE, size);
+        meteor.getDataManager().set(NyxEntityFallingMeteor.TYPE, type);
         meteor.homing = homing;
         pos = meteor.getPosition();
         notifyCommandListener(sender, this, "command.nyx.meteor.success", pos.getX(), pos.getY(), pos.getZ());
+    }
+
+    @Override
+    public List<String> getTabCompletions(MinecraftServer server, ICommandSender sender, String[] args, @Nullable BlockPos targetPos) {
+        if (args.length == 1) return getTabCompletionCoordinateXZ(args, 0, targetPos);
+        if (args.length == 2) return getTabCompletionCoordinateXZ(args, 1, targetPos);
+        if (args.length == 3) return getListOfStringsMatchingLastWord(args, "1", "2", "3");
+        if (args.length == 4) return getListOfStringsMatchingLastWord(args, "1", "2", "3", "4");
+        if (args.length == 5) return getListOfStringsMatchingLastWord(args, "true", "false");
+        return Collections.emptyList();
     }
 }
