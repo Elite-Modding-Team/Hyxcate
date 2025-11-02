@@ -112,9 +112,9 @@ dependencies {
     // Baubles
     implementation rfg.deobf('curse.maven:baubles-227083:2518667')
 
-    // Tinkers' Construct
+    // Tinkers' Antique
     implementation rfg.deobf('curse.maven:mantle-74924:2713386')
-    implementation rfg.deobf('curse.maven:tinkers-construct-74072:2902483')
+    implementation rfg.deobf('curse.maven:tinkers-antique-1242239:7077817')
 
     // Construct's Armory
     implementation rfg.deobf('curse.maven:constructs-armory-287683:3174535')
