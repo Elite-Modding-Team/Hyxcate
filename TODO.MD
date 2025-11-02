@@ -5,6 +5,13 @@
 - Should check and see if the sky event mixins don't cause any incompatibilities with mods like Astral Sorcery
 - Should check which config options and misc features are worth keeping
 - Rebalance recipes for endgame content
+- Use the actual "Unbreakable" tag for items that cannot break (celestial hammer, tektite greatsword and beam swords)
+- Apparently the magnetization effect cannot pull items vertically and will cause them to get stuck on blocks.
+- Several tooltips are too long and need to be shortened. Some tooltips could be moved to JEI?
+- Set bonus tooltip can be changed to be much more intuitive where it shows which pieces of the set are equipped and what the set does. See Botania armor for a good example of this.
+- More info on where everything comes from, putting info on JEI will suffice for now
+- Change Tektite and Meteorite effects into attributes
+- Might be fun to be able to sneak + right-click beam swords to toggle them on and off
 - Tektite Gem Clusters should be an additional drop rather than a replacement, this will prevent smelting enchantments from making it never drop
 - Update textures for regular tools, most ingots and most metal blocks
 - Update textures for special moons
