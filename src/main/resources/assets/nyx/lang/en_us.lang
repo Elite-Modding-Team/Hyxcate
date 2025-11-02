@@ -102,10 +102,10 @@ command.nyx.meteor.success=Spawned a meteor at %s, %s, %s
 advancement.nyx.no_more_sleepless_nights.name=No More Sleepless Nights
 advancement.nyx.no_more_sleepless_nights.desc=The world has grown accustomed to your presence...
 
-tooltip.nyx.celestial_emblem=It's pulsating with tremendous celestial energy!
-tooltip.nyx.cyber_crystal=It's capable of focusing and amplifying energy.
-tooltip.nyx.fallen_star=It's so full of energy that it won't stop twinkling!
-tooltip.nyx.tektite_gem_cluster=A cluster of very rare gems originating from outer space. They are packed with electricity.
+tooltip.nyx.celestial_emblem=Pulsating with tremendous celestial energy!
+tooltip.nyx.cyber_crystal=Capable of focusing and amplifying energy.
+tooltip.nyx.fallen_star=It won't stop twinkling!
+tooltip.nyx.tektite_gem_cluster=They are packed with electricity.
 
 tooltip.nyx.beam_sword=With its distinctive glowing blade, this weapon is eye-catching and lethal. All attacks completely ignore armor.
 tooltip.nyx.celestial_warhammer=All attacks have a wider range and will cause knockback. Hold down right-click and let go at full charge to make yourself jump up high into the air and slam down to unleash a fiery quake.
