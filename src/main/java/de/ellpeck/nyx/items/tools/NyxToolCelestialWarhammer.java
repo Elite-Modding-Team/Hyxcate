@@ -5,9 +5,11 @@ import com.google.common.collect.Multimap;
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.items.NyxItemSword;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
+import de.ellpeck.nyx.util.Utils;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -61,6 +63,11 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
         }
 
         return true;
+    }
+    
+    @Override
+    public void setDamage(ItemStack stack, int damage) {
+        // Unbreakable
     }
 
     @Override
@@ -138,13 +145,20 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
     public IRarity getForgeRarity(ItemStack stack) {
         return EnumRarity.EPIC;
     }
+    
+    @Override
+    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> list) {
+        if (this.isInCreativeTab(tab)) {
+            ItemStack stack = new ItemStack(this);
+            Utils.setUnbreakable(stack);
+            list.add(stack);
+        }
+    }
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
         if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.celestial_warhammer"));
-            tooltip.add(I18n.format(""));
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.indestructible"));
         } else {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.shift"));
         }

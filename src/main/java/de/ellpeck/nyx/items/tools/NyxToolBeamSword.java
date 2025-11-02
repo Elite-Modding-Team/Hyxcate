@@ -6,11 +6,13 @@ import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.items.NyxItemSword;
 import de.ellpeck.nyx.sound.NyxSoundBeamSword;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
+import de.ellpeck.nyx.util.Utils;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -22,6 +24,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
@@ -52,11 +55,6 @@ public class NyxToolBeamSword extends NyxItemSword {
         }
 
         return true;
-    }
-
-    @Override
-    public boolean isDamageable() {
-        return false;
     }
 
     @Override
@@ -103,6 +101,15 @@ public class NyxToolBeamSword extends NyxItemSword {
         return EnumRarity.EPIC;
     }
 
+    @Override
+    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> list) {
+        if (this.isInCreativeTab(tab)) {
+            ItemStack stack = new ItemStack(this);
+            Utils.setUnbreakable(stack);
+            list.add(stack);
+        }
+    }
+
     @SideOnly(Side.CLIENT)
     @Override
     public void onUpdate(ItemStack stack, World world, Entity entity, int itemSlot, boolean isSelected) {
@@ -125,8 +132,6 @@ public class NyxToolBeamSword extends NyxItemSword {
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
         if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.beam_sword"));
-            tooltip.add(I18n.format(""));
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.indestructible"));
         } else {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.shift"));
         }

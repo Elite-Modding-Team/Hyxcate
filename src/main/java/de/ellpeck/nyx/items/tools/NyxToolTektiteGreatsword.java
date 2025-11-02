@@ -4,9 +4,11 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import de.ellpeck.nyx.items.NyxItemSword;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
+import de.ellpeck.nyx.util.Utils;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -20,6 +22,7 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
@@ -63,6 +66,11 @@ public class NyxToolTektiteGreatsword extends NyxItemSword {
 
         return true;
     }
+    
+    @Override
+    public void setDamage(ItemStack stack, int damage) {
+        // Unbreakable
+    }
 
     @Override
     public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos, EntityLivingBase entityLiving) {
@@ -95,11 +103,18 @@ public class NyxToolTektiteGreatsword extends NyxItemSword {
     }
 
     @Override
+    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> list) {
+        if (this.isInCreativeTab(tab)) {
+            ItemStack stack = new ItemStack(this);
+            Utils.setUnbreakable(stack);
+            list.add(stack);
+        }
+    }
+
+    @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
         if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.tektite_greatsword"));
-            tooltip.add(I18n.format(""));
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.indestructible"));
         } else {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.shift"));
         }
