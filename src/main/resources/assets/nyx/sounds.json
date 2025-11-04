@@ -2,31 +2,38 @@
   "falling_star": {
     "category": "ambient",
     "sounds": [
-      "nyx:random/falling_star"
+      "nyx:random/falling_star_loop"
     ]
   },
   "falling_star_impact": {
     "category": "ambient",
     "sounds": [
-      "nyx:random/falling_star_impact"
+      "nyx:random/falling_star_impact1",
+	  "nyx:random/falling_star_impact2",
+	  "nyx:random/falling_star_impact3",
+	  "nyx:random/falling_star_impact4"
     ]
   },
   "falling_meteor": {
     "category": "ambient",
     "sounds": [
-      "nyx:random/falling_meteor"
+      "nyx:random/falling_meteor_loop"
     ]
   },
   "falling_meteor_impact": {
     "category": "ambient",
     "sounds": [
-      "nyx:random/falling_meteor_impact"
+      "nyx:random/falling_meteor_impact1",
+	  "nyx:random/falling_meteor_impact2"
     ]
   },
   "falling_meteor_impact_far": {
     "category": "ambient",
     "sounds": [
-      "nyx:random/falling_meteor_impact_far"
+      "nyx:random/falling_meteor_impact_far1",
+	  "nyx:random/falling_meteor_impact_far2",
+	  "nyx:random/falling_meteor_impact_far3",
+	  "nyx:random/falling_meteor_impact_far4"
     ]
   },
   "hammer_smash": {
