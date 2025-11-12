@@ -89,8 +89,6 @@ public class NyxItemArmor extends ItemArmor {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.kreknorite_armor"));
         } else if (this == NyxItems.meteoriteBoots || this == NyxItems.meteoriteChestplate || this == NyxItems.meteoriteHelmet || this == NyxItems.meteoriteLeggings) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.meteorite_armor"));
-        } else if (this == NyxItems.tektiteBoots || this == NyxItems.tektiteChestplate || this == NyxItems.tektiteHelmet || this == NyxItems.tektiteLeggings) {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.tektite_armor"));
         }
 
         if (this == NyxItems.frezariteBoots) {

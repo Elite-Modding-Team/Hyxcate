@@ -147,10 +147,10 @@ public class NyxItems {
         tektiteHoe = initItem(new NyxItemHoe(tektiteToolMaterial), "tektite_hoe");
         tektiteSword = initItem(new NyxItemSword(tektiteToolMaterial), "tektite_Sword");
         tektiteGreatsword = initItem(new NyxToolTektiteGreatsword(tektiteGreatswordToolMaterial), "tektite_greatsword");
-        tektiteHelmet = initItem(new NyxItemArmor(tektiteArmorMaterial, 0, EntityEquipmentSlot.HEAD), "tektite_helmet");
-        tektiteChestplate = initItem(new NyxItemArmor(tektiteArmorMaterial, 1, EntityEquipmentSlot.CHEST), "tektite_chestplate");
-        tektiteLeggings = initItem(new NyxItemArmor(tektiteArmorMaterial, 2, EntityEquipmentSlot.LEGS), "tektite_leggings");
-        tektiteBoots = initItem(new NyxItemArmor(tektiteArmorMaterial, 3, EntityEquipmentSlot.FEET), "tektite_boots");
+        tektiteHelmet = initItem(new NyxItemERArmor(tektiteArmorMaterial, 0, EntityEquipmentSlot.HEAD, 0.15D), "tektite_helmet");
+        tektiteChestplate = initItem(new NyxItemERArmor(tektiteArmorMaterial, 1, EntityEquipmentSlot.CHEST, 0.30D), "tektite_chestplate");
+        tektiteLeggings = initItem(new NyxItemERArmor(tektiteArmorMaterial, 2, EntityEquipmentSlot.LEGS, 0.25D), "tektite_leggings");
+        tektiteBoots = initItem(new NyxItemERArmor(tektiteArmorMaterial, 3, EntityEquipmentSlot.FEET, 0.10D), "tektite_boots");
         tektiteBow = initItem(new NyxItemBow(2500, 1.35F, 1.5F, 0.3F, 0.5F, EnumRarity.EPIC, Ingredient.fromStacks(new ItemStack(tektiteGemCluster))), "tektite_bow");
         celestialWarhammer = initItem(new NyxToolCelestialWarhammer(celestialWarhammerToolMaterial), "celestial_warhammer");
 

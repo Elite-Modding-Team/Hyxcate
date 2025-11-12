@@ -1,5 +1,7 @@
 itemGroup.nyx=Hyxcate
 
+attribute.name.nyx.explosion_resistance=Explosion Resistance
+
 enchantment.nyx.lunar_edge=Lunar Edge
 enchantment.nyx.lunar_edge.desc=Increases damage of the item. Strength is affected by the current moon phase.
 enchantment.nyx.lunar_shield=Lunar Shield
@@ -117,7 +119,6 @@ tooltip.nyx.kreknorite_tool=All attacks will cause a small explosion that deals 
 tooltip.nyx.meteor_detector=Points you to nearby meteor crash sites.
 tooltip.nyx.meteorite_armor=Pulls items towards you while equipped.
 tooltip.nyx.meteorite_tool=Pulls items towards you while held.
-tooltip.nyx.tektite_armor=Each equipped armor piece gives +20%% explosion resistance.
 tooltip.nyx.tektite_bow=Fires powerful arrows very quickly.
 tooltip.nyx.tektite_greatsword=All attacks have a wider range, as well as a 20%% chance to stun mobs and leave them immobile for a few seconds.
 tooltip.nyx.tektite_tool=All attacks have a 20%% chance to stun mobs and leave them immobile for a few seconds.
