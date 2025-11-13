@@ -121,7 +121,7 @@ public final class NyxConfig {
         meteorMessageVerbose = instance.get("meteors", "meteorMessageVerbose", false, "If chat messages for meteor impacts should include coordinates").getBoolean();
         meteorChance = instance.get("meteors", "meteorChance", 1.875E-5D, "The chance of a meteor spawning every second, during the day").getDouble();
         meteorChanceNight = instance.get("meteors", "meteorChanceNight", 5.0E-5D, "The chance of a meteor spawning every second, during nighttime").getDouble();
-        meteorGateDimension = instance.get("meteors", "meteorGateDimension", "the_nether", "The dimension that needs to be entered to increase the spawning of meteors").getString();
+        meteorGateDimension = instance.get("meteors", "meteorGateDimension", "the_end", "The dimension that needs to be entered to increase the spawning of meteors").getString();
         meteorChanceAfterGate = instance.get("meteors", "meteorChanceAfterGate", 2.5E-5D, "The chance of a meteor spawning every second, during the day, after the gate dimension has been entered once").getDouble();
         meteorChanceAfterGateNight = instance.get("meteors", "meteorChanceAfterGateNight", 7.5E-5D, "The chance of a meteor spawning every second, during the day, after the gate dimension has been entered once").getDouble();
         meteorChanceStarShower = instance.get("meteors", "meteorChanceStarShower", 0.001875D, "The chance of a meteor spawning every second, during a star shower").getDouble();
