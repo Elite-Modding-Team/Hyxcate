@@ -144,19 +144,46 @@
   "crystal_break": {
     "category": "block",
     "sounds": [
-      "nyx:blocks/crystal/break"
+      "nyx:block/crystal/break"
     ]
   },
   "crystal_hit": {
     "category": "block",
     "sounds": [
-      "nyx:blocks/crystal/hit"
+      "nyx:block/crystal/hit"
     ]
   },
   "crystal_place": {
     "category": "block",
     "sounds": [
-      "nyx:blocks/crystal/place"
+      "nyx:block/crystal/place"
+    ]
+  },
+  "light_crystal_break": {
+    "category": "block",
+    "sounds": [
+      "nyx:block/light_crystal/break1",
+      "nyx:block/light_crystal/break2",
+      "nyx:block/light_crystal/break3",
+      "nyx:block/light_crystal/break4"
+    ]
+  },
+  "light_crystal_hit": {
+    "category": "block",
+    "sounds": [
+      "nyx:block/light_crystal/hit1",
+      "nyx:block/light_crystal/hit2",
+      "nyx:block/light_crystal/hit3",
+      "nyx:block/light_crystal/hit4"
+    ]
+  },
+  "light_crystal_place": {
+    "category": "block",
+    "sounds": [
+      "nyx:block/light_crystal/place1",
+      "nyx:block/light_crystal/place2",
+      "nyx:block/light_crystal/place3",
+      "nyx:block/light_crystal/place4"
     ]
   },
   "comet_kitty_idle": {

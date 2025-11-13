@@ -6,7 +6,6 @@ import net.minecraft.util.SoundEvent;
 
 public enum NyxSoundEvents {
     fallingStar("falling_star"),
-	fallingStarIdle("falling_star_idle"),
     fallingStarImpact("falling_star_impact"),
     fallingMeteor("falling_meteor"),
     fallingMeteorImpact("falling_meteor_impact"),
@@ -36,7 +35,10 @@ public enum NyxSoundEvents {
     // Blocks
     crystalBreak("crystal_break"),
     crystalHit("crystal_hit"),
-    crystalPlace("crystal_place");
+    crystalPlace("crystal_place"),
+    lightCrystalBreak("light_crystal_break"),
+    lightCrystalHit("light_crystal_hit"),
+    lightCrystalPlace("light_crystal_place");
 
     private final SoundEvent soundEvent;
 

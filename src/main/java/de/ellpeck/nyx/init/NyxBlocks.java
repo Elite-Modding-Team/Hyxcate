@@ -4,6 +4,7 @@ import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.blocks.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
@@ -42,9 +43,9 @@ public class NyxBlocks {
 
         reg.registerAll(
                 starAir = new NyxBlockStarAir(),
-                starBlock = initBlock(new Block(Material.ROCK).setHardness(2), "star_block", ItemBlock::new),
-                crackedStarBlock = initBlock(new Block(Material.ROCK).setHardness(2), "cracked_star_block", ItemBlock::new),
-                chiseledStarBlock = initBlock(new Block(Material.ROCK).setHardness(2), "chiseled_star_block", ItemBlock::new),
+                starBlock = initBlock(new NyxBlock(Material.ROCK, MapColor.GOLD, 2.0F, 2000.0F, NyxRegistry.LIGHT_CRYSTAL), "star_block", ItemBlock::new),
+                crackedStarBlock = initBlock(new NyxBlock(Material.ROCK, MapColor.GOLD, 2.0F, 2000.0F, NyxRegistry.LIGHT_CRYSTAL), "cracked_star_block", ItemBlock::new),
+                chiseledStarBlock = initBlock(new NyxBlock(Material.ROCK, MapColor.GOLD, 2.0F, 2000.0F, NyxRegistry.LIGHT_CRYSTAL), "chiseled_star_block", ItemBlock::new),
                 starStairs = initBlock(new NyxBlockStairs(starBlock.getDefaultState()), "star_stairs", ItemBlock::new),
                 meteoriteRock = initBlock(new NyxBlockMeteorRock(() -> NyxItems.meteoriteShard, EnumParticleTypes.SUSPENDED_DEPTH, SoundType.STONE, 3).setHardness(10.0F).setResistance(2000.0F), "meteorite_rock", ItemBlock::new),
                 meteoriteRockHot = initBlock(new NyxBlockMeteorRockHot(() -> NyxItems.meteoriteShard, meteoriteRock, EnumParticleTypes.FLAME, SoundType.STONE, 3, 0.05D, 0.05D).setHardness(20.0F).setResistance(3000.0F), "meteorite_rock_hot", ItemBlock::new),
@@ -54,11 +55,12 @@ public class NyxBlocks {
                 meteoriteBlock = initBlock(new Block(Material.ROCK).setHardness(3), "meteorite_block", ItemBlock::new),
                 frezariteBlock = initBlock(new Block(Material.ROCK).setHardness(3), "frezarite_block", ItemBlock::new),
                 kreknoriteBlock = initBlock(new Block(Material.ROCK).setHardness(3), "kreknorite_block", ItemBlock::new),
-                tektiteBlock = initBlock(new Block(Material.ROCK).setHardness(3), "tektite_block", ItemBlock::new),
+                tektiteBlock = initBlock(new NyxBlock(Material.ROCK, MapColor.RED, 3.0F, 3000.0F, NyxRegistry.LIGHT_CRYSTAL), "tektite_block", ItemBlock::new),
                 meteorGlass = initBlock(new NyxBlockSpaceGlass().setHardness(2).setResistance(3000), "meteor_glass", ItemBlock::new)
         );
 
-        NyxBlockSlab[] slabs = NyxBlockSlab.makeSlab("star_slab", Material.ROCK, SoundType.STONE, 2);
+        // TODO: Set resistance and map color as well
+        NyxBlockSlab[] slabs = NyxBlockSlab.makeSlab("star_slab", Material.ROCK, NyxRegistry.LIGHT_CRYSTAL, 2.0F);
         reg.registerAll(slabs);
         starSlab = slabs[0];
     }
