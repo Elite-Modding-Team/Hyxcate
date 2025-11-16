@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 public class NyxLayerAlienCreeperCharge implements LayerRenderer<NyxEntityAlienCreeper> {
-    private static final ResourceLocation LIGHTNING_TEXTURE = new ResourceLocation(Nyx.ID, "textures/entities/meteor_creeper_armor.png");
+    private static final ResourceLocation LIGHTNING_TEXTURE = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper_armor.png");
     private final NyxRendererAlienCreeper alienCreeperRendered;
     private final NyxModelAlienCreeper alienCreeperModel = new NyxModelAlienCreeper(2.0F);
 

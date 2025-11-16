@@ -21,7 +21,7 @@ public class NyxEntities {
     public static void onEntityRegistry(RegistryEvent.Register<EntityEntry> event) {
         EntityRegistry.registerModEntity(new ResourceLocation(Nyx.ID, "falling_star"), NyxEntityFallingStar.class, Nyx.ID + ".falling_star", id++, Nyx.instance, 512, 1, true);
         EntityRegistry.registerModEntity(new ResourceLocation(Nyx.ID, "falling_meteor"), NyxEntityFallingMeteor.class, Nyx.ID + ".falling_meteor", id++, Nyx.instance, 512, 1, true);
-        EntityRegistry.registerModEntity(new ResourceLocation(Nyx.ID, "alien_creeper"), NyxEntityAlienCreeper.class, Nyx.ID + ".alien_creeper", id++, Nyx.instance, 64, 1, true, 7864485, 16732697);
+        EntityRegistry.registerModEntity(new ResourceLocation(Nyx.ID, "alien_creeper"), NyxEntityAlienCreeper.class, Nyx.ID + ".alien_creeper", id++, Nyx.instance, 64, 1, true, 2498630, 14278883);
         EntityRegistry.registerModEntity(new ResourceLocation(Nyx.ID, "comet_kitty"), NyxEntityCometKitty.class, Nyx.ID + ".comet_kitty", id++, Nyx.instance, 64, 1, true, 2239283, 884535);
         EntityRegistry.registerModEntity(new ResourceLocation(Nyx.ID, "alien_kitty"), NyxEntityAlienKitty.class, Nyx.ID + ".alien_kitty", id++, Nyx.instance, 64, 1, true, 65280, 0);
         //EntityRegistry.registerModEntity(new ResourceLocation(Nyx.ID, "stellar_protector"), NyxEntityStellarProtector.class, Nyx.ID + ".stellar_protector", id++, Nyx.instance, 64, 1, true, 2239283, 884535);

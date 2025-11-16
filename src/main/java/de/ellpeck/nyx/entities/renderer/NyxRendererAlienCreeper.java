@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 
 public class NyxRendererAlienCreeper extends RenderLiving<NyxEntityAlienCreeper> {
-    private static final ResourceLocation SKIN = new ResourceLocation(Nyx.ID, "textures/entities/meteor_creeper.png");
+    private static final ResourceLocation SKIN = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper.png");
 
     public NyxRendererAlienCreeper(RenderManager renderManager) {
         super(renderManager, new NyxModelAlienCreeper(), 0.5F);
