@@ -23,12 +23,12 @@ public class NyxEventHarvestMoon extends NyxLunarEvent {
     private final ConfigImpl config = new ConfigImpl(() -> NyxConfig.harvestMoon);
 
     public NyxEventHarvestMoon(NyxWorld nyxWorld) {
-        super("harvest_moon", nyxWorld);
+        super("blue_moon", nyxWorld);
     }
 
     @Override
     public ITextComponent getStartMessage() {
-        return new TextComponentTranslation("info." + Nyx.ID + ".harvest_moon")
+        return new TextComponentTranslation("info." + Nyx.ID + ".blue_moon")
                 .setStyle(new Style().setColor(TextFormatting.BLUE).setItalic(true));
     }
 
@@ -63,7 +63,7 @@ public class NyxEventHarvestMoon extends NyxLunarEvent {
 
     @Override
     public String getMoonTexture() {
-        return "harvest_moon";
+        return "blue_moon";
     }
 
     @Override
