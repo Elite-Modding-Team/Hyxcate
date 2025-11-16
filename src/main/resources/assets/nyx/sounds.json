@@ -6,7 +6,7 @@
     ]
   },
   "falling_star_idle": {
-	"category": "ambient",
+    "category": "ambient",
     "sounds": [
       "nyx:random/falling_star_idle_loop"
     ]
@@ -15,9 +15,9 @@
     "category": "ambient",
     "sounds": [
       "nyx:random/falling_star_impact1",
-	  "nyx:random/falling_star_impact2",
-	  "nyx:random/falling_star_impact3",
-	  "nyx:random/falling_star_impact4"
+      "nyx:random/falling_star_impact2",
+      "nyx:random/falling_star_impact3",
+      "nyx:random/falling_star_impact4"
     ]
   },
   "falling_meteor": {
@@ -30,16 +30,16 @@
     "category": "ambient",
     "sounds": [
       "nyx:random/falling_meteor_impact1",
-	  "nyx:random/falling_meteor_impact2"
+      "nyx:random/falling_meteor_impact2"
     ]
   },
   "falling_meteor_impact_far": {
     "category": "ambient",
     "sounds": [
       "nyx:random/falling_meteor_impact_far1",
-	  "nyx:random/falling_meteor_impact_far2",
-	  "nyx:random/falling_meteor_impact_far3",
-	  "nyx:random/falling_meteor_impact_far4"
+      "nyx:random/falling_meteor_impact_far2",
+      "nyx:random/falling_meteor_impact_far3",
+      "nyx:random/falling_meteor_impact_far4"
     ]
   },
   "hammer_smash": {
@@ -80,8 +80,8 @@
     "sounds": [
       "nyx:item/beam_sword_hit1",
       "nyx:item/beam_sword_hit2",
-	  "nyx:item/beam_sword_hit3",
-	  "nyx:item/beam_sword_hit4"
+      "nyx:item/beam_sword_hit3",
+      "nyx:item/beam_sword_hit4"
     ]
   },
   "beam_sword_swing": {
@@ -193,8 +193,8 @@
       "nyx:block/light_crystal/step2",
       "nyx:block/light_crystal/step3",
       "nyx:block/light_crystal/step4",
-	  "nyx:block/light_crystal/step5",
-	  "nyx:block/light_crystal/step6"
+      "nyx:block/light_crystal/step5",
+      "nyx:block/light_crystal/step6"
     ]
   },
   "comet_kitty_idle": {
