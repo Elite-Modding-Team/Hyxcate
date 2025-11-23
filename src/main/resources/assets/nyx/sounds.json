@@ -51,15 +51,19 @@
   "volcano": {
     "category": "player",
     "sounds": [
-      "nyx:volcano1",
-      "nyx:volcano2",
-      "nyx:volcano3"
+      "nyx:item/kreknorite_hit1",
+      "nyx:item/kreknorite_hit2",
+	  "nyx:item/kreknorite_hit3",
+	  "nyx:item/kreknorite_hit4"
     ]
   },
   "glacier": {
     "category": "player",
     "sounds": [
-      "nyx:glacier"
+      "nyx:item/frezarite_hit1",
+	  "nyx:item/frezarite_hit2",
+	  "nyx:item/frezarite_hit3",
+	  "nyx:item/frezarite_hit4"
     ]
   },
   "stun": {
