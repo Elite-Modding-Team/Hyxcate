@@ -1,29 +1,16 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "hexxitgear"
-    }
-  ],
   "type": "forge:ore_shaped",
   "pattern": [
-    "E#E",
-    "ECE",
-    "ESE"
+    "C",
+    "C",
+    "E"
   ],
   "key": {
-    "S": {
-      "type": "forge:ore_dict",
-      "ore": "ingotStarsteel"
+    "E": {
+      "item": "nyx:celestial_emblem"
     },
     "C": {
-      "item": "nyx:cyber_power_cell"
-    },
-    "#": {
       "item": "nyx:cyber_crystal"
-    },
-    "E": {
-      "item": "hexxitgear:hexical_essence"
     }
   },
   "result": {

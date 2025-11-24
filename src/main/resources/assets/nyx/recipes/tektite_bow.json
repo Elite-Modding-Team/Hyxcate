@@ -1,19 +1,13 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "morebows"
-    }
-  ],
   "type": "forge:ore_shaped",
   "pattern": [
-    "TTT",
-    "OBO",
-    "TTT"
+    "TOT",
+    "CBC",
+    "TOT"
   ],
   "key": {
     "B": {
-      "item": "morebows:diamond_bow",
+      "item": "minecraft:bow",
       "data": 32767
     },
     "T": {
@@ -22,6 +16,9 @@
     "O": {
       "type": "forge:ore_dict",
       "ore": "obsidian"
+    },
+    "C": {
+      "item": "nyx:cyber_crystal"
     }
   },
   "result": {

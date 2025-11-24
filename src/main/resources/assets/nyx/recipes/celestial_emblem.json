@@ -1,29 +1,19 @@
 {
   "type": "forge:ore_shaped",
   "pattern": [
-    "SFS",
-    "MAT",
-    "SKS"
+    "SCS",
+    "CTC",
+    "SCS"
   ],
   "key": {
-    "A": {
-      "item": "nyx:heros_broken_artifact"
-    },
     "S": {
-      "type": "forge:ore_dict",
-      "ore": "ingotStarsteel"
+      "item": "nyx:fallen_star"
     },
-    "F": {
-      "item": "nyx:frezarite_block"
-    },
-    "M": {
-      "item": "nyx:meteorite_block"
+    "C": {
+      "item": "nyx:cyber_crystal"
     },
     "T": {
-      "item": "nyx:tektite_block"
-    },
-    "K": {
-      "item": "nyx:kreknorite_block"
+      "item": "nyx:tektite_gem_cluster"
     }
   },
   "result": {

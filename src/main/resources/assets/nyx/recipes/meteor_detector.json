@@ -1,14 +1,13 @@
 {
   "type": "forge:ore_shaped",
   "pattern": [
-    "GTG",
+    "STS",
     "TCT",
-    "GTG"
+    "STS"
   ],
   "key": {
-    "G": {
-      "type": "forge:ore_dict",
-      "ore": "ingotStarglass"
+    "S": {
+      "item": "nyx:fallen_star"
     },
     "T": {
       "item": "nyx:tektite_gem_cluster"
