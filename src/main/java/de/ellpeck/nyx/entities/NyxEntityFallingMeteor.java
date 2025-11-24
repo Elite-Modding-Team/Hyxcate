@@ -61,7 +61,7 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
             case 1: // Meteorite
                 return this.rand.nextBoolean() ? NyxBlocks.meteoriteRockHot : NyxBlocks.meteoriteRock;
             case 2: // Frezarite
-                return this.rand.nextBoolean() ? NyxBlocks.frezariteRock : Blocks.ICE;
+                return this.rand.nextBoolean() ? NyxBlocks.frezariteRock : Blocks.PACKED_ICE;
             case 3: // Kreknorite
                 return this.rand.nextBoolean() ? NyxBlocks.kreknoriteRock : Blocks.OBSIDIAN;
             case 4: // Unknown
@@ -75,7 +75,7 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
                     case 3:
                         return NyxBlocks.kreknoriteRock;
                     case 4:
-                        return Blocks.ICE;
+                        return Blocks.PACKED_ICE;
                     case 5:
                         return Blocks.OBSIDIAN;
                 }
