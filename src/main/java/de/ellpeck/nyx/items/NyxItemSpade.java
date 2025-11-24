@@ -1,6 +1,7 @@
 package de.ellpeck.nyx.items;
 
 import de.ellpeck.nyx.events.NyxEvents;
+import de.ellpeck.nyx.init.NyxAttributes;
 import de.ellpeck.nyx.init.NyxItems;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
 import net.minecraft.client.resources.I18n;
@@ -8,8 +9,11 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
@@ -22,11 +26,22 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.IRarity;
 
 import javax.annotation.Nullable;
+
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
+
 import java.util.List;
 
 public class NyxItemSpade extends ItemSpade {
-    public NyxItemSpade(ToolMaterial material) {
+    public double attackSpeed;
+    public AttributeModifier paralysisChance;
+    public EnumRarity rarity;
+    
+    public NyxItemSpade(ToolMaterial material, double attackSpeed, double paralysisChance, EnumRarity rarity) {
         super(material);
+        this.attackSpeed = attackSpeed;
+        this.paralysisChance = new AttributeModifier(NyxAttributes.PARALYSIS_ID.toString(), paralysisChance, 1);
+        this.rarity = rarity;
     }
 
     @Override
@@ -101,11 +116,6 @@ public class NyxItemSpade extends ItemSpade {
                     nearbyLivingEntity.attackEntityFrom(DamageSource.causeMobDamage(attacker), this.attackDamage + 4.0F);
                 }
             }
-        } else if (this == NyxItems.tektiteShovel) {
-            if (target.world.rand.nextInt(5) == 0) {
-                target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.paralysis.getSoundEvent(), SoundCategory.PLAYERS, 0.8F, 1.5F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
-                target.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 10 * 20, 9));
-            }
         }
 
         stack.damageItem(1, attacker);
@@ -126,17 +136,7 @@ public class NyxItemSpade extends ItemSpade {
 
     @Override
     public IRarity getForgeRarity(ItemStack stack) {
-        if (this == NyxItems.frezariteShovel) {
-            return EnumRarity.EPIC;
-        } else if (this == NyxItems.kreknoriteShovel) {
-            return EnumRarity.EPIC;
-        } else if (this == NyxItems.meteoriteShovel) {
-            return EnumRarity.RARE;
-        } else if (this == NyxItems.tektiteShovel) {
-            return EnumRarity.EPIC;
-        }
-
-        return EnumRarity.COMMON;
+        return rarity;
     }
 
     @Override
@@ -147,8 +147,19 @@ public class NyxItemSpade extends ItemSpade {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.kreknorite_tool"));
         } else if (this == NyxItems.meteoriteShovel) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.meteorite_tool"));
-        } else if (this == NyxItems.tektiteShovel) {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.tektite_tool"));
         }
+    }
+    
+    @Override
+    public Multimap<String, AttributeModifier> getItemAttributeModifiers(EntityEquipmentSlot equipmentSlot) {
+        Multimap<String, AttributeModifier> multimap = HashMultimap.create();
+
+        if (equipmentSlot == EntityEquipmentSlot.MAINHAND) {
+            multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(), new AttributeModifier(ATTACK_DAMAGE_MODIFIER, NyxAttributes.ATTACK_DAMAGE_ID.toString(), this.attackDamage, 0));
+            multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(), new AttributeModifier(ATTACK_SPEED_MODIFIER, NyxAttributes.ATTACK_SPEED_ID.toString(), this.attackSpeed - 4.0D, 0));
+            multimap.put(NyxAttributes.PARALYSIS.getName(), paralysisChance);
+        }
+
+        return multimap;
     }
 }

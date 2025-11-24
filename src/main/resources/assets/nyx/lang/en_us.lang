@@ -122,7 +122,6 @@ tooltip.nyx.meteorite_armor=Pulls items towards you while equipped.
 tooltip.nyx.meteorite_tool=Pulls items towards you while held.
 tooltip.nyx.tektite_bow=Fires powerful arrows very quickly.
 tooltip.nyx.tektite_greatsword=All attacks have a wider range, as well as a 20%% chance to stun mobs and leave them immobile for a few seconds.
-tooltip.nyx.tektite_tool=All attacks have a 20%% chance to stun mobs and leave them immobile for a few seconds.
 
 tooltip.nyx.shift=Hold SHIFT to see more info...
 
