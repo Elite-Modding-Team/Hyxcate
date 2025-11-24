@@ -11,7 +11,6 @@ public enum NyxSoundEvents {
     fallingMeteorImpact("falling_meteor_impact"),
     fallingMeteorImpactFar("falling_meteor_impact_far"),
     hammerSmash("hammer_smash"),
-    powerup("powerup"),
     paralysis("paralysis"),
     celestialEmblem("celestial_emblem"),
     cometKittyIdle("comet_kitty_idle"),

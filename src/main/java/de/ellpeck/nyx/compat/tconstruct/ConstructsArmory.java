@@ -19,6 +19,7 @@ public class ConstructsArmory {
     public static final AbstractArmorTrait STUNLOCK_ARMOR = new TraitStunlockArmor();
     public static final AbstractArmorTrait SUPERCHARGE_ARMOR = new TraitSuperchargeArmor();
 
+    // TODO: Rework traits for Cyber Crystal, Frezarite, Kreknorite, Meteorite, Tektite
     // Materials are already registered in the Tinkers' Construct class, this only adds support for Construct's Armory armor
     public static void registerToolMaterials() {
         TinkerRegistry.addMaterialStats(TinkersConstruct.FALLEN_STAR,

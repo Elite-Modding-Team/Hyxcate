@@ -73,12 +73,6 @@
       "nyx:paralysis2"
     ]
   },
-  "powerup": {
-    "category": "player",
-    "sounds": [
-      "nyx:powerup"
-    ]
-  },
   "beam_sword_hit": {
     "category": "player",
     "sounds": [

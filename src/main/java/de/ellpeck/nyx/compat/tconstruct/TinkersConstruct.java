@@ -54,6 +54,7 @@ public class TinkersConstruct {
         ForgeRegistries.ITEMS.register(itemBlockMolten);
     }
 
+    // TODO: Rework traits for Cyber Crystal, Frezarite, Kreknorite, Meteorite, Tektite
     public static void registerToolMaterials() {
         TinkerRegistry.addMaterialStats(FALLEN_STAR,
                 new HeadMaterialStats(250, 8.00F, 4.50F, HarvestLevels.OBSIDIAN),

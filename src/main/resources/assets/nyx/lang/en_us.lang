@@ -146,7 +146,7 @@ fluid.kreknorite.name=Molten Kreknorite
 fluid.meteorite.name=Molten Meteorite
 
 modifier.nyx.feint.name=Feint
-modifier.nyx.feint.desc=§oFaster than the speed of light!§r\nYour tool has a chance to deal an additional +25% damage while also gaining the ability to pierce through armor.
+modifier.nyx.feint.desc=§oFaster than the speed of light!§r\nYour tool has a 20% chance to deal an additional +25% damage while also gaining the ability to pierce through armor.
 modifier.nyx.frezarites_bane.name=Frezarite's Bane
 modifier.nyx.frezarites_bane.desc=§oIt's a nuclear winter!§r\nSuccessful hits greatly slows your target more and more.
 modifier.nyx.glacier.name=Glacier
@@ -180,7 +180,7 @@ modifier.nyx.hypercharge_armor.desc=§oMaximum power!§r\nGetting hurt has a cha
 modifier.nyx.kreknorites_ward_armor.name=Kreknorite's Ward
 modifier.nyx.kreknorites_ward_armor.desc=§oThe Nether right at your doorstep!§r\nGetting hurt greatly withers your attacker more and more. The attacker will also be set on fire.
 modifier.nyx.star_shield_armor.name=Star Shield
-modifier.nyx.star_shield_armor.desc=§oFortified!§r\nThere is a small chance for damage to be ignored entirely, you'll also temporarily gain Resistance III.
+modifier.nyx.star_shield_armor.desc=§oFortified!§r\nThere is a chance (5% per armor piece) for damage to be ignored entirely, you'll also gain Resistance III for 5 seconds.
 modifier.nyx.stunlock_armor.name=Stunlock
 modifier.nyx.stunlock_armor.desc=§oStay put!§r\nGetting hurt has a chance to stun your attacker and make them completely immobile for a few seconds.
 modifier.nyx.supercharge_armor.name=Supercharge
