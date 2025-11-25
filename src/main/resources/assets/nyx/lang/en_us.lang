@@ -112,7 +112,7 @@ tooltip.nyx.tektite_gem_cluster=They are packed with electricity.
 
 tooltip.nyx.beam_sword=With its distinctive glowing blade, this weapon is eye-catching and lethal. All attacks completely ignore armor.
 tooltip.nyx.blastproof=Blastproof
-tooltip.nyx.celestial_warhammer=Increased attack radius and knockback. Hold right-click to leap into the air and do a smash attack.
+tooltip.nyx.celestial_warhammer=Wider attack range and knockback. Hold right-click to leap into the air and do a smash attack.
 tooltip.nyx.frezarite_armor=Equipping a full set gives you infinite Water Breathing.
 tooltip.nyx.frezarite_tool=All attacks will cause a small explosion that deals area of effect damage. All affected mobs will also become inflicted with Slowness III for a few seconds.
 tooltip.nyx.kreknorite_armor=Equipping a full set gives you infinite Fire Resistance.
@@ -121,7 +121,7 @@ tooltip.nyx.meteor_detector=Points you to nearby meteor crash sites.
 tooltip.nyx.meteorite_armor=Pulls items towards you while equipped.
 tooltip.nyx.meteorite_tool=Pulls items towards you while held.
 tooltip.nyx.tektite_bow=Fires powerful arrows very quickly.
-tooltip.nyx.tektite_greatsword=All attacks have a wider range, as well as a 20%% chance to stun mobs and leave them immobile for a few seconds.
+tooltip.nyx.tektite_greatsword=All attacks have a wider range.
 
 tooltip.nyx.shift=Hold SHIFT to see more info...
 
