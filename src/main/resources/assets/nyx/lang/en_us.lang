@@ -143,8 +143,12 @@ tipped_arrow.effect.paralysis=Arrow of Paralysis
 # JEI Info
 item.nyx.fallen_star.jei_desc=Fallen Stars can be encountered during the night.\n\nIf you start hearing something magical and see a trail of particles heading towards the ground in the sky, it's a Fallen Star.\n\nOnce landed, they will provide light and emit particles which makes it easier to find them.
 item.nyx.frezarite_boots.jei_desc=The Frezarite Boots will temporarily freeze water below you into frosted ice while equipped. The radius is increased when these boots are enchanted with Frost Walker.
-item.nyx.tektite_gem_cluster.jei_desc=Tektite Gem Clusters are rarely dropped when successfully mining any type of meteor rock.\n\nCreatures exclusively encountered in crashed meteor sites can also rarely drop some when they are killed.
-tile.nyx.cyber_crystal.jei_desc=Cyber Crystals can be found very rarely in crashed meteor sites of any type and are immune to explosions.\n\nYou'll need a mining level of 4 to mine it, tools made from meteor materials are strong enough.
+item.nyx.tektite_gem_cluster.jei_desc=Tektite Gem Clusters are rarely dropped when successfully mining any type of hot meteor rock.\n\nCreatures exclusively encountered in crashed meteor sites can also rarely drop some when they are killed.
+tile.nyx.cyber_crystal.jei_desc=Cyber Crystals can be found very rarely in crashed meteor sites of any type and are immune to explosions.\n\nYou'll need a mining level of 4 to mine them, tools made from meteor materials are strong enough.
+tile.nyx.frezarite_rock.jei_desc=Frezarite Rocks be found uncommonly in meteor crash sites, these rocks can be mined for shards but will cool off if left alone for too long.\n\nFortune will not work on these rocks and you'll need a mining level of 4 to mine them.\n\nTools made from meteor materials are strong enough.
+tile.nyx.kreknorite_rock.jei_desc=Kreknorite Rocks can be found uncommonly in meteor crash sites, these rocks can be mined for shards but will cool off if left alone for too long.\n\nFortune will not work on these rocks and you'll need a mining level of 4 to mine them.\n\nTools made from meteor materials are strong enough.
+tile.nyx.meteorite_rock.jei_desc=When Hot Meteorite Rocks are cooled, they can still be mined at a much quicker pace.\n\nThey will now only have a 25% chance to drop a shard however.\n\n\nRocks made out of Frezarite and Kreknorite do not have cooled variants, they instead will cool off to Packed Ice and Obsidian respectively.
+tile.nyx.meteorite_rock_hot.jei_desc=Hot Meteorite Rocks can be found in meteor crash sites, these rocks can be mined for shards but will cool off if left alone for too long.\n\nFortune will not work on these rocks and you'll need a mining level of 3 to mine them.\n\nTools made from diamond are strong enough.
 
 # Tinkers' Construct
 material.nyx.fallen_star.name=Starry

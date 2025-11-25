@@ -6,20 +6,20 @@
 - Should check which config options and misc features are worth keeping
 - Rebalance recipes for endgame content
 - Apparently the magnetization effect cannot pull items vertically and will cause them to get stuck on blocks.
-- Several tooltips are too long and need to be shortened. Some tooltips could be moved to JEI?
-- Set bonus tooltip can be changed to be much more intuitive where it shows which pieces of the set are equipped and what the set does. See Botania armor for a good example of this.
-- More info on where everything comes from, putting info on JEI will suffice for now
-- Change Tektite and Meteorite effects into attributes
+- Several tooltips are too long and need to be shortened. Some tooltips could be moved to JEI? (Frezarite and Kreknorite items mainly)
+- Set bonus tooltip can be changed to be much more intuitive where it shows which pieces of the set are equipped and what the set does. See Botania armor for a good example of this. (1/4 Set Bonus: Water Breathing)
+- Change the Meteorite effect into an attributes
 - Might be fun to be able to sneak + right-click beam swords to toggle them on and off
-- Tektite Gem Clusters should be an additional drop rather than a replacement, this will prevent smelting enchantments from making it never drop
 - Update textures for regular tools, most ingots and most metal blocks
 - Update textures for special moons
+- Shooting Star spawns should be reworked to only spawn up to an x amount per night, star showers will possibly keep the current system instead
+- Maybe disable weather during events? When rain happens during a Red Giant for example, it hides the entire effect.
+- Overlay effects when events happen? To give off the illusion of colored light. Red Giant could also use its own overlay due to the extreme heat.
 
 ## Future Updates
 
-- Reworked Sounds (with the help of PessiMysterio)
 - New system for allowing special mobs to spawn during events?
-- Make sky events work properly with Astral Sorcery
+- Make sky events work properly with Astral Sorcery's special night sky
 - Astral Sorcery integration for Solar Eclipse
 - Alien Creeper variants
 - Harken Scythe integration (Mechanical Scythe)

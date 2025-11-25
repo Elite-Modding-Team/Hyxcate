@@ -12,10 +12,17 @@ import net.minecraft.item.ItemStack;
 public class JEI implements IModPlugin {
     @Override
     public void register(IModRegistry registry) {
-        addJEIInfo(registry, new ItemStack(NyxBlocks.cyberCrystal));
+        // JEI Info
         addJEIInfo(registry, new ItemStack(NyxItems.fallenStar));
         addJEIInfo(registry, new ItemStack(NyxItems.frezariteBoots));
+
+        // JEI Info - Meteors
+        addJEIInfo(registry, new ItemStack(NyxBlocks.meteoriteRockHot));
+        addJEIInfo(registry, new ItemStack(NyxBlocks.meteoriteRock));
+        addJEIInfo(registry, new ItemStack(NyxBlocks.frezariteRock));
+        addJEIInfo(registry, new ItemStack(NyxBlocks.kreknoriteRock));
         addJEIInfo(registry, new ItemStack(NyxItems.tektiteGemCluster));
+        addJEIInfo(registry, new ItemStack(NyxBlocks.cyberCrystal));
     }
 
     private static void addJEIInfo(IModRegistry registry, ItemStack stack) {
