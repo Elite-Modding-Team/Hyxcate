@@ -142,7 +142,7 @@ public final class NyxEvents {
 
         List<EntityItem> items = player.getEntityWorld().getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(player.posX - distance, player.posY - distance, player.posZ - distance, player.posX + distance, player.posY + distance, player.posZ + distance));
         for (EntityItem item : items) {
-            if (item.getItem().isEmpty() || item.isDead) {
+            if (item.getItem().isEmpty() || item.isDead || item.getEntityData().getBoolean("PreventRemoteMovement")) {
                 continue;
             }
 
