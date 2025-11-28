@@ -473,10 +473,10 @@ public final class NyxEvents {
     public static void onDamageEvent(LivingDamageEvent event) {
         EntityLivingBase entity = event.getEntityLiving();
         DamageSource damageSource = event.getSource();
-        EntityLivingBase trueSource = (EntityLivingBase) damageSource.getTrueSource();
+        Entity trueSource = damageSource.getTrueSource();
 
         if (entity instanceof EntityLivingBase && trueSource instanceof EntityLivingBase) {
-            IAttributeInstance paralysis = trueSource.getEntityAttribute(NyxAttributes.PARALYSIS);
+            IAttributeInstance paralysis = ((EntityLivingBase) trueSource).getEntityAttribute(NyxAttributes.PARALYSIS);
             if (paralysis != null && !paralysis.getModifiers().isEmpty()) {
                 float paralysisValue = 0.0F;
 
