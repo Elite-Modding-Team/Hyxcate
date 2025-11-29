@@ -206,6 +206,37 @@
       "nyx:block/light_crystal/step6"
     ]
   },
+  "meteoric_rock_break": {
+    "category": "block",
+    "sounds": [
+      "nyx:block/meteoric_rock/break1",
+      "nyx:block/meteoric_rock/break2",
+      "nyx:block/meteoric_rock/break3",
+      "nyx:block/meteoric_rock/break4",
+      "nyx:block/meteoric_rock/break5",
+      "nyx:block/meteoric_rock/break6"
+    ]
+  },
+  "meteoric_rock_place": {
+    "category": "block",
+    "sounds": [
+      "nyx:block/meteoric_rock/place1",
+      "nyx:block/meteoric_rock/place2",
+      "nyx:block/meteoric_rock/place3",
+      "nyx:block/meteoric_rock/place4"
+    ]
+  },
+  "meteoric_rock_step": {
+    "category": "block",
+    "sounds": [
+      "nyx:block/meteoric_rock/step1",
+      "nyx:block/meteoric_rock/step2",
+      "nyx:block/meteoric_rock/step3",
+      "nyx:block/meteoric_rock/step4",
+      "nyx:block/meteoric_rock/step5",
+      "nyx:block/meteoric_rock/step6"
+    ]
+  },
   "comet_kitty_idle": {
     "category": "neutral",
     "sounds": [

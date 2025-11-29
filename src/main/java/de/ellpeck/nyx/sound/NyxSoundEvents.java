@@ -32,6 +32,9 @@ public enum NyxSoundEvents {
     lightCrystalHit("light_crystal_hit"),
     lightCrystalPlace("light_crystal_place"),
     lightCrystalStep("light_crystal_step"),
+    meteoricRockBreak("meteoric_rock_break"),
+    meteoricRockPlace("meteoric_rock_place"),
+    meteoricRockStep("meteoric_rock_step"),
 
     // Effects
     paralyzeZap("paralyze_zap"),
