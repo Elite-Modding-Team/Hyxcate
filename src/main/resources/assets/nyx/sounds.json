@@ -102,6 +102,33 @@
       "nyx:item/beam_sword_swing4"
     ]
   },
+  "hammer_hit": {
+    "category": "player",
+    "sounds": [
+      "nyx:item/hammer_hit1",
+      "nyx:item/hammer_hit2",
+      "nyx:item/hammer_hit3",
+      "nyx:item/hammer_hit4"
+    ]
+  },
+  "hammer_special_launch": {
+    "category": "player",
+    "sounds": [
+      "nyx:item/hammer_special_launch1",
+      "nyx:item/hammer_special_launch2",
+      "nyx:item/hammer_special_launch3",
+      "nyx:item/hammer_special_launch4"
+    ]
+  },
+  "hammer_special_hit": {
+    "category": "player",
+    "sounds": [
+      "nyx:item/hammer_special_hit1",
+      "nyx:item/hammer_special_hit2",
+      "nyx:item/hammer_special_hit3",
+      "nyx:item/hammer_special_hit4"
+    ]
+  },
   "beam_sword_idle": {
     "category": "player",
     "sounds": [

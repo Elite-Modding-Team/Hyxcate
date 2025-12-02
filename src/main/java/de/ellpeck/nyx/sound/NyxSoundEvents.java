@@ -47,8 +47,10 @@ public enum NyxSoundEvents {
     equipMetallic("equip_metallic"),
     frezariteHit("frezarite_hit"),
     kreknoriteHit("kreknorite_hit"),
-    tektiteHit("tektite_hit");
-
+    tektiteHit("tektite_hit"),
+	hammerHit("hammer_hit"),
+	hammerSpecialLaunch("hammer_special_launch"),
+	hammerSpecialHit("hammer_special_hit");
 
     private final SoundEvent soundEvent;
 
