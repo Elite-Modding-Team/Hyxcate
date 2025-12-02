@@ -112,6 +112,11 @@ dependencies {
     // Baubles
     implementation rfg.deobf('curse.maven:baubles-227083:2518667')
 
+    // Expanded Events
+    // This allows us to utilize more event handlers. See here for more info:
+    // https://github.com/Invadermonky/ExpandedEvents/blob/master/README.md
+    implementation rfg.deobf('curse.maven:expanded-events-1396395:7284797')
+
     // Future Fireproof
     implementation rfg.deobf('curse.maven:future-fireproof-1121231:6877387')
 
