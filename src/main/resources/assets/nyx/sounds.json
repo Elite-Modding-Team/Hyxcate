@@ -42,12 +42,6 @@
       "nyx:random/falling_meteor_impact_far4"
     ]
   },
-  "hammer_smash": {
-    "category": "player",
-    "sounds": [
-      "nyx:hammer_smash"
-    ]
-  },
   "kreknorite_hit": {
     "category": "player",
     "sounds": [

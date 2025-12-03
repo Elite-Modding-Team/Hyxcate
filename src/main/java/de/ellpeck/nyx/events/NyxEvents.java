@@ -97,7 +97,9 @@ public final class NyxEvents {
                         if (!entity.isOnSameTeam(player)) {
                             if (entity == player) continue;
 
+                            // TODO: Add custom damage over time effect here
                             entity.setFire(10 + (player.world.rand.nextInt(10)));
+                            entity.addPotionEffect(new PotionEffect(MobEffects.GLOWING, 10 * 20, 0, false, false));
                             entity.attackEntityFrom(source, damage);
                             entity.knockBack(player, 3.0F, player.posX - entity.posX, player.posZ - entity.posZ);
                             entity.motionY = 1;
@@ -110,13 +112,12 @@ public final class NyxEvents {
                         IBlockState state = player.world.getBlockState(new BlockPos(player.posX, player.posY, player.posZ).down());
                         int blockId = Block.getStateId(state);
 
-                        ((WorldServer) player.world).spawnParticle(EnumParticleTypes.LAVA, player.posX, player.posY, player.posZ, particleAmount, particleDistance, 0.0D, particleDistance, 0.0D);
-                        ((WorldServer) player.world).spawnParticle(EnumParticleTypes.SMOKE_LARGE, player.posX, player.posY, player.posZ, particleAmount, particleDistance, 0.0D, particleDistance, 0.15D);
+                        // TODO: Cooler particles
+                        ((WorldServer) player.world).spawnParticle(EnumParticleTypes.END_ROD, player.posX, player.posY + 1.0D, player.posZ, particleAmount, particleDistance, 0.0D, particleDistance, 0.5D);
                         ((WorldServer) player.world).spawnParticle(EnumParticleTypes.BLOCK_DUST, player.posX, player.posY, player.posZ, particleAmount * 2, particleDistance, 0.0D, particleDistance, 1.0D, blockId);
                     }
 
-                    player.world.playSound(null, player.getPosition(), NyxSoundEvents.hammerSmash.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, (1.0F + (player.world.rand.nextFloat() - player.world.rand.nextFloat()) * 0.2F) * 0.7F);
-                    player.world.playSound(null, player.getPosition(), NyxSoundEvents.kreknoriteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.25F, (1.0F + (player.world.rand.nextFloat() - player.world.rand.nextFloat()) * 0.2F) * 0.7F);
+                    player.world.playSound(null, player.getPosition(), NyxSoundEvents.hammerSpecialHit.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F);
                 }
             }
 

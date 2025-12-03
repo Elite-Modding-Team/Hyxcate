@@ -14,7 +14,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
@@ -52,7 +51,7 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
                 }
             }
 
-            attacker.world.playSound(null, attacker.posX, attacker.posY, attacker.posZ, SoundEvents.ENTITY_ZOMBIE_ATTACK_IRON_DOOR, SoundCategory.PLAYERS, 1.0F, 0.025F / (attacker.world.rand.nextFloat() * 0.4F + 1.2F));
+            attacker.world.playSound(null, attacker.posX, attacker.posY, attacker.posZ, NyxSoundEvents.hammerHit.getSoundEvent(), SoundCategory.PLAYERS, 1.35F, 1.0F / (attacker.world.rand.nextFloat() * 0.4F + 1.2F));
             ((EntityPlayer) attacker).spawnSweepParticles();
         }
 
@@ -82,7 +81,7 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
 
         int useTime = this.getMaxItemUseDuration(stack) - timeLeft;
 
-        if (useTime < 20)
+        if (useTime < 0)
             return;
 
         float modifier = MathHelper.clamp((useTime - 20.0F) / 5.0F, 1.0F, 2.5F);
@@ -98,10 +97,9 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
         }
 
         if (!world.isRemote) {
-            world.playSound(null, entityLiving.getPosition(), SoundEvents.ENTITY_IRONGOLEM_ATTACK, SoundCategory.PLAYERS, 1.0F, 1.0F / (world.rand.nextFloat() * 0.4F + 0.8F));
-            world.playSound(null, entityLiving.getPosition(), NyxSoundEvents.hammerSmash.getSoundEvent(), SoundCategory.PLAYERS, 0.35F, 1.5F / (world.rand.nextFloat() * 0.4F + 0.8F));
-            world.playSound(null, entityLiving.getPosition(), SoundEvents.ENTITY_ZOMBIE_ATTACK_IRON_DOOR, SoundCategory.PLAYERS, 0.35F, 0.75F / (world.rand.nextFloat() * 0.4F + 0.8F));
-            ((WorldServer) world).spawnParticle(EnumParticleTypes.FLAME, false, entityLiving.posX, entityLiving.posY + entityLiving.getEyeHeight(), entityLiving.posZ, 30, 0.25, 0.25, 0.25, 0.05);
+            world.playSound(null, entityLiving.getPosition(), NyxSoundEvents.hammerSpecialLaunch.getSoundEvent(), SoundCategory.PLAYERS, 1.35F, 1.0F / (world.rand.nextFloat() * 0.4F + 0.8F));
+            world.playSound(null, entityLiving.getPosition(), NyxSoundEvents.hammerHit.getSoundEvent(), SoundCategory.PLAYERS, 1.35F, 1.5F / (world.rand.nextFloat() * 0.4F + 0.8F));
+            ((WorldServer) world).spawnParticle(EnumParticleTypes.END_ROD, false, entityLiving.posX, entityLiving.posY + entityLiving.getEyeHeight(), entityLiving.posZ, 30, 0.25, 0.25, 0.25, 0.05);
         }
     }
 
