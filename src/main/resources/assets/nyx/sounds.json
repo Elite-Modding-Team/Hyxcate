@@ -129,6 +129,16 @@
       "nyx:item/beam_sword_idle_loop"
     ]
   },
+  "laser_shot": {
+	"category": "player",
+    "sounds": [
+      "nyx:item/laser_shot1",
+	  "nyx:item/laser_shot2",
+	  "nyx:item/laser_shot3",
+	  "nyx:item/laser_shot4"
+    ]
+  },
+  
   "celestial_emblem": {
     "category": "player",
     "sounds": [

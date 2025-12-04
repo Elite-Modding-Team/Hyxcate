@@ -42,6 +42,7 @@ public enum NyxSoundEvents {
     beamSwordHit("beam_sword_hit"),
     beamSwordIdle("beam_sword_idle"),
     beamSwordSwing("beam_sword_swing"),
+	laserShot("laser_shot"),
     equipCrystalline("equip_crystalline"),
     equipMetallic("equip_metallic"),
     frezariteHit("frezarite_hit"),
