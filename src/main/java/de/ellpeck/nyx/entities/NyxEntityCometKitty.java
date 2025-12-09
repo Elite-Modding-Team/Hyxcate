@@ -6,6 +6,7 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIAvoidEntity;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.util.ResourceLocation;
@@ -19,6 +20,12 @@ public class NyxEntityCometKitty extends EntityOcelot {
     public NyxEntityCometKitty(World world) {
         super(world);
         this.isImmuneToFire = true;
+    }
+
+    @Override
+    protected void initEntityAI() {
+        super.initEntityAI();
+        this.tasks.addTask(3, new EntityAIAvoidEntity<>(this, NyxEntityAlienCreeper.class, 16.0F, 0.8D, 1.33D));
     }
 
     @Override

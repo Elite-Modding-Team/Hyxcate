@@ -1,8 +1,10 @@
 package de.ellpeck.nyx.init;
 
 import de.ellpeck.nyx.Nyx;
+import de.ellpeck.nyx.entities.NyxEntityAlienCreeper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.attributes.AbstractAttributeMap;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttribute;
 import net.minecraft.entity.ai.attributes.RangedAttribute;
 import net.minecraft.entity.player.EntityPlayer;
@@ -43,6 +45,12 @@ public class NyxAttributes {
             if (event.getEntity() instanceof EntityPlayer) {
                 // Player attributes go here
                 EntityPlayer player = (EntityPlayer) event.getEntity();
+            }
+
+            // Woe to those who encounter them
+            if (event.getEntity() instanceof NyxEntityAlienCreeper) {
+                NyxEntityAlienCreeper creeper = (NyxEntityAlienCreeper) event.getEntity();
+                creeper.getEntityAttribute(EXPLOSION_RESISTANCE).applyModifier(new AttributeModifier("alien creeper explosion resistance", 1.0D, 1));
             }
         }
     }
