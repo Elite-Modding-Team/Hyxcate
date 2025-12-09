@@ -4,7 +4,6 @@ import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.items.*;
 import de.ellpeck.nyx.items.tools.*;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;

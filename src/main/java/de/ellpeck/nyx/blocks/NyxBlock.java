@@ -4,8 +4,6 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-import org.lwjgl.input.Keyboard;
-
 import de.ellpeck.nyx.init.NyxBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;

@@ -22,6 +22,7 @@ public class NyxPotions {
                 setPotionName("effect." + Nyx.ID + "." + name + ".name");
     }
 
+    @SuppressWarnings("unused")
     private static PotionType registerPotionType(String name, PotionType potionType) {
         return potionType.setRegistryName(new ResourceLocation(Nyx.ID, name));
     }

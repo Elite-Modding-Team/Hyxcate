@@ -4,7 +4,6 @@ import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.init.NyxEntities;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.EntityAgeable;
-import net.minecraft.entity.EntityList;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;

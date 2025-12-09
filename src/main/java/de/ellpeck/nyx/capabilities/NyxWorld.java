@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.*;
 
+@SuppressWarnings("unchecked")
 public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCompound> {
 
     public static float moonPhase;
