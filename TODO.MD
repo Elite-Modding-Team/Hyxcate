@@ -1,7 +1,6 @@
 ## Release
 
 - Setup ConfigAnytime if any mixins become configurable
-- Ensure the meteor detector works correctly, it was previously reported that they keep pointing to older meteor crashes
 - Should check and see if the sky event mixins don't cause any incompatibilities with mods like Astral Sorcery
 - Should check which config options and misc features are worth keeping
 - Apparently the magnetization effect cannot pull items vertically and will cause them to get stuck on blocks.
