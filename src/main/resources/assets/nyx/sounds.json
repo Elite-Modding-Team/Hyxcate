@@ -141,7 +141,7 @@
   "celestial_emblem": {
     "category": "player",
     "sounds": [
-      "nyx:celestial_emblem"
+      "nyx:item/celestial_emblem"
     ]
   },
   "blood_moon_start": {

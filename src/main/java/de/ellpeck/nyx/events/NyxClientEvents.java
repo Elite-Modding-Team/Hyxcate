@@ -241,6 +241,7 @@ public final class NyxClientEvents {
         }
     }
 
+    // TODO: Seems to not work with certain mods or modpacks (Hexxit II for example). There might be a better way?
     @SubscribeEvent
     public static void craftingSound(PlayerEvent.ItemCraftedEvent event) {
         if (lastCraftSoundTime != event.player.world.getWorldTime()) {
