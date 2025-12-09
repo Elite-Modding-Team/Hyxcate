@@ -5,20 +5,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 
 public enum NyxSoundEvents {
-    fallingStar("falling_star"),
-    fallingStarImpact("falling_star_impact"),
-    fallingMeteor("falling_meteor"),
-    fallingMeteorImpact("falling_meteor_impact"),
-    fallingMeteorImpactFar("falling_meteor_impact_far"),
-    celestialEmblem("celestial_emblem"),
-    alienKittyIdle("alien_kitty_idle"),
-
-    // Lunar Events
+    // Lunar Events - No unique sounds yet, these will be done in the future!
     bloodMoonStart("blood_moon_start"),
     harvestMoonStart("harvest_moon_start"),
     starShowerStart("star_shower_start"),
 
-    // Solar Events
+    // Solar Events - No unique sounds yet, these will be done in the future!
     redSunStart("red_sun_start"),
     redSunStartSpecial("red_sun_start_special"),
     solarEclipseStart("solar_eclipse_start"),
@@ -34,6 +26,14 @@ public enum NyxSoundEvents {
     meteoricRockPlace("meteoric_rock_place"),
     meteoricRockStep("meteoric_rock_step"),
 
+    // Entities
+    alienKittyIdle("alien_kitty_idle"),
+    fallingMeteor("falling_meteor"),
+    fallingMeteorImpact("falling_meteor_impact"),
+    fallingMeteorImpactFar("falling_meteor_impact_far"),
+    fallingStar("falling_star"),
+    fallingStarImpact("falling_star_impact"),
+
     // Effects
     paralyzeZap("paralyze_zap"),
 
@@ -41,7 +41,7 @@ public enum NyxSoundEvents {
     beamSwordHit("beam_sword_hit"),
     beamSwordIdle("beam_sword_idle"),
     beamSwordSwing("beam_sword_swing"),
-    laserShot("laser_shot"),
+    celestialEmblem("celestial_emblem"),
     equipCrystalline("equip_crystalline"),
     equipMetallic("equip_metallic"),
     frezariteHit("frezarite_hit"),
@@ -49,6 +49,7 @@ public enum NyxSoundEvents {
     hammerSpecialHit("hammer_special_hit"),
     hammerSpecialLaunch("hammer_special_launch"),
     kreknoriteHit("kreknorite_hit"),
+    laserShot("laser_shot"),
     tektiteHit("tektite_hit");
 
 

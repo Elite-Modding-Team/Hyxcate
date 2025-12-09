@@ -147,37 +147,37 @@
   "blood_moon_start": {
     "category": "ambient",
     "sounds": [
-      "nyx:events/blood_moon"
+      "nyx:event/blood_moon"
     ]
   },
   "harvest_moon_start": {
     "category": "ambient",
     "sounds": [
-      "nyx:events/harvest_moon"
+      "nyx:event/harvest_moon"
     ]
   },
   "star_shower_start": {
     "category": "ambient",
     "sounds": [
-      "nyx:events/star_shower"
+      "nyx:event/star_shower"
     ]
   },
   "red_sun_start": {
     "category": "ambient",
     "sounds": [
-      "nyx:events/red_sun"
+      "nyx:event/red_giant"
     ]
   },
   "red_sun_start_special": {
     "category": "ambient",
     "sounds": [
-      "nyx:events/red_sun_special"
+      "nyx:event/red_giant_special"
     ]
   },
   "solar_eclipse_start": {
     "category": "ambient",
     "sounds": [
-      "nyx:events/solar_eclipse"
+      "nyx:event/solar_eclipse"
     ]
   },
   "dense_crystal_break": {
