@@ -11,7 +11,6 @@ public enum NyxSoundEvents {
     fallingMeteorImpact("falling_meteor_impact"),
     fallingMeteorImpactFar("falling_meteor_impact_far"),
     celestialEmblem("celestial_emblem"),
-    cometKittyIdle("comet_kitty_idle"),
     alienKittyIdle("alien_kitty_idle"),
 
     // Lunar Events

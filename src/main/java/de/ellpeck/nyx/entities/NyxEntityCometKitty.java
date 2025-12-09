@@ -1,7 +1,8 @@
 package de.ellpeck.nyx.entities;
 
+import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.init.NyxEntities;
-import de.ellpeck.nyx.sound.NyxSoundEvents;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.IEntityLivingData;
@@ -9,8 +10,6 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
@@ -83,22 +82,13 @@ public class NyxEntityCometKitty extends EntityOcelot {
         }
     }
 
+    // This needs to be done or else it will be named 'Cat' when tamed
     @Override
     public String getName() {
         if (this.hasCustomName()) {
             return this.getCustomNameTag();
         } else {
-            String s = EntityList.getEntityString(this);
-            if (s == null) {
-                s = "generic";
-            }
-            return I18n.translateToLocal("entity." + s + ".name");
+            return this.isTamed() ? I18n.format("entity." + Nyx.ID + ".comet_kitty.name") : super.getName();
         }
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getAmbientSound() {
-        return NyxSoundEvents.cometKittyIdle.getSoundEvent();
     }
 }

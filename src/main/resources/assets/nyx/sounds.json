@@ -267,16 +267,6 @@
       "nyx:block/meteoric_rock/step6"
     ]
   },
-  "comet_kitty_idle": {
-    "category": "neutral",
-    "sounds": [
-      "nyx:entity/comet_kitty/idle1",
-      "nyx:entity/comet_kitty/idle2",
-      "nyx:entity/comet_kitty/idle3",
-      "nyx:entity/comet_kitty/idle4",
-      "nyx:entity/comet_kitty/idle5"
-    ]
-  },
   "alien_kitty_idle": {
     "category": "neutral",
     "sounds": [
