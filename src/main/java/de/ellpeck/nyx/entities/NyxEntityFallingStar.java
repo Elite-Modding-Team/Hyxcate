@@ -64,10 +64,10 @@ public class NyxEntityFallingStar extends Entity {
     }
 
     protected void initTrajectory(float multiplier) {
-        this.trajectoryX = MathHelper.nextFloat(this.world.rand, 0.5F, 1.25F) * multiplier;
+        this.trajectoryX = MathHelper.nextFloat(this.world.rand, 0.5F, 0.85F) * multiplier;
         if (this.world.rand.nextBoolean()) this.trajectoryX *= -1;
         this.trajectoryY = MathHelper.nextFloat(this.world.rand, -0.5F, -0.85F) * multiplier;
-        this.trajectoryZ = MathHelper.nextFloat(this.world.rand, 0.5F, 1.25F) * multiplier;
+        this.trajectoryZ = MathHelper.nextFloat(this.world.rand, 0.5F, 0.85F) * multiplier;
         if (this.world.rand.nextBoolean()) this.trajectoryZ *= -1;
     }
 
