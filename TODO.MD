@@ -3,7 +3,6 @@
 - Setup ConfigAnytime if any mixins become configurable
 - Should check and see if the sky event mixins don't cause any incompatibilities with mods like Astral Sorcery
 - Should check which config options and misc features are worth keeping
-- Apparently the magnetization effect cannot pull items vertically and will cause them to get stuck on blocks.
 - Several tooltips are too long and need to be shortened. Some tooltips could be moved to JEI? (Frezarite and Kreknorite items mainly)
 - Set bonus tooltip can be changed to be much more intuitive where it shows which pieces of the set are equipped and what the set does. See Botania armor for a good example of this. (1/4 Set Bonus: Water Breathing)
 - Change the Meteorite effect into an attributes

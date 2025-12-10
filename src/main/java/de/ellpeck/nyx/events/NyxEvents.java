@@ -139,12 +139,12 @@ public final class NyxEvents {
     }
 
     // Magnetization effect
-    public static void pullItems(EntityPlayer player, double distanceAmount, float strengthAmount) {
-        double distance = distanceAmount;
-        int pulled = 0;
-        float strength = strengthAmount;
+    public static void pullItems(EntityPlayer player, double distance, float strength) {
+        World world = player.getEntityWorld();
+        AxisAlignedBB aabb = new AxisAlignedBB(player.posX - distance, player.posY - distance, player.posZ - distance, player.posX + distance, player.posY + distance, player.posZ + distance);
+        List<EntityItem> items = world.getEntitiesWithinAABB(EntityItem.class, aabb);
 
-        List<EntityItem> items = player.getEntityWorld().getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(player.posX - distance, player.posY - distance, player.posZ - distance, player.posX + distance, player.posY + distance, player.posZ + distance));
+        int pulled = 0;
         for (EntityItem item : items) {
             if (item.getItem().isEmpty() || item.isDead || item.getEntityData().getBoolean("PreventRemoteMovement")) {
                 continue;
@@ -154,7 +154,7 @@ public final class NyxEvents {
                 break;
             }
 
-            Vector3d vec = new Vector3d(player.posX, player.posY, player.posZ);
+            Vector3d vec = new Vector3d(player.posX, player.posY + 1, player.posZ);
             vec.sub(new Vector3d(item.posX, item.posY, item.posZ));
 
             if (vec.lengthSquared() <= 0.05) {
@@ -167,6 +167,9 @@ public final class NyxEvents {
             item.motionX += vec.x;
             item.motionY += vec.y;
             item.motionZ += vec.z;
+
+            // Prevent ground clamping
+            item.onGround = false;
 
             pulled++;
         }
