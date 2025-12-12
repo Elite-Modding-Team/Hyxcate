@@ -22,7 +22,6 @@ public final class NyxConfig {
     public static double minLevelLunarEdgeDamage;
     public static double maxLevelLunarEdgeDamage;
     public static double baseLunarEdgeDamage;
-    public static boolean disallowDayEnchanting;
     public static boolean fallingStars;
     public static double fallingStarRarity;
     public static double fallingStarRarityShower;
@@ -58,7 +57,6 @@ public final class NyxConfig {
     public static boolean meteorMessageVerbose;
     public static int meteorDisallowRadius;
     public static int meteorDisallowTime;
-    public static Set<String> enchantingWhitelistDimensions;
     public static boolean eventNotifications;
     public static int celestialWarhammerAbilityDamage;
 
@@ -91,8 +89,6 @@ public final class NyxConfig {
         minLevelLunarEdgeDamage = instance.get("enchantments", "minLevelLunarEdgeDamage", 1.0D, "The amount of additional damage that should be applied to an item with level 1 lunar edge on a full moon.").getDouble();
         maxLevelLunarEdgeDamage = instance.get("enchantments", "maxLevelLunarEdgeDamage", 3.0D, "The amount of additional damage that should be applied to an item with max level lunar edge on a full moon.").getDouble();
         baseLunarEdgeDamage = instance.get("enchantments", "baseLunarEdgeDamage", 0, "The amount of additional damage that will always be applied regardless of moon phase.").getDouble();
-        disallowDayEnchanting = instance.get("enchantments", "disallowDayEnchanting", false, "If enchanting should be disallowed during the day").getBoolean();
-        enchantingWhitelistDimensions = Sets.newHashSet(instance.get("enchantments", "enchantingWhitelistDimensions", new String[]{"the_nether", "the_end"}, "A list of names of dimensions where enchanting is always allowed, and not just at night").getStringList());
 
         harvestMoon = new LunarEventConfig("harvestMoon", "harvestMoon", "Harvest Moon", 0.05D);
         harvestMoonOnFull = instance.get("harvestMoon", "harvestMoonOnFull", true, "If the harvest moon should only occur on full moon nights").getBoolean();

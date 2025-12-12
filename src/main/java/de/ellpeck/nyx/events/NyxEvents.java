@@ -399,17 +399,6 @@ public final class NyxEvents {
         Block block = state.getBlock();
         NyxWorld nyx = NyxWorld.get(world);
 
-        ench:
-        if (NyxConfig.disallowDayEnchanting) {
-            long time = world.getWorldTime() % 24000;
-            if (time > 13000 && time < 23000) break ench;
-            if (!(block instanceof BlockEnchantmentTable)) break ench;
-            if (NyxConfig.enchantingWhitelistDimensions.contains(world.provider.getDimensionType().getName()))
-                break ench;
-            event.setUseBlock(Event.Result.DENY);
-            player.sendStatusMessage(new TextComponentTranslation("info." + Nyx.ID + ".day_enchanting"), true);
-        }
-
         if (nyx != null && nyx.currentLunarEvent != null && nyx.currentLunarEvent.shouldPreventSleeping() && !NyxConfig.specialMoonSleeping && block instanceof BlockBed) {
             if (nyx.currentLunarEvent instanceof NyxEventBloodMoon) {
                 player.sendStatusMessage(new TextComponentTranslation("info." + Nyx.ID + ".blood_moon_sleeping"), true);
