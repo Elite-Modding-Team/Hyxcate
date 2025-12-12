@@ -11,13 +11,13 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(value = WorldProvider.class, remap = false)
+@Mixin(WorldProvider.class)
 public abstract class NyxLightmapColorsMixin {
 
     @Shadow
     protected World world;
 
-    @Inject(method = "getLightmapColors", at = @At("HEAD"))
+    @Inject(method = "getLightmapColors", at = @At("HEAD"), remap = false)
     private void nyxSetLightmapColors(float partialTicks, float sunBrightness, float skyLight, float blockLight, float[] colors, CallbackInfo ci) {
         if (!NyxConfig.eventTint) return;
         NyxWorld nyxWorld = NyxWorld.get(this.world);
