@@ -29,7 +29,7 @@ public abstract class NyxLightmapColorsMixin {
             colors[2] *= customLightmapColors[2];
         }
         if (nyxWorld.currentLunarEvent != null) {
-            float[] customLightmapColors = NyxColorUtils.getRgbIntAsFloatArray(NyxColorUtils.adjustBrightness(nyxWorld.currentLunarEvent.getSkyColor(), 0.5F));
+            float[] customLightmapColors = NyxColorUtils.getRgbIntAsFloatArray(nyxWorld.currentLunarEvent.getSkyColor());
             colors[0] *= customLightmapColors[0];
             colors[1] *= customLightmapColors[1];
             colors[2] *= customLightmapColors[2];
