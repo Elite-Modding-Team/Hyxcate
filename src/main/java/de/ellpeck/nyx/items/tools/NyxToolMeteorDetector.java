@@ -171,7 +171,7 @@ public class NyxToolMeteorDetector extends Item {
         if (pending == null) {
             BlockPos nearest = Stream.concat(data.meteorLandingSites.stream(), data.cachedMeteorPositions.stream()).min(Comparator.comparingDouble(player::getDistanceSq)).orElse(null);
 
-            if (nearest == null) {
+            if (nearest == null || player.getDistanceSq(nearest) > 32 * 32) {
                 player.sendMessage(new TextComponentTranslation("info.nyx.meteor_detector.no_pending").setStyle(new Style().setColor(TextFormatting.RED)));
                 player.world.playSound(null, player.getPosition(), NyxSoundEvents.meteorDetectorCancel.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F);
                 return EnumActionResult.FAIL;
