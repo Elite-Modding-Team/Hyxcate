@@ -14,6 +14,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.util.UUID;
 
+import javax.annotation.Nonnull;
+
 @Mod.EventBusSubscriber(modid = Nyx.ID)
 public class NyxAttributes {
     // Attribute UUIDs
@@ -35,7 +37,7 @@ public class NyxAttributes {
 
     // Registers attributes to all entities
     @SubscribeEvent
-    public static void onEntityConstructEvent(EntityEvent.EntityConstructing event) {
+    public static void onEntityConstructEvent(@Nonnull EntityEvent.EntityConstructing event) {
         if (event.getEntity() instanceof EntityLivingBase) {
             // Global attributes go here
             EntityLivingBase entity = (EntityLivingBase) event.getEntity();
@@ -55,7 +57,7 @@ public class NyxAttributes {
         }
     }
 
-    private static void registerAttribute(AbstractAttributeMap attributeMap, IAttribute attribute) {
+    private static void registerAttribute(@Nonnull AbstractAttributeMap attributeMap, @Nonnull IAttribute attribute) {
         if (attributeMap.getAttributeInstance(attribute) == null) {
             attributeMap.registerAttribute(attribute);
         }
