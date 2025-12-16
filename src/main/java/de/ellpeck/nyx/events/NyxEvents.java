@@ -20,6 +20,7 @@ import de.ellpeck.nyx.network.NyxPacketHandler;
 import de.ellpeck.nyx.network.NyxPacketWorld;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
 import de.ellpeck.nyx.sound.NyxSoundFallingEntity;
+import de.ellpeck.nyx.util.NyxDamageSource;
 import de.ellpeck.nyx.util.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBed;
@@ -523,8 +524,7 @@ public final class NyxEvents {
         DamageSource damageSource = event.getSource();
         Entity trueSource = damageSource.getTrueSource();
 
-        // TODO: Change this to custom damage source
-        if (damageSource == DamageSource.MAGIC) {
+        if (damageSource == NyxDamageSource.PARALYSIS) {
             entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.paralyzeZap.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
         }
 

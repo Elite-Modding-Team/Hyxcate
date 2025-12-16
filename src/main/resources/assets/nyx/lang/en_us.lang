@@ -153,6 +153,14 @@ potion.effect.paralysis=Potion of Paralysis
 splash_potion.effect.paralysis=Splash Potion of Paralysis
 tipped_arrow.effect.paralysis=Arrow of Paralysis
 
+# Death Messages
+death.attack.nyx_deep_freeze=%1$s froze to death
+death.attack.nyx_deep_freeze.player=%1$s was frozen to death by %2$s
+death.attack.nyx_inferno=%1$s was consumed by the inferno
+death.attack.nyx_inferno.player=%1$s was infernalized to death by %2$s
+death.attack.nyx_paralysis=%1$s couldn't contain the watts
+death.attack.nyx_paralysis.player=%1$s was electrocuted to death by %2$s
+
 # JEI Info
 item.nyx.fallen_star.jei_desc=Fallen Stars can be encountered during the night.\n\nIf you start hearing something magical and see a trail of particles heading towards the ground in the sky, it's a Fallen Star.\n\nOnce landed, they will provide light and emit particles which makes it easier to find them.
 item.nyx.frezarite_boots.jei_desc=The Frezarite Boots will temporarily freeze water below you into frosted ice while equipped. The radius is increased when these boots are enchanted with Frost Walker.

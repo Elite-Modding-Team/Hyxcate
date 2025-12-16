@@ -1,19 +1,19 @@
 package de.ellpeck.nyx.potions;
 
+import de.ellpeck.nyx.util.NyxDamageSource;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.DamageSource;
 
 public class NyxPotionParalysis extends NyxPotionBase {
     public NyxPotionParalysis(String name, boolean isBadEffect, int liquidColor) {
         super(name, isBadEffect, liquidColor);
     }
 
-    // TODO: Scale damage and add custom damage source
+    // TODO: Scale damage
     @Override
     public void performEffect(EntityLivingBase entity, int amplifier) {
-        entity.attackEntityFrom(DamageSource.MAGIC, 1.0F);
+        entity.attackEntityFrom(NyxDamageSource.PARALYSIS, 1.0F);
 
         // Disable mob ai when paralyzed
         if (entity instanceof EntityPlayer) {
