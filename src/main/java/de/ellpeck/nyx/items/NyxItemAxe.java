@@ -34,13 +34,15 @@ import java.util.List;
 
 // If Future Fireproof is installed, make it fireproof like Netherite!
 @Optional.Interface(modid = "futurefireproof", iface = "com.invadermonky.futurefireproof.api.IFireproofItem", striprefs = true)
-public class NyxItemAxe extends ItemAxe implements IFireproofItem {
-    public AttributeModifier paralysisChance;
-    public EnumRarity rarity;
+public class NyxItemAxe extends ItemAxe implements INyxTool, IFireproofItem {
+    private final AttributeModifier paralysisChance;
+    private final EnumRarity rarity;
+    private final ToolMaterial material;
     
     public NyxItemAxe(ToolMaterial material, float damage, float speed, double paralysisChance, EnumRarity rarity) {
         super(material, damage - 1.0F, speed - 4.0F);
         this.paralysisChance = new AttributeModifier(NyxAttributes.PARALYSIS_ID.toString(), paralysisChance, 1);
+        this.material = material;
         this.rarity = rarity;
     }
 
@@ -159,4 +161,9 @@ public class NyxItemAxe extends ItemAxe implements IFireproofItem {
 
         return multimap;
     }
+
+	@Override
+	public ToolMaterial getToolMaterial() {
+		return material;
+	}
 }

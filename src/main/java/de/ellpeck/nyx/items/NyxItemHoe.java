@@ -16,6 +16,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
@@ -34,13 +35,15 @@ import java.util.List;
 
 // If Future Fireproof is installed, make it fireproof like Netherite!
 @Optional.Interface(modid = "futurefireproof", iface = "com.invadermonky.futurefireproof.api.IFireproofItem", striprefs = true)
-public class NyxItemHoe extends ItemHoe implements IFireproofItem {
+public class NyxItemHoe extends ItemHoe implements INyxTool, IFireproofItem {
     public AttributeModifier paralysisChance;
     public EnumRarity rarity;
+    private final ToolMaterial material;
     
     public NyxItemHoe(ToolMaterial material, double paralysisChance, EnumRarity rarity) {
         super(material);
         this.paralysisChance = new AttributeModifier(NyxAttributes.PARALYSIS_ID.toString(), paralysisChance, 1);
+        this.material = material;
         this.rarity = rarity;
     }
 
@@ -160,4 +163,9 @@ public class NyxItemHoe extends ItemHoe implements IFireproofItem {
 
         return multimap;
     }
+    
+	@Override
+	public ToolMaterial getToolMaterial() {
+		return material;
+	}
 }
