@@ -37,8 +37,6 @@ public class TinkersConstruct {
     public static final AbstractTrait FREZARITES_BANE = new TraitFrezaritesBane();
     public static final AbstractTrait GLACIER = new TraitGlacier();
     public static final AbstractTrait GLEAMING = new TraitGleaming();
-    public static final AbstractTrait GREATER_MAGNETIC = new TraitGreaterMagnetic(1);
-    public static final AbstractTrait GREATER_MAGNETIC2 = new TraitGreaterMagnetic(2);
     public static final AbstractTrait HYPERCHARGE = new TraitHypercharge();
     public static final AbstractTrait KREKNORITES_BANE = new TraitKreknoritesBane();
     public static final AbstractTrait STUNLOCK = new TraitStunlock();
@@ -97,9 +95,9 @@ public class TinkersConstruct {
                 new HandleMaterialStats(1.20F, 200),
                 new ExtraMaterialStats(350),
                 new BowMaterialStats(0.5F, 1.5F, 8.0F));
-        METEORITE.addTrait(GREATER_MAGNETIC2, MaterialTypes.HEAD);
+        METEORITE.addTrait(TinkerTraits.magnetic2, MaterialTypes.HEAD);
         METEORITE.addTrait(TinkerTraits.alien, MaterialTypes.HEAD);
-        METEORITE.addTrait(GREATER_MAGNETIC);
+        METEORITE.addTrait(TinkerTraits.magnetic);
         METEORITE.addTrait(TinkerTraits.alien);
         registerFluid(METEORITE_FLUID);
         METEORITE_FLUID.setTemperature(900);

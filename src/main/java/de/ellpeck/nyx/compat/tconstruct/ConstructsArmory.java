@@ -11,8 +11,6 @@ public class ConstructsArmory {
     public static final AbstractArmorTrait ASTRAL_PLATING = new TraitAstralPlating();
     public static final AbstractArmorTrait FREZARITES_WARD = new TraitFrezaritesWard();
     public static final AbstractArmorTrait GLEAMING_ARMOR = new TraitGleamingArmor();
-    public static final AbstractArmorTrait GREATER_MAGNETIC_ARMOR = new TraitGreaterMagneticArmor(1);
-    public static final AbstractArmorTrait GREATER_MAGNETIC_ARMOR2 = new TraitGreaterMagneticArmor(2);
     public static final AbstractArmorTrait HYPERCHARGE_ARMOR = new TraitHyperchargeArmor();
     public static final AbstractArmorTrait KREKNORITES_WARD = new TraitKreknoritesWard();
     public static final AbstractArmorTrait STAR_SHIELD_ARMOR = new TraitStarShieldArmor();
@@ -59,11 +57,11 @@ public class ConstructsArmory {
                 new CoreMaterialStats(19.5F, 19.0F),
                 new PlatesMaterialStats(1.25F, 12.0F, 4.0F),
                 new TrimMaterialStats(16.0F));
-        ArmorMaterials.addArmorTrait(TinkersConstruct.METEORITE, GREATER_MAGNETIC_ARMOR2, ArmorMaterialType.CORE);
+        ArmorMaterials.addArmorTrait(TinkersConstruct.METEORITE, ArmorTraits.magnetic2, ArmorMaterialType.CORE);
         ArmorMaterials.addArmorTrait(TinkersConstruct.METEORITE, ArmorTraits.alien, ArmorMaterialType.CORE);
-        ArmorMaterials.addArmorTrait(TinkersConstruct.METEORITE, GREATER_MAGNETIC_ARMOR, ArmorMaterialType.PLATES);
+        ArmorMaterials.addArmorTrait(TinkersConstruct.METEORITE, ArmorTraits.magnetic, ArmorMaterialType.PLATES);
         ArmorMaterials.addArmorTrait(TinkersConstruct.METEORITE, ArmorTraits.alien, ArmorMaterialType.PLATES);
-        ArmorMaterials.addArmorTrait(TinkersConstruct.METEORITE, GREATER_MAGNETIC_ARMOR, ArmorMaterialType.TRIM);
+        ArmorMaterials.addArmorTrait(TinkersConstruct.METEORITE, ArmorTraits.magnetic, ArmorMaterialType.TRIM);
         ArmorMaterials.addArmorTrait(TinkersConstruct.METEORITE, ArmorTraits.alien, ArmorMaterialType.TRIM);
 
         TinkerRegistry.addMaterialStats(TinkersConstruct.FREZARITE,
