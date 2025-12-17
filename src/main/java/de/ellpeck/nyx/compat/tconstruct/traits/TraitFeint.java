@@ -20,7 +20,7 @@ public class TraitFeint extends AbstractTrait {
     @Override
     public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical, boolean wasHit) {
         if (Utils.setChance(0.2F) && wasHit) {
-            target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.fallingStarImpact.getSoundEvent(), SoundCategory.PLAYERS, 0.85F, 2.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
+            target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.fallingStarImpact.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 2.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
             TinkerTools.proxy.spawnEffectParticle(ParticleEffect.Type.HEART_ARMOR, target, 5);
             target.attackEntityFrom(DamageSource.causeMobDamage(player).setDamageBypassesArmor(), damageDealt * 1.25F); // +25% damage + armor piercing
         }

@@ -26,7 +26,7 @@ public class TraitStarShieldArmor extends AbstractArmorTrait {
         if (Utils.setChance(0.05F)) {
             // Completely cancel out the damage
             event.setCanceled(true);
-            player.world.playSound(null, player.getPosition(), NyxSoundEvents.fallingStarImpact.getSoundEvent(), SoundCategory.PLAYERS, 0.85F, 3.0F / (player.world.rand.nextFloat() * 0.4F + 1.2F));
+            player.world.playSound(null, player.getPosition(), NyxSoundEvents.hammerSpecialHit.getSoundEvent(), SoundCategory.PLAYERS, 0.85F, 2.0F / (player.world.rand.nextFloat() * 0.4F + 1.2F));
 
             // Inflict Resistance III on the wielder (5 seconds)
             if (!player.world.isRemote) {
