@@ -26,3 +26,4 @@
 - Make sure endgame content is balanced just right
 - Set bonus tooltip can be changed to be much more intuitive where it shows which pieces of the set are equipped and what the set does. See Botania armor for a good example of this. (1/4 Set Bonus: Water Breathing)
 - Rework Frezarite, Kreknorite, and Tektite sets to block a set of configurable potion effects when the full set is worn
+- Replace 'Star Air' with a cleaner approach

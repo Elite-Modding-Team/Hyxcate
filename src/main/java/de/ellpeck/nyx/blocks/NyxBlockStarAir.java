@@ -1,7 +1,7 @@
 package de.ellpeck.nyx.blocks;
 
-import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.init.NyxBlocks;
+import de.ellpeck.nyx.items.NyxItemFallenStar;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
@@ -83,7 +83,7 @@ public class NyxBlockStarAir extends BlockContainer {
                 return;
             AxisAlignedBB bounds = new AxisAlignedBB(this.pos).grow(1);
             List<EntityItem> items = this.world.getEntitiesWithinAABB(EntityItem.class, bounds, e ->
-                    e.isEntityAlive() && e.getEntityData().getBoolean(Nyx.ID + ":fallen_star"));
+                    e.isEntityAlive() && e.getItem().getItem() instanceof NyxItemFallenStar);
             if (items.isEmpty())
                 this.world.setBlockState(this.pos, Blocks.AIR.getDefaultState());
         }
