@@ -524,6 +524,14 @@ public final class NyxEvents {
         DamageSource damageSource = event.getSource();
         Entity trueSource = damageSource.getTrueSource();
 
+        if (damageSource == NyxDamageSource.DEEP_FREEZE) {
+            entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.frezariteHit.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+        }
+
+        if (damageSource == NyxDamageSource.INFERNO) {
+            entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.kreknoriteHit.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+        }
+
         if (damageSource == NyxDamageSource.PARALYSIS) {
             entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.paralyzeZap.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
         }
@@ -538,33 +546,6 @@ public final class NyxEvents {
                 // Beam swords also ignore invincibility frames
                 entity.hurtResistantTime = 0;
                 entity.hurtTime = 0;
-            }
-        }
-    }
-
-    // Re-enable mob ai when Paralysis effect ends
-    @SubscribeEvent
-    public static void onPotionExpired(PotionEvent.PotionExpiryEvent event) {
-        EntityLivingBase entity = event.getEntityLiving();
-
-        if (event.getPotionEffect().getPotion().equals(NyxPotions.PARALYSIS) && !(entity instanceof EntityPlayer)) {
-            if (entity instanceof EntityLiving) {
-                ((EntityLiving) entity).setNoAI(false);
-            } else {
-                entity.updateBlocked = false;
-            }
-        }
-    }
-
-    @SubscribeEvent
-    public static void onPotionRemoved(PotionEvent.PotionExpiryEvent event) {
-        EntityLivingBase entity = event.getEntityLiving();
-
-        if (event.getPotionEffect().getPotion().equals(NyxPotions.PARALYSIS) && !(entity instanceof EntityPlayer)) {
-            if (entity instanceof EntityLiving) {
-                ((EntityLiving) entity).setNoAI(false);
-            } else {
-                entity.updateBlocked = false;
             }
         }
     }

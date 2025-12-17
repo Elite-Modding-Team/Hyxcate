@@ -6,6 +6,7 @@ import de.ellpeck.nyx.config.NyxConfig;
 import de.ellpeck.nyx.entities.*;
 import de.ellpeck.nyx.entities.renderer.*;
 import de.ellpeck.nyx.init.NyxItems;
+import de.ellpeck.nyx.init.NyxPotions;
 import de.ellpeck.nyx.items.NyxItemBow;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
 import net.minecraft.block.Block;
@@ -262,6 +263,25 @@ public final class NyxClientEvents {
                     break;
                 }
             }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onMouseEvent(MouseEvent event) {
+        // When a player is paralyzed, it will be impossible for them to use their mouse
+        if (Minecraft.getMinecraft().player.isPotionActive(NyxPotions.PARALYSIS) && Minecraft.getMinecraft().inGameHasFocus) {
+            event.setCanceled(true);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onInputUpdateEvent(InputUpdateEvent event) {
+        // When a player is paralyzed, it will be impossible for them to move
+        if (event.getEntityPlayer().isPotionActive(NyxPotions.PARALYSIS)) {
+            event.getMovementInput().jump = false;
+            event.getMovementInput().moveForward = 0;
+            event.getMovementInput().moveStrafe = 0;
+            event.getMovementInput().sneak = false;
         }
     }
 
