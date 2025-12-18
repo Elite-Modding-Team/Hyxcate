@@ -1,6 +1,5 @@
 package de.ellpeck.nyx.entities;
 
-import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.config.NyxConfig;
 import de.ellpeck.nyx.init.NyxItems;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
@@ -44,7 +43,6 @@ public class NyxEntityFallingStar extends Entity {
                 this.world.playSound(null, this.posX, this.posY, this.posZ, NyxSoundEvents.fallingStarImpact.getSoundEvent(), SoundCategory.AMBIENT, (float) NyxConfig.fallingStarImpactVolume, 1);
 
                 EntityItem item = new EntityItem(this.world, this.posX, this.posY, this.posZ, new ItemStack(NyxItems.fallenStar));
-                item.getEntityData().setBoolean(Nyx.ID + ":fallen_star", true);
                 this.world.spawnEntity(item);
                 this.setDead();
             }

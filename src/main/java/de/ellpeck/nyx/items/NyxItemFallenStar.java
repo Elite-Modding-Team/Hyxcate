@@ -1,7 +1,6 @@
 package de.ellpeck.nyx.items;
 
 import de.ellpeck.nyx.Nyx;
-import de.ellpeck.nyx.capabilities.NyxWorld;
 import de.ellpeck.nyx.init.NyxBlocks;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
 import de.ellpeck.nyx.sound.NyxSoundFallenEntity;
@@ -40,12 +39,6 @@ public class NyxItemFallenStar extends Item implements IFireproofItem {
                 entityItem.world.spawnParticle(EnumParticleTypes.FIREWORKS_SPARK, true, entityItem.posX, entityItem.posY + 0.5F, entityItem.posZ, mX, mY, mZ);
             }
             return false;
-        }
-
-        // This tag is set to true only by stars spawned by falling
-        if (entityItem.getEntityData().getBoolean(Nyx.ID + ":fallen_star") && NyxWorld.isDaytime(entityItem.world)) {
-            entityItem.setDead();
-            return true;
         }
 
         String lastOnGround = Nyx.ID + ":last_on_ground";
