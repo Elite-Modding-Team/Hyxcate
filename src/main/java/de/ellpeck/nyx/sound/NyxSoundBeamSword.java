@@ -2,7 +2,6 @@ package de.ellpeck.nyx.sound;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.ISound;
-import net.minecraft.client.audio.ITickableSound;
 import net.minecraft.client.audio.MovingSound;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -12,7 +11,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class NyxSoundBeamSword extends MovingSound implements ITickableSound {
+public class NyxSoundBeamSword extends MovingSound {
     protected EntityPlayer player;
     protected BlockPos position;
     protected ItemStack swordStack;
@@ -38,10 +37,5 @@ public class NyxSoundBeamSword extends MovingSound implements ITickableSound {
         if (!this.player.getHeldItemMainhand().equals(this.swordStack)) {
             this.volume -= 0.2F;
         }
-    }
-
-    @Override
-    public boolean isDonePlaying() {
-        return this.volume <= 0.0F;
     }
 }
