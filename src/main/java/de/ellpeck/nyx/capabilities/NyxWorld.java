@@ -71,11 +71,11 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
     }
 
     public static boolean isNighttime(World world) {
-        // https://minecraft.fandom.com/wiki/Daylight_cycle
-        // 12542: Beds can be used
-        // 23216: Solar zenith angle is 0
+        // https://minecraft.fandom.com/wiki/Daylight_cycle#24-hour_Minecraft_day
+        // 12786: Solar zenith angle is 0 (beginning of night)
+        // 23216: Solar zenith angle is 0 (end of night)
         long time = world.getWorldTime() % 24000;
-        return time >= 12542 && time < 23216;
+        return time >= 12786 && time < 23216;
     }
 
     public static NyxWorld get(World world) {
