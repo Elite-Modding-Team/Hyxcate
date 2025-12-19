@@ -15,7 +15,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 @EventBusSubscriber(modid = Nyx.ID)
 public class NyxPotions {
-    public static Potion CELESTIAL_ERASURE, DEEP_FREEZE, INFERNO, PARALYSIS;
+    public static Potion ASTRAL_EROSION, DEEP_FREEZE, INFERNO, PARALYSIS;
     public static PotionType PARALYSIS_NORMAL, PARALYSIS_LONG;
 
     private static Potion registerPotion(String name, Potion potion) {
@@ -32,7 +32,7 @@ public class NyxPotions {
     public static void registerPotions(@Nonnull final RegistryEvent.Register<Potion> event) {
         IForgeRegistry<Potion> registry = event.getRegistry();
 
-        CELESTIAL_ERASURE = registerPotion("celestial_erasure", new NyxPotionCelestialErasure("celestial_erasure", true, 16769431));
+        ASTRAL_EROSION = registerPotion("astral_erosion", new NyxPotionCelestialErasure("astral_erosion", true, 16769431));
         DEEP_FREEZE = registerPotion("deep_freeze", new NyxPotionDeepFreeze("deep_freeze", true, 12638975)
                 .registerPotionAttributeModifier(SharedMonsterAttributes.MOVEMENT_SPEED, NyxAttributes.MOVEMENT_SPEED_ID.toString(), -0.25D, 2)
                 .registerPotionAttributeModifier(SharedMonsterAttributes.ATTACK_SPEED, NyxAttributes.ATTACK_SPEED_ID.toString(), -0.2D, 2));
@@ -41,6 +41,6 @@ public class NyxPotions {
                 .registerPotionAttributeModifier(SharedMonsterAttributes.MOVEMENT_SPEED, NyxAttributes.MOVEMENT_SPEED_ID.toString(), -1.0D, 2)
                 .registerPotionAttributeModifier(SharedMonsterAttributes.ATTACK_SPEED, NyxAttributes.ATTACK_SPEED_ID.toString(), -1.0D, 2));
 
-        registry.registerAll(CELESTIAL_ERASURE, DEEP_FREEZE, INFERNO, PARALYSIS);
+        registry.registerAll(ASTRAL_EROSION, DEEP_FREEZE, INFERNO, PARALYSIS);
     }
 }

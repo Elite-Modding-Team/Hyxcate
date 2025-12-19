@@ -144,7 +144,7 @@ entity.nyx.falling_star.name=Falling Star
 entity.nyx.stellar_protector.name=Stellar Protector
 
 # Potions
-effect.nyx.celestial_erasure.name=Celestial Erasure
+effect.nyx.astral_erosion.name=Astral Erosion
 effect.nyx.deep_freeze.name=Deep Freeze
 effect.nyx.inferno.name=Inferno
 effect.nyx.paralysis.name=Paralysis

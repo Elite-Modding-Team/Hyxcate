@@ -103,7 +103,7 @@ public final class NyxEvents {
                         if (!entity.isOnSameTeam(player)) {
                             if (entity == player) continue;
 
-                            entity.addPotionEffect(new PotionEffect(NyxPotions.CELESTIAL_ERASURE, 8 * 20, 0, false, false));
+                            entity.addPotionEffect(new PotionEffect(NyxPotions.ASTRAL_EROSION, 8 * 20, 0, false, false));
                             entity.attackEntityFrom(source, damage);
                             entity.knockBack(player, 3.0F, player.posX - entity.posX, player.posZ - entity.posZ);
                             entity.motionY = 1;

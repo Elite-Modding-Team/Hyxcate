@@ -42,7 +42,7 @@ public class NyxPotionCelestialErasure extends NyxPotionBase {
     public static void onPotionExpired(PotionEvent.PotionExpiryEvent event) {
         EntityLivingBase entity = event.getEntityLiving();
 
-        if (event.getPotionEffect().getPotion().equals(NyxPotions.CELESTIAL_ERASURE)) {
+        if (event.getPotionEffect().getPotion().equals(NyxPotions.ASTRAL_EROSION)) {
             if (entity instanceof EntityLiving) {
                 entity.setGlowing(false);
             }
@@ -53,7 +53,7 @@ public class NyxPotionCelestialErasure extends NyxPotionBase {
     public static void onPotionRemoved(PotionEvent.PotionExpiryEvent event) {
         EntityLivingBase entity = event.getEntityLiving();
 
-        if (event.getPotionEffect().getPotion().equals(NyxPotions.CELESTIAL_ERASURE)) {
+        if (event.getPotionEffect().getPotion().equals(NyxPotions.ASTRAL_EROSION)) {
             if (entity instanceof EntityLiving) {
                 entity.setGlowing(false);
             }
