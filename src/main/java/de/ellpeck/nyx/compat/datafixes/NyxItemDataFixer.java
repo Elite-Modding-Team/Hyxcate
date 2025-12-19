@@ -71,5 +71,4 @@ public class NyxItemDataFixer implements IFixableData {
             }
         }
     }
-
 }
