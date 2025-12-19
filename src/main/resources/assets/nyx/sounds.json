@@ -258,7 +258,7 @@
       "nyx:item/laser_gun/shoot4"
     ]
   },
-  "item.meteor_detector_cancel": {
+  "item.meteor_detector.cancel": {
     "sounds": [
       "nyx:item/meteor_detector/cancel"
     ]
