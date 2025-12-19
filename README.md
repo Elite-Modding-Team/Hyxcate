@@ -6,7 +6,7 @@
 
 ![Hyxcate Banner](docs/banner.png)
 
-**Hyxcate** (a combination of the Greek goddess names Nyx and Hecate) is a grand sci-fi themed adventure mod that mainly introduces new events for day and night to make Survival even more challenging, as well as meteors containing special endgame materials. Originally it started off as a fork of **Nyx** for the **Hexxit II** modpack, it has now evolved into its own standalone mod with many features originating from Nyx being reworked or removed.
+**Hyxcate** (a portmanteau of the Greek goddess names Nyx and Hecate) is a grand sci-fi themed adventure mod that mainly introduces new events for day and night to make Survival even more challenging, as well as meteors containing special endgame materials. Originally it started off as a fork of **Nyx** for the **Hexxit II** modpack, it has now evolved into its own standalone mod with many features originating from Nyx being reworked or removed.
 
 #### **_IMPORTANT: This mod is going to stay on 1.12.2, there are no plans for porting from our side! The mod is currently in Beta, things are subject to change and even be removed!_**
 
@@ -30,7 +30,7 @@
 ![Night Events](docs/night_events.png)
 
 - **Full Moon:** The full moon phase is now considered an event, but only when no other event is active. Hostile mobs will spawn more frequently and they can also sometimes spawn with positive status effects like **Strength** or **Resistance** to make them more difficult to fight. Untamed wolves will become hostile when approached, no werewolves on sight at least!
-- **Blood Moon:** The moon and sky will turn a blood red color. Hostile mobs will spawn much more frequently and you won't be able to sleep for the night.
+- **Blood Moon:** The moon and sky will turn a blood-red color. Hostile mobs will spawn much more frequently and you won't be able to sleep for the night.
 - **Blue Moon:** The moon and sky will turn a deep blue color. This event is peaceful and prevents all hostile mobs from spawning. Additionally, crops will grow faster and you will be provided with the **Luck II** effect while the event remains active.
 - **Star Shower:** The moon and sky will turn a bright yellow color. Falling stars will appear much more frequently while this event is active.
 
@@ -39,7 +39,7 @@
 ![Day Events](docs/day_events.png)
 
 - **Grim Eclipse:** The sun gets blocked by an unknown planet-sized object. Hostile mobs will continue to spawn and not be able to burn under the sun as if it were an extended night. **NOTE:** It's not considered an actual eclipse and we're not exactly sure what the object blocking the sun is...
-- **Red Giant:** The sun will temporarily exhaust its hydrogen fuel in its core, thankfully the world is resilient enough to handle the immense heat. Currently this event is mostly cosmetic and is still a work in progress!
+- **Red Giant:** The sun will temporarily exhaust its hydrogen fuel in its core, thankfully the world is resilient enough to handle the immense heat. Currently, this event is mostly cosmetic and still a work in progress!
 
 #### ☄️ Materials
 
