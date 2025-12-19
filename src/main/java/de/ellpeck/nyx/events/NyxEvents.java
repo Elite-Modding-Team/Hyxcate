@@ -70,7 +70,8 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 import javax.vecmath.Vector3d;
@@ -222,9 +223,6 @@ public final class NyxEvents {
                     NyxEntityFallingStar star = new NyxEntityFallingStar(event.world);
                     star.setPosition(startPos.getX(), startPos.getY(), startPos.getZ());
                     event.world.spawnEntity(star);
-                    if (FMLLaunchHandler.side().isClient()) {
-                        Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallingEntity(star, NyxSoundEvents.ENTITY_STAR_FALLING.getSoundEvent(), (float) NyxConfig.fallingStarAmbientVolume));
-                    }
                 }
             }
         }
@@ -544,7 +542,7 @@ public final class NyxEvents {
             entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.EFFECT_PARALYSIS_ZAP.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
         }
 
-        if (trueSource instanceof EntityPlayer && trueSource != null) {
+        if (trueSource instanceof EntityPlayer) {
             Item heldItem = ((EntityPlayer) trueSource).getHeldItemMainhand().getItem();
 
             // Beam swords ignore armor
@@ -555,6 +553,18 @@ public final class NyxEvents {
                 entity.hurtResistantTime = 0;
                 entity.hurtTime = 0;
             }
+        }
+    }
+
+    @SideOnly(Side.CLIENT)
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public static void onEntityJoinClient(EntityJoinWorldEvent event) {
+        if (!event.getWorld().isRemote) return;
+
+        if (event.getEntity() instanceof NyxEntityFallingMeteor) {
+            Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallingEntity(event.getEntity(), NyxSoundEvents.ENTITY_METEOR_FALLING.getSoundEvent(), 5F));
+        } else if (event.getEntity() instanceof NyxEntityFallingStar) {
+            Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallingEntity(event.getEntity(), NyxSoundEvents.ENTITY_STAR_FALLING.getSoundEvent(), (float) NyxConfig.fallingStarAmbientVolume));
         }
     }
 }

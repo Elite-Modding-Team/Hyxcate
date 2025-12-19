@@ -38,6 +38,9 @@ public class NyxItemFallenStar extends Item implements IFireproofItem {
                 double mZ = entityItem.world.rand.nextGaussian() * 0.05;
                 entityItem.world.spawnParticle(EnumParticleTypes.FIREWORKS_SPARK, true, entityItem.posX, entityItem.posY + 0.5F, entityItem.posZ, mX, mY, mZ);
             }
+            if (entityItem.ticksExisted == 5 && FMLLaunchHandler.side().isClient()) {
+                Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallenEntity(entityItem, NyxSoundEvents.ENTITY_STAR_IDLE.getSoundEvent(), 1F));
+            }
             return false;
         }
 
@@ -45,9 +48,6 @@ public class NyxItemFallenStar extends Item implements IFireproofItem {
         if (entityItem.onGround && !entityItem.getEntityData().getBoolean(lastOnGround)) {
             entityItem.getEntityData().setBoolean(lastOnGround, true);
             this.placeStarAir(entityItem);
-            if (FMLLaunchHandler.side().isClient() && !entityItem.world.isRemote) {
-                Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallenEntity(entityItem, NyxSoundEvents.ENTITY_STAR_IDLE.getSoundEvent(), 1F));
-            }
         }
         return false;
     }

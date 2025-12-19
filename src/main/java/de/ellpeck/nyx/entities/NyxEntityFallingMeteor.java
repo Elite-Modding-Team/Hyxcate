@@ -5,11 +5,9 @@ import de.ellpeck.nyx.capabilities.NyxWorld;
 import de.ellpeck.nyx.config.NyxConfig;
 import de.ellpeck.nyx.init.NyxBlocks;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
-import de.ellpeck.nyx.sound.NyxSoundFallingEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSnow;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -31,7 +29,6 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
 import java.util.List;
 
@@ -56,10 +53,6 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
         pos = world.getPrecipitationHeight(pos).up(MathHelper.getInt(world.rand, 64, 96));
         meteor.setPosition(pos.getX(), pos.getY(), pos.getZ());
         world.spawnEntity(meteor);
-        if (FMLLaunchHandler.side().isClient() && !world.isRemote) {
-            // TODO: Make volume configurable?
-            Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallingEntity(meteor, NyxSoundEvents.ENTITY_METEOR_FALLING.getSoundEvent(), 5F));
-        }
         return meteor;
     }
 
