@@ -73,8 +73,10 @@ public final class NyxClientEvents {
         if (nyx == null) return;
         nyx.update();
 
+        long time = world.getWorldTime() % 24000;
+
         String moonTex = nyx.currentLunarEvent != null ? nyx.currentLunarEvent.getMoonTexture() : null;
-        if (!Objects.equals(moonTex, lastMoonTextures)) {
+        if (!Objects.equals(moonTex, lastMoonTextures) && (moonTex != null || (time >= 4000 && time <= 8000))) {
             lastMoonTextures = moonTex;
             ResourceLocation res = ObfuscationReflectionHelper.getPrivateValue(RenderGlobal.class, null, "field_110927_h");
             ObfuscationReflectionHelper.setPrivateValue(ResourceLocation.class, res, moonTex == null ? "minecraft" : Nyx.ID, "field_110626_a");
@@ -82,7 +84,7 @@ public final class NyxClientEvents {
         }
 
         String sunTex = nyx.currentSolarEvent != null ? nyx.currentSolarEvent.getSunTexture() : null;
-        if (!Objects.equals(sunTex, lastSunTextures)) {
+        if (!Objects.equals(sunTex, lastSunTextures) && (sunTex != null || (time >= 16000 && time <= 20000))) {
             lastSunTextures = sunTex;
             ResourceLocation res = ObfuscationReflectionHelper.getPrivateValue(RenderGlobal.class, null, "field_110928_i");
             ObfuscationReflectionHelper.setPrivateValue(ResourceLocation.class, res, sunTex == null ? "minecraft" : Nyx.ID, "field_110626_a");
