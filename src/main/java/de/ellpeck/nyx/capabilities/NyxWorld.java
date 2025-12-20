@@ -62,7 +62,7 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
         this.lunarEvents.add(new NyxEventHarvestMoon(this));
         this.lunarEvents.add(new NyxEventStarShower(this));
         this.lunarEvents.add(new NyxEventBloodMoon(this));
-        // this needs to stay at the end to prioritize random events
+        // This needs to stay at the end to prioritize random events
         this.lunarEvents.add(new NyxEventFullMoon(this));
     }
 
@@ -71,7 +71,7 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
     }
 
     public static boolean isNighttime(World world) {
-        // https://minecraft.fandom.com/wiki/Daylight_cycle#24-hour_Minecraft_day
+        // https://minecraft.wiki/w/Daylight_cycle#24-hour_Minecraft_day
         // 12786: Solar zenith angle is 0 (beginning of night)
         // 23216: Solar zenith angle is 0 (end of night)
         long time = world.getWorldTime() % 24000;

@@ -75,7 +75,7 @@ public final class NyxClientEvents {
 
         long time = world.getWorldTime() % 24000;
 
-        // https://minecraft.fandom.com/wiki/Daylight_cycle#24-hour_Minecraft_day
+        // https://minecraft.wiki/w/Daylight_cycle#24-hour_Minecraft_day
         // 167: The moon disappears on the horizon
         // 11834: The moon appears on the horizon
         String moonTex = nyx.currentLunarEvent != null ? nyx.currentLunarEvent.getMoonTexture() : null;
@@ -86,7 +86,7 @@ public final class NyxClientEvents {
             ObfuscationReflectionHelper.setPrivateValue(ResourceLocation.class, res, moonTex == null ? "textures/environment/moon_phases.png" : "textures/moon/" + moonTex + ".png", "field_110625_b");
         }
 
-        // https://minecraft.fandom.com/wiki/Daylight_cycle#24-hour_Minecraft_day
+        // https://minecraft.wiki/w/Daylight_cycle#24-hour_Minecraft_day
         // 13702: The sun disappears on the horizon
         // 22300: The sun appears on the horizon
         String sunTex = nyx.currentSolarEvent != null ? nyx.currentSolarEvent.getSunTexture() : null;
