@@ -287,6 +287,14 @@
       "nyx:item/meteor_detector/prompt"
     ]
   },
+  "random.laser": {
+    "sounds": [
+      "nyx:random/laser1",
+      "nyx:random/laser2",
+      "nyx:random/laser3",
+      "nyx:random/laser4"
+    ]
+  },
   "random.star_aura": {
     "sounds": [
       "nyx:random/star_aura1",
