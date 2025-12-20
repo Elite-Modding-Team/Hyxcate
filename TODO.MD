@@ -1,9 +1,13 @@
 ## Release
 
-- Several tooltips are too long and need to be shortened. Some tooltips could be moved to JEI? (Frezarite and Kreknorite items mainly)
 - Change the Meteorite effect into an attribute
-- Update textures for regular tools, most ingots and most metal blocks
 - Make sure TiC integration is balanced and just right (currently partially done)
+- Rework config file
+- Rename all class files
+- New attributes for Frezarite, Kreknorite, and Tektite to provide an effect when hit
+
+Put this on Future Updates if it can't be done:
+- Update textures for regular tools, most ingots and most metal blocks
 
 ## Future Updates
 
@@ -13,8 +17,8 @@
 - Enchantment Rework: Rework for Lunar Edge and Lunar Shield while also introducing Solar counterparts
 - New system for allowing special mobs to spawn during events?
 - Unique purpose for Red Giant (potentially inspired by SCP-001)
-- Add fancier and more unique particles
-- Alien Creeper variants
+- Add fancier and more unique particles, vignette effects in some other areas as well
+- Alien Creeper variants causing different effects when exploding
 - Harken Scythe integration (Mechanical Scythe)
 - Meteor Summoners like the original meteors mod, these will be creative only
 - Stellar Protector Mob
