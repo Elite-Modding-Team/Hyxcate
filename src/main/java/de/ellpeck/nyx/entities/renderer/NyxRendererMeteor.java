@@ -11,10 +11,10 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class NyxRendererMeteor extends Render<NyxEntityFallingMeteor> {
-    private static final ResourceLocation METEORITE = new ResourceLocation(Nyx.ID, "textures/models/meteor.png");
-    private static final ResourceLocation FREZARITE = new ResourceLocation(Nyx.ID, "textures/models/frezarite_meteor.png");
-    private static final ResourceLocation KREKNORITE = new ResourceLocation(Nyx.ID, "textures/models/kreknorite_meteor.png");
-    private static final ResourceLocation UNKNOWN = new ResourceLocation(Nyx.ID, "textures/models/unknown_meteor.png");
+    private static final ResourceLocation METEORITE = new ResourceLocation(Nyx.ID, "textures/entities/meteor/meteorite.png");
+    private static final ResourceLocation FREZARITE = new ResourceLocation(Nyx.ID, "textures/entities/meteor/frezarite.png");
+    private static final ResourceLocation KREKNORITE = new ResourceLocation(Nyx.ID, "textures/entities/meteor/kreknorite.png");
+    private static final ResourceLocation UNKNOWN = new ResourceLocation(Nyx.ID, "textures/entities/meteor/unknown.png");
     private final ModelOverlay model = new ModelOverlay();
 
     public NyxRendererMeteor(RenderManager renderManager) {
