@@ -22,13 +22,13 @@ import slimeknights.tconstruct.tools.TinkerTraits;
 public class TinkersConstruct {
     // These materials are used universally between tools and armor
     public static final Material FALLEN_STAR = new Material(Nyx.ID + "." + "fallen_star", 0xDFCE62);
-    public static final Material FREZARITE = new Material(Nyx.ID + "." + "frezarite", 0x1AC5E1);
+    public static final Material FREZARITE = new Material(Nyx.ID + "." + "frezarite", 0x6AA7FF);
     public static final Material CYBER_CRYSTAL = new Material(Nyx.ID + "." + "cyber_crystal", 0x4F7694);
     public static final Material KREKNORITE = new Material(Nyx.ID + "." + "kreknorite", 0x8F0E0E);
     public static final Material METEORITE = new Material(Nyx.ID + "." + "meteorite", 0x554F75);
     public static final Material TEKTITE = new Material(Nyx.ID + "." + "tektite", 0xC82323);
 
-    public static final FluidMolten FREZARITE_FLUID = new FluidMolten("frezarite", 0x1AC5E1);
+    public static final FluidMolten FREZARITE_FLUID = new FluidMolten("frezarite", 0x6AA7FF);
     public static final FluidMolten KREKNORITE_FLUID = new FluidMolten("kreknorite", 0x8F0E0E);
     public static final FluidMolten METEORITE_FLUID = new FluidMolten("meteorite", 0x554F75);
 
