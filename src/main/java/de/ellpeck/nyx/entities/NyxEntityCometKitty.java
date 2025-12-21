@@ -2,6 +2,7 @@ package de.ellpeck.nyx.entities;
 
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.init.NyxEntities;
+import de.ellpeck.nyx.sound.NyxSoundEvents;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.IEntityLivingData;
@@ -9,6 +10,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
@@ -50,6 +52,17 @@ public class NyxEntityCometKitty extends EntityOcelot {
     @Override
     public boolean canBreatheUnderwater() {
         return true;
+    }
+    
+    @Override
+    public int getTalkInterval() {
+        return super.getTalkInterval() * 2;
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return NyxSoundEvents.ENTITY_COMET_KITTY_IDLE.getSoundEvent();
     }
 
     @Override

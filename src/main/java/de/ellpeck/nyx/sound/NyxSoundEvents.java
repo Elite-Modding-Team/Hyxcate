@@ -25,6 +25,7 @@ public enum NyxSoundEvents {
     // Entities
     ENTITY_ALIEN_CREEPER_IDLE("entity.alien_creeper.idle"),
     ENTITY_ALIEN_KITTY_IDLE("entity.alien_kitty.idle"),
+    ENTITY_COMET_KITTY_IDLE("entity.comet_kitty.idle"),
     ENTITY_METEOR_FALLING("entity.meteor.falling"),
     ENTITY_METEOR_IMPACT_FAR("entity.meteor.impact.far"),
     ENTITY_METEOR_IMPACT("entity.meteor.impact"),
@@ -61,6 +62,7 @@ public enum NyxSoundEvents {
     ITEM_METEOR_DETECTOR_PROMPT("item.meteor_detector.prompt"),
 
     // Random
+    RANDOM_LASER("random.laser"),
     RANDOM_STAR_AURA("random.star_aura"),
     RANDOM_STAR_EXPLODE("random.star_explode");
 
