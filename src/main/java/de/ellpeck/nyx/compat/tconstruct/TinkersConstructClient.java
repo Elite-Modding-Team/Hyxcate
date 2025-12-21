@@ -1,6 +1,6 @@
 package de.ellpeck.nyx.compat.tconstruct;
 
-import de.ellpeck.nyx.events.NyxClientEvents;
+import de.ellpeck.nyx.event.NyxClientEvents;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 

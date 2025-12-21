@@ -1,7 +1,7 @@
 package de.ellpeck.nyx.mixin.client;
 
-import de.ellpeck.nyx.capabilities.NyxWorld;
-import de.ellpeck.nyx.events.solar.NyxEventRedGiant;
+import de.ellpeck.nyx.capability.NyxWorld;
+import de.ellpeck.nyx.event.solar.NyxEventRedGiant;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.RenderGlobal;
 import org.spongepowered.asm.mixin.Mixin;

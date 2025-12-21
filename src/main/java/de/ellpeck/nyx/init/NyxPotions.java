@@ -3,7 +3,7 @@ package de.ellpeck.nyx.init;
 import javax.annotation.Nonnull;
 
 import de.ellpeck.nyx.Nyx;
-import de.ellpeck.nyx.potions.*;
+import de.ellpeck.nyx.potion.*;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionType;

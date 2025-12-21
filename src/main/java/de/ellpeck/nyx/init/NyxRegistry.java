@@ -1,8 +1,7 @@
 package de.ellpeck.nyx.init;
 
 import de.ellpeck.nyx.Nyx;
-import de.ellpeck.nyx.capabilities.NyxWorld;
-import de.ellpeck.nyx.sound.NyxSoundEvents;
+import de.ellpeck.nyx.capability.NyxWorld;
 import net.minecraft.block.SoundType;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;

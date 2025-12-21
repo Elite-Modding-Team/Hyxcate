@@ -2,8 +2,8 @@ package de.ellpeck.nyx.compat.tconstruct.traits.armor;
 
 import c4.conarm.lib.traits.AbstractArmorTrait;
 import de.ellpeck.nyx.Nyx;
-import de.ellpeck.nyx.sound.NyxSoundEvents;
-import de.ellpeck.nyx.util.Utils;
+import de.ellpeck.nyx.init.NyxSoundEvents;
+import de.ellpeck.nyx.util.NyxUtils;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
@@ -23,7 +23,7 @@ public class TraitStarShieldArmor extends AbstractArmorTrait {
     @Override
     public float onDamaged(ItemStack armor, EntityPlayer player, DamageSource source, float damage, float newDamage, LivingDamageEvent event) {
     	// 5% chance per piece
-        if (Utils.setChance(0.05F)) {
+        if (NyxUtils.setChance(0.05F)) {
             // Completely cancel out the damage
             event.setCanceled(true);
             player.world.playSound(null, player.getPosition(), NyxSoundEvents.ITEM_CELESTIAL_WARHAMMER_SMASH.getSoundEvent(), SoundCategory.PLAYERS, 0.85F, 2.0F / (player.world.rand.nextFloat() * 0.4F + 1.2F));

@@ -1,7 +1,7 @@
 package de.ellpeck.nyx.mixin.common;
 
-import de.ellpeck.nyx.capabilities.NyxWorld;
-import de.ellpeck.nyx.events.solar.NyxEventGrimEclipse;
+import de.ellpeck.nyx.capability.NyxWorld;
+import de.ellpeck.nyx.event.solar.NyxEventGrimEclipse;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

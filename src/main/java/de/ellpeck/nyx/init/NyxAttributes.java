@@ -1,7 +1,7 @@
 package de.ellpeck.nyx.init;
 
 import de.ellpeck.nyx.Nyx;
-import de.ellpeck.nyx.entities.NyxEntityAlienCreeper;
+import de.ellpeck.nyx.entity.NyxEntityAlienCreeper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.attributes.AbstractAttributeMap;
 import net.minecraft.entity.ai.attributes.AttributeModifier;

@@ -1,8 +1,8 @@
 package de.ellpeck.nyx.config;
 
 import com.google.common.collect.Sets;
-import de.ellpeck.nyx.capabilities.NyxWorld;
-import de.ellpeck.nyx.events.lunar.NyxEventStarShower;
+import de.ellpeck.nyx.capability.NyxWorld;
+import de.ellpeck.nyx.event.lunar.NyxEventStarShower;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
 import net.minecraftforge.common.config.Configuration;

@@ -1,6 +1,6 @@
 package de.ellpeck.nyx.network;
 
-import de.ellpeck.nyx.capabilities.NyxWorld;
+import de.ellpeck.nyx.capability.NyxWorld;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.NBTTagCompound;

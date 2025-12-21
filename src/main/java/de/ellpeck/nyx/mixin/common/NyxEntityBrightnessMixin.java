@@ -1,7 +1,7 @@
 package de.ellpeck.nyx.mixin.common;
 
-import de.ellpeck.nyx.capabilities.NyxWorld;
-import de.ellpeck.nyx.events.solar.NyxEventRedGiant;
+import de.ellpeck.nyx.capability.NyxWorld;
+import de.ellpeck.nyx.event.solar.NyxEventRedGiant;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.world.World;

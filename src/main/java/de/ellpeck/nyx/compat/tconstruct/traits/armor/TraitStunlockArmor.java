@@ -2,7 +2,7 @@ package de.ellpeck.nyx.compat.tconstruct.traits.armor;
 
 import c4.conarm.lib.traits.AbstractArmorTrait;
 import de.ellpeck.nyx.Nyx;
-import de.ellpeck.nyx.sound.NyxSoundEvents;
+import de.ellpeck.nyx.init.NyxSoundEvents;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;

@@ -1,7 +1,7 @@
 package de.ellpeck.nyx.compat.tconstruct.traits;
 
 import de.ellpeck.nyx.Nyx;
-import de.ellpeck.nyx.sound.NyxSoundEvents;
+import de.ellpeck.nyx.init.NyxSoundEvents;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;

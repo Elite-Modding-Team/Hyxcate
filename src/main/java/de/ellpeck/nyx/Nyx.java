@@ -1,7 +1,7 @@
 package de.ellpeck.nyx;
 
-import de.ellpeck.nyx.commands.NyxCommandForce;
-import de.ellpeck.nyx.commands.NyxCommandMeteor;
+import de.ellpeck.nyx.command.NyxCommandForce;
+import de.ellpeck.nyx.command.NyxCommandMeteor;
 import de.ellpeck.nyx.compat.NyxCompatHandler;
 import de.ellpeck.nyx.compat.datafixes.NyxBlockDataFixer;
 import de.ellpeck.nyx.compat.datafixes.NyxItemDataFixer;

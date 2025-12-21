@@ -1,7 +1,7 @@
 package de.ellpeck.nyx.init;
 
 import de.ellpeck.nyx.Nyx;
-import de.ellpeck.nyx.entities.*;
+import de.ellpeck.nyx.entity.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;

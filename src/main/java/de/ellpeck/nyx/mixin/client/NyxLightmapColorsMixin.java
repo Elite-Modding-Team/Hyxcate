@@ -1,6 +1,6 @@
 package de.ellpeck.nyx.mixin.client;
 
-import de.ellpeck.nyx.capabilities.NyxWorld;
+import de.ellpeck.nyx.capability.NyxWorld;
 import de.ellpeck.nyx.config.NyxConfig;
 import de.ellpeck.nyx.util.NyxColorUtils;
 import net.minecraft.world.World;
