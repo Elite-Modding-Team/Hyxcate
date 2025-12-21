@@ -15,9 +15,19 @@ public class NyxModelCometKitty extends ModelOcelot {
 
     public NyxModelCometKitty() {
         super();
-        this.setTextureOffset("helmet.main", 38, 19);
+        this.setTextureOffset("helmet.main", 34, 17);
+        this.setTextureOffset("helmet.top", 48, 12);
+        this.setTextureOffset("helmet.left", 14, 25);
+        this.setTextureOffset("helmet.right", 24, 25);
+        this.setTextureOffset("helmet.right2", 6, 29);
+        this.setTextureOffset("helmet.left2", 0, 29);
         this.helmet = new ModelRenderer(this, "helmet");
-        this.helmet.addBox("main", -3F, -3.5F, -4.5F, 6, 6, 7);
+        this.helmet.addBox("main", -3.5F, -4.0F, -5.0F, 7, 7, 8);
+        this.helmet.addBox("top", -1F, -6F, -3F, 2, 1, 4);
+        this.helmet.addBox("left", 4F, -2F, -3F, 1, 3, 4);
+        this.helmet.addBox("right", -5F, -2F, -3F, 1, 3, 4);
+        this.helmet.addBox("right2", -6F, -1F, -2F, 1, 1, 2);
+        this.helmet.addBox("left2", 5F, -1F, -2F, 1, 1, 2);
         this.helmet.setRotationPoint(0.0F, 15.0F, -9.0F);
     }
 
