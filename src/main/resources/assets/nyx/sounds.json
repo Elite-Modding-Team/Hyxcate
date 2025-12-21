@@ -114,8 +114,7 @@
       "nyx:entity/alien_creeper/idle1",
       "nyx:entity/alien_creeper/idle2",
       "nyx:entity/alien_creeper/idle3",
-      "nyx:entity/alien_creeper/idle4",
-      "nyx:entity/alien_creeper/idle5"
+      "nyx:entity/alien_creeper/idle4"
     ]
   },
   "entity.alien_kitty.idle": {
@@ -124,6 +123,15 @@
       "nyx:entity/alien_kitty/idle2",
       "nyx:entity/alien_kitty/idle3",
       "nyx:entity/alien_kitty/idle4"
+    ]
+  },
+  "entity.comet_kitty.idle": {
+    "sounds": [
+      "nyx:entity/comet_kitty/idle1",
+      "nyx:entity/comet_kitty/idle2",
+      "nyx:entity/comet_kitty/idle3",
+      "nyx:entity/comet_kitty/idle4",
+      "nyx:entity/comet_kitty/idle5"
     ]
   },
   "entity.meteor.falling": {
