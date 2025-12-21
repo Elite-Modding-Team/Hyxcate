@@ -2,6 +2,7 @@
   "package": "de.ellpeck.nyx.mixin.common",
   "refmap": "mixins.nyx.refmap.json",
   "mixins": [
+    "NyxEntityAccessor",
     "NyxEntityBrightnessMixin",
     "NyxMobValidLightLevelMixin",
     "NyxSunBrightnessFactorMixin"

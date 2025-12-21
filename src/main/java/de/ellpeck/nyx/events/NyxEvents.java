@@ -17,6 +17,7 @@ import de.ellpeck.nyx.init.NyxItems;
 import de.ellpeck.nyx.init.NyxPotions;
 import de.ellpeck.nyx.items.INyxTool;
 import de.ellpeck.nyx.items.tools.*;
+import de.ellpeck.nyx.mixin.common.NyxEntityAccessor;
 import de.ellpeck.nyx.network.NyxPacketHandler;
 import de.ellpeck.nyx.network.NyxPacketWorld;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
@@ -359,6 +360,7 @@ public final class NyxEvents {
             double newMaxHealth = maxHealthAttribute.getBaseValue() * 1.5;
             maxHealthAttribute.setBaseValue(newMaxHealth);
             entity.setHealth((float) newMaxHealth);
+            if (!entity.isImmuneToFire()) ((NyxEntityAccessor) entity).setIsImmuneToFire(true);
         }
     }
 
