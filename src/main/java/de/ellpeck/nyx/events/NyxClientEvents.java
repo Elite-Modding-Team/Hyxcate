@@ -73,24 +73,16 @@ public final class NyxClientEvents {
         if (nyx == null) return;
         nyx.update();
 
-        long time = world.getWorldTime() % 24000;
-
-        // https://minecraft.wiki/w/Daylight_cycle#24-hour_Minecraft_day
-        // 167: The moon disappears on the horizon
-        // 11834: The moon appears on the horizon
         String moonTex = nyx.currentLunarEvent != null ? nyx.currentLunarEvent.getMoonTexture() : null;
-        if (!Objects.equals(moonTex, lastMoonTextures) && (moonTex != null || (time > 167 && time < 11834))) {
+        if (!Objects.equals(moonTex, lastMoonTextures)) {
             lastMoonTextures = moonTex;
             ResourceLocation res = ObfuscationReflectionHelper.getPrivateValue(RenderGlobal.class, null, "field_110927_h");
             ObfuscationReflectionHelper.setPrivateValue(ResourceLocation.class, res, moonTex == null ? "minecraft" : Nyx.ID, "field_110626_a");
             ObfuscationReflectionHelper.setPrivateValue(ResourceLocation.class, res, moonTex == null ? "textures/environment/moon_phases.png" : "textures/moon/" + moonTex + ".png", "field_110625_b");
         }
 
-        // https://minecraft.wiki/w/Daylight_cycle#24-hour_Minecraft_day
-        // 13702: The sun disappears on the horizon
-        // 22300: The sun appears on the horizon
         String sunTex = nyx.currentSolarEvent != null ? nyx.currentSolarEvent.getSunTexture() : null;
-        if (!Objects.equals(sunTex, lastSunTextures) && (sunTex != null || (time > 13702 && time < 22300))) {
+        if (!Objects.equals(sunTex, lastSunTextures)) {
             lastSunTextures = sunTex;
             ResourceLocation res = ObfuscationReflectionHelper.getPrivateValue(RenderGlobal.class, null, "field_110928_i");
             ObfuscationReflectionHelper.setPrivateValue(ResourceLocation.class, res, sunTex == null ? "minecraft" : Nyx.ID, "field_110626_a");
