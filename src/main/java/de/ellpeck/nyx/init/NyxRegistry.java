@@ -7,10 +7,13 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.SoundEvent;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.CapabilityManager;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -22,7 +25,7 @@ public final class NyxRegistry {
     public static final SoundType DENSE_CRYSTAL = new SoundType(1.0F, 1.0F, NyxSoundEvents.BLOCK_DENSE_CRYSTAL_BREAK.getSoundEvent(), NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_STEP.getSoundEvent(), NyxSoundEvents.BLOCK_DENSE_CRYSTAL_PLACE.getSoundEvent(), NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_HIT.getSoundEvent(), NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_HIT.getSoundEvent());
     public static final SoundType LIGHT_CRYSTAL = new SoundType(1.0F, 1.0F, NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_BREAK.getSoundEvent(), NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_STEP.getSoundEvent(), NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_PLACE.getSoundEvent(), NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_HIT.getSoundEvent(), NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_HIT.getSoundEvent());
     public static final SoundType METEORIC_ROCK = new SoundType(1.0F, 1.0F, NyxSoundEvents.BLOCK_METEORIC_ROCK_BREAK.getSoundEvent(), NyxSoundEvents.BLOCK_METEORIC_ROCK_STEP.getSoundEvent(), NyxSoundEvents.BLOCK_METEORIC_ROCK_PLACE.getSoundEvent(), NyxSoundEvents.BLOCK_METEORIC_ROCK_STEP.getSoundEvent(), NyxSoundEvents.BLOCK_METEORIC_ROCK_STEP.getSoundEvent());
-    
+
     public static final CreativeTabs CREATIVE_TAB = new CreativeTabs(Nyx.ID) {
         @Override
         public ItemStack createIcon() {
@@ -56,7 +59,7 @@ public final class NyxRegistry {
         GameRegistry.addSmelting(new ItemStack(NyxBlocks.kreknoriteRock), new ItemStack(NyxItems.kreknoriteShard), 1.5F);
         GameRegistry.addSmelting(new ItemStack(NyxItems.meteoriteShard), new ItemStack(NyxItems.meteoriteIngot), 1.0F);
         GameRegistry.addSmelting(new ItemStack(NyxBlocks.meteoriteRock), new ItemStack(NyxItems.meteoriteShard), 1.0F);
-        
+
         OreDictionary.registerOre("blockFrezarite", new ItemStack(NyxBlocks.frezariteBlock));
         OreDictionary.registerOre("blockKreknorite", new ItemStack(NyxBlocks.kreknoriteBlock));
         OreDictionary.registerOre("blockMeteorite", new ItemStack(NyxBlocks.meteoriteBlock));
@@ -70,5 +73,12 @@ public final class NyxRegistry {
         OreDictionary.registerOre("ingotFrezarite", new ItemStack(NyxItems.frezariteIngot));
         OreDictionary.registerOre("ingotKreknorite", new ItemStack(NyxItems.kreknoriteIngot));
         OreDictionary.registerOre("ingotMeteorite", new ItemStack(NyxItems.meteoriteIngot));
+    }
+
+    @SubscribeEvent
+    public static void registerSoundEvents(RegistryEvent.Register<SoundEvent> event) {
+        for (NyxSoundEvents soundEvents : NyxSoundEvents.values()) {
+            event.getRegistry().register(soundEvents.getSoundEvent());
+        }
     }
 }
