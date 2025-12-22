@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import com.invadermonky.futurefireproof.api.IFireproofBlock;
+
 import de.ellpeck.nyx.init.NyxBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -14,8 +16,11 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.Optional;
 
-public class NyxBlock extends Block {
+// If Future Fireproof is installed, make it fireproof like Netherite!
+@Optional.Interface(modid = "futurefireproof", iface = "com.invadermonky.futurefireproof.api.IFireproofBlock", striprefs = true)
+public class NyxBlock extends Block implements IFireproofBlock {
     public NyxBlock(Material material, MapColor mapColor, float hardness, float resistance, SoundType soundType) {
         super(material, mapColor);
         this.setHardness(hardness);
