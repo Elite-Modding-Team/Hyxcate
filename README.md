@@ -132,3 +132,7 @@ Want to help translating? Submit a [**Pull Request**](https://github.com/Elite-M
 - Fire Breath.wav by bspiller5 -- https://freesound.org/s/157616/ -- License: Creative Commons 0
 - Scary noise by SamsterBirdies -- https://freesound.org/s/555382/ -- License: Creative Commons 0
 - Red Sun in the Sky - Note Block Cover by Jimmy145 -- https://youtu.be/PCERgEtiX7c
+
+---
+
+![Doodle by Kimiko0402](docs/doodle.png)
