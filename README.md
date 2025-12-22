@@ -41,6 +41,12 @@
 - **Grim Eclipse:** The sun gets blocked by an unknown planet-sized object. Hostile mobs will continue to spawn and not be able to burn under the sun as if it were an extended night. **NOTE:** It's not considered an actual eclipse and we're not exactly sure what the object blocking the sun is...
 - **Red Giant:** The sun will temporarily exhaust its hydrogen fuel in its core, thankfully the world is resilient enough to handle the immense heat. Currently, this event is mostly cosmetic and still a work in progress!
 
+#### 🐈 **Creatures**
+
+- **Alien Creeper:** This very dangerous creeper variant that is found exclusively at meteor crash sites has over 80 health and is always charged. Does not like being around **Alien Kitties** and **Comet Kitties**.
+- **Alien Kitty:** These cats are extraterrestrial and have 40 health! They are found exclusively at meteor crash sites and they tend to scare away **Alien Creepers**.
+- **Comet Kitty:** Same as the **Alien Kitty** except they're a super intelligent cat species exploring the depths of space. Some of them have hitched a ride on a meteor by accident.
+
 #### ☄️ Materials
 
 ![Hyxcate Materials](docs/materials.png)
@@ -64,6 +70,25 @@
 - **Bow of Lightspeed:** This bow can fire arrows extremely fast and make them pack a punch!
 - **Beam Swords:** These weapons are of pure plasma and energy, they will cut through even the strongest armor! They not only ignore armor, they will also ignore invincibility frames.
 - **Celestial Warhammer:** This warhammer is of the stars! Hold right-click to hit the ground and fly up onto the air, then once you hit the ground, you'll deal a large AoE attack that will knock all your foes away and inflict them with the **Astral Erosion** effect.
+
+#### 🧪 **Potion Effects**
+
+- **Astral Erosion:** Inflicts damage over time (2 damage + 2 per level) and will damage faster per level. The affected user will glow and damage frames will also be completely ignored while it is active.
+- **Deep Freeze:** Inflicts damage over time (1 damage + 1 per level) and will damage faster per level. It also provides a wide variety of debuffs: -25% **Jump Height** (-50% on Deep Freeze II and above), -25% **Speed** per level, -20% **Attack Speed** per level, and -20% **Mining Speed** per level.
+- **Inferno:** Inflicts damage over time (1 damage + 1 per level) and will damage faster per level. Affected users that are fire resistant or have the **Fire Resistance** effect applied will have the damaged doubled instead of being immune to it.
+- **Paralysis:** Inflicts damage over time (1 damage + 1 per level) and will damage faster per level. Completely disables AI on affected mobs while players will become completely immobile and are not able to use any tools. **Mining Speed** is also reduced by 100%.
+
+#### 📚 **Attributes**
+
+- **Explosion Resistance:** Exclusive to **Tektite** armor, it reduces damage against explosions similar to **Blast Protection**. The maximum **Explosion Resistance** is **+100%**.
+- **Magnetization:** Exclusive to **Meteorite** armor and tools, nearby items will be drawn towards you. The higher the **Magnetization**, the higher the pull strength. The maximum **Magnetization** is **+10**.
+- **Paralysis Chance:** Exclusive to **Tektite** tools, it will have a chance to inflict **Paralysis** on the hit target. The maximum **Paralysis Chance** is **+100%**.
+
+#### 📖 **Enchantments**
+
+- **Lunar Edge:** Adds bonus melee damage to the affected armor piece similar to **Sharpness**, the amount of bonus melee damage applied is increased during the night. Incompatible with **Bane of Arthropods**, **Sharpness**, and **Smite**. The max level is **V**.
+- **Lunar Shield:** Adds bonus damage reduction to the affected armor piece similar to **Protection**, the amount of damage reduction applied is increased during the night. Incompatible with **Blast Protection**, **Fire Protection**, **Projectile Protection**, and **Protection**. The max level is **IV**.
+- **Magnetization:** Enchantment counterpart of the attribute of the same name, when applied to any tool or armor, nearby items will be drawn towards you. Each level will increase the pull strength. Incompatible with **Meteorite** equipment. The max level is **V**.
 
 ### 🔁 **Mod Integration**
 
