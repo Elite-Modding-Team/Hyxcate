@@ -95,7 +95,7 @@ public class NyxEntityStellarProtector extends EntityMob implements IMob {
     @Nonnull
     @Override
     protected ResourceLocation getLootTable() {
-        return NyxEntities.ALIEN_CREEPER;
+        return null;
     }
 
     /**
