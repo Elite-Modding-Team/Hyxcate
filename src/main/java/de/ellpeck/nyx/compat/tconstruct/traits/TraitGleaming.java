@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import slimeknights.tconstruct.library.traits.AbstractTrait;
 
 public class TraitGleaming extends AbstractTrait {
-    public static final float DAMAGE_MULT = 0.5F;
+    public static final float DAMAGE_MULT = 0.4F;
 
     public TraitGleaming() {
         super(Nyx.ID + "." + "gleaming", 0xA36BB4);

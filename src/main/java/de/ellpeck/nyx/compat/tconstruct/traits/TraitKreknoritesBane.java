@@ -1,8 +1,8 @@
 package de.ellpeck.nyx.compat.tconstruct.traits;
 
 import de.ellpeck.nyx.Nyx;
+import de.ellpeck.nyx.init.NyxPotions;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import slimeknights.tconstruct.library.traits.AbstractTrait;
@@ -14,8 +14,8 @@ public class TraitKreknoritesBane extends AbstractTrait {
 
     @Override
     public void onHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damage, boolean isCritical) {
-        int level = 0;
-        PotionEffect potionEffect = target.getActivePotionEffect(MobEffects.WITHER);
+        int level = -1;
+        PotionEffect potionEffect = target.getActivePotionEffect(NyxPotions.INFERNO);
 
         if (potionEffect != null) {
             level = potionEffect.getAmplifier();
@@ -23,7 +23,6 @@ public class TraitKreknoritesBane extends AbstractTrait {
 
         level = Math.min(4, level + 1);
 
-        target.addPotionEffect(new PotionEffect(MobEffects.WITHER, 5 * 20, level));
-        target.setFire(level + 1);
+        target.addPotionEffect(new PotionEffect(NyxPotions.INFERNO, 3 * 20, level));
     }
 }

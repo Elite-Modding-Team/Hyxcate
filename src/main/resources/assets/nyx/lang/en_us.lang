@@ -193,21 +193,15 @@ material.nyx.tektite.name=Tektite
 modifier.nyx.feint.name=Feint
 modifier.nyx.feint.desc=§oFaster than the speed of light!§r\nYour tool has a 20% chance to deal an additional +25% damage while also gaining the ability to pierce through armor.
 modifier.nyx.frezarites_bane.name=Frezarite's Bane
-modifier.nyx.frezarites_bane.desc=§oIt's a nuclear winter!§r\nSuccessful hits greatly slows your target more and more.
-modifier.nyx.glacier.name=Glacier
-modifier.nyx.glacier.desc=§oPK Freeze!§r\nAll attacks will cause a small explosion that deals area of effect damage. All affected mobs will also become inflicted with Slowness III for a few seconds.
+modifier.nyx.frezarites_bane.desc=§oIt's a nuclear winter!§r\nSuccessful hits inflicts Deep Freeze on your target more and more.
 modifier.nyx.gleaming.name=Gleaming
-modifier.nyx.gleaming.desc=§oCrystal Power!§r\nYour tool deals +50% damage, less bonus damage is dealt the more lower your health is.
-modifier.nyx.hypercharge.name=Hypercharge
-modifier.nyx.hypercharge.desc=§oMaximum power!§r\nHitting a target or breaking a block has a chance to charge you up with Haste IV and Strength II for a few seconds!
+modifier.nyx.gleaming.desc=§oCrystal Power!§r\nYour tool deals +40% damage, less bonus damage is dealt the more lower your health is.
 modifier.nyx.kreknorites_bane.name=Kreknorite's Bane
-modifier.nyx.kreknorites_bane.desc=§oThe Nether right at your doorstep!§r\nSuccessful hits greatly withers your target more and more. The target will also be set on fire.
+modifier.nyx.kreknorites_bane.desc=§oHell right at your doorstep!§r\nSuccessful hits inflicts Inferno on your target more and more.
 modifier.nyx.stunlock.name=Stunlock
-modifier.nyx.stunlock.desc=§oStay put!§r\nHit targets have a chance to become stunned and be completely immobile for a few seconds.
+modifier.nyx.stunlock.desc=§oStay put!§r\nHit targets have a 15% chance to become paralyzed and be completely immobile for a few seconds.
 modifier.nyx.supercharge.name=Supercharge
 modifier.nyx.supercharge.desc=§oSupercharge me!§r\nHitting a target or breaking a block has a chance to charge you up with Haste III for a few seconds!
-modifier.nyx.volcano.name=Volcano
-modifier.nyx.volcano.desc=§oDid somebody say boom?!§r\nAll attacks will cause a small explosion that deals area of effect damage. All affected mobs will also be set on fire and become inflicted with Wither II.
 
 # Mod Integration - Antique Armory (Construct's Armory)
 modifier.nyx.astral_plating_armor.name=Astral Plating

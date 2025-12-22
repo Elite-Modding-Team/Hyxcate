@@ -1,6 +1,7 @@
 package de.ellpeck.nyx.compat.tconstruct.traits;
 
 import de.ellpeck.nyx.Nyx;
+import de.ellpeck.nyx.util.NyxUtils;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
@@ -19,7 +20,7 @@ public class TraitSupercharge extends AbstractTrait {
 
     @Override
     public void afterBlockBreak(ItemStack tool, World world, IBlockState state, BlockPos pos, EntityLivingBase player, boolean wasEffective) {
-        if (random.nextInt(10) == 0 && wasEffective) {
+        if (NyxUtils.setChance(0.1F) && wasEffective) {
             player.world.playSound(null, player.posX, player.posY, player.posZ, Sounds.shocking_discharge, SoundCategory.PLAYERS, 0.5F, 0.5F / (player.world.rand.nextFloat() * 0.4F + 1.2F));
             player.addPotionEffect(new PotionEffect(MobEffects.HASTE, 5 * 20, 2));
         }
@@ -27,7 +28,7 @@ public class TraitSupercharge extends AbstractTrait {
 
     @Override
     public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical, boolean wasHit) {
-        if (random.nextInt(10) == 0 && wasHit) {
+        if (NyxUtils.setChance(0.1F) && wasHit) {
             player.world.playSound(null, player.posX, player.posY, player.posZ, Sounds.shocking_discharge, SoundCategory.PLAYERS, 0.5F, 0.5F / (player.world.rand.nextFloat() * 0.4F + 1.2F));
             player.addPotionEffect(new PotionEffect(MobEffects.HASTE, 5 * 20, 2));
         }

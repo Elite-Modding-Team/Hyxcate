@@ -35,13 +35,10 @@ public class TinkersConstruct {
     // These traits are for tools and not armor
     public static final AbstractTrait FEINT = new TraitFeint();
     public static final AbstractTrait FREZARITES_BANE = new TraitFrezaritesBane();
-    public static final AbstractTrait GLACIER = new TraitGlacier();
     public static final AbstractTrait GLEAMING = new TraitGleaming();
-    public static final AbstractTrait HYPERCHARGE = new TraitHypercharge();
     public static final AbstractTrait KREKNORITES_BANE = new TraitKreknoritesBane();
     public static final AbstractTrait STUNLOCK = new TraitStunlock();
     public static final AbstractTrait SUPERCHARGE = new TraitSupercharge();
-    public static final AbstractTrait VOLCANO = new TraitVolcano();
 
     // TODO: Return bucket when picked from JEI
     public static void registerFluid(Fluid fluid) {
@@ -72,9 +69,9 @@ public class TinkersConstruct {
                 new ExtraMaterialStats(375),
                 new BowMaterialStats(0.65F, 1.7F, 10.0F));
         CYBER_CRYSTAL.addTrait(GLEAMING, MaterialTypes.HEAD);
-        CYBER_CRYSTAL.addTrait(HYPERCHARGE, MaterialTypes.HEAD);
+        CYBER_CRYSTAL.addTrait(SUPERCHARGE, MaterialTypes.HEAD);
         CYBER_CRYSTAL.addTrait(TinkerTraits.alien, MaterialTypes.HEAD);
-        CYBER_CRYSTAL.addTrait(HYPERCHARGE);
+        CYBER_CRYSTAL.addTrait(SUPERCHARGE);
         CYBER_CRYSTAL.addTrait(TinkerTraits.alien);
         TinkerRegistry.integrate(new MaterialIntegration(CYBER_CRYSTAL)).preInit();
 
@@ -108,7 +105,6 @@ public class TinkersConstruct {
                 new HandleMaterialStats(1.40F, 300),
                 new ExtraMaterialStats(400),
                 new BowMaterialStats(0.65F, 1.6F, 9.0F));
-        FREZARITE.addTrait(GLACIER, MaterialTypes.HEAD);
         FREZARITE.addTrait(FREZARITES_BANE, MaterialTypes.HEAD);
         FREZARITE.addTrait(TinkerTraits.alien, MaterialTypes.HEAD);
         FREZARITE.addTrait(FREZARITES_BANE);
@@ -122,7 +118,6 @@ public class TinkersConstruct {
                 new HandleMaterialStats(1.40F, 300),
                 new ExtraMaterialStats(400),
                 new BowMaterialStats(0.65F, 1.6F, 9.0F));
-        KREKNORITE.addTrait(VOLCANO, MaterialTypes.HEAD);
         KREKNORITE.addTrait(KREKNORITES_BANE, MaterialTypes.HEAD);
         KREKNORITE.addTrait(TinkerTraits.alien, MaterialTypes.HEAD);
         KREKNORITE.addTrait(KREKNORITES_BANE);
