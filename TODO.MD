@@ -1,9 +1,7 @@
 ## Release
 
-- Change the Meteorite effect into an attribute
 - Make sure TiC integration is balanced and just right (currently partially done)
 - Rework config file
-- Rename all class files
 - New attributes for Frezarite, Kreknorite, and Tektite to provide an effect when hit
 
 ## Future Updates
@@ -29,3 +27,4 @@
 - Rework Frezarite, Kreknorite, and Tektite sets to block a set of configurable potion effects when the full set is worn
 - Replace 'Star Air' with a cleaner approach
 - Some textures still need to be polished up and armor textures still need to be updated to be consistent
+- Rename all class files

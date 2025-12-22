@@ -27,12 +27,14 @@ public class NyxAttributes {
     public static final UUID KNOCKBACK_RESISTANCE_ID = UUID.fromString("7E042E2C-2B6A-48C3-91A4-46344C56B7DC");
     public static final UUID LUCK_ID = UUID.fromString("F6620677-4dCF-4D83-9F16-AA624695D30E");
     public static final UUID MAX_HEALTH_ID = UUID.fromString("35C90F6B-302F-4C21-B819-2FDFB866D45A");
+    public static final UUID MAGNETIZATION_ID = UUID.fromString("25CC8516-C975-4652-881C-C9B0F24867F6");
     public static final UUID MOVEMENT_SPEED_ID = UUID.fromString("F8DC5256-1DBD-465E-9326-CEFAE193D742");
     public static final UUID PARALYSIS_ID = UUID.fromString("1017D9CD-354A-4DE8-AB60-6522324F3C5C");
     public static final UUID REACH_DISTANCE_ID = UUID.fromString("CA7B27CC-504F-4007-BECE-806A8F512766");
 
     // Attributes
     public static final IAttribute EXPLOSION_RESISTANCE = new RangedAttribute(null, Nyx.ID + ".explosion_resistance", 0.0D, 0.0D, 100.0D).setShouldWatch(true); // Cannot exceed past 100%
+    public static final IAttribute MAGNETIZATION = new RangedAttribute(null, Nyx.ID + ".magnetization", 0.0D, 0.0D, 10.0D).setShouldWatch(true); // Cannot exceed 10 so it doesn't get too insane
     public static final IAttribute PARALYSIS = new RangedAttribute(null, Nyx.ID + ".paralysis", 0.0D, 0.0D, 100.0D).setShouldWatch(true); // Cannot exceed past 100%
 
     // Registers attributes to all entities
@@ -47,6 +49,7 @@ public class NyxAttributes {
             if (event.getEntity() instanceof EntityPlayer) {
                 // Player attributes go here
                 EntityPlayer player = (EntityPlayer) event.getEntity();
+                registerAttribute(player.getAttributeMap(), MAGNETIZATION);
             }
 
             // Woe to those who encounter them

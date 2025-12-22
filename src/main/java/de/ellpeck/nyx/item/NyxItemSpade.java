@@ -1,6 +1,5 @@
 package de.ellpeck.nyx.item;
 
-import de.ellpeck.nyx.event.NyxEvents;
 import de.ellpeck.nyx.init.NyxAttributes;
 import de.ellpeck.nyx.init.NyxItems;
 import de.ellpeck.nyx.item.tool.INyxTool;
@@ -34,13 +33,15 @@ import java.util.List;
 @Optional.Interface(modid = "futurefireproof", iface = "com.invadermonky.futurefireproof.api.IFireproofItem", striprefs = true)
 public class NyxItemSpade extends ItemSpade implements INyxTool, IFireproofItem {
     public double attackSpeed;
+    public AttributeModifier magnetizationAmount;
     public AttributeModifier paralysisChance;
     public EnumRarity rarity;
     private final ToolMaterial material;
 
-    public NyxItemSpade(ToolMaterial material, double attackSpeed, double paralysisChance, EnumRarity rarity) {
+    public NyxItemSpade(ToolMaterial material, double attackSpeed, int magnetizationAmount, double paralysisChance, EnumRarity rarity) {
         super(material);
         this.attackSpeed = attackSpeed;
+        this.magnetizationAmount = new AttributeModifier(NyxAttributes.MAGNETIZATION_ID.toString(), magnetizationAmount, 0);
         this.paralysisChance = new AttributeModifier(NyxAttributes.PARALYSIS_ID.toString(), paralysisChance, 1);
         this.material = material;
         this.rarity = rarity;
@@ -86,18 +87,6 @@ public class NyxItemSpade extends ItemSpade implements INyxTool, IFireproofItem 
     }
 
     @Override
-    public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
-        if (isSelected && this == NyxItems.meteoriteShovel) {
-            EntityPlayer player = (EntityPlayer) entityIn;
-
-            // If an item with Magnetization exists, cancel out the armor's effect in favor of the leveled enchants
-            if (NyxEvents.magnetizationLevel == 0) {
-                NyxEvents.pullItems(player, 4.0D, 0.0125F);
-            }
-        }
-    }
-
-    @Override
     public IRarity getForgeRarity(ItemStack stack) {
         return rarity;
     }
@@ -122,6 +111,7 @@ public class NyxItemSpade extends ItemSpade implements INyxTool, IFireproofItem 
         if (equipmentSlot == EntityEquipmentSlot.MAINHAND) {
             multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(), new AttributeModifier(ATTACK_DAMAGE_MODIFIER, NyxAttributes.ATTACK_DAMAGE_ID.toString(), this.attackDamage, 0));
             multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(), new AttributeModifier(ATTACK_SPEED_MODIFIER, NyxAttributes.ATTACK_SPEED_ID.toString(), this.attackSpeed - 4.0D, 0));
+            multimap.put(NyxAttributes.MAGNETIZATION.getName(), magnetizationAmount);
             multimap.put(NyxAttributes.PARALYSIS.getName(), paralysisChance);
         }
 

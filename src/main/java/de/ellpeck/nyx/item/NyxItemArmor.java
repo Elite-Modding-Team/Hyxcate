@@ -1,11 +1,12 @@
 package de.ellpeck.nyx.item;
 
-import de.ellpeck.nyx.event.NyxEvents;
+import de.ellpeck.nyx.init.NyxAttributes;
 import de.ellpeck.nyx.init.NyxItems;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.EnchantmentFrostWalker;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.MobEffects;
@@ -22,6 +23,7 @@ import net.minecraftforge.fml.common.Optional;
 
 import javax.annotation.Nullable;
 
+import com.google.common.collect.Multimap;
 import com.invadermonky.futurefireproof.api.IFireproofItem;
 
 import java.util.List;
@@ -29,10 +31,14 @@ import java.util.List;
 // If Future Fireproof is installed, make it fireproof like Netherite!
 @Optional.Interface(modid = "futurefireproof", iface = "com.invadermonky.futurefireproof.api.IFireproofItem", striprefs = true)
 public class NyxItemArmor extends ItemArmor implements IFireproofItem {
+    public AttributeModifier explosiveResistance;
+    public AttributeModifier magnetizationAmount;
     public EnumRarity rarity;
 
-    public NyxItemArmor(ArmorMaterial material, int renderIndex, EntityEquipmentSlot equipmentSlot, EnumRarity rarity) {
+    public NyxItemArmor(ArmorMaterial material, int renderIndex, EntityEquipmentSlot equipmentSlot, int magnetizationAmount, double explosiveResistance, EnumRarity rarity) {
         super(material, renderIndex, equipmentSlot);
+        this.magnetizationAmount = new AttributeModifier(NyxAttributes.MAGNETIZATION_ID.toString(), magnetizationAmount, 0);
+        this.explosiveResistance = new AttributeModifier(NyxAttributes.EXPLOSION_RESISTANCE_ID.toString(), explosiveResistance, 1);
         this.rarity = rarity;
     }
 
@@ -42,14 +48,6 @@ public class NyxItemArmor extends ItemArmor implements IFireproofItem {
         ItemStack chestplate = player.getItemStackFromSlot(EntityEquipmentSlot.CHEST);
         ItemStack helmet = player.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
         ItemStack leggings = player.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
-
-        // Meteorite (Any Piece) - Built-in Magnetization effect
-        if (boots.getItem() == NyxItems.meteoriteBoots || chestplate.getItem() == NyxItems.meteoriteChestplate || helmet.getItem() == NyxItems.meteoriteHelmet || leggings.getItem() == NyxItems.meteoriteLeggings) {
-            // If an item with Magnetization exists, cancel out the armor's effect in favor of the leveled enchants
-            if (NyxEvents.magnetizationLevel == 0) {
-                NyxEvents.pullItems(player, 4.0D, 0.0125F);
-            }
-        }
 
         // Frezarite (Boots) - Built-in Frost Walker effect, Frost Walker enchantment will improve the effect
         if (boots.getItem() == NyxItems.frezariteBoots) {
@@ -88,5 +86,17 @@ public class NyxItemArmor extends ItemArmor implements IFireproofItem {
         } else if (this == NyxItems.kreknoriteBoots || this == NyxItems.kreknoriteChestplate || this == NyxItems.kreknoriteHelmet || this == NyxItems.kreknoriteLeggings) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.kreknorite_armor"));
         }
+    }
+
+    @Override
+    public Multimap<String, AttributeModifier> getItemAttributeModifiers(EntityEquipmentSlot equipmentSlot) {
+        Multimap<String, AttributeModifier> multimap = super.getItemAttributeModifiers(equipmentSlot);
+
+        if (equipmentSlot == this.armorType) {
+            multimap.put(NyxAttributes.MAGNETIZATION.getName(), this.magnetizationAmount);
+            multimap.put(NyxAttributes.EXPLOSION_RESISTANCE.getName(), this.explosiveResistance);
+        }
+
+        return multimap;
     }
 }

@@ -33,8 +33,8 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class NyxToolBeamSword extends NyxItemSword {
-    public NyxToolBeamSword(ToolMaterial material, double attackSpeed, double paralysisChance, EnumRarity rarity) {
-        super(material, attackSpeed, paralysisChance, rarity);
+    public NyxToolBeamSword(ToolMaterial material, double attackSpeed, int magnetizationAmount, double paralysisChance, EnumRarity rarity) {
+        super(material, attackSpeed, magnetizationAmount, paralysisChance, rarity);
         this.attackSpeed = 1.4F;
     }
 

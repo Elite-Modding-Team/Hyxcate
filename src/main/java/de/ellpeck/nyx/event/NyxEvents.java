@@ -129,11 +129,24 @@ public final class NyxEvents {
             player.getEntityData().removeTag(Nyx.ID + ":leap_start");
         }
 
-        // TODO: Add this mechanic for meteorite tools
-        // Magnetization Enchantment, controlled by the enchantment level
         for (ItemStack stack : player.getEquipmentAndArmor()) {
+            IAttributeInstance magnetization = player.getEntityAttribute(NyxAttributes.MAGNETIZATION);
             magnetizationLevel = EnchantmentHelper.getEnchantmentLevel(NyxEnchantments.magnetization, stack);
 
+            // Magnetization Attribute
+            if (magnetization != null && !magnetization.getModifiers().isEmpty()) {
+                float magnetizationValue = 0.0F;
+
+                for (AttributeModifier attributemodifier : magnetization.getModifiers()) {
+                    magnetizationValue += (float) attributemodifier.getAmount();
+                }
+                if (magnetizationValue <= 0) return;
+
+                // Draw nearby items, with strength being based on attribute amount
+                pullItems(player, 6.0D, 0.004F + (0.002F * magnetizationValue));
+            }
+
+            // Magnetization Enchantment, controlled by the enchantment level
             if (magnetizationLevel != 0) {
                 pullItems(player, 4.0D * magnetizationLevel, 0.0125F * magnetizationLevel);
             }
