@@ -1,9 +1,11 @@
 package de.ellpeck.nyx.item;
 
 import de.ellpeck.nyx.init.NyxAttributes;
+import de.ellpeck.nyx.init.NyxEnchantments;
 import de.ellpeck.nyx.init.NyxItems;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentFrostWalker;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -98,5 +100,11 @@ public class NyxItemArmor extends ItemArmor implements IFireproofItem {
         }
 
         return multimap;
+    }
+
+    @Override
+    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+        if (enchantment == NyxEnchantments.magnetization && this.magnetizationAmount.getAmount() > 0) return false;
+        return super.canApplyAtEnchantingTable(stack, enchantment);
     }
 }
