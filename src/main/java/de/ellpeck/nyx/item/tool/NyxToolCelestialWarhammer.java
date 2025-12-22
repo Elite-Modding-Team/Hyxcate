@@ -1,12 +1,10 @@
 package de.ellpeck.nyx.item.tool;
 
 import de.ellpeck.nyx.Nyx;
-import de.ellpeck.nyx.item.NyxItemSword;
-import de.ellpeck.nyx.client.sound.NyxSoundCelestialWarhammer;
 import de.ellpeck.nyx.init.NyxSoundEvents;
+import de.ellpeck.nyx.item.NyxItemSword;
 import de.ellpeck.nyx.util.NyxUtils;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -103,7 +101,7 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
             world.playSound(null, entityLiving.getPosition(), NyxSoundEvents.ITEM_CELESTIAL_WARHAMMER_HIT.getSoundEvent(), SoundCategory.PLAYERS, 1.35F, 1.5F / (world.rand.nextFloat() * 0.4F + 0.8F));
             ((WorldServer) world).spawnParticle(EnumParticleTypes.END_ROD, false, entityLiving.posX, entityLiving.posY + entityLiving.getEyeHeight(), entityLiving.posZ, 30, 0.25, 0.25, 0.25, 0.05);
         } else if (FMLLaunchHandler.side().isClient()) {
-            Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundCelestialWarhammer(1.35F, 1.0F / (world.rand.nextFloat() * 0.4F + 0.8F)));
+            NyxUtils.playClientSoundWarhammer(world);
         }
     }
 

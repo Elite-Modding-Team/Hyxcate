@@ -2,7 +2,6 @@ package de.ellpeck.nyx.client.sound;
 
 import de.ellpeck.nyx.init.NyxSoundEvents;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.audio.ISound;
 import net.minecraft.client.audio.MovingSound;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -19,7 +18,7 @@ public class NyxSoundBeamSword extends MovingSound {
 
     public NyxSoundBeamSword(ItemStack swordStack) {
         super(NyxSoundEvents.ITEM_BEAM_SWORD_IDLE.getSoundEvent(), SoundCategory.PLAYERS);
-        this.attenuationType = ISound.AttenuationType.NONE;
+        this.attenuationType = AttenuationType.NONE;
         this.repeat = true;
         this.repeatDelay = 0;
         this.player = Minecraft.getMinecraft().player;

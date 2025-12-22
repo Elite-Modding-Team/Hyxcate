@@ -1,12 +1,10 @@
 package de.ellpeck.nyx.item.tool;
 
 import de.ellpeck.nyx.Nyx;
-import de.ellpeck.nyx.item.NyxItemSword;
-import de.ellpeck.nyx.client.sound.NyxSoundBeamSword;
 import de.ellpeck.nyx.init.NyxSoundEvents;
+import de.ellpeck.nyx.item.NyxItemSword;
 import de.ellpeck.nyx.util.NyxUtils;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
@@ -99,7 +97,7 @@ public class NyxToolBeamSword extends NyxItemSword {
         boolean wasEquipped = tag.getBoolean("wasEquipped");
         if (isSelected) {
             if (!wasEquipped) {
-                Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundBeamSword(stack));
+                NyxUtils.playClientSoundBeamSword(stack);
                 tag.setBoolean("wasEquipped", true);
             }
         } else {

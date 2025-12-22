@@ -2,9 +2,7 @@ package de.ellpeck.nyx.item;
 
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.init.NyxBlocks;
-import de.ellpeck.nyx.init.NyxSoundEvents;
-import de.ellpeck.nyx.client.sound.NyxSoundFallenEntity;
-import net.minecraft.client.Minecraft;
+import de.ellpeck.nyx.util.NyxUtils;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.item.EntityItem;
@@ -39,7 +37,7 @@ public class NyxItemFallenStar extends Item implements IFireproofItem {
                 entityItem.world.spawnParticle(EnumParticleTypes.FIREWORKS_SPARK, true, entityItem.posX, entityItem.posY + 0.5F, entityItem.posZ, mX, mY, mZ);
             }
             if (entityItem.ticksExisted == 5 && FMLLaunchHandler.side().isClient()) {
-                Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallenEntity(entityItem, NyxSoundEvents.ENTITY_STAR_IDLE.getSoundEvent(), 1F));
+                NyxUtils.playClientSoundFallenStar(entityItem);
             }
             return false;
         }

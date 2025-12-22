@@ -21,13 +21,11 @@ import de.ellpeck.nyx.mixin.common.NyxEntityAccessor;
 import de.ellpeck.nyx.network.NyxPacketHandler;
 import de.ellpeck.nyx.network.NyxPacketWorld;
 import de.ellpeck.nyx.init.NyxSoundEvents;
-import de.ellpeck.nyx.client.sound.NyxSoundFallingEntity;
 import de.ellpeck.nyx.util.NyxDamageSource;
 import de.ellpeck.nyx.util.NyxUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBed;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -577,9 +575,9 @@ public final class NyxEvents {
         if (!event.getWorld().isRemote) return;
 
         if (event.getEntity() instanceof NyxEntityFallingMeteor) {
-            Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallingEntity(event.getEntity(), NyxSoundEvents.ENTITY_METEOR_FALLING.getSoundEvent(), 5F));
+            NyxUtils.playClientSoundFallingMeteor(event.getEntity());
         } else if (event.getEntity() instanceof NyxEntityFallingStar) {
-            Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallingEntity(event.getEntity(), NyxSoundEvents.ENTITY_STAR_FALLING.getSoundEvent(), (float) NyxConfig.fallingStarAmbientVolume));
+            NyxUtils.playClientSoundFallingStar(event.getEntity());
         }
     }
 }
