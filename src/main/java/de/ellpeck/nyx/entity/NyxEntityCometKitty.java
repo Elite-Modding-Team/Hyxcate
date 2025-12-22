@@ -1,7 +1,6 @@
 package de.ellpeck.nyx.entity;
 
 import de.ellpeck.nyx.Nyx;
-import de.ellpeck.nyx.init.NyxEntities;
 import de.ellpeck.nyx.init.NyxLootTables;
 import de.ellpeck.nyx.init.NyxSoundEvents;
 import net.minecraft.client.resources.I18n;
