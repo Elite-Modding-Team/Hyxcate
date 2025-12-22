@@ -70,6 +70,7 @@
 - **Bow of Lightspeed:** This bow can fire arrows extremely fast and make them pack a punch!
 - **Beam Swords:** These weapons are of pure plasma and energy, they will cut through even the strongest armor! They not only ignore armor, they will also ignore invincibility frames.
 - **Celestial Warhammer:** This warhammer is of the stars! Hold right-click to hit the ground and fly up onto the air, then once you hit the ground, you'll deal a large AoE attack that will knock all your foes away and inflict them with the **Astral Erosion** effect.
+- **Meteor Detector:** This high-tech device points you to the nearest meteor crash site. Right-clicking will give you the estimated amount of blocks left to reach the destination. Holding shift and right-clicking will give you the chance to delete the current location so that it can point towards another area instead.
 
 #### 🧪 **Potion Effects**
 
