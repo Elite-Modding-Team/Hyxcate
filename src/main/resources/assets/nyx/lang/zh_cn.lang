@@ -1,0 +1,220 @@
+itemGroup.nyx=宙蚀之刻
+# ↑我知道这个词看起来和hyxcate这个原词不一致，但是这个译名我和作者讨论过了
+# Attributes
+attribute.name.nyx.explosion_resistance=爆炸抗性
+attribute.name.nyx.magnetization=磁性
+attribute.name.nyx.paralysis=麻痹概率
+
+# Blocks
+tile.nyx.star_block.name=流星块
+tile.nyx.chiseled_star_block.name=錾制流星块
+tile.nyx.cracked_star_block.name=裂纹流星块
+tile.nyx.star_stairs.name=流星楼梯
+tile.nyx.star_slab.name=流星台阶
+tile.nyx.star_slab_double.name=流星双层台阶
+tile.nyx.cyber_crystal.name=赛博水晶
+tile.nyx.frezarite_block.name=霜冻陨石块
+tile.nyx.frezarite_rock.name=霜冻陨石
+tile.nyx.kreknorite_block.name=炽燃陨石块
+tile.nyx.kreknorite_rock.name=炽燃陨石
+tile.nyx.meteorite_block.name=陨石块
+tile.nyx.meteorite_rock.name=陨石
+tile.nyx.meteorite_rock_hot.name=炽热陨石
+tile.nyx.tektite_block.name=玻陨石块
+tile.nyx.tektite_glass.name=玻陨石玻璃
+
+# 命令
+command.nyx.force.usage=/nyxforce <事件名> 触发一次月相/日相事件
+command.nyx.force.invalid=不存在名为 %s 的月相/日相事件
+command.nyx.force.success=%s 将在下一个可用的夜晚/白天发生
+command.nyx.force.clear=已清除强制触发的事件
+command.nyx.meteor.usage=/nyxmeteor [x坐标] [z坐标] [大小 <1-3>] [类型 <1-4>] [追踪 <true/false>] 生成一颗陨石
+command.nyx.meteor.success=已在 %s, %s, %s 生成陨石
+
+# 死亡信息
+death.attack.nyx_celestial=%1$s 被天体能量化为灰烬
+death.attack.nyx_deep_freeze=%1$s 冻结而亡
+death.attack.nyx_deep_freeze.player=%1$s 被 %2$s 冻结致死
+death.attack.nyx_inferno=%1$s 被炼狱之火吞噬
+death.attack.nyx_inferno.player=%1$s 被 %2$s 用炼狱之火焚烧致死
+death.attack.nyx_paralysis=%1$s 无法掌控电能
+death.attack.nyx_paralysis.player=%1$s 被 %2$s 麻痹致死
+
+# 附魔
+enchantment.nyx.lunar_edge=月刃
+enchantment.nyx.lunar_edge.desc=提升物品伤害，效果强度受当前月相影响
+enchantment.nyx.lunar_shield=月盾
+enchantment.nyx.lunar_shield.desc=降低大多数来源的伤害，效果强度受当前月相影响
+enchantment.nyx.magnetization=磁性
+enchantment.nyx.magnetization.desc=将物品吸附至自身，每级提升吸附范围和吸力
+
+# 实体
+entity.nyx.alien_creeper.name=外星爬行者
+entity.nyx.alien_kitty.name=外星猫咪
+entity.nyx.comet_kitty.name=彗星猫咪
+entity.nyx.falling_meteor.name=坠落的陨石
+entity.nyx.falling_star.name=坠落的流星
+entity.nyx.stellar_protector.name=星际守护者
+
+# 流体
+fluid.frezarite.name=熔融霜冻陨石
+fluid.kreknorite.name=熔融炽燃陨石
+fluid.meteorite.name=熔融陨石
+
+# 信息提示
+info.nyx.day_enchanting=现在光线过强，无法附魔
+info.nyx.blue_moon=蓝月正在升起...
+info.nyx.star_shower=流星开始从天际坠落...
+info.nyx.full_moon=满月正在升起...
+info.nyx.blood_moon=血月正在升起...
+info.nyx.blood_moon_sleeping=入睡的想法使你感到不安
+info.nyx.meteor=附近有一颗陨石坠落！
+info.nyx.meteor_far=远方有一颗陨石坠落！
+info.nyx.meteor_verbose=陨石坠落于
+info.nyx.red_giant=太阳已演变为红巨星！
+info.nyx.grim_eclipse=有物体遮蔽了太阳！幽暗日食即将开始...
+info.nyx.meteor_detector.none_found=未发现陨石坠落点！
+info.nyx.meteor_detector.distance=最近的陨石坠落点距离你 %s 格。
+info.nyx.meteor_detector.confirm=是否从数据库中删除坐标 %d, %d, %d 处的陨石坠落点？
+info.nyx.meteor_detector.sneak_confirm=[潜行+右键点击]确认删除。
+info.nyx.meteor_detector.no_pending=无待删除项，或陨石坠落点距离过远。
+info.nyx.meteor_detector.expired=确认已过期。
+info.nyx.meteor_detector.wrong_dimension=你必须处于同一维度。
+info.nyx.meteor_detector.moved_too_far=你已偏离之前的位置过远。
+info.nyx.meteor_detector.deleted=坐标 %d, %d, %d 处的陨石坠落点已删除！
+info.nyx.meteor_detector.reset=探测器重置中，请稍候。
+info.nyx.meteor_detector.already_gone=该陨石坠落点已不存在。
+
+# 物品
+item.nyx.fallen_star.name=流星
+item.nyx.meteor_detector.name=陨石探测器
+item.nyx.celestial_warhammer.name=天体战锤
+item.nyx.tektite_bow.name=光速之弓
+item.nyx.tektite_pickaxe.name=玻陨石镐
+item.nyx.tektite_axe.name=玻陨石斧
+item.nyx.tektite_shovel.name=玻陨石铲
+item.nyx.tektite_hoe.name=玻陨石锄
+item.nyx.tektite_sword.name=玻陨石剑
+item.nyx.tektite_greatsword.name=玻陨石大剑
+item.nyx.tektite_helmet.name=玻陨石头盔
+item.nyx.tektite_chestplate.name=玻陨石胸甲
+item.nyx.tektite_leggings.name=玻陨石护腿
+item.nyx.tektite_boots.name=玻陨石靴子
+item.nyx.meteorite_shard.name=陨石碎片
+item.nyx.meteorite_ingot.name=陨石锭
+item.nyx.meteorite_pickaxe.name=陨石镐
+item.nyx.meteorite_axe.name=陨石斧
+item.nyx.meteorite_shovel.name=陨石铲
+item.nyx.meteorite_hoe.name=陨石锄
+item.nyx.meteorite_sword.name=陨石剑
+item.nyx.meteorite_helmet.name=陨石头盔
+item.nyx.meteorite_chestplate.name=陨石胸甲
+item.nyx.meteorite_leggings.name=陨石护腿
+item.nyx.meteorite_boots.name=陨石靴子
+item.nyx.frezarite_crystal.name=霜冻陨石晶体
+item.nyx.frezarite_ingot.name=霜冻陨石锭
+item.nyx.frezarite_pickaxe.name=霜冻陨石镐
+item.nyx.frezarite_axe.name=霜冻陨石斧
+item.nyx.frezarite_shovel.name=霜冻陨石铲
+item.nyx.frezarite_hoe.name=霜冻陨石锄
+item.nyx.frezarite_sword.name=霜冻陨石剑
+item.nyx.frezarite_helmet.name=霜冻陨石头盔
+item.nyx.frezarite_chestplate.name=霜冻陨石胸甲
+item.nyx.frezarite_leggings.name=霜冻陨石护腿
+item.nyx.frezarite_boots.name=霜冻陨石靴子
+item.nyx.kreknorite_shard.name=炽燃陨石碎片
+item.nyx.kreknorite_ingot.name=炽燃陨石锭
+item.nyx.kreknorite_pickaxe.name=炽燃陨石镐
+item.nyx.kreknorite_axe.name=炽燃陨石斧
+item.nyx.kreknorite_shovel.name=炽燃陨石铲
+item.nyx.kreknorite_hoe.name=炽燃陨石锄
+item.nyx.kreknorite_sword.name=炽燃陨石剑
+item.nyx.kreknorite_helmet.name=炽燃陨石头盔
+item.nyx.kreknorite_chestplate.name=炽燃陨石胸甲
+item.nyx.kreknorite_leggings.name=炽燃陨石护腿
+item.nyx.kreknorite_boots.name=炽燃陨石靴子
+item.nyx.tektite_gem_cluster.name=玻陨石晶簇
+item.nyx.celestial_emblem.name=天体徽章
+item.nyx.fallen_star_beam_sword.name=光束剑·S型
+item.nyx.meteorite_beam_sword.name=光束剑·M型
+item.nyx.frezarite_beam_sword.name=光束剑·F型
+item.nyx.kreknorite_beam_sword.name=光束剑·K型
+item.nyx.tektite_beam_sword.name=光束剑·T型
+item.nyx.cyber_crystal_beam_sword.name=光束剑·C型
+
+# Tooltips
+tooltip.nyx.beam_sword=刀刃散发独特光芒，夺目且致命。所有攻击可完全无视盔甲与无敌帧。
+tooltip.nyx.blastproof=防爆
+tooltip.nyx.celestial_emblem=蕴含澎湃的天体能量，散发着脉动光芒！
+tooltip.nyx.celestial_warhammer=攻击范围更广，击退效果更强。按住右键可跃至空中发动重击，对所有目标施加星界侵蚀（0:08）。
+tooltip.nyx.cyber_crystal=能够汇聚并增幅能量。
+tooltip.nyx.fallen_star=闪烁不止！
+tooltip.nyx.frezarite_armor=装备全套可获得无限水下呼吸效果。
+tooltip.nyx.frezarite_tool=所有攻击附带范围伤害，对所有目标施加深度冻结（0:08）。
+tooltip.nyx.kreknorite_armor=装备全套可获得无限火焰抗性效果。
+tooltip.nyx.kreknorite_tool=所有攻击附带范围伤害，对所有目标施加炼狱之火（0:08）。
+tooltip.nyx.meteor_detector=指引你前往附近的陨石坠落点。
+tooltip.nyx.meteor_detector.hint=右键点击可追踪陨石坠落点的距离（单位：格）。
+tooltip.nyx.meteor_detector.hint2=潜行+右键点击可删除当前追踪的陨石坠落点。
+tooltip.nyx.shift=按住SHIFT查看更多信息...
+tooltip.nyx.tektite_bow=发射速度极快的强力箭矢。
+tooltip.nyx.tektite_gem_cluster=蕴含大量电能。
+tooltip.nyx.tektite_greatsword=所有攻击的范围更广。
+
+# 药水效果
+effect.nyx.astral_erosion.name=星界侵蚀
+effect.nyx.deep_freeze.name=深度冻结
+effect.nyx.inferno.name=炼狱之火
+effect.nyx.paralysis.name=麻痹
+
+lingering_potion.effect.paralysis=滞留型麻痹药水
+potion.effect.paralysis=麻痹药水
+splash_potion.effect.paralysis=喷溅型麻痹药水
+tipped_arrow.effect.paralysis=麻痹之箭
+
+# 模组集成 - JEI
+item.nyx.fallen_star.jei_desc=流星仅在夜间出现。\n\n若你听到神秘声响，且看到天空中有粒子轨迹向地面坠落，那便是流星n\n落地后，陨星会发出光芒并释放粒子效果，便于你寻找。
+item.nyx.frezarite_boots.jei_desc=装备霜冻陨石靴时，会将你下方的水暂时冻结为霜冰。\n若靴子附魔冰霜行者，冻结范围将扩大。
+item.nyx.tektite_gem_cluster.jei_desc=成功挖掘任何类型的炽热陨石时，有极低概率掉落玻陨石晶簇。\n\n仅在陨石坠落点生成的生物，被击杀后也有极低概率掉落。
+tile.nyx.cyber_crystal.jei_desc=赛博水晶在所有类型的陨石坠落点中极为稀有，且免疫爆炸。\n\n挖掘需4级挖掘等级，陨石材质工具可满足要求。
+tile.nyx.frezarite_rock.jei_desc=霜冻陨石在陨石坠落点中属于不常见生成，挖掘可获得碎片，但放置过久会冷却。\n\n时运附魔对此类方块无效，挖掘需4级挖掘等级。\n\n陨石材质工具可满足挖掘要求。
+tile.nyx.kreknorite_rock.jei_desc=炽燃陨石在陨石坠落点中属于不常见生成，挖掘可获得碎片，但放置过久会冷却。\n\n时运附魔对此类方块无效，挖掘需4级挖掘等级。\n\n陨石材质工具可满足挖掘要求。
+tile.nyx.meteorite_rock.jei_desc=炽热陨石冷却后，挖掘速度会大幅提升。\n\n但此时仅25%的概率掉落碎片。\n\n\n霜冻陨石和炽燃陨石无冷却变种，冷却后会分别转化为浮冰和黑曜石。
+tile.nyx.meteorite_rock_hot.jei_desc=炽热陨石生成于陨石坠落点，挖掘可获得碎片，但放置过久会冷却。\n\n时运附魔对此类方块无效，挖掘需3级挖掘等级。\n\n钻石材质工具可满足挖掘要求。
+
+# 模组集成 - 匠魂怀古
+material.nyx.fallen_star.name=流星
+material.nyx.cyber_crystal.name=赛博水晶
+material.nyx.frezarite.name=霜冻陨石
+material.nyx.kreknorite.name=炽燃陨石
+material.nyx.meteorite.name=陨石
+material.nyx.tektite.name=玻陨石
+
+modifier.nyx.feint.name=佯攻
+modifier.nyx.feint.desc=§o超越光速！§r\n你的工具拥有20%概率造成额外+25%伤害，且可穿透盔甲。
+modifier.nyx.frezarites_bane.name=霜冻之咒
+modifier.nyx.frezarites_bane.desc=§o核冬日降临！§r\n成功命中目标时，会持续为其施加深度冻结效果。
+modifier.nyx.gleaming.name=璀璨
+modifier.nyx.gleaming.desc=§o水晶之力！§r\n你的工具造成+40%伤害，生命值越低，额外伤害加成越少。
+modifier.nyx.kreknorites_bane.name=炽燃之咒
+modifier.nyx.kreknorites_bane.desc=§o这是献给你们的地狱！§r\n成功命中目标时，会持续为其施加炼狱之火效果。
+modifier.nyx.stunlock.name=眩晕禁锢
+modifier.nyx.stunlock.desc=§o待着别动！§r\n命中目标时有15%概率使其麻痹，8秒内完全无法反抗。
+modifier.nyx.supercharge.name=超级充能
+modifier.nyx.supercharge.desc=§o§o启动超载!§r\n命中目标或破坏方块时有10%概率获得急迫III效果，持续5秒！
+
+# 模组集成 - 匠魂盔甲怀古
+modifier.nyx.astral_plating_armor.name=星界镀层
+modifier.nyx.astral_plating_armor.desc=§o呼叫银河总部！§r\n你的盔甲可完全抵消50%的火焰伤害与溺水伤害。
+modifier.nyx.frezarites_ward_armor.name=霜冻之护
+modifier.nyx.frezarites_ward_armor.desc=§o核冬日降临！§r\n受到伤害时有概率（每件盔甲10%）持续为攻击者施加深度冻结效果。
+modifier.nyx.gleaming_armor.name=璀璨
+modifier.nyx.gleaming_armor.desc=§o水晶之力！§r\n你的盔甲可完全抵消40%的总伤害，生命值越低，伤害减免效果越弱。
+modifier.nyx.kreknorites_ward_armor.name=炽燃之护
+modifier.nyx.kreknorites_ward_armor.desc=§o这是献给你们的地狱！§r\n受到伤害时有概率（每件盔甲10%）持续为攻击者施加炼狱之火效果。
+modifier.nyx.star_shield_armor.name=星辰之护
+modifier.nyx.star_shield_armor.desc=§o与星同芒！§r\n受到伤害时有概率（每件盔甲5%）完全无视该次伤害，并获得抗性III效果，持续5秒。
+modifier.nyx.stunlock_armor.name=眩晕禁锢
+modifier.nyx.stunlock_armor.desc=§o待着别动！§r\n受到伤害时有概率（每件盔甲5%）使攻击者麻痹，8秒内完全无法反抗。
+modifier.nyx.supercharge_armor.name=过载
+modifier.nyx.supercharge_armor.desc=§o启动超载!§r\n受到伤害时有概率（每件盔甲5%）获得急迫III与速度III效果，持续5秒！
