@@ -191,11 +191,11 @@ material.nyx.meteorite.name=陨石
 material.nyx.tektite.name=玻陨石
 
 modifier.nyx.feint.name=佯攻
-modifier.nyx.feint.desc=§o超越光速！§r\n你的工具拥有20%概率造成额外+25%伤害，且可穿透盔甲。
+modifier.nyx.feint.desc=§o超越光速！§r\n你的工具拥有20%概率造成额外25%且可穿透盔甲的伤害，。
 modifier.nyx.frezarites_bane.name=霜冻之咒
 modifier.nyx.frezarites_bane.desc=§o核冬日降临！§r\n成功命中目标时，会持续为其施加深度冻结效果。
 modifier.nyx.gleaming.name=璀璨
-modifier.nyx.gleaming.desc=§o水晶之力！§r\n你的工具造成+40%伤害，生命值越低，额外伤害加成越少。
+modifier.nyx.gleaming.desc=§o水晶之力！§r\n你的工具造成伤害增加40%，生命值越低，额外伤害加成越少。
 modifier.nyx.kreknorites_bane.name=炽燃之咒
 modifier.nyx.kreknorites_bane.desc=§o这是献给你们的地狱！§r\n成功命中目标时，会持续为其施加炼狱之火效果。
 modifier.nyx.stunlock.name=眩晕禁锢
