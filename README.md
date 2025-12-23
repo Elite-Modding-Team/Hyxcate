@@ -94,11 +94,11 @@
 ### 🔁 **Mod Integration**
 
 - With [**Astral Sorcery**](https://www.curseforge.com/minecraft/mc-mods/astral-sorcery) installed, Hyxcate events will never trigger on the same day the Horologium constellation (Solar Eclipse) happens.
-- With [**CraftTweaker**](https://www.curseforge.com/minecraft/mc-mods/crafttweaker) installed, current lunar and solar events can be detected. See [this explanation page](https://github.com/Elite-Modding-Team/Hyxcate/blob/main/docs/crafttweaker.md).
+- With [**CraftTweaker**](https://www.curseforge.com/minecraft/mc-mods/crafttweaker) installed, current lunar and solar events can be detected. See [this explanation page](https://github.com/Elite-Modding-Team/Hyxcate/wiki/CraftTweaker).
 - With [**Demagnetize**](https://www.curseforge.com/minecraft/mc-mods/demagnetize) installed, Hyxcate magnetization effects will not pull items around activated Demagnetizers.
 - With [**Future Fireproof**](https://www.curseforge.com/minecraft/mc-mods/future-fireproof) installed, many items and blocks added by Hyxcate will become immune to being destroyed by fire or lava, similar to Netherite from modern versions of Minecraft.
-- With [**Tinkers' Antique (Tinkers' Construct)**](https://www.curseforge.com/minecraft/mc-mods/tinkers-antique) installed, there are new tool materials to tinker with.
-- With [**Antique Armory (Construct's Armory)**](https://www.curseforge.com/minecraft/mc-mods/antique-armory) installed, there are new armor materials to tinker with.
+- With [**Tinkers' Antique (Tinkers' Construct)**](https://www.curseforge.com/minecraft/mc-mods/tinkers-antique) installed, there are new tool materials to tinker with. You can find more information on our [documentation here](https://github.com/Elite-Modding-Team/Hyxcate/wiki/Tinkers'-Construct)!
+- With [**Antique Armory (Construct's Armory)**](https://www.curseforge.com/minecraft/mc-mods/antique-armory) installed, there are new armor materials to tinker with. You can find more information on our [documentation here](https://github.com/Elite-Modding-Team/Hyxcate/wiki/Tinkers'-Construct-(Construct's-Armory))!
 - More to come!
 
 ### 👨‍💻 Main Developers, Collaborators, and Friends
@@ -107,7 +107,7 @@
 - Lead Developer ~ ACGaming
 - Sound Artist ~ PessiMysterio
 - Texture Artist ~ Ichipie1125
-- Beam Sword textures, Alien Kitty textures, and earlier weapon textures ~ Kimiko0402
+- Beam Sword textures, Alien Kitty textures, earlier weapon textures, and the space cat doodle on the bottom of this readme ~ Kimiko0402
 - Extensive feedback on earlier versions of the mod ~ xJon
 
 ### 🙏 Special Thanks
@@ -120,7 +120,7 @@
 
 ### 🌐 Translators
 
-- None yet!
+- Chinese ~ star_rain
 
 Want to help translating? Submit a [**Pull Request**](https://github.com/Elite-Modding-Team/Hyxcate/pulls) or send your translation via [**Discord**](https://acgam.ing/discord)!
 
