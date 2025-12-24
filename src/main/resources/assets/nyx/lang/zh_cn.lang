@@ -173,7 +173,7 @@ splash_potion.effect.paralysis=喷溅型麻痹药水
 tipped_arrow.effect.paralysis=麻痹之箭
 
 # 模组集成 - JEI
-item.nyx.fallen_star.jei_desc=流星仅在夜间出现。\n\n若你听到神秘声响，且看到天空中有粒子轨迹向地面坠落，那便是流星n\n落地后，陨星会发出光芒并释放粒子效果，便于你寻找。
+item.nyx.fallen_star.jei_desc=流星仅在夜间出现。\n\n若你听到神秘声响，且看到天空中有粒子轨迹向地面坠落，那便是流星\n\n落地后，陨星会发出光芒并释放粒子效果，便于你寻找。
 item.nyx.frezarite_boots.jei_desc=装备霜冻陨石靴时，会将你下方的水暂时冻结为霜冰。\n若靴子附魔冰霜行者，冻结范围将扩大。
 item.nyx.tektite_gem_cluster.jei_desc=成功挖掘任何类型的炽热陨石时，有极低概率掉落玻陨石晶簇。\n\n仅在陨石坠落点生成的生物，被击杀后也有极低概率掉落。
 tile.nyx.cyber_crystal.jei_desc=赛博水晶在所有类型的陨石坠落点中极为稀有，且免疫爆炸。\n\n挖掘需4级挖掘等级，陨石材质工具可满足要求。
@@ -191,7 +191,7 @@ material.nyx.meteorite.name=陨石
 material.nyx.tektite.name=玻陨石
 
 modifier.nyx.feint.name=佯攻
-modifier.nyx.feint.desc=§o超越光速！§r\n你的工具拥有20%概率造成额外25%且可穿透盔甲的伤害，。
+modifier.nyx.feint.desc=§o超越光速！§r\n你的工具拥有20%概率造成额外25%且可穿透盔甲的伤害。
 modifier.nyx.frezarites_bane.name=霜冻之咒
 modifier.nyx.frezarites_bane.desc=§o核冬日降临！§r\n成功命中目标时，会持续为其施加深度冻结效果。
 modifier.nyx.gleaming.name=璀璨
