@@ -1,0 +1,220 @@
+itemGroup.nyx=Hyxcate
+
+# Attributes
+attribute.name.nyx.explosion_resistance=Explosionsresistenz
+attribute.name.nyx.magnetization=Magnetisierung
+attribute.name.nyx.paralysis=Lähmungswahrscheinlichkeit
+
+# Blocks
+tile.nyx.star_block.name=Sternenblock
+tile.nyx.chiseled_star_block.name=Gemeißelter Sternenblock
+tile.nyx.cracked_star_block.name=Gerissener Sternenblock
+tile.nyx.star_stairs.name=Sternenblocktreppe
+tile.nyx.star_slab.name=Sternenblockstufe
+tile.nyx.star_slab_double.name=Doppelte Sternenblockstufe
+tile.nyx.cyber_crystal.name=Cyberkristall
+tile.nyx.frezarite_block.name=Frezaritblock
+tile.nyx.frezarite_rock.name=Frezaritgestein
+tile.nyx.kreknorite_block.name=Kreknoritblock
+tile.nyx.kreknorite_rock.name=Kreknoritgestein
+tile.nyx.meteorite_block.name=Meteoritenblock
+tile.nyx.meteorite_rock.name=Meteoritengestein
+tile.nyx.meteorite_rock_hot.name=Heißes Meteoritengestein
+tile.nyx.tektite_block.name=Tektitblock
+tile.nyx.tektite_glass.name=Tektitglas
+
+# Commands
+command.nyx.force.usage=/nyxforce <event> um ein Mond-/Sonnenereignis auszulösen
+command.nyx.force.invalid=Es gibt kein Mond-/Sonnenereignis mit dem Namen %s
+command.nyx.force.success=%s wird in der nächsten möglichen Nacht/Tag stattfinden
+command.nyx.force.clear=Erzwungenes Ereignis wurde zurückgesetzt
+command.nyx.meteor.usage=/nyxmeteor [x] [z] [size <1-3>] [type <1-4>] [homing <true/false>] um einen Meteor zu spawnen
+command.nyx.meteor.success=Meteor bei %s, %s, %s gespawnt
+
+# Death Messages
+death.attack.nyx_celestial=%1$s ist durch himmlische Energie zu Asche geworden
+death.attack.nyx_deep_freeze=%1$s ist erfroren
+death.attack.nyx_deep_freeze.player=%1$s wurde von %2$s zu Tode gefroren
+death.attack.nyx_inferno=%1$s wurde vom Inferno verschlungen
+death.attack.nyx_inferno.player=%1$s wurde von %2$s infernalisiert
+death.attack.nyx_paralysis=%1$s konnte die Wattstunde nicht bändigen
+death.attack.nyx_paralysis.player=%1$s wurde von %2$s zu Tode gelähmt
+
+# Enchantments
+enchantment.nyx.lunar_edge=Mondklinge
+enchantment.nyx.lunar_edge.desc=Erhöht den Schaden des Gegenstands. Die Stärke hängt von der aktuellen Mondphase ab.
+enchantment.nyx.lunar_shield=Mondschild
+enchantment.nyx.lunar_shield.desc=Reduziert Schaden von den meisten Quellen. Die Stärke hängt von der aktuellen Mondphase ab.
+enchantment.nyx.magnetization=Magnetisierung
+enchantment.nyx.magnetization.desc=Zieht Gegenstände zu dir. Jede Stufe erhöht den Radius und die Stärke.
+
+# Entities
+entity.nyx.alien_creeper.name=Aliencreeper
+entity.nyx.alien_kitty.name=Alienkätzchen
+entity.nyx.comet_kitty.name=Kometenkätzchen
+entity.nyx.falling_meteor.name=Fallender Meteor
+entity.nyx.falling_star.name=Sternschnuppe
+entity.nyx.stellar_protector.name=Sternenschützer
+
+# Fluids
+fluid.frezarite.name=Geschmolzener Frezarit
+fluid.kreknorite.name=Geschmolzener Kreknorit
+fluid.meteorite.name=Geschmolzener Meteorit
+
+# Info
+info.nyx.day_enchanting=Es ist zu hell, um jetzt zu verzaubern
+info.nyx.blue_moon=Der Blaue Mond geht auf...
+info.nyx.star_shower=Sterne beginnen vom Himmel zu regnen...
+info.nyx.full_moon=Der Vollmond geht auf...
+info.nyx.blood_moon=Der Blutmond geht auf...
+info.nyx.blood_moon_sleeping=Beim Gedanken an Schlaf wird dir unwohl
+info.nyx.meteor=Ein Meteor ist in der Nähe eingeschlagen!
+info.nyx.meteor_far=Ein Meteor ist in der Ferne eingeschlagen!
+info.nyx.meteor_verbose=Ein Meteor ist eingeschlagen bei
+info.nyx.red_giant=Die Sonne ist zu einem Roten Riesen gewachsen!
+info.nyx.grim_eclipse=Etwas blockiert die Sonne! Eine düstere Sonnenfinsternis beginnt...
+info.nyx.meteor_detector.none_found=Keine Meteor-Einschlagstellen gefunden!
+info.nyx.meteor_detector.distance=Nächste Meteor-Einschlagstelle ist %s Blöcke entfernt.
+info.nyx.meteor_detector.confirm=Meteor-Einschlagstelle bei %d, %d, %d aus der Datenbank löschen?
+info.nyx.meteor_detector.sneak_confirm=[Schleichen + Rechtsklick] zum Bestätigen.
+info.nyx.meteor_detector.no_pending=Keine ausstehenden Löschungen oder die Einschlagstelle ist zu weit entfernt.
+info.nyx.meteor_detector.expired=Bestätigung abgelaufen.
+info.nyx.meteor_detector.wrong_dimension=Du musst dich in derselben Dimension befinden.
+info.nyx.meteor_detector.moved_too_far=Du hast dich zu weit von deiner vorherigen Position entfernt.
+info.nyx.meteor_detector.deleted=Meteor-Einschlagstelle bei %d, %d, %d gelöscht!
+info.nyx.meteor_detector.reset=Bitte warte, bis der Detektor zurückgesetzt ist.
+info.nyx.meteor_detector.already_gone=Diese Meteor-Einschlagstelle existiert nicht mehr.
+
+# Items
+item.nyx.fallen_star.name=Gefallener Stern
+item.nyx.meteor_detector.name=Meteordetektor
+item.nyx.celestial_warhammer.name=Himmlischer Kriegshammer
+item.nyx.tektite_bow.name=Lichtgeschwindigkeitsbogen
+item.nyx.tektite_pickaxe.name=Tektitspitzhacke
+item.nyx.tektite_axe.name=Tektitaxt
+item.nyx.tektite_shovel.name=Tektitschaufel
+item.nyx.tektite_hoe.name=Tektithacke
+item.nyx.tektite_sword.name=Tektitschwert
+item.nyx.tektite_greatsword.name=Tektitgroßschwert
+item.nyx.tektite_helmet.name=Tektithelm
+item.nyx.tektite_chestplate.name=Tektitharnisch
+item.nyx.tektite_leggings.name=Tektitbeinschutz
+item.nyx.tektite_boots.name=Tektitstiefel
+item.nyx.meteorite_shard.name=Meteoritenscherbe
+item.nyx.meteorite_ingot.name=Meteoritenbarren
+item.nyx.meteorite_pickaxe.name=Meteoritenspitzhacke
+item.nyx.meteorite_axe.name=Meteoritenaxt
+item.nyx.meteorite_shovel.name=Meteoritenschaufel
+item.nyx.meteorite_hoe.name=Meteoritenhacke
+item.nyx.meteorite_sword.name=Meteoritenschwert
+item.nyx.meteorite_helmet.name=Meteoritenhelm
+item.nyx.meteorite_chestplate.name=Meteoritenharnisch
+item.nyx.meteorite_leggings.name=Meteoritenbeinschutz
+item.nyx.meteorite_boots.name=Meteoritenstiefel
+item.nyx.frezarite_crystal.name=Frezaritkristall
+item.nyx.frezarite_ingot.name=Frezaritbarren
+item.nyx.frezarite_pickaxe.name=Frezaritspitzhacke
+item.nyx.frezarite_axe.name=Frezaritaxt
+item.nyx.frezarite_shovel.name=Frezaritschaufel
+item.nyx.frezarite_hoe.name=Frezarithacke
+item.nyx.frezarite_sword.name=Frezaritschwert
+item.nyx.frezarite_helmet.name=Frezarithelm
+item.nyx.frezarite_chestplate.name=Frezaritharnisch
+item.nyx.frezarite_leggings.name=Frezaritbeinschutz
+item.nyx.frezarite_boots.name=Frezaritstiefel
+item.nyx.kreknorite_shard.name=Kreknoritscherbe
+item.nyx.kreknorite_ingot.name=Kreknoritbarren
+item.nyx.kreknorite_pickaxe.name=Kreknoritspitzhacke
+item.nyx.kreknorite_axe.name=Kreknoritaxt
+item.nyx.kreknorite_shovel.name=Kreknoritschaufel
+item.nyx.kreknorite_hoe.name=Kreknorithacke
+item.nyx.kreknorite_sword.name=Kreknoritschwert
+item.nyx.kreknorite_helmet.name=Kreknorithelm
+item.nyx.kreknorite_chestplate.name=Kreknoritharnisch
+item.nyx.kreknorite_leggings.name=Kreknoritbeinschutz
+item.nyx.kreknorite_boots.name=Kreknoritstiefel
+item.nyx.tektite_gem_cluster.name=Tektit-Edelsteinhaufen
+item.nyx.celestial_emblem.name=Himmlisches Emblem
+item.nyx.fallen_star_beam_sword.name=Lichtschwert Typ S
+item.nyx.meteorite_beam_sword.name=Lichtschwert Typ M
+item.nyx.frezarite_beam_sword.name=Lichtschwert Typ F
+item.nyx.kreknorite_beam_sword.name=Lichtschwert Typ K
+item.nyx.tektite_beam_sword.name=Lichtschwert Typ T
+item.nyx.cyber_crystal_beam_sword.name=Lichtschwert Typ C
+
+# Tooltips
+tooltip.nyx.beam_sword=Mit seiner markanten leuchtenden Klinge ist diese Waffe auffällig und tödlich. Alle Angriffe ignorieren Rüstung und Unverwundbarkeits-Frames.
+tooltip.nyx.blastproof=Explosionssicher
+tooltip.nyx.celestial_emblem=Pulsiert mit enormer himmlischer Energie!
+tooltip.nyx.celestial_warhammer=Größere Angriffsreichweite und Rückstoß. Halte Rechtsklick, um in die Luft zu springen und einen Smash-Angriff auszuführen, der allen Zielen Astrale Erosion (0:08) zufügt.
+tooltip.nyx.cyber_crystal=Ableitung und Verstärkung von Energie möglich.
+tooltip.nyx.fallen_star=Es hört nicht auf zu funkeln!
+tooltip.nyx.frezarite_armor=Das Tragen eines vollständigen Sets gewährt unendliche Wasseratmung.
+tooltip.nyx.frezarite_tool=Alle Angriffe verursachen Flächenschaden. Fügt allen Zielen Tiefes Einfrieren (0:08) zu.
+tooltip.nyx.kreknorite_armor=Das Tragen eines vollständigen Sets gewährt unendliche Feuerresistenz.
+tooltip.nyx.kreknorite_tool=Alle Angriffe verursachen Flächenschaden. Fügt allen Zielen Inferno (0:08) zu.
+tooltip.nyx.meteor_detector=Zeigt auf nahegelegene Meteor-Einschlagstellen.
+tooltip.nyx.meteor_detector.hint=Rechtsklick, um die Entfernung zur Einschlagstelle in Blöcken zu verfolgen.
+tooltip.nyx.meteor_detector.hint2=Shift + Rechtsklick, um die aktuell verfolgte Einschlagstelle zu löschen.
+tooltip.nyx.shift=Halte SHIFT, um mehr Informationen zu erhalten...
+tooltip.nyx.tektite_bow=Schießt sehr schnell starke Pfeile.
+tooltip.nyx.tektite_gem_cluster=Sie sind voller Elektrizität.
+tooltip.nyx.tektite_greatsword=Alle Angriffe haben eine größere Reichweite.
+
+# Potions
+effect.nyx.astral_erosion.name=Astrale Erosion
+effect.nyx.deep_freeze.name=Tiefes Einfrieren
+effect.nyx.inferno.name=Inferno
+effect.nyx.paralysis.name=Lähmung
+
+lingering_potion.effect.paralysis=Verweiltrank der Lähmung
+potion.effect.paralysis=Trank der Lähmung
+splash_potion.effect.paralysis=Wurftrank der Lähmung
+tipped_arrow.effect.paralysis=Pfeil der Lähmung
+
+# Mod Integration - JEI
+item.nyx.fallen_star.jei_desc=Sternschnuppen können nachts angetroffen werden.\n\nWenn du etwas Magisches hörst und eine Partikelspur am Himmel zur Erde siehst, ist es eine Sternschnuppe.\n\nNach der Landung geben sie Licht und Partikel von sich, was die Suche erleichtert.
+item.nyx.frezarite_boots.jei_desc=Die Frezaritstiefel gefrieren Wasser unter dir temporär zu brüchigem Eis, während sie ausgerüstet sind. Der Radius wird erhöht, wenn die Stiefel mit Eisläufer verzaubert sind.
+item.nyx.tektite_gem_cluster.jei_desc=Tektit-Edelsteinhaufen werden selten beim erfolgreichen Abbau von heißem Meteorgestein gedroppt.\n\nKreaturen, die ausschließlich an Meteor-Einschlagstellen vorkommen, können sie ebenfalls selten droppen, wenn sie getötet werden.
+tile.nyx.cyber_crystal.jei_desc=Cyberkristalle sind sehr selten an Meteor-Einschlagstellen jeglicher Art zu finden und resistent gegen Explosionen.\n\nDu benötigst eine Abbaustufe von 4, um sie abzubauen, Werkzeuge aus Meteor-Materialien sind stark genug.
+tile.nyx.frezarite_rock.jei_desc=Frezaritgestein ist weniger häufig an Meteor-Einschlagstellen zu finden, diese Gesteine können für Scherben abgebaut werden, kühlen jedoch ab, wenn sie zu lange unberührt bleiben.\n\nGlück funktioniert bei diesen Gesteinen nicht, und du benötigst eine Abbaustufe von 4.\n\nWerkzeuge aus Meteor-Materialien sind stark genug.
+tile.nyx.kreknorite_rock.jei_desc=Kreknoritgestein ist weniger häufig an Meteor-Einschlagstellen zu finden, diese Gesteine können für Scherben abgebaut werden, kühlen jedoch ab, wenn sie zu lange unberührt bleiben.\n\nGlück funktioniert bei diesen Gesteinen nicht, und du benötigst eine Abbaustufe von 4.\n\nWerkzeuge aus Meteor-Materialien sind stark genug.
+tile.nyx.meteorite_rock.jei_desc=Wenn heißes Meteoritengestein abgekühlt ist, kann es viel schneller abgebaut werden.\n\nEs hat jedoch nur eine 25%ige Chance, eine Scherbe zu droppen.\n\nGesteine aus Frezarit und Kreknorit haben keine abgekühlten Varianten, sie kühlen stattdessen zu Packeis bzw. Obsidian ab.
+tile.nyx.meteorite_rock_hot.jei_desc=Heißes Meteoritengestein ist an Meteor-Einschlagstellen zu finden, diese Gesteine können für Scherben abgebaut werden, kühlen jedoch ab, wenn sie zu lange unberührt bleiben.\n\nGlück funktioniert bei diesen Gesteinen nicht, und du benötigst eine Abbaustufe von 3.\n\nWerkzeuge aus Diamant sind stark genug.
+
+# Mod Integration - Tinkers' Antique (Tinkers' Construct)
+material.nyx.fallen_star.name=Sternenbesetzt
+material.nyx.cyber_crystal.name=Cyberkristall
+material.nyx.frezarite.name=Frezarit
+material.nyx.kreknorite.name=Kreknorit
+material.nyx.meteorite.name=Meteorit
+material.nyx.tektite.name=Tektit
+
+modifier.nyx.feint.name=Täuschung
+modifier.nyx.feint.desc=§oSchneller als das Licht!§r\nDein Werkzeug hat eine 20%ige Chance, zusätzlichen +25% Schaden zu verursachen, der Rüstung durchdringt.
+modifier.nyx.frezarites_bane.name=Frezaritfluch
+modifier.nyx.frezarites_bane.desc=§oEin nuklearer Winter!§r\nErfolgreiche Treffer fügen deinem Ziel fortwährend Tiefes Einfrieren zu.
+modifier.nyx.gleaming.name=Glänzend
+modifier.nyx.gleaming.desc=§oKristallkraft!§r\nDein Werkzeug verursacht +40% Schaden, weniger Bonusschaden wird verursacht, je niedriger deine Gesundheit ist.
+modifier.nyx.kreknorites_bane.name=Kreknoritfluch
+modifier.nyx.kreknorites_bane.desc=§oHölle direkt vor deiner Tür!§r\nErfolgreiche Treffer fügen deinem Ziel fortwährend Inferno zu.
+modifier.nyx.stunlock.name=Betäubung
+modifier.nyx.stunlock.desc=§oBleib stehen!§r\nGetroffene Ziele haben eine 15%ige Chance, für 8 Sekunden gelähmt und völlig unbeweglich zu werden.
+modifier.nyx.supercharge.name=Superaufladung
+modifier.nyx.supercharge.desc=§oLade mich auf!§r\nDas Treffen eines Ziels oder das Abbauen eines Blocks hat eine 10%ige Chance, dich für 5 Sekunden mit Eile III aufzuladen!
+
+# Mod Integration - Antique Armory (Construct's Armory)
+modifier.nyx.astral_plating_armor.name=Astrale Panzerung
+modifier.nyx.astral_plating_armor.desc=§oHerein, Sternenkommando!§r\nDeine Rüstung schützt dich komplett vor 50% von Schaden durch Feuer oder Ertrinken.
+modifier.nyx.frezarites_ward_armor.name=Frezaritschutz
+modifier.nyx.frezarites_ward_armor.desc=§oEin nuklearer Winter!§r\nVerletzungen haben eine Chance (10% pro Rüstungsteil), deinem Angreifer fortwährend Tiefes Einfrieren zuzufügen.
+modifier.nyx.gleaming_armor.name=Glänzend
+modifier.nyx.gleaming_armor.desc=§oKristallkraft!§r\nDeine Rüstung schützt dich komplett vor 40% des gesamten erlittenen Schadens, dies wird weniger effektiv, je niedriger deine Gesundheit ist.
+modifier.nyx.kreknorites_ward_armor.name=Kreknoritschutz
+modifier.nyx.kreknorites_ward_armor.desc=§oHölle direkt vor deiner Tür!§r\nVerletzungen haben eine Chance (10% pro Rüstungsteil), deinem Angreifer fortwährend Inferno zuzufügen.
+modifier.nyx.star_shield_armor.name=Sternenschild
+modifier.nyx.star_shield_armor.desc=§oEins mit den Sternen!§r\nEs besteht eine Chance (5% pro Rüstungsteil), dass Schaden komplett ignoriert wird, und du erhältst Resistenz III für 5 Sekunden.
+modifier.nyx.stunlock_armor.name=Betäubung
+modifier.nyx.stunlock_armor.desc=§oBleib stehen!§r\nVerletzungen haben eine Chance (5% pro Rüstungsteil), deinen Angreifer zu lähmen und für 8 Sekunden völlig unbeweglich zu machen.
+modifier.nyx.supercharge_armor.name=Superaufladung
+modifier.nyx.supercharge_armor.desc=§oLade mich auf!§r\nVerletzungen haben eine Chance (5% pro Rüstungsteil), dich für 5 Sekunden mit Eile III und Schnelligkeit III aufzuladen!
