@@ -32,6 +32,10 @@ public abstract class NyxSolarEvent implements INBTSerializable<NBTTagCompound> 
 
     public abstract boolean shouldStop(boolean lastNighttime);
 
+    public boolean shouldStartBasic(boolean lastNighttime) {
+        return lastNighttime && !NyxWorld.isNighttime(this.world);
+    }
+
     public int getSkyColor() {
         return 0;
     }

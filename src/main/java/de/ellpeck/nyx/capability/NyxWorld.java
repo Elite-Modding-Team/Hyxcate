@@ -3,8 +3,8 @@ package de.ellpeck.nyx.capability;
 import de.ellpeck.nyx.compat.astralsorcery.AstralSorcery;
 import de.ellpeck.nyx.config.NyxConfig;
 import de.ellpeck.nyx.event.lunar.*;
-import de.ellpeck.nyx.event.solar.NyxEventRedGiant;
 import de.ellpeck.nyx.event.solar.NyxEventGrimEclipse;
+import de.ellpeck.nyx.event.solar.NyxEventRedGiant;
 import de.ellpeck.nyx.event.solar.NyxSolarEvent;
 import de.ellpeck.nyx.init.NyxRegistry;
 import de.ellpeck.nyx.network.NyxPacketHandler;
@@ -135,11 +135,11 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
             if (!this.world.isRemote) {
                 boolean isDirty = false;
 
-                if (this.currentLunarEvent == null && (!Loader.isModLoaded("astralsorcery") || !AstralSorcery.isDayOfLunarEclipse(this.world))) {
-                    if (this.forcedLunarEvent != null && this.forcedLunarEvent.shouldStart(this.wasDaytime)) {
+                if (this.currentLunarEvent == null) {
+                    if (this.forcedLunarEvent != null && this.forcedLunarEvent.shouldStartBasic(this.wasDaytime)) {
                         this.currentLunarEvent = this.forcedLunarEvent;
                         this.forcedLunarEvent = null;
-                    } else {
+                    } else if (!Loader.isModLoaded("astralsorcery") || !AstralSorcery.isDayOfLunarEclipse(this.world)) {
                         for (NyxLunarEvent event : this.lunarEvents) {
                             if (event.shouldStart(this.wasDaytime)) {
                                 this.currentLunarEvent = event;
@@ -191,11 +191,11 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
             if (!this.world.isRemote) {
                 boolean isDirty = false;
 
-                if (this.currentSolarEvent == null && (!Loader.isModLoaded("astralsorcery") || !AstralSorcery.isDayOfSolarEclipse(this.world))) {
-                    if (this.forcedSolarEvent != null && this.forcedSolarEvent.shouldStart(this.wasNighttime)) {
+                if (this.currentSolarEvent == null) {
+                    if (this.forcedSolarEvent != null && this.forcedSolarEvent.shouldStartBasic(this.wasNighttime)) {
                         this.currentSolarEvent = this.forcedSolarEvent;
                         this.forcedSolarEvent = null;
-                    } else {
+                    } else if (!Loader.isModLoaded("astralsorcery") || !AstralSorcery.isDayOfSolarEclipse(this.world)) {
                         for (NyxSolarEvent event : this.solarEvents) {
                             if (event.shouldStart(this.wasNighttime)) {
                                 this.currentSolarEvent = event;

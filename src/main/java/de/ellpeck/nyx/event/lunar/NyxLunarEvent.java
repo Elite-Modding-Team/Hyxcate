@@ -32,6 +32,10 @@ public abstract class NyxLunarEvent implements INBTSerializable<NBTTagCompound> 
 
     public abstract boolean shouldStop(boolean lastDaytime);
 
+    public boolean shouldStartBasic(boolean lastDaytime) {
+        return lastDaytime && !NyxWorld.isDaytime(this.world);
+    }
+
     public int getSkyColor() {
         return 0;
     }
