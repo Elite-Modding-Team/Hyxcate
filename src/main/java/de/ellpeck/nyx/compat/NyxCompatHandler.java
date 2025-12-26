@@ -4,6 +4,7 @@ import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.compat.tconstruct.ConstructsArmory;
 import de.ellpeck.nyx.compat.tconstruct.TinkersConstruct;
 import de.ellpeck.nyx.compat.tconstruct.TinkersConstructClient;
+import de.ellpeck.nyx.compat.toughasnails.ToughAsNails;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -28,6 +29,9 @@ public class NyxCompatHandler {
     public static void init() {
         if (Loader.isModLoaded("tconstruct")) {
             TinkersConstruct.registerToolRecipes();
+        }
+        if (Loader.isModLoaded("toughasnails")) {
+            ToughAsNails.registerTemperatureModifiers();
         }
     }
 

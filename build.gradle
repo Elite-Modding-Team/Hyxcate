@@ -132,6 +132,9 @@ dependencies {
     implementation 'curse.maven:mtlib-253211:3308160'
     implementation 'curse.maven:crafttweaker-239197:6929088'
 
+    // Tough As Nails
+    implementation rfg.deobf('curse.maven:tough-as-nails-246391:2710969')
+
     if (project.use_mixins.toBoolean()) {
         // Change your mixin refmap name here:
         String mixin = modUtils.enableMixins('zone.rong:mixinbooter:10.7', "mixins.${project.mod_id}.refmap.json")

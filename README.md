@@ -99,6 +99,7 @@
 - With [**Future Fireproof**](https://www.curseforge.com/minecraft/mc-mods/future-fireproof) installed, many items and blocks added by Hyxcate will become immune to being destroyed by fire or lava, similar to Netherite from modern versions of Minecraft.
 - With [**Tinkers' Antique (Tinkers' Construct)**](https://www.curseforge.com/minecraft/mc-mods/tinkers-antique) installed, there are new tool materials to tinker with. You can find more information on our [documentation here](https://github.com/Elite-Modding-Team/Hyxcate/wiki/Tinkers'-Construct)!
 - With [**Antique Armory (Construct's Armory)**](https://www.curseforge.com/minecraft/mc-mods/antique-armory) installed, there are new armor materials to tinker with. You can find more information on our [documentation here](https://github.com/Elite-Modding-Team/Hyxcate/wiki/Tinkers'-Construct-(Construct's-Armory))!
+- With [**Tough As Nails**](https://www.curseforge.com/minecraft/mc-mods/tough-as-nails) installed, environment temperature is doubled on active Red Giant events.
 - More to come!
 
 ### 👨‍💻 Main Developers, Collaborators, and Friends
