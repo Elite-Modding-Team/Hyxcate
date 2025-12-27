@@ -1,5 +1,6 @@
 package de.ellpeck.nyx.util;
 
+import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.client.sound.NyxSoundBeamSword;
 import de.ellpeck.nyx.client.sound.NyxSoundCelestialWarhammer;
 import de.ellpeck.nyx.client.sound.NyxSoundFallenEntity;
@@ -8,10 +9,17 @@ import de.ellpeck.nyx.config.NyxConfig;
 import de.ellpeck.nyx.init.NyxSoundEvents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldEntitySpawner;
+import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -59,6 +67,59 @@ public class NyxUtils {
         }
 
         return stack;
+    }
+
+    public static void doExtraSpawn(Entity original, String key) {
+        String addedSpawnKey = Nyx.ID + ":" + key;
+        if (!original.getEntityData().getBoolean(addedSpawnKey)) {
+            ResourceLocation name = EntityList.getKey(original);
+            if (name != null) {
+                boolean listed = NyxConfig.mobDuplicationBlacklist.contains(name.toString());
+                if (NyxConfig.isMobDuplicationWhitelist != listed) return;
+
+                for (int x = -2; x <= 2; x++) {
+                    for (int y = -2; y <= 2; y++) {
+                        for (int z = -2; z <= 2; z++) {
+                            if (x == 0 && y == 0 && z == 0) continue;
+                            BlockPos offset = original.getPosition().add(x, y, z);
+                            if (!WorldEntitySpawner.canCreatureTypeSpawnAtLocation(EntityLiving.SpawnPlacementType.ON_GROUND, original.world, offset))
+                                continue;
+                            Entity entity = EntityList.createEntityByIDFromName(name, original.world);
+                            if (!(entity instanceof EntityLiving)) return;
+                            EntityLiving living = (EntityLiving) entity;
+                            entity.setLocationAndAngles(original.posX + x, original.posY + y, original.posZ + z, MathHelper.wrapDegrees(original.world.rand.nextFloat() * 360), 0);
+                            living.rotationYawHead = living.rotationYaw;
+                            living.renderYawOffset = living.rotationYaw;
+                            living.getEntityData().setBoolean(addedSpawnKey, true);
+                            if (!ForgeEventFactory.doSpecialSpawn(living, original.world, (float) original.posX + x, (float) original.posY + y, (float) original.posZ + z, null))
+                                living.onInitialSpawn(original.world.getDifficultyForLocation(new BlockPos(living)), null);
+                            original.world.spawnEntity(entity);
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public static void doReplacementSpawn(Entity original, String key, EntityLiving replacement) {
+        String addedSpawnKey = Nyx.ID + ":" + key;
+        if (!original.getEntityData().getBoolean(addedSpawnKey)) {
+            ResourceLocation name = EntityList.getKey(original);
+            if (name != null) {
+                boolean listed = NyxConfig.mobDuplicationBlacklist.contains(name.toString());
+                if (NyxConfig.isMobDuplicationWhitelist != listed) return;
+                if (!WorldEntitySpawner.canCreatureTypeSpawnAtLocation(EntityLiving.SpawnPlacementType.ON_GROUND, original.world, original.getPosition()))
+                    return;
+                replacement.setLocationAndAngles(original.posX, original.posY, original.posZ, MathHelper.wrapDegrees(original.world.rand.nextFloat() * 360), 0);
+                replacement.rotationYawHead = replacement.rotationYaw;
+                replacement.renderYawOffset = replacement.rotationYaw;
+                replacement.getEntityData().setBoolean(addedSpawnKey, true);
+                if (!ForgeEventFactory.doSpecialSpawn(replacement, original.world, (float) original.posX, (float) original.posY, (float) original.posZ, null))
+                    replacement.onInitialSpawn(original.world.getDifficultyForLocation(new BlockPos(replacement)), null);
+                original.world.spawnEntity(replacement);
+            }
+        }
     }
 
     @SideOnly(Side.CLIENT)

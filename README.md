@@ -39,7 +39,7 @@
 ![Day Events](docs/day_events.png)
 
 - **Grim Eclipse:** The sun gets blocked by an unknown planet-sized object. Hostile mobs will continue to spawn and not be able to burn under the sun as if it were an extended night. **NOTE:** It's not considered an actual eclipse and we're not exactly sure what the object blocking the sun is...
-- **Red Giant:** The sun will temporarily exhaust its hydrogen fuel in its core, thankfully the world is resilient enough to handle the immense heat. Currently, this event is mostly cosmetic and still a work in progress!
+- **Red Giant:** The sun will temporarily exhaust its hydrogen fuel in its core, thankfully the world is resilient enough to handle the immense heat. Mobs gain health, become immune to fire, some spawn as their "hot" equivalents.
 
 #### 🐈 **Creatures**
 

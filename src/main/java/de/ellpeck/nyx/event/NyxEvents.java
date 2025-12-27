@@ -3,24 +3,22 @@ package de.ellpeck.nyx.event;
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.capability.NyxWorld;
 import de.ellpeck.nyx.config.NyxConfig;
-import de.ellpeck.nyx.entity.ai.NyxAIWolfSpecialMoon;
 import de.ellpeck.nyx.entity.NyxEntityFallingMeteor;
 import de.ellpeck.nyx.entity.NyxEntityFallingStar;
+import de.ellpeck.nyx.entity.ai.NyxAIWolfSpecialMoon;
 import de.ellpeck.nyx.event.lunar.NyxEventBloodMoon;
-import de.ellpeck.nyx.event.lunar.NyxEventFullMoon;
 import de.ellpeck.nyx.event.lunar.NyxEventBlueMoon;
+import de.ellpeck.nyx.event.lunar.NyxEventFullMoon;
 import de.ellpeck.nyx.event.lunar.NyxEventStarShower;
 import de.ellpeck.nyx.event.solar.NyxEventRedGiant;
-import de.ellpeck.nyx.init.NyxAttributes;
-import de.ellpeck.nyx.init.NyxEnchantments;
-import de.ellpeck.nyx.init.NyxItems;
-import de.ellpeck.nyx.init.NyxPotions;
+import de.ellpeck.nyx.init.*;
 import de.ellpeck.nyx.item.tool.INyxTool;
-import de.ellpeck.nyx.item.tool.*;
+import de.ellpeck.nyx.item.tool.NyxToolBeamSword;
+import de.ellpeck.nyx.item.tool.NyxToolCelestialWarhammer;
+import de.ellpeck.nyx.item.tool.NyxToolTektiteGreatsword;
 import de.ellpeck.nyx.mixin.common.NyxEntityAccessor;
 import de.ellpeck.nyx.network.NyxPacketHandler;
 import de.ellpeck.nyx.network.NyxPacketWorld;
-import de.ellpeck.nyx.init.NyxSoundEvents;
 import de.ellpeck.nyx.util.NyxDamageSource;
 import de.ellpeck.nyx.util.NyxUtils;
 import net.minecraft.block.Block;
@@ -31,10 +29,7 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.monster.EntityCreeper;
-import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.monster.EntitySlime;
-import net.minecraft.entity.monster.IMob;
+import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -52,12 +47,10 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldEntitySpawner;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
-import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -363,15 +356,33 @@ public final class NyxEvents {
 
             // Spawn a second one
             if (NyxConfig.additionalMobsChance > 0 && entity.world.rand.nextInt(NyxConfig.additionalMobsChance) == 0)
-                doExtraSpawn(entity, "full_moon_spawn");
+                NyxUtils.doExtraSpawn(entity, "full_moon_spawn");
         }
 
-        if (nyx.currentSolarEvent instanceof NyxEventRedGiant && entity.world.canSeeSky(entity.getPosition())) {
+        if (nyx.currentSolarEvent instanceof NyxEventRedGiant) {
+            // Increase health by 50%, make immune to fire
             IAttributeInstance maxHealthAttribute = entity.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
             double newMaxHealth = maxHealthAttribute.getBaseValue() * 1.5;
             maxHealthAttribute.setBaseValue(newMaxHealth);
             entity.setHealth((float) newMaxHealth);
             if (!entity.isImmuneToFire()) ((NyxEntityAccessor) entity).setIsImmuneToFire(true);
+
+            // Replace vanilla mobs
+            ResourceLocation entityRL = EntityList.getKey(entity);
+            if (entityRL != null) {
+                if (entityRL.toString().equals("minecraft:zombie")) {
+                    NyxUtils.doReplacementSpawn(entity, "red_giant_spawn", new EntityHusk(entity.world));
+                    event.setCanceled(true);
+                }
+                if (entityRL.toString().equals("minecraft:skeleton")) {
+                    NyxUtils.doReplacementSpawn(entity, "red_giant_spawn", new EntityWitherSkeleton(entity.world));
+                    event.setCanceled(true);
+                }
+                if (entityRL.toString().equals("minecraft:slime")) {
+                    NyxUtils.doReplacementSpawn(entity, "red_giant_spawn", new EntityMagmaCube(entity.world));
+                    event.setCanceled(true);
+                }
+            }
         }
     }
 
@@ -404,39 +415,6 @@ public final class NyxEvents {
         NyxWorld nyx = NyxWorld.get(player.world);
         if (nyx != null && nyx.currentLunarEvent instanceof NyxEventBloodMoon && !NyxConfig.bloodMoonSleeping)
             event.setResult(EntityPlayer.SleepResult.OTHER_PROBLEM);
-    }
-
-    private static void doExtraSpawn(Entity original, String key) {
-        String addedSpawnKey = Nyx.ID + ":" + key;
-        if (!original.getEntityData().getBoolean(addedSpawnKey)) {
-            ResourceLocation name = EntityList.getKey(original);
-            if (name != null) {
-                boolean listed = NyxConfig.mobDuplicationBlacklist.contains(name.toString());
-                if (NyxConfig.isMobDuplicationWhitelist != listed) return;
-
-                for (int x = -2; x <= 2; x++) {
-                    for (int y = -2; y <= 2; y++) {
-                        for (int z = -2; z <= 2; z++) {
-                            if (x == 0 && y == 0 && z == 0) continue;
-                            BlockPos offset = original.getPosition().add(x, y, z);
-                            if (!WorldEntitySpawner.canCreatureTypeSpawnAtLocation(EntityLiving.SpawnPlacementType.ON_GROUND, original.world, offset))
-                                continue;
-                            Entity entity = EntityList.createEntityByIDFromName(name, original.world);
-                            if (!(entity instanceof EntityLiving)) return;
-                            EntityLiving living = (EntityLiving) entity;
-                            entity.setLocationAndAngles(original.posX + x, original.posY + y, original.posZ + z, MathHelper.wrapDegrees(original.world.rand.nextFloat() * 360), 0);
-                            living.rotationYawHead = living.rotationYaw;
-                            living.renderYawOffset = living.rotationYaw;
-                            living.getEntityData().setBoolean(addedSpawnKey, true);
-                            if (!ForgeEventFactory.doSpecialSpawn(living, original.world, (float) original.posX + x, (float) original.posY + y, (float) original.posZ + z, null))
-                                living.onInitialSpawn(original.world.getDifficultyForLocation(new BlockPos(living)), null);
-                            original.world.spawnEntity(entity);
-                            return;
-                        }
-                    }
-                }
-            }
-        }
     }
 
     @SubscribeEvent
