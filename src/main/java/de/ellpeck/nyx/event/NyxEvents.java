@@ -368,19 +368,22 @@ public final class NyxEvents {
             if (!entity.isImmuneToFire()) ((NyxEntityAccessor) entity).setIsImmuneToFire(true);
 
             // Replace vanilla mobs
+            // TODO: Expose to config
             ResourceLocation entityRL = EntityList.getKey(entity);
             if (entityRL != null) {
-                if (entityRL.toString().equals("minecraft:zombie")) {
-                    NyxUtils.doReplacementSpawn(entity, "red_giant_spawn", new EntityHusk(entity.world));
-                    event.setCanceled(true);
-                }
-                if (entityRL.toString().equals("minecraft:skeleton")) {
-                    NyxUtils.doReplacementSpawn(entity, "red_giant_spawn", new EntityWitherSkeleton(entity.world));
-                    event.setCanceled(true);
-                }
-                if (entityRL.toString().equals("minecraft:slime")) {
-                    NyxUtils.doReplacementSpawn(entity, "red_giant_spawn", new EntityMagmaCube(entity.world));
-                    event.setCanceled(true);
+                switch (entityRL.toString()) {
+                    case "minecraft:zombie":
+                        NyxUtils.doReplacementSpawn(entity, "red_giant_spawn", new EntityHusk(entity.world));
+                        event.setCanceled(true);
+                        break;
+                    case "minecraft:skeleton":
+                        NyxUtils.doReplacementSpawn(entity, "red_giant_spawn", new EntityWitherSkeleton(entity.world));
+                        event.setCanceled(true);
+                        break;
+                    case "minecraft:slime":
+                        NyxUtils.doReplacementSpawn(entity, "red_giant_spawn", new EntityMagmaCube(entity.world));
+                        event.setCanceled(true);
+                        break;
                 }
             }
         }
