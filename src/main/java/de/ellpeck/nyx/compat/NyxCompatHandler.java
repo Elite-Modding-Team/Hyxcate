@@ -1,6 +1,7 @@
 package de.ellpeck.nyx.compat;
 
 import de.ellpeck.nyx.Nyx;
+import de.ellpeck.nyx.compat.simpledifficulty.SimpleDifficulty;
 import de.ellpeck.nyx.compat.tconstruct.ConstructsArmory;
 import de.ellpeck.nyx.compat.tconstruct.TinkersConstruct;
 import de.ellpeck.nyx.compat.tconstruct.TinkersConstructClient;
@@ -32,6 +33,9 @@ public class NyxCompatHandler {
         }
         if (Loader.isModLoaded("toughasnails")) {
             ToughAsNails.registerTemperatureModifiers();
+        }
+        if (Loader.isModLoaded("simpledifficulty")) {
+            SimpleDifficulty.registerTemperatureModifiers();
         }
     }
 

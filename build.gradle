@@ -135,6 +135,9 @@ dependencies {
     // Tough As Nails
     implementation rfg.deobf('curse.maven:tough-as-nails-246391:2710969')
 
+    // SimpleDifficulty for Underdog
+    implementation rfg.deobf('curse.maven:simpledifficulty-for-underdog-574162:6266763')
+
     if (project.use_mixins.toBoolean()) {
         // Change your mixin refmap name here:
         String mixin = modUtils.enableMixins('zone.rong:mixinbooter:10.7', "mixins.${project.mod_id}.refmap.json")
