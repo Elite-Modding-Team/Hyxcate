@@ -1,0 +1,221 @@
+itemGroup.nyx=Hyxcate
+
+# Attributes
+attribute.name.nyx.explosion_resistance=Resistencia a Explosiones
+attribute.name.nyx.magnetization=Magnetización
+attribute.name.nyx.paralysis=Probabilidad de parálisis
+
+# Blocks
+tile.nyx.star_block.name=Bloque de Estrella
+tile.nyx.chiseled_star_block.name=Bloque de Estrella Cincelado
+tile.nyx.cracked_star_block.name=Bloque de Estrella Agrietado
+tile.nyx.star_stairs.name=Escaleras de Bloque de Estrella
+tile.nyx.star_slab.name=Losa de Bloque de Estrella
+tile.nyx.star_slab_double.name=Losa doble de Bloque de Estrella
+tile.nyx.cyber_crystal.name=Cristal Cibernético
+tile.nyx.frezarite_block.name=Bloque de Frezarita
+tile.nyx.frezarite_rock.name=Roca de Frezarita
+tile.nyx.kreknorite_block.name=Bloque de Kreknorita
+tile.nyx.kreknorite_rock.name=Roca de Kreknorita
+tile.nyx.meteorite_block.name=Bloque de Meteorito
+tile.nyx.meteorite_rock.name=Roca de Meteorito
+tile.nyx.meteorite_rock_hot.name=Roca de Meteorito Caliente
+tile.nyx.tektite_block.name=Bloque de Tektita
+tile.nyx.tektite_glass.name=Cristal de Tektita
+
+# Commands
+command.nyx.force.usage=/nyxforce <evento> para provocar que ocurra un evento lunar/solar
+command.nyx.force.invalid=No existe ningún evento lunar/solar con el nombre %s
+command.nyx.force.success=%s ocurrirá en la próxima noche/día disponible
+command.nyx.force.clear=El evento forzado fue cancelado
+command.nyx.meteor.usage=/nyxmeteor [x] [z] [size <1-3>] [type <1-4>] [homing <true/false>] para generar un meteorito
+command.nyx.meteor.success=Se generó un meteorito en %s, %s, %s
+
+# Death Messages
+death.attack.nyx_celestial=%1$s fue reducido a cenizas por energía celestial
+death.attack.nyx_deep_freeze=%1$s murió congelado
+death.attack.nyx_deep_freeze.player=%1$s fue congelado hasta la muerte por %2$s
+death.attack.nyx_inferno=%1$s fue consumido por el Inferno
+death.attack.nyx_inferno.player=%1$s fue infernalizado hasta la muerte por %2$s
+death.attack.nyx_paralysis=%1$s no pudo contener los vatios
+death.attack.nyx_paralysis.player=%1$s murió paralizado por %2$s
+
+# Enchantments
+enchantment.nyx.lunar_edge=Filo Lunar
+enchantment.nyx.lunar_edge.desc=Aumenta el daño del objeto. La fuerza se ve afectada por la fase lunar actual.
+enchantment.nyx.lunar_shield=Escudo Lunar
+enchantment.nyx.lunar_shield.desc=Reduce el daño de la mayoría de fuentes. La fuerza se ve afectada por la fase lunar actual.
+enchantment.nyx.magnetization=Magnetización
+enchantment.nyx.magnetization.desc=Atrae los objetos hacia ti. Cada nivel aumenta el radio y la intensidad.
+
+# Entities
+entity.nyx.alien_creeper.name=Creeper Alienígena
+entity.nyx.alien_kitty.name=Gatito Alienígena
+entity.nyx.comet_kitty.name=Gatito Cometa
+entity.nyx.falling_meteor.name=Meteoro Cayendo
+entity.nyx.falling_star.name=Estrella Cayendo
+entity.nyx.stellar_protector.name=Protector Estelar
+
+# Fluids
+fluid.frezarite.name=Frezarita Fundida
+fluid.kreknorite.name=Kreknorita Fundida
+fluid.meteorite.name=Meteorito Fundido
+
+# Info
+info.nyx.day_enchanting=Hay demasiada luz para encantar ahora mismo
+info.nyx.blue_moon=La Luna Azul está saliendo...
+info.nyx.star_shower=Empiezan a llover estrellas del cielo...
+info.nyx.full_moon=La Luna Llena está saliendo...
+info.nyx.blood_moon=La Luna de Sangre está saliendo...
+info.nyx.blood_moon_sleeping=La idea de dormir te incomoda
+info.nyx.meteor=¡Un meteorito ha caído cerca!
+info.nyx.meteor_far=¡Un meteorito ha caído en el horizonte!
+info.nyx.meteor_verbose=¡Un meteorito ha caído en
+info.nyx.red_giant=¡El Sol se ha convertido en una Gigante Roja!
+info.nyx.grim_eclipse=¡Algo está bloqueando el Sol! Comienza un Eclipse Tenebroso...
+info.nyx.meteor_detector.none_found=¡No se han encontrado sitios de impacto de meteoritos!
+info.nyx.meteor_detector.distance=El sitio de impacto de meteorito más cercano está a %s bloques de distancia.
+info.nyx.meteor_detector.confirm=¿Eliminar el sitio de impacto de meteorito en %d, %d, %d de la base de datos?
+info.nyx.meteor_detector.sneak_confirm=[Agacharse + Clic Derecho] para confirmar.
+info.nyx.meteor_detector.no_pending=No hay eliminaciones pendientes o el sitio de impacto de meteorito está demasiado lejos.
+info.nyx.meteor_detector.expired=La confirmación ha caducado.
+info.nyx.meteor_detector.wrong_dimension=Tienes que estar en la misma dimensión.
+info.nyx.meteor_detector.moved_too_far=Te has alejado demasiado de tu posición anterior.
+info.nyx.meteor_detector.deleted=¡El sitio de impacto de meteorito en %d, %d, %d ha sido eliminado!
+info.nyx.meteor_detector.reset=Por favor, espere a que el detector se reinicie.
+info.nyx.meteor_detector.already_gone=Ese sitio de impacto de meteorito ya no existe.
+
+# Items
+item.nyx.fallen_star.name=Estrella Caída
+item.nyx.meteor_detector.name=Detector de meteoritos
+item.nyx.celestial_warhammer.name=Martillo de Guerra Celestial
+item.nyx.tektite_bow.name=Arco a la Velocidad de la Luz
+item.nyx.tektite_pickaxe.name=Pico de Tektita
+item.nyx.tektite_axe.name=Hacha de Tektita
+item.nyx.tektite_shovel.name=Pala de Tektita
+item.nyx.tektite_hoe.name=Azada de Tektita
+item.nyx.tektite_sword.name=Espada de Tektita
+item.nyx.tektite_greatsword.name=Gran Espada de Tektita
+item.nyx.tektite_helmet.name=Casco de Tektita
+item.nyx.tektite_chestplate.name=Peto de Tektita
+item.nyx.tektite_leggings.name=Grebas de Tektita
+item.nyx.tektite_boots.name=Botas de Tektita 
+item.nyx.meteorite_shard.name=Fragmento de Meteorito
+item.nyx.meteorite_ingot.name=Lingote de Meteorito
+item.nyx.meteorite_pickaxe.name=Pico de Meteorito
+item.nyx.meteorite_axe.name=Hacha de Meteorito
+item.nyx.meteorite_shovel.name=Pala de Meteorito
+item.nyx.meteorite_hoe.name=Azada de Meteorito
+item.nyx.meteorite_sword.name=Espada de Meteorito
+item.nyx.meteorite_helmet.name=Casco de Meteorito
+item.nyx.meteorite_chestplate.name=Peto de Meteorito
+item.nyx.meteorite_leggings.name=Grebas de Meteorito
+item.nyx.meteorite_boots.name=Botas de Meteorito
+item.nyx.frezarite_crystal.name=Cristal de Frezarita
+item.nyx.frezarite_ingot.name=Lingote de Frezarita
+item.nyx.frezarite_pickaxe.name=Pico de Frezarita
+item.nyx.frezarite_axe.name=Hacha de Frezarita
+item.nyx.frezarite_shovel.name=Pala de Frezarita
+item.nyx.frezarite_hoe.name=Azada de Frezarita
+item.nyx.frezarite_sword.name=Espada de Frezarita
+item.nyx.frezarite_helmet.name=Casco de Frezarita
+item.nyx.frezarite_chestplate.name=Peto de Frezarita
+item.nyx.frezarite_leggings.name=Grebas de Frezarita
+item.nyx.frezarite_boots.name=Botas de Frezarita
+item.nyx.kreknorite_shard.name=Fragmento de Kreknorita
+item.nyx.kreknorite_ingot.name=Lingote de Kreknorita
+item.nyx.kreknorite_pickaxe.name=Pico de Kreknorita
+item.nyx.kreknorite_axe.name=Hacha de Kreknorita
+item.nyx.kreknorite_shovel.name=Pala de Kreknorita
+item.nyx.kreknorite_hoe.name=Azada de Kreknorita
+item.nyx.kreknorite_sword.name=Espada de Kreknorita
+item.nyx.kreknorite_helmet.name=Casco de Kreknorita
+item.nyx.kreknorite_chestplate.name=Peto de Kreknorita
+item.nyx.kreknorite_leggings.name=Grebas de Kreknorita
+item.nyx.kreknorite_boots.name=Botas de Kreknorita
+item.nyx.tektite_gem_cluster.name=Cluster de Gemas de Tektita
+item.nyx.celestial_emblem.name=Emblema Celestial
+item.nyx.fallen_star_beam_sword.name=Espada de Haz Tipo S
+item.nyx.meteorite_beam_sword.name=Espada de Haz Tipo M
+item.nyx.frezarite_beam_sword.name=Espada de Haz Tipo F
+item.nyx.kreknorite_beam_sword.name=Espada de Haz Tipo K
+item.nyx.tektite_beam_sword.name=Espada de Haz Tipo T
+item.nyx.cyber_crystal_beam_sword.name=Espada de Haz Tipo C
+
+# Tooltips
+tooltip.nyx.beam_sword=Con su distintiva hoja luminosa, esta arma llama la atención y es letal. Todos los ataques ignoran completamente la armadura y los fotograma de invencibilidad.
+tooltip.nyx.blastproof=A prueba de explosiones
+tooltip.nyx.celestial_emblem=¡Palpitando con tremenda energía celestial!
+tooltip.nyx.celestial_warhammer=Mayor alcance de ataque y empuje. Mantén pulsado clic derecho para saltar al aire y realizar un ataque de aplastamiento que inflige Erosión Astral (0:08) a todos los objetivos.
+tooltip.nyx.cyber_crystal=Capaz de enfocar y amplificar la energía.
+tooltip.nyx.fallen_star=¡No deja de centellear!
+tooltip.nyx.frezarite_armor=Equipar un conjunto completo te otorga Apnea infinita.
+tooltip.nyx.frezarite_tool=Todos los ataques infligirán daño de área de efecto. Inflige Congelación Profunda (0:08) a todos los objetivos.
+tooltip.nyx.kreknorite_armor=Equipar un conjunto completo te otorga Cuerpo ignífugo infinita.
+tooltip.nyx.kreknorite_tool=Todos los ataques infligirán daño en área. Inflige Infierno (0:08) a todos los objetivos.
+tooltip.nyx.meteor_detector=Te señala los sitios de impacto de meteoritos cercanos.
+tooltip.nyx.meteor_detector.hint=Clic derecho para rastrear la distancia al sitio de impacto de meteorito en bloques.
+tooltip.nyx.meteor_detector.hint2=Shift + clic derecho para eliminar el sitio de impacto de meteorito que estás rastreando actualmente.
+tooltip.nyx.shift=Mantén SHIFT para ver más información…
+tooltip.nyx.tektite_bow=Dispara flechas poderosas muy rápidamente.
+tooltip.nyx.tektite_gem_cluster=Están cargados de electricidad.
+tooltip.nyx.tektite_greatsword=Todos los ataques tienen un alcance mayor.
+
+# Potions
+effect.nyx.astral_erosion.name=Erosión Astral
+effect.nyx.deep_freeze.name=Congelación Profunda
+effect.nyx.inferno.name=Inferno
+effect.nyx.paralysis.name=Parálisis
+
+lingering_potion.effect.paralysis=Poción de Parálisis Persistente
+potion.effect.paralysis=Poción de Parálisis
+splash_potion.effect.paralysis=Poción de Parálisis Arrojadiza
+tipped_arrow.effect.paralysis=Flecha de Parálisis
+
+# Mod Integration - JEI
+item.nyx.fallen_star.jei_desc=Las Estrellas Caídas pueden encontrarse durante la noche.\n\nSi empiezas a escuchar algo mágico y ves un rastro de partículas descendiendo desde el cielo, se trata de una Estrella Caída.\n\nUna vez que aterrizan, proporcionan luz y emiten partículas, lo que facilita encontrarlas.
+item.nyx.frezarite_boots.jei_desc=Las Botas de Frezarita congelarán temporalmente el agua bajo tus pies en hielo escarchado mientras estén equipadas. El radio aumenta cuando estas botas están encantadas con Paso Helado.
+item.nyx.tektite_gem_cluster.jei_desc=Los Clusters de Gemas de Tektita se obtienen raramente al minar con éxito cualquier tipo de roca de meteorito caliente.\n\nLas criaturas que se encuentran exclusivamente en los sitios de impacto de meteoritos también pueden dejar caer algunos raramente cuando son eliminadas.
+tile.nyx.cyber_crystal.jei_desc=Los Cristales Cibernéticos se pueden encontrar muy raramente en los sitios de impacto de meteoritos de cualquier tipo y son inmunes a las explosiones.\n\nNecesitarás un nivel de minería de 4 para extraerlos; las herramientas hechas de materiales de meteorito son lo suficientemente fuertes.
+tile.nyx.frezarite_rock.jei_desc=Las Rocas de Frezarita se encuentran de manera poco común en los sitios de impacto de meteoritos; estas rocas se pueden minar para obtener fragmentos, pero se enfriarán si se dejan solas por demasiado tiempo.\n\nFortuna no funciona en estas rocas y necesitarás un nivel de minería de 4 para extraerlas.\n\nLas herramientas hechas de materiales de meteorito son lo suficientemente fuertes.
+tile.nyx.kreknorite_rock.jei_desc=Las Rocas de Kreknorita se encuentran de manera poco común en los sitios de impacto de meteoritos; estas rocas se pueden minar para obtener fragmentos, pero se enfriarán si se dejan solas por demasiado tiempo.\n\nFortuna no funciona en estas rocas y necesitarás un nivel de minería de 4 para extraerlas.\n\nLas herramientas hechas de materiales de meteorito son lo suficientemente fuertes.
+tile.nyx.meteorite_rock.jei_desc=Cuando las Rocas de Meteorito Caliente se enfrían, aún se pueden minar a un ritmo mucho más rápido.\n\nSin embargo, ahora solo tendrán un 25 % de probabilidad de soltar un fragmento.\n\nLas rocas hechas de Frezarita y Kreknorita no tienen variantes enfriadas; en su lugar, se enfriarán convirtiéndose en Hielo Compacto y Obsidiana, respectivamente.
+tile.nyx.meteorite_rock_hot.jei_desc=Las Rocas de Meteorito Caliente se encuentran en los sitios de impacto de meteoritos; estas rocas se pueden minar para obtener fragmentos, pero se enfriarán si se dejan solas por demasiado tiempo.\n\nFortuna no funciona en estas rocas y necesitarás un nivel de minería de 3 para extraerlas.\n\nLas herramientas hechas de diamante son lo suficientemente fuertes.
+
+# Mod Integration - Tinkers' Antique (Tinkers' Construct)
+material.nyx.fallen_star.name=Starry
+material.nyx.cyber_crystal.name=Cristal Cibernético
+material.nyx.frezarite.name=Frezarita
+material.nyx.kreknorite.name=Kreknorita
+material.nyx.meteorite.name=Meteorito
+material.nyx.tektite.name=Tektita
+
+modifier.nyx.feint.name=Finta
+modifier.nyx.feint.desc=§o¡Más rápido que la velocidad de la luz!§r\nTu herramienta tiene un 20 % de probabilidad de infligir un +25 % de daño adicional que atraviesa la armadura.
+modifier.nyx.frezarites_bane.name=Maldición de Frezarita
+modifier.nyx.frezarites_bane.desc=§o¡Es un invierno nuclear!§r\nLos golpes exitosos infligen Congelación Profunda en tu objetivo cada vez más.
+modifier.nyx.gleaming.name=Resplandeciente
+modifier.nyx.gleaming.desc=§o¡Poder de Cristal!§r\nTu herramienta inflige +40 % de daño; cuanto menor sea tu salud, menos daño adicional se inflige.
+modifier.nyx.kreknorites_bane.name=Maldición de Kreknorita
+modifier.nyx.kreknorites_bane.desc=§o¡El infierno a tus pies!§r\nLos golpes exitosos infligen Inferno en tu objetivo cada vez más.
+modifier.nyx.stunlock.name=Bloqueo
+modifier.nyx.stunlock.desc=§o¡Quédate quieto!§r\nLos objetivos golpeados tienen un 15 % de probabilidad de quedar paralizados e inmóviles durante 8 segundos.
+modifier.nyx.supercharge.name=Sobrecarga
+modifier.nyx.supercharge.desc=§o¡Sobrecárgame!§r\nGolpear un objetivo o romper un bloque tiene un 10 % de probabilidad de otorgarte Prisa minera III durante 5 segundos.
+
+# Mod Integration - Antique Armory (Construct's Armory)
+modifier.nyx.astral_plating_armor.name=Placas Astrales
+modifier.nyx.astral_plating_armor.desc=§o¡Adelante, Comando Estelar!§r\nTu armadura te protegerá completamente de un 50 % del daño por fuego y por ahogamiento.
+modifier.nyx.frezarites_ward_armor.name=Protección de Frezarita
+modifier.nyx.frezarites_ward_armor.desc=§o¡Es un invierno nuclear!§r\nRecibir daño tiene una probabilidad (10 % por pieza de armadura) de infligir Congelación Profunda a tu atacante cada vez más.
+modifier.nyx.gleaming_armor.name=Resplandeciente
+modifier.nyx.gleaming_armor.desc=§o¡Poder de Cristal!§r\nTu armadura te protegerá completamente de un 40 % del daño recibido en general; esta protección será cada vez menos efectiva cuanto menor sea tu salud.
+modifier.nyx.kreknorites_ward_armor.name=Protección de Kreknorita
+modifier.nyx.kreknorites_ward_armor.desc=§o¡El infierno a tus pies!§r\nRecibir daño tiene una probabilidad (10 % por pieza de armadura) de infligir Inferno a tu atacante cada vez más.
+modifier.nyx.star_shield_armor.name=Escudo Estelar
+modifier.nyx.star_shield_armor.desc=§o¡Uno con las estrellas!§r\nExiste una probabilidad (5 % por pieza de armadura) de que el daño se ignore por completo; además, obtendrás Resistencia III durante 5 segundos.
+modifier.nyx.stunlock_armor.name=Bloqueo
+modifier.nyx.stunlock_armor.desc=§o¡Quédate quieto!§r\nRecibir daño tiene una probabilidad (5 % por pieza de armadura) de paralizar a tu atacante y dejarlo completamente inmóvil durante 8 segundos.
+modifier.nyx.supercharge_armor.name=Sobrecarga
+modifier.nyx.supercharge_armor.desc=§o¡Sobrecárgame!§r\nRecibir daño tiene una probabilidad (5 % por pieza de armadura) de otorgarte Prisa minera III y Velocidad III durante 5 segundos.
+
