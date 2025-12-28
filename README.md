@@ -123,6 +123,7 @@
 
 - Chinese ~ star_rain
 - German ~ ACGaming
+- Spanish ~ Polytetrafluoroethylene-PTFE
 
 Want to help translating? Submit a [**Pull Request**](https://github.com/Elite-Modding-Team/Hyxcate/pulls) or send your translation via [**Discord**](https://acgam.ing/discord)!
 
