@@ -10,6 +10,7 @@ import de.ellpeck.nyx.event.lunar.NyxEventBloodMoon;
 import de.ellpeck.nyx.event.lunar.NyxEventBlueMoon;
 import de.ellpeck.nyx.event.lunar.NyxEventFullMoon;
 import de.ellpeck.nyx.event.lunar.NyxEventStarShower;
+import de.ellpeck.nyx.event.solar.NyxEventGrimEclipse;
 import de.ellpeck.nyx.event.solar.NyxEventRedGiant;
 import de.ellpeck.nyx.init.*;
 import de.ellpeck.nyx.item.tool.INyxTool;
@@ -416,8 +417,13 @@ public final class NyxEvents {
     public static void onSleep(PlayerSleepInBedEvent event) {
         EntityPlayer player = event.getEntityPlayer();
         NyxWorld nyx = NyxWorld.get(player.world);
-        if (nyx != null && nyx.currentLunarEvent instanceof NyxEventBloodMoon && !NyxConfig.bloodMoonSleeping)
-            event.setResult(EntityPlayer.SleepResult.OTHER_PROBLEM);
+        if (nyx != null) {
+            if (nyx.currentLunarEvent instanceof NyxEventBloodMoon && !NyxConfig.bloodMoonSleeping) {
+                event.setResult(EntityPlayer.SleepResult.OTHER_PROBLEM);
+            } else if (nyx.currentSolarEvent instanceof NyxEventGrimEclipse) {
+                event.setResult(EntityPlayer.SleepResult.NOT_POSSIBLE_NOW); // TODO: Make conditional?
+            }
+        }
     }
 
     @SubscribeEvent
