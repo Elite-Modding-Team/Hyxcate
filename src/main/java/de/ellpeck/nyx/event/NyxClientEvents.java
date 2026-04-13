@@ -9,9 +9,12 @@ import de.ellpeck.nyx.init.NyxItems;
 import de.ellpeck.nyx.init.NyxPotions;
 import de.ellpeck.nyx.init.NyxSoundEvents;
 import de.ellpeck.nyx.item.NyxItemBow;
+import de.ellpeck.nyx.util.NyxColorTransition;
+import de.ellpeck.nyx.util.NyxColorUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.RenderGlobal;
@@ -90,14 +93,59 @@ public final class NyxClientEvents {
         }
     }
 
+    private static final NyxColorTransition fogColorTransition = new NyxColorTransition(NyxConfig.GENERAL.eventTintSkyColorDuration);
+
     @SubscribeEvent
     public static void onFogRender(EntityViewRenderEvent.FogColors event) {
-        if (!NyxConfig.GENERAL.eventTint) return;
-        NyxWorld world = NyxWorld.get(Minecraft.getMinecraft().world);
-        if (world == null || world.currentSkyColor == 0) return;
-        event.setRed(lerp(event.getRed(), (world.currentSkyColor >> 16 & 255) / 255F, world.eventSkyModifier));
-        event.setGreen(lerp(event.getGreen(), (world.currentSkyColor >> 8 & 255) / 255F, world.eventSkyModifier));
-        event.setBlue(lerp(event.getBlue(), (world.currentSkyColor & 255) / 255F, world.eventSkyModifier));
+
+        if(!NyxConfig.GENERAL.eventTint) {
+            return;
+        }
+
+        WorldClient world = Minecraft.getMinecraft().world;
+
+        if(world == null) {
+            return;
+        }
+
+        NyxWorld nyxWorld = NyxWorld.get(world);
+
+        if(nyxWorld == null || nyxWorld.currentSkyColor == 0) {
+            return;
+        }
+
+        long worldTime = world.getWorldTime();
+        float[] initialColors = new float[]{event.getRed(), event.getGreen(), event.getBlue()};
+
+        if(nyxWorld.currentSolarEvent != null) {
+            fogColorTransition.transition(
+                    initialColors,
+                    NyxColorUtils.getRgbIntAsFloatArray(NyxColorUtils.adjustBrightness(nyxWorld.currentSolarEvent.getSkyColor(), 1.5F)),
+                    worldTime,
+                    NyxColorTransition.TargetType.CUSTOM_COLOR
+            );
+        } else if(nyxWorld.currentLunarEvent != null) {
+            fogColorTransition.transition(
+                    initialColors,
+                    NyxColorUtils.getRgbIntAsFloatArray(NyxColorUtils.adjustBrightness(nyxWorld.currentLunarEvent.getSkyColor(), 1.5F)),
+                    worldTime,
+                    NyxColorTransition.TargetType.CUSTOM_COLOR
+            );
+        } else {
+            fogColorTransition.transition(
+                    initialColors,
+                    worldTime,
+                    NyxColorTransition.TargetType.DEFAULT_COLOR
+            );
+        }
+
+        if(fogColorTransition.isOverriding()) {
+            float[] customFogColors = fogColorTransition.getCurrentColor(worldTime, (float) event.getRenderPartialTicks());
+            event.setRed(lerp(initialColors[0], customFogColors[0], nyxWorld.eventSkyModifier));
+            event.setGreen(lerp(initialColors[1], customFogColors[1], nyxWorld.eventSkyModifier));
+            event.setBlue(lerp(initialColors[2], customFogColors[2], nyxWorld.eventSkyModifier));
+        }
+
     }
 
     @SubscribeEvent

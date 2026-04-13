@@ -5,17 +5,17 @@ import de.ellpeck.nyx.config.NyxConfig;
 import de.ellpeck.nyx.util.NyxColorTransition;
 import de.ellpeck.nyx.util.NyxColorUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraftforge.client.ForgeHooksClient;
+import net.minecraft.world.WorldProvider;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(value = ForgeHooksClient.class, remap = false)
+@Mixin(value = WorldProvider.class, remap = false)
 public abstract class NyxSkyColorMixin {
 
     @Unique
@@ -24,13 +24,16 @@ public abstract class NyxSkyColorMixin {
     @Unique
     private static final NyxColorTransition hyxcate$colorTransition = new NyxColorTransition(NyxConfig.GENERAL.eventTintSkyColorDuration);
 
-    @Shadow
-    private static int skyRGBMultiplier;
-
-    @Inject(method = "getSkyBlendColour", at = @At("TAIL"))
-    private static void nyxSetSkyColor(World world, BlockPos center, CallbackInfoReturnable<Integer> cir) {
+    @Inject(method = "getSkyColor", at = @At("TAIL"), cancellable = true)
+    private static void nyxGetSkyColor(Entity cameraEntity, float partialTicks, CallbackInfoReturnable<Vec3d> cir) {
 
         if(!NyxConfig.GENERAL.eventTint) {
+            return;
+        }
+
+        World world = cameraEntity.world;
+
+        if(world == null) {
             return;
         }
 
@@ -40,7 +43,7 @@ public abstract class NyxSkyColorMixin {
             return;
         }
 
-        float[] initialColors = NyxColorUtils.getRgbIntAsFloatArray(cir.getReturnValue());
+        float[] initialColors = NyxColorUtils.getVec3dAsFloatArray(cir.getReturnValue());
         long worldTime = world.getWorldTime();
 
         if(nyxWorld.currentSolarEvent != null) {
@@ -67,7 +70,7 @@ public abstract class NyxSkyColorMixin {
 
         if(hyxcate$colorTransition.isOverriding()) {
             float[] customSkyColors = hyxcate$colorTransition.getCurrentColor(worldTime, hyxcate$mc.getRenderPartialTicks());
-            skyRGBMultiplier = NyxColorUtils.getFloatArrayAsRgbInt(customSkyColors);
+            cir.setReturnValue(NyxColorUtils.getFloatArrayAsVec3d(customSkyColors));
         }
 
     }
