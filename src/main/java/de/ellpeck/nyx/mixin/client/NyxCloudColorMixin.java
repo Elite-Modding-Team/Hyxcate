@@ -20,7 +20,7 @@ public abstract class NyxCloudColorMixin {
     public abstract long getWorldTime();
 
     @Unique
-    private final NyxColorTransition hyxcate$colorTransition = new NyxColorTransition(NyxConfig.GENERAL.eventTintCloudColorDuration);
+    private final NyxColorTransition hyxcate$colorTransition = new NyxColorTransition(NyxConfig.GENERAL.eventTintSkyColorDuration);
 
     @Inject(method = "getCloudColorBody", at = @At("TAIL"), cancellable = true)
     private void nyxSetCloudColor(float partialTicks, CallbackInfoReturnable<Vec3d> cir) {
