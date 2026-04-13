@@ -19,13 +19,17 @@ public class NyxColorTransition {
 
     public void transition(float[] startColor, float[] targetColor, long currentTime, TargetType targetType) {
 
-        if(targetType == this.targetType) {
+        if(targetType == TargetType.DEFAULT_COLOR && targetType == this.targetType) {
             return;
         }
 
         // Avoid transition if target color is already the same
-        if(targetColor[0] == this.targetColor[0] || targetColor[1] == this.targetColor[1] || targetColor[2] == this.targetColor[2]) {
+        if(targetColor[0] == this.targetColor[0] && targetColor[1] == this.targetColor[1] && targetColor[2] == this.targetColor[2]) {
             return;
+        }
+
+        if(isOverriding()) {
+            startColor = currentColor;
         }
 
         System.arraycopy(startColor, 0, this.startColor, 0, 3);
