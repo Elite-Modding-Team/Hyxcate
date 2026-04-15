@@ -31,21 +31,21 @@ public abstract class NyxCloudColorMixin {
 
         NyxWorld nyxWorld = NyxWorld.get((World) (Object) this);
 
-        if(nyxWorld == null || nyxWorld.currentSkyColor == 0) {
+        if(nyxWorld == null) {
             return;
         }
 
         float[] initialColors = NyxColorUtils.getVec3dAsFloatArray(cir.getReturnValue());
         long worldTime = getWorldTime();
 
-        if(nyxWorld.currentSolarEvent != null) {
+        if(nyxWorld.currentSolarEvent != null && nyxWorld.currentSolarEvent.getCloudColor() != 0) {
             hyxcate$colorTransition.transition(
                     initialColors,
                     NyxColorUtils.getRgbIntAsFloatArray(nyxWorld.currentSolarEvent.getCloudColor()),
                     worldTime,
                     NyxColorTransition.TargetType.CUSTOM_COLOR
             );
-        } else if(nyxWorld.currentLunarEvent != null) {
+        } else if(nyxWorld.currentLunarEvent != null && nyxWorld.currentLunarEvent.getCloudColor() != 0) {
             hyxcate$colorTransition.transition(
                     initialColors,
                     NyxColorUtils.getRgbIntAsFloatArray(nyxWorld.currentLunarEvent.getCloudColor()),

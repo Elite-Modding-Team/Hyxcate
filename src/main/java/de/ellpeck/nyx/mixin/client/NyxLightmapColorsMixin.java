@@ -34,20 +34,20 @@ public abstract class NyxLightmapColorsMixin {
 
         NyxWorld nyxWorld = NyxWorld.get(this.world);
 
-        if(nyxWorld == null || nyxWorld.currentSkyColor == 0) {
+        if(nyxWorld == null) {
             return;
         }
 
         long worldTime = world.getWorldTime();
 
-        if(nyxWorld.currentSolarEvent != null) {
+        if(nyxWorld.currentSolarEvent != null && nyxWorld.currentSolarEvent.getLightmapColor() != 0) {
             hyxcate$colorTransition.transition(
                     hyxcate$START_MULTIPLIER,
                     NyxColorUtils.getRgbIntAsFloatArray(NyxColorUtils.adjustBrightness(nyxWorld.currentSolarEvent.getLightmapColor(), 2.0F)),
                     worldTime,
                     NyxColorTransition.TargetType.CUSTOM_COLOR
             );
-        } else if(nyxWorld.currentLunarEvent != null) {
+        } else if(nyxWorld.currentLunarEvent != null && nyxWorld.currentLunarEvent.getLightmapColor() != 0) {
             hyxcate$colorTransition.transition(
                     hyxcate$START_MULTIPLIER,
                     NyxColorUtils.getRgbIntAsFloatArray(nyxWorld.currentLunarEvent.getLightmapColor()),

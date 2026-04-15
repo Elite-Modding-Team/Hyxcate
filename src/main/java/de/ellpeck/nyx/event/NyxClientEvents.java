@@ -110,21 +110,21 @@ public final class NyxClientEvents {
 
         NyxWorld nyxWorld = NyxWorld.get(world);
 
-        if(nyxWorld == null || nyxWorld.currentSkyColor == 0) {
+        if(nyxWorld == null) {
             return;
         }
 
         long worldTime = world.getWorldTime();
         float[] initialColors = new float[]{event.getRed(), event.getGreen(), event.getBlue()};
 
-        if(nyxWorld.currentSolarEvent != null) {
+        if(nyxWorld.currentSolarEvent != null && nyxWorld.currentSolarEvent.getSkyColor() != 0) {
             fogColorTransition.transition(
                     initialColors,
                     NyxColorUtils.getRgbIntAsFloatArray(NyxColorUtils.adjustBrightness(nyxWorld.currentSolarEvent.getSkyColor(), 1.5F)),
                     worldTime,
                     NyxColorTransition.TargetType.CUSTOM_COLOR
             );
-        } else if(nyxWorld.currentLunarEvent != null) {
+        } else if(nyxWorld.currentLunarEvent != null && nyxWorld.currentLunarEvent.getSkyColor() != 0) {
             fogColorTransition.transition(
                     initialColors,
                     NyxColorUtils.getRgbIntAsFloatArray(NyxColorUtils.adjustBrightness(nyxWorld.currentLunarEvent.getSkyColor(), 1.5F)),
