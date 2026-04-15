@@ -20,6 +20,10 @@ public class NyxColorTransition {
     public void transition(float[] startColor, float[] targetColor, long currentTime, TargetType targetType) {
 
         if(targetType == TargetType.DEFAULT_COLOR && targetType == this.targetType) {
+            // Allow updating target mid-transition when going back to the default color
+            if(isTransitioning) {
+                System.arraycopy(targetColor, 0, this.targetColor, 0, 3);
+            }
             return;
         }
 

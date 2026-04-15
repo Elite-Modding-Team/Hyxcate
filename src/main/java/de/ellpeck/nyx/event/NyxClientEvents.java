@@ -14,7 +14,6 @@ import de.ellpeck.nyx.util.NyxColorUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.RenderGlobal;
@@ -102,7 +101,7 @@ public final class NyxClientEvents {
             return;
         }
 
-        WorldClient world = Minecraft.getMinecraft().world;
+        World world = event.getEntity().world;
 
         if(world == null) {
             return;
@@ -120,14 +119,14 @@ public final class NyxClientEvents {
         if(nyxWorld.currentSolarEvent != null && nyxWorld.currentSolarEvent.getSkyColor() != 0) {
             fogColorTransition.transition(
                     initialColors,
-                    NyxColorUtils.getRgbIntAsFloatArray(NyxColorUtils.adjustBrightness(nyxWorld.currentSolarEvent.getSkyColor(), 1.5F)),
+                    NyxColorUtils.getRgbIntAsFloatArray(nyxWorld.currentSolarEvent.getSkyColor()),
                     worldTime,
                     NyxColorTransition.TargetType.CUSTOM_COLOR
             );
         } else if(nyxWorld.currentLunarEvent != null && nyxWorld.currentLunarEvent.getSkyColor() != 0) {
             fogColorTransition.transition(
                     initialColors,
-                    NyxColorUtils.getRgbIntAsFloatArray(NyxColorUtils.adjustBrightness(nyxWorld.currentLunarEvent.getSkyColor(), 1.5F)),
+                    NyxColorUtils.getRgbIntAsFloatArray(nyxWorld.currentLunarEvent.getSkyColor()),
                     worldTime,
                     NyxColorTransition.TargetType.CUSTOM_COLOR
             );
@@ -141,9 +140,9 @@ public final class NyxClientEvents {
 
         if(fogColorTransition.isOverriding()) {
             float[] customFogColors = fogColorTransition.getCurrentColor(worldTime, (float) event.getRenderPartialTicks());
-            event.setRed(lerp(initialColors[0], customFogColors[0], nyxWorld.eventSkyModifier));
-            event.setGreen(lerp(initialColors[1], customFogColors[1], nyxWorld.eventSkyModifier));
-            event.setBlue(lerp(initialColors[2], customFogColors[2], nyxWorld.eventSkyModifier));
+            event.setRed(customFogColors[0]);
+            event.setGreen(customFogColors[1]);
+            event.setBlue(customFogColors[2]);
         }
 
     }
@@ -177,10 +176,6 @@ public final class NyxClientEvents {
         ModelBakery.registerItemVariants(item);
         ModelLoader.setCustomMeshDefinition(item, mapper);
         ModelLoader.setCustomStateMapper(block, mapper);
-    }
-
-    private static float lerp(float a, float b, float f) {
-        return a + f * (b - a);
     }
 
     // Courtesy of NeRdTheNed
