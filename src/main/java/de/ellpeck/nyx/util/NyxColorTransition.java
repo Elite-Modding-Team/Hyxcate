@@ -28,7 +28,9 @@ public class NyxColorTransition {
         }
 
         // Avoid transition if target color is already the same
-        if(targetColor[0] == this.targetColor[0] && targetColor[1] == this.targetColor[1] && targetColor[2] == this.targetColor[2]) {
+        if(targetColor[0] == this.targetColor[0] &&
+           targetColor[1] == this.targetColor[1] &&
+           targetColor[2] == this.targetColor[2]) {
             return;
         }
 
@@ -63,9 +65,9 @@ public class NyxColorTransition {
                 : 1F;
 
         // Basic lerp between startColor and targetColor
-        for(int i = 0; i < 3; i++) {
-            currentColor[i] = startColor[i] + ((targetColor[i] - startColor[i]) * progress);
-        }
+        currentColor[0] = startColor[0] + ((targetColor[0] - startColor[0]) * progress);
+        currentColor[1] = startColor[1] + ((targetColor[1] - startColor[1]) * progress);
+        currentColor[2] = startColor[2] + ((targetColor[2] - startColor[2]) * progress);
 
         if(progress == 1F) {
             isTransitioning = false;

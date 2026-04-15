@@ -46,8 +46,6 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
     public final Map<ChunkPos, MutableInt> playersPresentTicks = new HashMap<>();
     public final Set<BlockPos> meteorLandingSites = new HashSet<>();
     public final Set<String> visitedDimensions = new HashSet<>();
-    public float eventSkyModifier;
-    public int currentSkyColor;
     public NyxLunarEvent currentLunarEvent;
     public NyxLunarEvent forcedLunarEvent;
     public NyxSolarEvent currentSolarEvent;
@@ -181,12 +179,6 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
                 if (isDirty) this.sendToClients();
 
                 this.wasDaytime = isDaytime(this.world);
-            } else {
-                if (this.currentLunarEvent != null && this.currentSkyColor != 0) {
-                    if (this.eventSkyModifier < 1) this.eventSkyModifier += 0.01F;
-                } else {
-                    if (this.currentSolarEvent == null && this.eventSkyModifier > 0) this.eventSkyModifier -= 0.01F;
-                }
             }
         }
     }
@@ -242,12 +234,6 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
                 if (isDirty) this.sendToClients();
 
                 this.wasNighttime = isNighttime(this.world);
-            } else {
-                if (this.currentSolarEvent != null && this.currentSkyColor != 0) {
-                    if (this.eventSkyModifier < 1) this.eventSkyModifier += 0.01F;
-                } else {
-                    if (this.currentLunarEvent == null && this.eventSkyModifier > 0) this.eventSkyModifier -= 0.01F;
-                }
             }
         }
     }
@@ -336,7 +322,6 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
         // Lunar events
         String nameLunar = compound.getString("event");
         this.currentLunarEvent = this.lunarEvents.stream().filter(e -> e.name.equals(nameLunar)).findFirst().orElse(null);
-        if (this.currentLunarEvent != null) this.currentSkyColor = this.currentLunarEvent.getSkyColor();
         this.wasDaytime = compound.getBoolean("was_daytime");
         for (NyxLunarEvent event : this.lunarEvents)
             event.deserializeNBT(compound.getCompoundTag(event.name));
@@ -344,7 +329,6 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
         // Solar events
         String nameSolar = compound.getString("eventSolar");
         this.currentSolarEvent = this.solarEvents.stream().filter(e -> e.name.equals(nameSolar)).findFirst().orElse(null);
-        if (this.currentSolarEvent != null) this.currentSkyColor = this.currentSolarEvent.getSkyColor();
         this.wasNighttime = compound.getBoolean("was_nighttime");
         for (NyxSolarEvent event : this.solarEvents)
             event.deserializeNBT(compound.getCompoundTag(event.name));
