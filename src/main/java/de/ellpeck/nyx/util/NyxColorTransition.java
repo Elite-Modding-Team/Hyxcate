@@ -3,7 +3,7 @@ package de.ellpeck.nyx.util;
 public class NyxColorTransition {
 
     private final float[] startColor = new float[3];
-    private final float[] targetColor = new float[3];
+    private final float[] targetColor = new float[]{-1, -1, -1};
     private final float[] currentColor = new float[3];
 
     private long transitionStartTick = -1;

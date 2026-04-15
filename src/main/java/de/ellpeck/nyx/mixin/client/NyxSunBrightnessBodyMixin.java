@@ -3,6 +3,7 @@ package de.ellpeck.nyx.mixin.client;
 import de.ellpeck.nyx.capability.NyxWorld;
 import de.ellpeck.nyx.config.NyxConfig;
 import de.ellpeck.nyx.event.solar.NyxEventGrimEclipse;
+import de.ellpeck.nyx.util.NyxColorTransition;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -18,32 +19,42 @@ public abstract class NyxSunBrightnessBodyMixin {
     public abstract long getWorldTime();
 
     @Unique
-    private long hyxcate$startTicks = -1;
+    private final NyxColorTransition hyxcate$brightnessTransition = new NyxColorTransition(NyxConfig.GENERAL.eventTintLightmapDuration);
 
     @Inject(method = "getSunBrightnessBody", at = @At("TAIL"), cancellable = true)
     private void nyxSetSunBrightnessBody(float partialTicks, CallbackInfoReturnable<Float> cir) {
 
         NyxWorld nyxWorld = NyxWorld.get((World) (Object) this);
-        float brightness = cir.getReturnValue();
 
         if(nyxWorld == null) {
             return;
         }
 
+        long worldTime = getWorldTime();
+
+        // Re-using NyxColorTransition even tho this isn’t technically a color.
+        // Since I'm using the brightness purely as a multiplier factor
+        // (similar to the Lightmap mixin, where it’s split into RGB channels though),
+        // only the first channel is used, the others are kept to 0.
+
         if(nyxWorld.currentSolarEvent instanceof NyxEventGrimEclipse) {
+            hyxcate$brightnessTransition.transition(
+                    new float[]{1, 0, 0},
+                    new float[]{0, 0, 0},
+                    worldTime,
+                    NyxColorTransition.TargetType.CUSTOM_COLOR
+            );
+        } else {
+            hyxcate$brightnessTransition.transition(
+                    new float[]{1, 0, 0},
+                    worldTime,
+                    NyxColorTransition.TargetType.DEFAULT_COLOR
+            );
+        }
 
-            if(hyxcate$startTicks == -1) {
-                hyxcate$startTicks = this.getWorldTime();
-            }
-
-            long elapsedTicks = this.getWorldTime() - hyxcate$startTicks;
-            // Reach 0% brightness in the config-specified amount of ticks
-            brightness *= Math.max(0, 1 - ((float) elapsedTicks / NyxConfig.GENERAL.eventTintLightmapDuration));
-
-            cir.setReturnValue(brightness);
-
-        } else if(hyxcate$startTicks != -1) {
-            hyxcate$startTicks = -1;
+        if(hyxcate$brightnessTransition.isOverriding()) {
+            float customBrightness = hyxcate$brightnessTransition.getCurrentColor(worldTime, partialTicks)[0];
+            cir.setReturnValue(cir.getReturnValue() * customBrightness);
         }
 
     }
