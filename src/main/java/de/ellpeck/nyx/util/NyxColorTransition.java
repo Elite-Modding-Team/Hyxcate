@@ -1,5 +1,7 @@
 package de.ellpeck.nyx.util;
 
+import de.ellpeck.nyx.event.NyxClientEvents;
+
 public class NyxColorTransition {
 
     private final float[] startColor = new float[3];
@@ -11,6 +13,8 @@ public class NyxColorTransition {
     private boolean isTransitioning = false;
     private TargetType targetType = TargetType.DEFAULT_COLOR;
 
+    private long lastJoinTime = -1;
+
     private final int durationTicks;
 
     public NyxColorTransition(int durationTicks) {
@@ -18,6 +22,17 @@ public class NyxColorTransition {
     }
 
     public void transition(float[] startColor, float[] targetColor, long currentTime, TargetType targetType) {
+
+        // Skip transition when joining world
+        if(NyxClientEvents.joinTime != lastJoinTime) {
+            lastJoinTime = NyxClientEvents.joinTime;
+
+            System.arraycopy(targetColor, 0, this.currentColor, 0, 3);
+
+            this.targetType = targetType;
+            isTransitioning = false;
+            return;
+        }
 
         if(targetType == TargetType.DEFAULT_COLOR && targetType == this.targetType) {
             // Allow updating target mid-transition when going back to the default color

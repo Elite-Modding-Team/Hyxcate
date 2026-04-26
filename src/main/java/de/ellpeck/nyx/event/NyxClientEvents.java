@@ -33,6 +33,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.*;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -49,6 +50,20 @@ public final class NyxClientEvents {
     private static long lastCraftSoundTime = 0L;
     private static String lastMoonTextures;
     private static String lastSunTextures;
+
+    /**
+     * Used mainly in {@link NyxColorTransition} to
+     * instantly transition on world join
+     */
+    public static long joinTime = -1;
+
+    @SubscribeEvent
+    public static void onWorldUnload(WorldEvent.Unload event) {
+        // Allow joinTime to be set again during first client tick
+        if(event.getWorld().isRemote) {
+            joinTime = -1;
+        }
+    }
 
     @SubscribeEvent
     public static void onDebug(RenderGameOverlayEvent.Text event) {
@@ -71,6 +86,11 @@ public final class NyxClientEvents {
         if (event.phase != TickEvent.Phase.START) return;
         World world = Minecraft.getMinecraft().world;
         if (world == null) return;
+
+        if(joinTime == -1) {
+            joinTime = world.getWorldTime();
+        }
+
         NyxWorld nyx = NyxWorld.get(world);
         if (nyx == null) return;
         nyx.update();
