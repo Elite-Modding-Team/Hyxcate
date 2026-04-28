@@ -81,8 +81,14 @@ public class NyxConfig {
 
     public static class General {
         @Config.Name("Celestial Warhammer Ability Damage")
-        @Config.Comment("The amount of damage that the celestial warhammer deals if the maximum flight time was used")
+        @Config.Comment("The amount of damage that the Celestial Warhammer deals if the maximum flight time was used")
         public int celestialWarhammerAbilityDamage = 32;
+
+        @Config.Name("Celestial Warhammer Ability Goes Forward")
+        @Config.Comment({
+                "Makes the Celestial Warhammer's ability also launch you forward",
+                "Disable if you prefer to launch upwards directly"})
+        public boolean celestialWarhammerForwardLaunch = true;
 
         @Config.Name("Event Tint")
         @Config.Comment("If celestial events should tint the sky")

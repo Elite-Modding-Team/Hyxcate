@@ -1,6 +1,7 @@
 package de.ellpeck.nyx.item.tool;
 
 import de.ellpeck.nyx.Nyx;
+import de.ellpeck.nyx.config.NyxConfig;
 import de.ellpeck.nyx.init.NyxSoundEvents;
 import de.ellpeck.nyx.item.NyxItemSword;
 import de.ellpeck.nyx.util.NyxUtils;
@@ -27,6 +28,7 @@ import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.IRarity;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
@@ -37,7 +39,7 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
 
     // TODO: Improve sweep damage calculation
     @Override
-    public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
+    public boolean hitEntity(@Nonnull ItemStack stack, @Nonnull EntityLivingBase target, @Nonnull EntityLivingBase attacker) {
         super.hitEntity(stack, target, attacker);
 
         if (attacker instanceof EntityPlayer) {
@@ -60,23 +62,23 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
     }
 
     @Override
-    public void setDamage(ItemStack stack, int damage) {
+    public void setDamage(@Nonnull ItemStack stack, int damage) {
         // Unbreakable
     }
 
     @Override
-    public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos, EntityLivingBase entityLiving) {
+    public boolean onBlockDestroyed(@Nonnull ItemStack stack, @Nonnull World world, @Nonnull IBlockState state, @Nonnull BlockPos pos, @Nonnull EntityLivingBase entityLiving) {
         return true;
     }
 
     @Override
-    public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
+    public ActionResult<ItemStack> onItemRightClick(@Nonnull World world, EntityPlayer player, @Nonnull EnumHand hand) {
         player.setActiveHand(hand);
         return ActionResult.newResult(EnumActionResult.SUCCESS, player.getHeldItem(hand));
     }
 
     @Override
-    public void onPlayerStoppedUsing(ItemStack stack, World world, EntityLivingBase entityLiving, int timeLeft) {
+    public void onPlayerStoppedUsing(@Nonnull ItemStack stack, @Nonnull World world, EntityLivingBase entityLiving, int timeLeft) {
         if (!entityLiving.onGround)
             return;
 
@@ -87,8 +89,11 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
 
         float modifier = MathHelper.clamp((useTime - 20.0F) / 5.0F, 1.0F, 2.5F);
 
-        entityLiving.motionX += -modifier * MathHelper.sin(entityLiving.rotationYaw * 0.02F);
         entityLiving.motionY += 1.250D * modifier;
+        if (NyxConfig.GENERAL.celestialWarhammerForwardLaunch) {
+            entityLiving.motionX += -modifier * MathHelper.sin(entityLiving.rotationYaw * 0.017453292F);
+            entityLiving.motionZ += modifier * MathHelper.cos(entityLiving.rotationYaw * 0.017453292F);
+        }
         entityLiving.getEntityData().setLong(Nyx.ID + ":leap_start", world.getTotalWorldTime());
 
         if (entityLiving instanceof EntityPlayer) {
@@ -105,17 +110,17 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
     }
 
     @Override
-    public EnumAction getItemUseAction(ItemStack stack) {
+    public EnumAction getItemUseAction(@Nonnull ItemStack stack) {
         return EnumAction.BOW;
     }
 
     @Override
-    public int getMaxItemUseDuration(ItemStack stack) {
+    public int getMaxItemUseDuration(@Nonnull ItemStack stack) {
         return 36000;
     }
 
     @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+    public boolean canApplyAtEnchantingTable(@Nonnull ItemStack stack, @Nonnull Enchantment enchantment) {
         if (enchantment == Enchantments.MENDING || enchantment == Enchantments.UNBREAKING) return false;
         return super.canApplyAtEnchantingTable(stack, enchantment);
     }
@@ -126,7 +131,7 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
     }
 
     @Override
-    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> list) {
+    public void getSubItems(@Nonnull CreativeTabs tab, @Nonnull NonNullList<ItemStack> list) {
         if (this.isInCreativeTab(tab)) {
             ItemStack stack = new ItemStack(this);
             NyxUtils.setUnbreakable(stack);
