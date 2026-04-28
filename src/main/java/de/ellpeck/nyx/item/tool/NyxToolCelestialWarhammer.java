@@ -89,7 +89,6 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
 
         entityLiving.motionX += -modifier * MathHelper.sin(entityLiving.rotationYaw * 0.02F);
         entityLiving.motionY += 1.250D * modifier;
-        entityLiving.motionZ += modifier * MathHelper.cos(entityLiving.rotationYaw * 0.02F);
         entityLiving.getEntityData().setLong(Nyx.ID + ":leap_start", world.getTotalWorldTime());
 
         if (entityLiving instanceof EntityPlayer) {
