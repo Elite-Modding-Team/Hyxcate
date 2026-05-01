@@ -86,14 +86,20 @@
 #### 📚 **Attributes**
 
 - **Explosion Resistance:** Exclusive to **Tektite** armor, it reduces damage against explosions similar to **Blast Protection**. The maximum **Explosion Resistance** is **+100%**.
+- **Lunar Damage:** It counts as damage, but only during the night.
+- **Lunar Ward:** Completely negates damage (+5% Lunar Ward means 5% of damage is nullified), but only during the night.
 - **Magnetization:** Nearby items will be drawn towards you. The higher the **Magnetization**, the higher the pull strength. The maximum **Magnetization** is **+10**.
 - **Paralysis Chance:** Exclusive to **Tektite** tools, it will have a chance to inflict **Paralysis** on the hit target. The maximum **Paralysis Chance** is **+100%**.
+- **Solar Damage:** It counts as damage, but only during the day.
+- **Solar Ward:** Completely negates damage (+5% Solar Ward means 5% of damage is nullified), but only during the day.
 
 #### 📖 **Enchantments**
 
-- **Lunar Edge:** Adds bonus melee damage to the affected armor piece similar to **Sharpness**, the amount of bonus melee damage applied is increased during the night. Incompatible with **Bane of Arthropods**, **Sharpness**, and **Smite**. The max level is **V**.
-- **Lunar Shield:** Adds bonus damage reduction to the affected armor piece similar to **Protection**, the amount of damage reduction applied is increased during the night. Incompatible with **Blast Protection**, **Fire Protection**, **Projectile Protection**, and **Protection**. The max level is **IV**.
+- **Lunar Edge:** Adds Lunar Damage to the affected tool. Incompatible with **Solar Edge**. The max level is **V**.
+- **Lunar Shield:** Adds Lunar Ward to the affected armor piece. Incompatible with **Solar Shield**. The max level is **IV**.
 - **Magnetiferous:** Adds +0.5 Magnetization per level. The max level is **IV**.
+- **Solar Edge:** Adds Solar Damage to the affected tool. Incompatible with **Lunar Edge**. The max level is **V**.
+- **Solar Shield:** Adds Solar Ward to the affected armor piece. Incompatible with **Lunar Shield**. The max level is **IV**.
 
 ### 🔁 **Mod Integration**
 
