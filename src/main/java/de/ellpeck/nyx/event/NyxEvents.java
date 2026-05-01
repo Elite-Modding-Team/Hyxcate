@@ -81,13 +81,16 @@ import javax.vecmath.Vector3d;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @EventBusSubscriber(modid = Nyx.ID)
 public final class NyxEvents {
     public static int lunarEdgeLevel;
+    public static int lunarShieldLevel;
     public static int magnetizationLevel;
     public static int solarEdgeLevel;
+    public static int solarShieldLevel;
 
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
@@ -148,6 +151,11 @@ public final class NyxEvents {
 
                 if (magnetizationValue <= 0) return;
 
+                // If exceeding 10, set to 10 to prevent insanity
+                if (magnetizationValue > 10.0F) {
+                    magnetizationValue = 10.0F;
+                }
+
                 // Draw nearby items, with strength being based on attribute amount
                 pullItems(player, 6.0D, 0.004F + (0.002F * magnetizationValue));
             }
@@ -201,14 +209,20 @@ public final class NyxEvents {
         ItemStack stack = event.getItemStack();
 
         if (NyxConfig.MASTER_SWITCHES.enchantmentsEnabled) {
-            magnetizationLevel = EnchantmentHelper.getEnchantmentLevel(NyxEnchantments.magnetization, stack);
-            double magnetizationBonus = 0.5D * magnetizationLevel;
-
             lunarEdgeLevel = EnchantmentHelper.getEnchantmentLevel(NyxEnchantments.lunarEdge, stack);
             double lunarEdgeBonus = NyxConfig.GENERAL.lunarEdgeDamageBase + (NyxConfig.GENERAL.lunarEdgeDamageSubsequent * lunarEdgeLevel);
 
+            lunarShieldLevel = EnchantmentHelper.getEnchantmentLevel(NyxEnchantments.lunarShield, stack);
+            double lunarShieldBonus = NyxConfig.GENERAL.lunarShieldWardBase + (NyxConfig.GENERAL.lunarShieldWardSubsequent * lunarShieldLevel);
+
+            magnetizationLevel = EnchantmentHelper.getEnchantmentLevel(NyxEnchantments.magnetization, stack);
+            double magnetizationBonus = 0.5D * magnetizationLevel;
+
             solarEdgeLevel = EnchantmentHelper.getEnchantmentLevel(NyxEnchantments.solarEdge, stack);
             double solarEdgeBonus = NyxConfig.GENERAL.solarEdgeDamageBase + (NyxConfig.GENERAL.solarEdgeDamageSubsequent * solarEdgeLevel);
+
+            solarShieldLevel = EnchantmentHelper.getEnchantmentLevel(NyxEnchantments.solarShield, stack);
+            double solarShieldBonus = NyxConfig.GENERAL.solarShieldWardBase + (NyxConfig.GENERAL.solarShieldWardSubsequent * solarShieldLevel);
 
             if (lunarEdgeLevel > 0 && event.getSlotType() == EntityEquipmentSlot.MAINHAND) {
                 Collection<AttributeModifier> modifiers = event.getOriginalModifiers().get(NyxAttributes.LUNAR_DAMAGE.getName());
@@ -235,6 +249,37 @@ public final class NyxEvents {
                             "Lunar Damage modifier",
                             lunarEdgeBonus,
                             Constants.AttributeModifierOperation.ADD)
+                    );
+                }
+            }
+
+            if (lunarShieldLevel > 0 && event.getSlotType() == ((ItemArmor) stack.getItem()).armorType) {
+                UUID lunarWardArmorSlotID = NyxAttributes.LUNAR_WARD_ARMOR_ID.get(event.getSlotType());
+
+                Collection<AttributeModifier> modifiers = event.getOriginalModifiers().get(NyxAttributes.LUNAR_WARD.getName());
+                AttributeModifier toModify = null;
+
+                for (AttributeModifier modifier : modifiers) {
+                    if (modifier.getID().equals(lunarWardArmorSlotID)) {
+                        toModify = modifier;
+                        break;
+                    }
+                }
+
+                if (toModify != null) {
+                    event.removeModifier(NyxAttributes.LUNAR_WARD, toModify);
+                    event.addModifier(NyxAttributes.LUNAR_WARD, new AttributeModifier(
+                            toModify.getID(),
+                            toModify.getName(),
+                            toModify.getAmount() + lunarShieldBonus,
+                            toModify.getOperation())
+                    );
+                } else {
+                    event.addModifier(NyxAttributes.LUNAR_WARD, new AttributeModifier(
+                            lunarWardArmorSlotID,
+                            "Lunar Ward modifier",
+                            lunarShieldBonus,
+                            Constants.AttributeModifierOperation.ADD_MULTIPLE)
                     );
                 }
             }
@@ -268,13 +313,46 @@ public final class NyxEvents {
                 }
             }
 
+            if (solarShieldLevel > 0 && event.getSlotType() == ((ItemArmor) stack.getItem()).armorType) {
+                UUID solarWardArmorSlotID = NyxAttributes.SOLAR_WARD_ARMOR_ID.get(event.getSlotType());
+
+                Collection<AttributeModifier> modifiers = event.getOriginalModifiers().get(NyxAttributes.SOLAR_WARD.getName());
+                AttributeModifier toModify = null;
+
+                for (AttributeModifier modifier : modifiers) {
+                    if (modifier.getID().equals(solarWardArmorSlotID)) {
+                        toModify = modifier;
+                        break;
+                    }
+                }
+
+                if (toModify != null) {
+                    event.removeModifier(NyxAttributes.SOLAR_WARD, toModify);
+                    event.addModifier(NyxAttributes.SOLAR_WARD, new AttributeModifier(
+                            toModify.getID(),
+                            toModify.getName(),
+                            toModify.getAmount() + solarShieldBonus,
+                            toModify.getOperation())
+                    );
+                } else {
+                    event.addModifier(NyxAttributes.SOLAR_WARD, new AttributeModifier(
+                            solarWardArmorSlotID,
+                            "Solar modifier",
+                            solarShieldBonus,
+                            Constants.AttributeModifierOperation.MULTIPLY)
+                    );
+                }
+            }
+
             // Checks are a bit hacky but we don't want the slot types to overlap
             if (magnetizationLevel > 0 && stack.getItem() instanceof ItemArmor && event.getSlotType() == ((ItemArmor) stack.getItem()).armorType) {
+                UUID magnetizationArmorSlotId = NyxAttributes.MAGNETIZATION_ARMOR_ID.get(event.getSlotType());
+
                 Collection<AttributeModifier> modifiers = event.getOriginalModifiers().get(NyxAttributes.MAGNETIZATION.getName());
                 AttributeModifier toModify = null;
 
                 for (AttributeModifier modifier : modifiers) {
-                    if (modifier.getID().equals(NyxAttributes.MAGNETIZATION_ARMOR_ID)) {
+                    if (modifier.getID().equals(magnetizationArmorSlotId)) {
                         toModify = modifier;
                         break;
                     }
@@ -290,7 +368,7 @@ public final class NyxEvents {
                     );
                 } else {
                     event.addModifier(NyxAttributes.MAGNETIZATION, new AttributeModifier(
-                            NyxAttributes.MAGNETIZATION_ARMOR_ID,
+                            magnetizationArmorSlotId,
                             "Magnetization modifier",
                             magnetizationBonus,
                             Constants.AttributeModifierOperation.ADD)
@@ -344,6 +422,10 @@ public final class NyxEvents {
 
     @SubscribeEvent
     public static void onDamage(LivingDamageEvent event) {
+        long time = event.getEntity().world.getWorldTime() % 24000;
+        boolean isNight = (time >= 13000 && time < 23000);
+        boolean isDay = (time > 0 && time < 12000);
+
         // Explosion Resistance Attribute
         if (event.getSource().isExplosion()) {
             IAttributeInstance explosionResistance = event.getEntityLiving().getEntityAttribute(NyxAttributes.EXPLOSION_RESISTANCE);
@@ -356,8 +438,59 @@ public final class NyxEvents {
                 }
                 if (explosionResistanceValue <= 0) return;
 
+                // If exceeding 100%, set to 100% to prevent healing
+                if (explosionResistanceValue > 1.0F) {
+                    explosionResistanceValue = 1.0F;
+                }
+
                 // Reduce explosion damage by attribute amount
-                event.setAmount(event.getAmount() * (1 - explosionResistanceValue));
+                event.setAmount(event.getAmount() * (1.0F - explosionResistanceValue));
+            }
+        }
+
+        // Lunar Ward Attribute
+        if (isNight) {
+            IAttributeInstance lunarWard = event.getEntityLiving().getEntityAttribute(NyxAttributes.LUNAR_WARD);
+
+            if (lunarWard != null && !lunarWard.getModifiers().isEmpty()) {
+                float lunarWardValue = 0.0F;
+
+                for (AttributeModifier attributemodifier : lunarWard.getModifiers()) {
+                    lunarWardValue += (float) attributemodifier.getAmount();
+                }
+
+                if (lunarWardValue <= 0) return;
+
+                // If exceeding 100%, set to 100% to prevent healing
+                if (lunarWardValue > 1.0F) {
+                    lunarWardValue = 1.0F;
+                }
+
+                // Reduce damage by attribute amount
+                event.setAmount(event.getAmount() * (1.0F - lunarWardValue));
+            }
+        }
+
+        // Solar Ward Attribute
+        if (isDay) {
+            IAttributeInstance solarWard = event.getEntityLiving().getEntityAttribute(NyxAttributes.SOLAR_WARD);
+
+            if (solarWard != null && !solarWard.getModifiers().isEmpty()) {
+                float solarWardValue = 0.0F;
+
+                for (AttributeModifier attributemodifier : solarWard.getModifiers()) {
+                    solarWardValue += (float) attributemodifier.getAmount();
+                }
+
+                if (solarWardValue <= 0) return;
+
+                // If exceeding 100%, set to 100% to prevent healing
+                if (solarWardValue > 1.0F) {
+                    solarWardValue = 1.0F;
+                }
+
+                // Reduce damage by attribute amount
+                event.setAmount(event.getAmount() * (1.0F - solarWardValue));
             }
         }
     }
@@ -689,7 +822,7 @@ public final class NyxEvents {
     }
 
     // Unbreaking still applies to items on anvils regardless of whether the items don't accept it in enchantment tables or not
-    // This event should fix that
+// This event should fix that
     @SubscribeEvent
     public static void onAnvilUpdate(AnvilUpdateEvent event) {
         if (event.getLeft().isEmpty() || event.getRight().isEmpty()) {

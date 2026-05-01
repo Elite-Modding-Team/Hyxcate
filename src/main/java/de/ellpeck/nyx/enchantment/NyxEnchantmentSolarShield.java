@@ -8,9 +8,9 @@ import javax.annotation.Nonnull;
 
 import static net.minecraft.inventory.EntityEquipmentSlot.*;
 
-public class NyxEnchantmentLunarShield extends NyxEnchantment {
-    public NyxEnchantmentLunarShield() {
-        super("lunar_shield", Rarity.UNCOMMON, EnumEnchantmentType.ARMOR, new EntityEquipmentSlot[]{HEAD, CHEST, LEGS, FEET});
+public class NyxEnchantmentSolarShield extends NyxEnchantment {
+    public NyxEnchantmentSolarShield() {
+        super("solar_shield", Rarity.UNCOMMON, EnumEnchantmentType.ARMOR, new EntityEquipmentSlot[]{HEAD, CHEST, LEGS, FEET});
     }
 
     @Override
@@ -30,6 +30,6 @@ public class NyxEnchantmentLunarShield extends NyxEnchantment {
 
     @Override
     protected boolean canApplyTogether(@Nonnull Enchantment ench) {
-        return super.canApplyTogether(ench) && !(ench instanceof NyxEnchantmentSolarShield);
+        return super.canApplyTogether(ench) && !(ench instanceof NyxEnchantmentLunarShield);
     }
 }

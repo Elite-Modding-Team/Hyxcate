@@ -125,20 +125,36 @@ public class NyxConfig {
         public boolean eventIntroSounds = true;
 
         @Config.Name("Lunar Edge Damage: Base")
-        @Config.Comment("The amount of base Lunar Damage received")
+        @Config.Comment("The amount of base Lunar Damage received (when first applying Lunar Edge)")
         public double lunarEdgeDamageBase = 0.5D;
 
         @Config.Name("Lunar Edge Damage: Subsequent")
-        @Config.Comment("The amount of additional Lunar Damage applied (per level) after the base damage")
+        @Config.Comment("The amount of additional Lunar Damage applied (per level of Lunar Edge) after the base damage")
         public double lunarEdgeDamageSubsequent = 0.5D;
 
+        @Config.Name("Lunar Shield Ward: Base")
+        @Config.Comment("The amount of Lunar Ward received (when first applying Lunar Shield)")
+        public double lunarShieldWardBase = 0.01D;
+
+        @Config.Name("Lunar Shield Ward: Subsequent")
+        @Config.Comment("The amount of Lunar Ward received (per level of Lunar Shield) after the base ward")
+        public double lunarShieldWardSubsequent = 0.01D;
+
         @Config.Name("Solar Edge Damage: Base")
-        @Config.Comment("The amount of base Solar Damage received")
+        @Config.Comment("The amount of base Solar Damage received (when first applying Lunar Edge)")
         public double solarEdgeDamageBase = 0.5D;
 
         @Config.Name("Solar Edge Damage: Subsequent")
-        @Config.Comment("The amount of additional Solar Damage applied (per level) after the base damage")
+        @Config.Comment("The amount of additional Solar Damage applied (per level of Solar Edge) after the base damage")
         public double solarEdgeDamageSubsequent = 0.5D;
+
+        @Config.Name("Solar Shield Ward: Base")
+        @Config.Comment("The amount of Solar Ward received (when first applying Solar Shield)")
+        public double solarShieldWardBase = 0.01D;
+
+        @Config.Name("Solar Shield Ward: Subsequent")
+        @Config.Comment("The amount of Solar Ward received (per level of Solar Shield) after the base ward")
+        public double solarShieldWardSubsequent = 0.01D;
     }
 
     public static class Entities {

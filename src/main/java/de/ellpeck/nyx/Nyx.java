@@ -23,7 +23,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
-@Mod(modid = Nyx.ID, name = Nyx.NAME, version = Nyx.VERSION, dependencies = "required-after:expandedevents;after:tconstruct;after:conarm")
+@Mod(modid = Nyx.ID, name = Nyx.NAME, version = Nyx.VERSION, dependencies = "required-after:mixinbooter@[10.2,);required-after:expandedevents;after:tconstruct;after:conarm")
 public class Nyx {
 
     public static final String ID = Tags.MOD_ID;

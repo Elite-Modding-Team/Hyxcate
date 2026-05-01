@@ -35,7 +35,7 @@ public class NyxItemArmor extends ItemArmor implements IFireproofItem {
 
     public NyxItemArmor(ArmorMaterial material, int renderIndex, EntityEquipmentSlot equipmentSlot, int magnetizationAmount, double explosiveResistance, EnumRarity rarity) {
         super(material, renderIndex, equipmentSlot);
-        this.magnetizationAmount = new AttributeModifier(NyxAttributes.MAGNETIZATION_ARMOR_ID, "Magnetization modifier", magnetizationAmount, 0);
+        this.magnetizationAmount = new AttributeModifier(NyxAttributes.MAGNETIZATION_ARMOR_ID.get(equipmentSlot), "Magnetization modifier", magnetizationAmount, 0);
         this.explosiveResistance = new AttributeModifier(NyxAttributes.EXPLOSION_RESISTANCE_ID.toString(), explosiveResistance, 1);
         this.rarity = rarity;
     }

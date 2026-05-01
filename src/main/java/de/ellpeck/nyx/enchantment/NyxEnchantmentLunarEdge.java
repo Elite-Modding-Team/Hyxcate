@@ -3,8 +3,6 @@ package de.ellpeck.nyx.enchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemAxe;
-import net.minecraft.item.ItemStack;
 
 import javax.annotation.Nonnull;
 
@@ -34,10 +32,5 @@ public class NyxEnchantmentLunarEdge extends NyxEnchantment {
     @Override
     protected boolean canApplyTogether(@Nonnull Enchantment ench) {
         return super.canApplyTogether(ench) && !(ench instanceof NyxEnchantmentSolarEdge);
-    }
-
-    @Override
-    public boolean canApply(ItemStack stack) {
-        return stack.getItem() instanceof ItemAxe || super.canApply(stack);
     }
 }
