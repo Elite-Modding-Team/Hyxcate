@@ -87,11 +87,11 @@
 
 - **Explosion Resistance:** Exclusive to **Tektite** armor, it reduces damage against explosions similar to **Blast Protection**. The maximum **Explosion Resistance** is **+100%**.
 - **Lunar Damage:** It counts as damage, but only during the night.
-- **Lunar Ward:** Completely negates damage (+5% Lunar Ward means 5% of damage is nullified), but only during the night.
+- **Lunar Ward:** Completely negates damage (+5% Lunar Ward means 5% of damage is nullified), but only during the night. The maximum **Lunar Ward** is **+100%**.
 - **Magnetization:** Nearby items will be drawn towards you. The higher the **Magnetization**, the higher the pull strength. The maximum **Magnetization** is **+10**.
 - **Paralysis Chance:** Exclusive to **Tektite** tools, it will have a chance to inflict **Paralysis** on the hit target. The maximum **Paralysis Chance** is **+100%**.
 - **Solar Damage:** It counts as damage, but only during the day.
-- **Solar Ward:** Completely negates damage (+5% Solar Ward means 5% of damage is nullified), but only during the day.
+- **Solar Ward:** Completely negates damage (+5% Solar Ward means 5% of damage is nullified), but only during the day. The maximum **Solar Ward** is **+100%**.
 
 #### 📖 **Enchantments**
 
