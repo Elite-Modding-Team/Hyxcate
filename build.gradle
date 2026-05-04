@@ -115,7 +115,7 @@ dependencies {
     // Expanded Events
     // This allows us to utilize more event handlers. See here for more info:
     // https://github.com/Invadermonky/ExpandedEvents/blob/master/README.md
-    implementation rfg.deobf('curse.maven:expanded-events-1396395:7931702')
+    implementation rfg.deobf('curse.maven:expanded-events-1396395:8035699')
 
     // Future Fireproof
     implementation rfg.deobf('curse.maven:future-fireproof-1121231:6877387')
