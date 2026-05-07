@@ -253,7 +253,7 @@ public final class NyxEvents {
                 }
             }
 
-            if (lunarShieldLevel > 0 && event.getSlotType() == ((ItemArmor) stack.getItem()).armorType) {
+            if (lunarShieldLevel > 0 && stack.getItem() instanceof ItemArmor && event.getSlotType() == ((ItemArmor) stack.getItem()).armorType) {
                 UUID lunarWardArmorSlotID = NyxAttributes.LUNAR_WARD_ARMOR_ID.get(event.getSlotType());
 
                 Collection<AttributeModifier> modifiers = event.getOriginalModifiers().get(NyxAttributes.LUNAR_WARD.getName());
@@ -313,7 +313,7 @@ public final class NyxEvents {
                 }
             }
 
-            if (solarShieldLevel > 0 && event.getSlotType() == ((ItemArmor) stack.getItem()).armorType) {
+            if (solarShieldLevel > 0 && stack.getItem() instanceof ItemArmor && event.getSlotType() == ((ItemArmor) stack.getItem()).armorType) {
                 UUID solarWardArmorSlotID = NyxAttributes.SOLAR_WARD_ARMOR_ID.get(event.getSlotType());
 
                 Collection<AttributeModifier> modifiers = event.getOriginalModifiers().get(NyxAttributes.SOLAR_WARD.getName());
