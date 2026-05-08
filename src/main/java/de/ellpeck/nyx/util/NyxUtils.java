@@ -77,11 +77,15 @@ public class NyxUtils {
 
     public static boolean handleExtraSpawn(Entity entity, String key, Map<ResourceLocation, List<ResourceLocation>> map) {
         ResourceLocation name = EntityList.getKey(entity);
-        if (map.containsKey(name)) {
+        if (name != null && map.containsKey(name)) {
             List<ResourceLocation> extras = map.get(name);
-            Entity extra = EntityList.createEntityByIDFromName(extras.get(RANDOM.nextInt(extras.size())), entity.world);
-            doExtraSpawn(entity, key, extra);
-            return true;
+            if (!extras.isEmpty()) {
+                Entity extra = EntityList.createEntityByIDFromName(extras.get(RANDOM.nextInt(extras.size())), entity.world);
+                if (extra instanceof EntityLiving) {
+                    doExtraSpawn(entity, key, extra);
+                    return true;
+                }
+            }
         }
         return false;
     }
@@ -118,12 +122,14 @@ public class NyxUtils {
 
     public static boolean handleReplacementSpawn(Entity entity, String key, Map<ResourceLocation, List<ResourceLocation>> map) {
         ResourceLocation name = EntityList.getKey(entity);
-        if (map.containsKey(name)) {
+        if (name != null && map.containsKey(name)) {
             List<ResourceLocation> replacements = map.get(name);
-            Entity replacement = EntityList.createEntityByIDFromName(replacements.get(RANDOM.nextInt(replacements.size())), entity.world);
-            if (replacement instanceof EntityLiving) {
-                doReplacementSpawn(entity, key, (EntityLiving) replacement);
-                return true;
+            if (!replacements.isEmpty()) {
+                Entity replacement = EntityList.createEntityByIDFromName(replacements.get(RANDOM.nextInt(replacements.size())), entity.world);
+                if (replacement instanceof EntityLiving) {
+                    doReplacementSpawn(entity, key, (EntityLiving) replacement);
+                    return true;
+                }
             }
         }
         return false;
