@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(value = World.class, remap = false)
+@Mixin(World.class)
 public abstract class NyxCloudColorMixin {
 
     @Shadow
@@ -22,7 +22,7 @@ public abstract class NyxCloudColorMixin {
     @Unique
     private final NyxColorTransition hyxcate$colorTransition = new NyxColorTransition(NyxConfig.GENERAL.eventTintSkyColorDuration);
 
-    @Inject(method = "getCloudColorBody", at = @At("TAIL"), cancellable = true)
+    @Inject(method = "getCloudColorBody", at = @At("TAIL"), cancellable = true, remap = false)
     private void nyxSetCloudColor(float partialTicks, CallbackInfoReturnable<Vec3d> cir) {
 
         if(!NyxConfig.GENERAL.eventTint) {

@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(value = World.class, remap = false)
+@Mixin(World.class)
 public abstract class NyxSunBrightnessBodyMixin {
 
     @Shadow
@@ -21,7 +21,7 @@ public abstract class NyxSunBrightnessBodyMixin {
     @Unique
     private final NyxColorTransition hyxcate$brightnessTransition = new NyxColorTransition(NyxConfig.GENERAL.eventTintLightmapDuration);
 
-    @Inject(method = "getSunBrightnessBody", at = @At("TAIL"), cancellable = true)
+    @Inject(method = "getSunBrightnessBody", at = @At("TAIL"), cancellable = true, remap = false)
     private void nyxSetSunBrightnessBody(float partialTicks, CallbackInfoReturnable<Float> cir) {
 
         NyxWorld nyxWorld = NyxWorld.get((World) (Object) this);
