@@ -8,6 +8,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +17,15 @@ import java.util.stream.Collectors;
 public class NyxCommandForce extends CommandBase {
     @Override
     public String getName() {
-        return "nyxforce";
+        return "hyxcateforce";
+    }
+
+    @Override
+    public List<String> getAliases() {
+        List<String> aliases = new ArrayList<>();
+        aliases.add("hyxforce");
+        aliases.add("nyxforce");
+        return aliases;
     }
 
     @Override

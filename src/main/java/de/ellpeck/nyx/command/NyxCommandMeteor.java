@@ -8,13 +8,22 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class NyxCommandMeteor extends CommandBase {
     @Override
     public String getName() {
-        return "nyxmeteor";
+        return "hyxcatemeteor";
+    }
+
+    @Override
+    public List<String> getAliases() {
+        List<String> aliases = new ArrayList<>();
+        aliases.add("hyxmeteor");
+        aliases.add("nyxmeteor");
+        return aliases;
     }
 
     @Override

@@ -28,11 +28,11 @@ tile.nyx.tektite_block.name=Block of Tektite
 tile.nyx.tektite_glass.name=Tektite Glass
 
 # Commands
-command.nyx.force.usage=/nyxforce <event> to cause a lunar/solar event to happen
+command.nyx.force.usage=/hyxcateforce <event> to cause a lunar/solar event to happen
 command.nyx.force.invalid=There is no lunar/solar event with the name %s
 command.nyx.force.success=%s will occur on the next possible night/day
 command.nyx.force.clear=Forced event was cleared
-command.nyx.meteor.usage=/nyxmeteor [x] [z] [size <1-3>] [type <1-4>] [homing <true/false>] to spawn a meteor
+command.nyx.meteor.usage=/hyxcatemeteor [x] [z] [size <1-3>] [type <1-4>] [homing <true/false>] to spawn a meteor
 command.nyx.meteor.success=Spawned a meteor at %s, %s, %s
 
 # Death Messages
