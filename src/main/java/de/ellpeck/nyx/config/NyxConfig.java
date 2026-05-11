@@ -706,6 +706,14 @@ public class NyxConfig {
                 "minecraft:lava",
                 "minecraft:water"
         };
+
+        @Config.Name("Meteor Sizes")
+        @Config.Comment({"Sizes of meteors that are allowed to spawn", "1 = Small", "2 = Medium", "3 = Large"})
+        public Integer[] meteorSizes = new Integer[]{1, 2, 3};
+
+        @Config.Name("Meteor Types")
+        @Config.Comment({"Types of meteors that are allowed to spawn", "1 = Meteorite", "2 = Frezarite", "3 = Kreknorite", "4 = Unknown"})
+        public Integer[] meteorTypes = new Integer[]{1, 2, 3, 4};
     }
 
     public static class ModIntegration {

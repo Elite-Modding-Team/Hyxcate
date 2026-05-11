@@ -15,6 +15,9 @@ public class NyxData {
     public static final List<Integer> ALLOWED_DIMENSIONS_LUNAR = new ArrayList<>();
     public static final List<Integer> ALLOWED_DIMENSIONS_SOLAR = new ArrayList<>();
 
+    public static final List<Integer> ALLOWED_METEOR_SIZES = new ArrayList<>();
+    public static final List<Integer> ALLOWED_METEOR_TYPES = new ArrayList<>();
+
     public static final List<Block> METEOR_BLOCKS_METEORITE = new ArrayList<>();
     public static final List<Block> METEOR_BLOCKS_FREZARITE = new ArrayList<>();
     public static final List<Block> METEOR_BLOCKS_KREKNORITE = new ArrayList<>();
@@ -56,6 +59,11 @@ public class NyxData {
         ALLOWED_DIMENSIONS_LUNAR.addAll(Arrays.asList(NyxConfig.EVENTS_LUNAR.allowedDimensions));
         ALLOWED_DIMENSIONS_SOLAR.clear();
         ALLOWED_DIMENSIONS_SOLAR.addAll(Arrays.asList(NyxConfig.EVENTS_SOLAR.allowedDimensions));
+
+        ALLOWED_METEOR_SIZES.clear();
+        ALLOWED_METEOR_SIZES.addAll(Arrays.asList(NyxConfig.METEORS.meteorSizes));
+        ALLOWED_METEOR_TYPES.clear();
+        ALLOWED_METEOR_TYPES.addAll(Arrays.asList(NyxConfig.METEORS.meteorTypes));
 
         readBlocksFromConfigAsList(NyxConfig.METEORS.meteorBlocksMeteorite, METEOR_BLOCKS_METEORITE);
         readBlocksFromConfigAsList(NyxConfig.METEORS.meteorBlocksFrezarite, METEOR_BLOCKS_FREZARITE);

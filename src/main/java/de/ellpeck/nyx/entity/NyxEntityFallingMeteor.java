@@ -42,10 +42,10 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
     public float speedModifier;
     public boolean spawnNoBlocks;
 
-    public NyxEntityFallingMeteor(World worldIn) {
-        super(worldIn);
-        this.dataManager.set(SIZE, worldIn.rand.nextInt(3) + 1);
-        this.dataManager.set(TYPE, worldIn.rand.nextInt(4) + 1);
+    public NyxEntityFallingMeteor(World world) {
+        super(world);
+        this.dataManager.set(SIZE, NyxData.ALLOWED_METEOR_SIZES.get(world.rand.nextInt(NyxData.ALLOWED_METEOR_SIZES.size())));
+        this.dataManager.set(TYPE, NyxData.ALLOWED_METEOR_TYPES.get(world.rand.nextInt(NyxData.ALLOWED_METEOR_TYPES.size())));
         this.initTrajectory(2 * this.speedModifier);
     }
 
