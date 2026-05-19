@@ -4,6 +4,7 @@ import com.google.common.collect.Sets;
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.capability.NyxWorld;
 import de.ellpeck.nyx.config.NyxConfig;
+import de.ellpeck.nyx.config.NyxData;
 import de.ellpeck.nyx.init.NyxSoundEvents;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.*;
@@ -212,6 +213,11 @@ public class NyxEventBloodMoon extends NyxLunarEvent {
                                                 ResourceLocation name = EntityList.getKey(entityliving);
                                                 if (name == null) {
                                                     // it looks like setting entry to null here selects a new random entity to spawn
+                                                    entry = null;
+                                                    continue;
+                                                }
+
+                                                if (!NyxData.EXCLUSIVE_SPAWNS_BLOOD_MOON.isEmpty() && !NyxData.EXCLUSIVE_SPAWNS_BLOOD_MOON.contains(name)) {
                                                     entry = null;
                                                     continue;
                                                 }

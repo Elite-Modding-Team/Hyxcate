@@ -103,12 +103,12 @@ public class NyxUtils {
                             if (!WorldEntitySpawner.canCreatureTypeSpawnAtLocation(EntityLiving.SpawnPlacementType.ON_GROUND, original.world, offset))
                                 continue;
                             Entity entity = EntityList.createEntityByIDFromName(name, original.world);
-                            if (!(entity instanceof EntityLiving)) return;
+                            if (!(entity instanceof EntityLiving)) continue;
                             EntityLiving living = (EntityLiving) entity;
                             entity.setLocationAndAngles(original.posX + x, original.posY + y, original.posZ + z, MathHelper.wrapDegrees(original.world.rand.nextFloat() * 360), 0);
                             living.rotationYawHead = living.rotationYaw;
                             living.renderYawOffset = living.rotationYaw;
-                            living.getEntityData().setBoolean(addedSpawnKey, true);
+                            original.getEntityData().setBoolean(addedSpawnKey, true);
                             if (!ForgeEventFactory.doSpecialSpawn(living, original.world, (float) original.posX + x, (float) original.posY + y, (float) original.posZ + z, null))
                                 living.onInitialSpawn(original.world.getDifficultyForLocation(new BlockPos(living)), null);
                             original.world.spawnEntity(entity);
@@ -145,7 +145,7 @@ public class NyxUtils {
                 replacement.setLocationAndAngles(original.posX, original.posY, original.posZ, MathHelper.wrapDegrees(original.world.rand.nextFloat() * 360), 0);
                 replacement.rotationYawHead = replacement.rotationYaw;
                 replacement.renderYawOffset = replacement.rotationYaw;
-                replacement.getEntityData().setBoolean(addedSpawnKey, true);
+                original.getEntityData().setBoolean(addedSpawnKey, true);
                 if (!ForgeEventFactory.doSpecialSpawn(replacement, original.world, (float) original.posX, (float) original.posY, (float) original.posZ, null))
                     replacement.onInitialSpawn(original.world.getDifficultyForLocation(new BlockPos(replacement)), null);
                 original.world.spawnEntity(replacement);
