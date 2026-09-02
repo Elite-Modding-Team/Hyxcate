@@ -17,9 +17,9 @@ public class NyxConfig {
     @Config.Comment("Settings for general mechanics")
     public static final General GENERAL = new General();
 
-    /*@Config.LangKey("config.nyx.entities")
+    @Config.LangKey("config.nyx.entities")
     @Config.Comment("Settings for entities")
-    public static final Entities ENTITIES = new Entities();*/
+    public static final Entities ENTITIES = new Entities();
 
     @Config.LangKey("config.nyx.events_lunar")
     @Config.Comment("Settings for lunar events")
@@ -157,7 +157,7 @@ public class NyxConfig {
         public double solarShieldWardSubsequent = 0.01D;
     }
 
-    /*public static class Entities {
+    public static class Entities {
         @Config.LangKey("config.nyx.eyezor")
         @Config.Comment("Eyezor settings")
         public final Eyezor EYEZOR = new Eyezor();
@@ -167,7 +167,7 @@ public class NyxConfig {
             @Config.Comment("The hex code of the Eyezor's laser color")
             public int laserColor = 0x6231FD;
         }
-    }*/
+    }
 
     public static class EventsLunar {
         @Config.LangKey("config.nyx.blood_moon")
@@ -251,7 +251,7 @@ public class NyxConfig {
             @Config.Name("Extra Spawns")
             @Config.Comment({"The registry names of entities that should spawn additionally alongside other entities during the event", "Syntax: originalEntity;extraEntity"})
             public String[] spawnsExtra = new String[]{
-                    //"minecraft:zombie;nyx:eyezor"
+                    "minecraft:zombie;nyx:eyezor"
             };
 
             @Config.Name("Extra Spawns Chance")
@@ -407,7 +407,7 @@ public class NyxConfig {
             @Config.Name("Extra Spawns")
             @Config.Comment({"The registry names of entities that should spawn additionally alongside other entities during the event", "Syntax: originalEntity;extraEntity"})
             public String[] spawnsExtra = new String[]{
-                    //"minecraft:zombie;nyx:eyezor"
+                    "minecraft:zombie;nyx:eyezor"
             };
 
             @Config.Name("Extra Spawns Chance")
@@ -462,7 +462,7 @@ public class NyxConfig {
             @Config.Name("Extra Spawns")
             @Config.Comment({"The registry names of entities that should spawn additionally alongside other entities during the event", "Syntax: originalEntity;extraEntity"})
             public String[] spawnsExtra = new String[]{
-                    //"minecraft:zombie;nyx:eyezor"
+                    "minecraft:zombie;nyx:eyezor"
             };
 
             @Config.Name("Extra Spawns Chance")
@@ -515,7 +515,7 @@ public class NyxConfig {
             @Config.Name("Extra Spawns")
             @Config.Comment({"The registry names of entities that should spawn additionally alongside other entities during the event", "Syntax: originalEntity;extraEntity"})
             public String[] spawnsExtra = new String[]{
-                    //"minecraft:zombie;nyx:eyezor"
+                    "minecraft:zombie;nyx:eyezor"
             };
 
             @Config.Name("Extra Spawns Chance")
