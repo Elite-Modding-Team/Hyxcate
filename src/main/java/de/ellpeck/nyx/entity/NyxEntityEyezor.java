@@ -1,6 +1,8 @@
 package de.ellpeck.nyx.entity;
 
+import de.ellpeck.nyx.capability.NyxWorld;
 import de.ellpeck.nyx.config.NyxConfig;
+import de.ellpeck.nyx.event.lunar.NyxEventStarShower;
 import de.ellpeck.nyx.init.NyxLootTables;
 import de.ellpeck.nyx.init.NyxSoundEvents;
 import net.minecraft.entity.*;
@@ -76,7 +78,12 @@ public class NyxEntityEyezor extends EntityZombie implements IRangedAttackMob {
     @Nullable
     @Override
     public IEntityLivingData onInitialSpawn(@Nonnull DifficultyInstance difficulty, @Nullable IEntityLivingData entityLivingData) {
-        //this.setType(this.rand.nextInt(2));
+        NyxWorld nyx = NyxWorld.get(world);
+        if (nyx != null) {
+            if (nyx.currentLunarEvent instanceof NyxEventStarShower) {
+                this.setType(1);
+            }
+        }
 
         return super.onInitialSpawn(difficulty, entityLivingData);
     }

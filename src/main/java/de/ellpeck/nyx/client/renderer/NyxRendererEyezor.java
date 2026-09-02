@@ -12,10 +12,12 @@ import net.minecraft.util.ResourceLocation;
 
 public class NyxRendererEyezor extends RenderBiped<NyxEntityEyezor> {
     private static final ResourceLocation[] TEXTURES = new ResourceLocation[]{
-            new ResourceLocation(Nyx.ID, "textures/entities/eyezor/bloody.png")
+            new ResourceLocation(Nyx.ID, "textures/entities/eyezor/bloody.png"),
+            new ResourceLocation(Nyx.ID, "textures/entities/eyezor/stargazer.png")
     };
     private static final ResourceLocation[] TEXTURES_GLOW = new ResourceLocation[]{
-            new ResourceLocation(Nyx.ID, "textures/entities/eyezor/bloody_layer.png")
+            new ResourceLocation(Nyx.ID, "textures/entities/eyezor/bloody_layer.png"),
+            new ResourceLocation(Nyx.ID, "textures/entities/eyezor/stargazer_layer.png")
     };
 
     public NyxRendererEyezor(RenderManager renderManager) {
