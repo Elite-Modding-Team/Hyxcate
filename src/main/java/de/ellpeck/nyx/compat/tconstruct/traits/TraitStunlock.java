@@ -17,9 +17,9 @@ public class TraitStunlock extends AbstractTrait {
 
     @Override
     public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical, boolean wasHit) {
-        if (NyxUtils.setChance(0.15F) && wasHit) {
+        if (NyxUtils.setChance(0.075F) && wasHit) {
             target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.EFFECT_PARALYSIS_START.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
-            target.addPotionEffect(new PotionEffect(NyxPotions.PARALYSIS, 8 * 20, 0));
+            target.addPotionEffect(new PotionEffect(NyxPotions.PARALYSIS, 5 * 20, 0));
         }
     }
 }

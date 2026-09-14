@@ -211,7 +211,7 @@ modifier.nyx.gleaming.desc=§oCrystal Power!§r\nYour tool deals +40% damage, le
 modifier.nyx.kreknorites_bane.name=Kreknorite's Bane
 modifier.nyx.kreknorites_bane.desc=§oHell right at your doorstep!§r\nSuccessful hits inflicts Inferno on your target more and more.
 modifier.nyx.stunlock.name=Stunlock
-modifier.nyx.stunlock.desc=§oStay put!§r\nHit targets have a 15% chance to become paralyzed and be completely immobile for 8 seconds.
+modifier.nyx.stunlock.desc=§oStay put!§r\nHit targets have a 7.5% chance to become paralyzed and be completely immobile for 5 seconds.
 modifier.nyx.supercharge.name=Supercharge
 modifier.nyx.supercharge.desc=§oSupercharge me!§r\nHitting a target or breaking a block has a 10% chance to charge you up with Haste III for 5 seconds!
 
@@ -227,7 +227,7 @@ modifier.nyx.kreknorites_ward_armor.desc=§oHell right at your doorstep!§r\nGet
 modifier.nyx.star_shield_armor.name=Star Shield
 modifier.nyx.star_shield_armor.desc=§oOne with the stars!§r\nThere is a chance (5% per armor piece) for damage to be ignored entirely, you'll also gain Resistance III for 5 seconds.
 modifier.nyx.stunlock_armor.name=Stunlock
-modifier.nyx.stunlock_armor.desc=§oStay put!§r\nGetting hurt has a chance (5% per armor piece) to paralyze your attacker and make them completely immobile for 8 seconds.
+modifier.nyx.stunlock_armor.desc=§oStay put!§r\nGetting hurt has a chance (2.5% per armor piece) to paralyze your attacker and make them completely immobile for 5 seconds.
 modifier.nyx.supercharge_armor.name=Supercharge
 modifier.nyx.supercharge_armor.desc=§oSupercharge me!§r\nGetting hurt has a chance (5% per armor piece) to charge you up with Haste III and Speed III for 5 seconds!
 

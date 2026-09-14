@@ -21,13 +21,13 @@ public class TraitStunlockArmor extends AbstractArmorTrait {
 
     @Override
     public float onDamaged(ItemStack armor, EntityPlayer player, DamageSource source, float damage, float newDamage, LivingDamageEvent event) {
-        if (NyxUtils.setChance(0.05F)) {
+        if (NyxUtils.setChance(0.025F)) {
             Entity trueSource = source.getTrueSource();
 
             if (!player.world.isRemote) {
                 if (trueSource instanceof EntityLivingBase) {
                     trueSource.world.playSound(null, trueSource.posX, trueSource.posY, trueSource.posZ, NyxSoundEvents.EFFECT_PARALYSIS_START.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (trueSource.world.rand.nextFloat() * 0.4F + 1.2F));
-                    ((EntityLivingBase) trueSource).addPotionEffect(new PotionEffect(NyxPotions.PARALYSIS, 8 * 20, 0));
+                    ((EntityLivingBase) trueSource).addPotionEffect(new PotionEffect(NyxPotions.PARALYSIS, 5 * 20, 0));
                 }
             }
         }
