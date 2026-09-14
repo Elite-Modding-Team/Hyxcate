@@ -124,6 +124,10 @@ public class NyxConfig {
         @Config.Comment("If celestial events should play a unique sound when they start")
         public boolean eventIntroSounds = true;
 
+        @Config.Name("F3 Info")
+        @Config.Comment("Displays the current active event on the F3 screen")
+        public boolean f3Info = true;
+
         @Config.Name("Lunar Edge Damage: Base")
         @Config.Comment("The amount of base Lunar Damage received (when first applying Lunar Edge)")
         public double lunarEdgeDamageBase = 0.5D;

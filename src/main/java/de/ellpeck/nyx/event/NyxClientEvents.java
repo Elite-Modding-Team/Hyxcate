@@ -65,10 +65,12 @@ public final class NyxClientEvents {
         }
     }
 
+    // TODO: Make these be affected by translations
+    // Also event names should have their actual name (e.g. Blood Moon instead of blood_moon)
     @SubscribeEvent
     public static void onDebug(RenderGameOverlayEvent.Text event) {
         Minecraft mc = Minecraft.getMinecraft();
-        if (!mc.gameSettings.showDebugInfo) return;
+        if (!mc.gameSettings.showDebugInfo || !NyxConfig.GENERAL.f3Info) return;
         event.getLeft().add("");
         NyxWorld world = NyxWorld.get(mc.world);
         String pre = TextFormatting.GREEN + "[" + Nyx.NAME + "]" + TextFormatting.RESET;
