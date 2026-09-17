@@ -630,28 +630,28 @@ public class NyxConfig {
         public boolean messageVerbose = false;
 
         @Config.Name("Meteor Blocks: Meteorite")
-        @Config.Comment("Main blocks that are spawned on impact of regular meteors")
+        @Config.Comment({"Main blocks that are spawned on impact of regular meteors", "Syntax: modid:block or modid:block:meta"})
         public String[] meteorBlocksMeteorite = new String[]{
                 "nyx:meteorite_rock_hot",
                 "nyx:meteorite_rock"
         };
 
         @Config.Name("Meteor Blocks: Frezarite")
-        @Config.Comment("Main blocks that are spawned on impact of cold meteors")
+        @Config.Comment({"Main blocks that are spawned on impact of cold meteors", "Syntax: modid:block or modid:block:meta"})
         public String[] meteorBlocksFrezarite = new String[]{
                 "nyx:frezarite_rock",
                 "minecraft:packed_ice"
         };
 
         @Config.Name("Meteor Blocks: Kreknorite")
-        @Config.Comment("Main blocks that are spawned on impact of hot meteors")
+        @Config.Comment({"Main blocks that are spawned on impact of hot meteors", "Syntax: modid:block or modid:block:meta"})
         public String[] meteorBlocksKreknorite = new String[]{
                 "nyx:kreknorite_rock",
                 "minecraft:obsidian"
         };
 
         @Config.Name("Meteor Blocks: Unknown")
-        @Config.Comment("Main blocks that are spawned on impact of mixed meteors")
+        @Config.Comment({"Main blocks that are spawned on impact of mixed meteors", "Syntax: modid:block or modid:block:meta"})
         public String[] meteorBlocksUnknown = new String[]{
                 "nyx:meteorite_rock_hot",
                 "nyx:meteorite_rock",
@@ -662,50 +662,50 @@ public class NyxConfig {
         };
 
         @Config.Name("Filler Blocks: Meteorite")
-        @Config.Comment("Subsidiary blocks that are spawned on impact of regular meteors")
+        @Config.Comment({"Subsidiary blocks that are spawned on impact of regular meteors", "Syntax: modid:block or modid:block:meta"})
         public String[] fillerBlocksMeteorite = new String[]{
                 "minecraft:magma"
         };
 
         @Config.Name("Filler Blocks: Frezarite")
-        @Config.Comment("Subsidiary blocks that are spawned on impact of cold meteors")
+        @Config.Comment({"Subsidiary blocks that are spawned on impact of cold meteors", "Syntax: modid:block or modid:block:meta"})
         public String[] fillerBlocksFrezarite = new String[]{
                 "minecraft:packed_ice"
         };
 
         @Config.Name("Filler Blocks: Kreknorite")
-        @Config.Comment("Subsidiary blocks that are spawned on impact of hot meteors")
+        @Config.Comment({"Subsidiary blocks that are spawned on impact of hot meteors", "Syntax: modid:block or modid:block:meta"})
         public String[] fillerBlocksKreknorite = new String[]{
                 "minecraft:magma"
         };
 
         @Config.Name("Filler Blocks: Unknown")
-        @Config.Comment("Subsidiary blocks that are spawned on impact of mixed meteors")
+        @Config.Comment({"Subsidiary blocks that are spawned on impact of mixed meteors", "Syntax: modid:block or modid:block:meta"})
         public String[] fillerBlocksUnknown = new String[]{
                 "minecraft:magma",
                 "minecraft:packed_ice"
         };
 
         @Config.Name("Liquid Blocks: Meteorite")
-        @Config.Comment("Fluid blocks that are spawned on impact of regular meteors")
+        @Config.Comment({"Fluid blocks that are spawned on impact of regular meteors", "Syntax: modid:block or modid:block:meta"})
         public String[] liquidBlocksMeteorite = new String[]{
                 "minecraft:air"
         };
 
         @Config.Name("Liquid Blocks: Frezarite")
-        @Config.Comment("Fluid blocks that are spawned on impact of cold meteors")
+        @Config.Comment({"Fluid blocks that are spawned on impact of cold meteors", "Syntax: modid:block or modid:block:meta"})
         public String[] liquidBlocksFrezarite = new String[]{
                 "minecraft:water"
         };
 
         @Config.Name("Liquid Blocks: Kreknorite")
-        @Config.Comment("Fluid blocks that are spawned on impact of hot meteors")
+        @Config.Comment({"Fluid blocks that are spawned on impact of hot meteors", "Syntax: modid:block or modid:block:meta"})
         public String[] liquidBlocksKreknorite = new String[]{
                 "minecraft:lava"
         };
 
         @Config.Name("Liquid Blocks: Unknown")
-        @Config.Comment("Fluid blocks that are spawned on impact of mixed meteors")
+        @Config.Comment({"Fluid blocks that are spawned on impact of mixed meteors", "Syntax: modid:block or modid:block:meta"})
         public String[] liquidBlocksUnknown = new String[]{
                 "minecraft:lava",
                 "minecraft:water"

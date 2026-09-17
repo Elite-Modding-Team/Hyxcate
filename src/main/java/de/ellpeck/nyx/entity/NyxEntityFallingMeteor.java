@@ -57,7 +57,7 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
         return meteor;
     }
 
-    private Block getMeteorBlock() {
+    private IBlockState getMeteorBlock() {
         switch (this.dataManager.get(TYPE)) {
             case 2: // Frezarite
                 return NyxData.METEOR_BLOCKS_FREZARITE.get(this.rand.nextInt(NyxData.METEOR_BLOCKS_FREZARITE.size()));
@@ -70,7 +70,7 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
         }
     }
 
-    private Block getFillerBlock() {
+    private IBlockState getFillerBlock() {
         switch (this.dataManager.get(TYPE)) {
             case 2: // Frezarite
                 return NyxData.FILLER_BLOCKS_FREZARITE.get(this.rand.nextInt(NyxData.FILLER_BLOCKS_FREZARITE.size()));
@@ -83,7 +83,7 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
         }
     }
 
-    private Block getLiquidBlock() {
+    private IBlockState getLiquidBlock() {
         switch (this.dataManager.get(TYPE)) {
             case 2: // Frezarite
                 return NyxData.LIQUID_BLOCKS_FREZARITE.get(this.rand.nextInt(NyxData.LIQUID_BLOCKS_FREZARITE.size()));
@@ -155,7 +155,7 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
                             for (int z = -radius; z <= radius; z++) {
                                 BlockPos offsetPos = center.add(x, y, z);
                                 if (x * x + y * y + z * z <= radius * radius && !this.world.getBlockState(offsetPos).getMaterial().isSolid())
-                                    this.world.setBlockState(offsetPos, this.getMeteorBlock().getDefaultState());
+                                    this.world.setBlockState(offsetPos, this.getMeteorBlock());
                             }
                         }
                     }
@@ -165,7 +165,7 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
                         if (this.world.getBlockState(affected).getMaterial().isSolid() || !this.world.getBlockState(affected.down()).isFullBlock() || this.world.rand.nextBoolean())
                             continue;
                         if (this.world.rand.nextInt(6) == 0) {
-                            this.world.setBlockState(affected, this.getFillerBlock().getDefaultState());
+                            this.world.setBlockState(affected, this.getFillerBlock());
                         } else if (this.world.rand.nextInt(8) == 0) {
                             // Frezarite
                             if (this.dataManager.get(TYPE) == 2) {
@@ -180,9 +180,9 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
                                 this.world.setBlockState(affected, this.rand.nextBoolean() ? Blocks.FIRE.getDefaultState() : Blocks.SNOW_LAYER.getDefaultState().withProperty(BlockSnow.LAYERS, snowLayers));
                             }
                         } else if (this.world.rand.nextInt(10) == 0) {
-                            this.world.setBlockState(affected, this.getLiquidBlock().getDefaultState());
+                            this.world.setBlockState(affected, this.getLiquidBlock());
                         } else if (this.world.rand.nextBoolean()) {
-                            this.world.setBlockState(affected, this.getMeteorBlock().getDefaultState());
+                            this.world.setBlockState(affected, this.getMeteorBlock());
 
                             // TODO: Spawn crystals on the side of meteor rocks.
                             if (this.world.rand.nextInt(80) == 0) {

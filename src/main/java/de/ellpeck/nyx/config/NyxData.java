@@ -1,7 +1,7 @@
 package de.ellpeck.nyx.config;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
@@ -18,20 +18,20 @@ public class NyxData {
     public static final List<Integer> ALLOWED_METEOR_SIZES = new ArrayList<>();
     public static final List<Integer> ALLOWED_METEOR_TYPES = new ArrayList<>();
 
-    public static final List<Block> METEOR_BLOCKS_METEORITE = new ArrayList<>();
-    public static final List<Block> METEOR_BLOCKS_FREZARITE = new ArrayList<>();
-    public static final List<Block> METEOR_BLOCKS_KREKNORITE = new ArrayList<>();
-    public static final List<Block> METEOR_BLOCKS_UNKNOWN = new ArrayList<>();
+    public static final List<IBlockState> METEOR_BLOCKS_METEORITE = new ArrayList<>();
+    public static final List<IBlockState> METEOR_BLOCKS_FREZARITE = new ArrayList<>();
+    public static final List<IBlockState> METEOR_BLOCKS_KREKNORITE = new ArrayList<>();
+    public static final List<IBlockState> METEOR_BLOCKS_UNKNOWN = new ArrayList<>();
 
-    public static final List<Block> FILLER_BLOCKS_METEORITE = new ArrayList<>();
-    public static final List<Block> FILLER_BLOCKS_FREZARITE = new ArrayList<>();
-    public static final List<Block> FILLER_BLOCKS_KREKNORITE = new ArrayList<>();
-    public static final List<Block> FILLER_BLOCKS_UNKNOWN = new ArrayList<>();
+    public static final List<IBlockState> FILLER_BLOCKS_METEORITE = new ArrayList<>();
+    public static final List<IBlockState> FILLER_BLOCKS_FREZARITE = new ArrayList<>();
+    public static final List<IBlockState> FILLER_BLOCKS_KREKNORITE = new ArrayList<>();
+    public static final List<IBlockState> FILLER_BLOCKS_UNKNOWN = new ArrayList<>();
 
-    public static final List<Block> LIQUID_BLOCKS_METEORITE = new ArrayList<>();
-    public static final List<Block> LIQUID_BLOCKS_FREZARITE = new ArrayList<>();
-    public static final List<Block> LIQUID_BLOCKS_KREKNORITE = new ArrayList<>();
-    public static final List<Block> LIQUID_BLOCKS_UNKNOWN = new ArrayList<>();
+    public static final List<IBlockState> LIQUID_BLOCKS_METEORITE = new ArrayList<>();
+    public static final List<IBlockState> LIQUID_BLOCKS_FREZARITE = new ArrayList<>();
+    public static final List<IBlockState> LIQUID_BLOCKS_KREKNORITE = new ArrayList<>();
+    public static final List<IBlockState> LIQUID_BLOCKS_UNKNOWN = new ArrayList<>();
 
     public static final Map<ResourceLocation, List<ResourceLocation>> EXTRA_SPAWNS_BLOOD_MOON = new Object2ObjectOpenHashMap<>();
     public static final Map<ResourceLocation, List<ResourceLocation>> EXTRA_SPAWNS_BLUE_MOON = new Object2ObjectOpenHashMap<>();
@@ -65,20 +65,20 @@ public class NyxData {
         ALLOWED_METEOR_TYPES.clear();
         ALLOWED_METEOR_TYPES.addAll(Arrays.asList(NyxConfig.METEORS.meteorTypes));
 
-        readBlocksFromConfigAsList(NyxConfig.METEORS.meteorBlocksMeteorite, METEOR_BLOCKS_METEORITE);
-        readBlocksFromConfigAsList(NyxConfig.METEORS.meteorBlocksFrezarite, METEOR_BLOCKS_FREZARITE);
-        readBlocksFromConfigAsList(NyxConfig.METEORS.meteorBlocksKreknorite, METEOR_BLOCKS_KREKNORITE);
-        readBlocksFromConfigAsList(NyxConfig.METEORS.meteorBlocksUnknown, METEOR_BLOCKS_UNKNOWN);
+        readBlockStatesFromConfigAsList(NyxConfig.METEORS.meteorBlocksMeteorite, METEOR_BLOCKS_METEORITE);
+        readBlockStatesFromConfigAsList(NyxConfig.METEORS.meteorBlocksFrezarite, METEOR_BLOCKS_FREZARITE);
+        readBlockStatesFromConfigAsList(NyxConfig.METEORS.meteorBlocksKreknorite, METEOR_BLOCKS_KREKNORITE);
+        readBlockStatesFromConfigAsList(NyxConfig.METEORS.meteorBlocksUnknown, METEOR_BLOCKS_UNKNOWN);
 
-        readBlocksFromConfigAsList(NyxConfig.METEORS.fillerBlocksMeteorite, FILLER_BLOCKS_METEORITE);
-        readBlocksFromConfigAsList(NyxConfig.METEORS.fillerBlocksFrezarite, FILLER_BLOCKS_FREZARITE);
-        readBlocksFromConfigAsList(NyxConfig.METEORS.fillerBlocksKreknorite, FILLER_BLOCKS_KREKNORITE);
-        readBlocksFromConfigAsList(NyxConfig.METEORS.fillerBlocksUnknown, FILLER_BLOCKS_UNKNOWN);
+        readBlockStatesFromConfigAsList(NyxConfig.METEORS.fillerBlocksMeteorite, FILLER_BLOCKS_METEORITE);
+        readBlockStatesFromConfigAsList(NyxConfig.METEORS.fillerBlocksFrezarite, FILLER_BLOCKS_FREZARITE);
+        readBlockStatesFromConfigAsList(NyxConfig.METEORS.fillerBlocksKreknorite, FILLER_BLOCKS_KREKNORITE);
+        readBlockStatesFromConfigAsList(NyxConfig.METEORS.fillerBlocksUnknown, FILLER_BLOCKS_UNKNOWN);
 
-        readBlocksFromConfigAsList(NyxConfig.METEORS.liquidBlocksMeteorite, LIQUID_BLOCKS_METEORITE);
-        readBlocksFromConfigAsList(NyxConfig.METEORS.liquidBlocksFrezarite, LIQUID_BLOCKS_FREZARITE);
-        readBlocksFromConfigAsList(NyxConfig.METEORS.liquidBlocksKreknorite, LIQUID_BLOCKS_KREKNORITE);
-        readBlocksFromConfigAsList(NyxConfig.METEORS.liquidBlocksUnknown, LIQUID_BLOCKS_UNKNOWN);
+        readBlockStatesFromConfigAsList(NyxConfig.METEORS.liquidBlocksMeteorite, LIQUID_BLOCKS_METEORITE);
+        readBlockStatesFromConfigAsList(NyxConfig.METEORS.liquidBlocksFrezarite, LIQUID_BLOCKS_FREZARITE);
+        readBlockStatesFromConfigAsList(NyxConfig.METEORS.liquidBlocksKreknorite, LIQUID_BLOCKS_KREKNORITE);
+        readBlockStatesFromConfigAsList(NyxConfig.METEORS.liquidBlocksUnknown, LIQUID_BLOCKS_UNKNOWN);
 
         readEntitiesFromConfigAsList(NyxConfig.EVENTS_LUNAR.BLOOD_MOON.spawnsExclusive, EXCLUSIVE_SPAWNS_BLOOD_MOON);
         readEntitiesFromConfigAsList(NyxConfig.EVENTS_LUNAR.BLUE_MOON.spawnsExclusive, EXCLUSIVE_SPAWNS_BLUE_MOON);
@@ -102,10 +102,16 @@ public class NyxData {
         readEntitiesFromConfigAsMap(NyxConfig.EVENTS_SOLAR.RED_GIANT.spawnsReplacement, REPLACEMENT_SPAWNS_RED_GIANT);
     }
 
-    private static void readBlocksFromConfigAsList(String[] array, List<Block> list) {
+    private static void readBlockStatesFromConfigAsList(String[] array, List<IBlockState> list) {
         list.clear();
         for (String string : array) {
-            list.add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(string)));
+            String[] split = string.split(":");
+            if (split.length == 3) {
+                int meta = Integer.parseInt(split[2]);
+                list.add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(split[0], split[1])).getStateFromMeta(meta));
+            } else {
+                list.add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(string)).getDefaultState());
+            }
         }
     }
 
