@@ -237,6 +237,7 @@ config.nyx.entities=Entities
 config.nyx.events_lunar=Events: Lunar
 config.nyx.events_solar=Events: Solar
 config.nyx.meteors=Meteors
+config.nyx.mod_integration=Mod Integration
 config.nyx.falling_stars=Falling Stars
 config.nyx.blood_moon=Blood Moon
 config.nyx.blue_moon=Blue Moon
