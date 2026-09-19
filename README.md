@@ -130,6 +130,7 @@
 ### 🌐 Translators
 
 - Chinese ~ star_rain
+- French ~ Demani
 - German ~ ACGaming
 - Spanish ~ Polytetrafluoroethylene-PTFE
 

@@ -1,0 +1,248 @@
+itemGroup.nyx=Hyxcate
+
+# Attributes
+attribute.name.nyx.generic.explosion_resistance=Résistance aux Explosions
+attribute.name.nyx.generic.moon_damage=Dégâts Lunaire
+attribute.name.nyx.generic.moon_ward=Protection Lunaire
+attribute.name.nyx.generic.magnetization=Magnétisation
+attribute.name.nyx.generic.paralysis=Chance de Paralysie
+attribute.name.nyx.generic.sun_damage=Dégâts Solaire
+attribute.name.nyx.generic.sun_ward=Protection Solaire
+
+# Blocks
+tile.nyx.star_block.name=Bloc d'Étoile
+tile.nyx.chiseled_star_block.name=Bloc d'Étoile Taillé
+tile.nyx.cracked_star_block.name=Bloc d'Étoile Fissuré
+tile.nyx.star_stairs.name=Escalier en Bloc d'Étoile
+tile.nyx.star_slab.name=Dalle en Bloc d'Étoile
+tile.nyx.star_slab_double.name=Dalle en Bloc d'Étoile Double
+tile.nyx.cyber_crystal.name=Cyber Cristal
+tile.nyx.frezarite_block.name=Bloc de Frezarite
+tile.nyx.frezarite_rock.name=Roche de Frezarite
+tile.nyx.kreknorite_block.name=Bloc de Kreknorite
+tile.nyx.kreknorite_rock.name=Roche de Kreknorite
+tile.nyx.meteorite_block.name=Bloc de Météorite
+tile.nyx.meteorite_rock.name=Roche de Météorite
+tile.nyx.meteorite_rock_hot.name=Roche de Météorite Chaude
+tile.nyx.tektite_block.name=Bloc de Tektite
+tile.nyx.tektite_glass.name=Verre en Tektite
+
+# Commands
+command.nyx.force.usage=/hyxcateforce <event> pour déclencher un évènement Lunaire/Solaire
+command.nyx.force.invalid=Il n'y a aucun évènement Lunaire/Solaire avec le nom %s
+command.nyx.force.success=%s aura lieu au début de la prochaine nuit/jour
+command.nyx.force.clear=L'évènement forcé a été arrêté
+command.nyx.meteor.usage=/hyxcatemeteor [x] [z] [Taille <1-3>] [type <1-4>] [à tête chercheuse <true/false>] pour faire apparaître un météore
+command.nyx.meteor.success=Un météore est apparu aux coordonnées %s, %s, %s
+
+# Death Messages
+death.attack.nyx_celestial=%1$s a été réduit en cendre à coup d'énergie célèste
+death.attack.nyx_deep_freeze=%1$s a gelé jusqu'à la moëlle
+death.attack.nyx_deep_freeze.player=%1$s a été gelé jusqu'à la moëlle par %2$s
+death.attack.nyx_inferno=%1$s a été consumé par les enfers
+death.attack.nyx_inferno.player=%1$s a été envoyé en enfer par %2$s
+death.attack.nyx_laser=%1$s a été vaporisé par un rayon laser
+death.attack.nyx_laser.player=%1$s a été vaporisé par le rayon laser de %2$s
+death.attack.nyx_paralysis=%1$s n'a pas pu contenir la Puissance
+death.attack.nyx_paralysis.player=%1$s a été paralysé à mort par %2$s
+
+# Enchantments
+enchantment.nyx.lunar_edge=Tranchant Lunaire
+enchantment.nyx.lunar_edge.desc=Augmente les dégâts de cet objet durant la nuit.
+enchantment.nyx.lunar_shield=Bouclier Lunaire
+enchantment.nyx.lunar_shield.desc=Annule complètement un certain pourcentage des dégâts reçus durant la nuit.
+enchantment.nyx.magnetization=Magnétifère
+enchantment.nyx.magnetization.desc=Vous attirez les objets vers vous. Chaque niveaux augmentent le rayon et la puissance de l'attraction.
+enchantment.nyx.solar_edge=Tranchant Solaire
+enchantment.nyx.solar_edge.desc=Augmente les dégâts de cet objet durant le jour.
+enchantment.nyx.solar_shield=Bouclier Solaire
+enchantment.nyx.solar_shield.desc=Annule complètement un certain pourcentage des dégâts reçus durant le jour.
+
+# Entities
+entity.nyx.alien_creeper.name=Creeper Alien
+entity.nyx.alien_kitty.name=Chat Alien
+entity.nyx.comet_kitty.name=Chat Comète
+entity.nyx.eyezor.name=Eyezor
+entity.nyx.falling_meteor.name=Météore en Chute
+entity.nyx.falling_star.name=Étoile Filante
+entity.nyx.laser.name=Rayon Laser
+entity.nyx.stellar_protector.name=Protecteur Stellaire
+
+# Fluids
+fluid.frezarite.name=Frezarite Fondu
+fluid.kreknorite.name=Kreknorite Fondu
+fluid.meteorite.name=Météorite Fondue
+
+# Info
+info.nyx.day_enchanting=Il fait trop jour pour enchanter
+info.nyx.blue_moon=La Lune Bleue se lève...
+info.nyx.star_shower=Des étoiles pleuvent du ciel...
+info.nyx.full_moon=La Pleine Lune se lève...
+info.nyx.blood_moon=La Lune De Sang se lève...
+info.nyx.blood_moon_sleeping=L'idée de dormir vous met mal à l'aise
+info.nyx.meteor=Un météore s'est écrasé tout près!
+info.nyx.meteor_far=Un météore s'est écrasé au loin!
+info.nyx.meteor_verbose=Un météore s'est écrasé à
+info.nyx.red_giant=Le soleil a grossi en une Géante Rouge!
+info.nyx.grim_eclipse=Quelque chose cache le soleil! Une Éclipse Sinistre commence...
+info.nyx.meteor_detector.none_found=Aucun site de crash de météore n'a été trouvé!
+info.nyx.meteor_detector.distance=Le site de crash de météore le plus proche est à %s blocs de distance.
+info.nyx.meteor_detector.confirm=Voulez-vous supprimer le site de crash de météore à %d, %d, %d de la base de données?
+info.nyx.meteor_detector.sneak_confirm=[Sneak + Right-Click] pour confirmer.
+info.nyx.meteor_detector.no_pending=Aucunes suppressions en attentes ou le site de crash de météore est trop loin.
+info.nyx.meteor_detector.expired=Délais de confirmation expiré.
+info.nyx.meteor_detector.wrong_dimension=Vous devez être dans la même dimension.
+info.nyx.meteor_detector.moved_too_far=Vous vous êtes trop éloigné de votre position précédente.
+info.nyx.meteor_detector.deleted=Le site de crash de météore à %d, %d, %d a été supprimé!
+info.nyx.meteor_detector.reset=Veuillez patienter pendant que le détecteur redémarre.
+info.nyx.meteor_detector.already_gone=Ce site de crash de météore n'existe plus.
+
+# Items
+item.nyx.fallen_star.name=Étoile
+item.nyx.meteor_detector.name=Détecteur de Météore
+item.nyx.celestial_warhammer.name=Marteau de Guerre Célèste
+item.nyx.tektite_bow.name=Arc de Vitesse Lumière
+item.nyx.tektite_pickaxe.name=Pioche en Tektite
+item.nyx.tektite_axe.name=Hache en Tektite
+item.nyx.tektite_shovel.name=Pelle en Tektite
+item.nyx.tektite_hoe.name=Houe en Tektite
+item.nyx.tektite_sword.name=Épée en Tektite
+item.nyx.tektite_greatsword.name=Grande Épée en Tektite
+item.nyx.tektite_helmet.name=Casque en Tektite
+item.nyx.tektite_chestplate.name=Plastron en Tektite
+item.nyx.tektite_leggings.name=Pantalon en Tektite
+item.nyx.tektite_boots.name=Bottes en Tektite
+item.nyx.meteorite_shard.name=Éclat de Météorite
+item.nyx.meteorite_ingot.name=Lingot de Météorite
+item.nyx.meteorite_pickaxe.name=Pioche enMétéorite
+item.nyx.meteorite_axe.name=Hache en Météorite
+item.nyx.meteorite_shovel.name=Pelle en Météorite
+item.nyx.meteorite_hoe.name=Houe en Météorite
+item.nyx.meteorite_sword.name=Épée en Météorite
+item.nyx.meteorite_helmet.name=Casque en Météorite
+item.nyx.meteorite_chestplate.name=Plastron en Météorite
+item.nyx.meteorite_leggings.name=Pantalon en Météorite
+item.nyx.meteorite_boots.name=Bottes en Météorite
+item.nyx.frezarite_crystal.name=Cristal de Frezarite
+item.nyx.frezarite_ingot.name=Lingot de Frezarite
+item.nyx.frezarite_pickaxe.name=Pioche en Frezarite
+item.nyx.frezarite_axe.name=Hache en Frezarite
+item.nyx.frezarite_shovel.name=Pelle en Frezarite
+item.nyx.frezarite_hoe.name=Houe en Frezarite
+item.nyx.frezarite_sword.name=Épée en Frezarite
+item.nyx.frezarite_helmet.name=Casque en Frezarite
+item.nyx.frezarite_chestplate.name=Plastron en Frezarite
+item.nyx.frezarite_leggings.name=Pantalon en Frezarite
+item.nyx.frezarite_boots.name=Bottes en Frezarite
+item.nyx.kreknorite_shard.name=Éclat de Kreknorite
+item.nyx.kreknorite_ingot.name=Lingot de Kreknorite
+item.nyx.kreknorite_pickaxe.name=Pioche en Kreknorite
+item.nyx.kreknorite_axe.name=Hache en Kreknorite
+item.nyx.kreknorite_shovel.name=Pelle en Kreknorite
+item.nyx.kreknorite_hoe.name=Houe en Kreknorite
+item.nyx.kreknorite_sword.name=Épée en Kreknorite
+item.nyx.kreknorite_helmet.name=Casque en Kreknorite
+item.nyx.kreknorite_chestplate.name=Plastron en Kreknorite
+item.nyx.kreknorite_leggings.name=Pantalon en Kreknorite
+item.nyx.kreknorite_boots.name=Bottes en Kreknorite
+item.nyx.tektite_gem_cluster.name=Amas de Gemmes de Tektite
+item.nyx.celestial_emblem.name=Emblème Célèste
+item.nyx.fallen_star_beam_sword.name=Épée Laser Type S
+item.nyx.meteorite_beam_sword.name=Épée Laser Type M
+item.nyx.frezarite_beam_sword.name=Épée Laser Type F
+item.nyx.kreknorite_beam_sword.name=Épée Laser Type K
+item.nyx.tektite_beam_sword.name=Épée Laser Type T
+item.nyx.cyber_crystal_beam_sword.name=Épée Laser Type C
+
+# Tooltips
+tooltip.nyx.beam_sword=Avec sa lame lumineuse distincte, cette arme est à la fois spéctaculaire et létale. Toutes les attaques ignorent complètement l'armure et les frames d'invincibilité.
+tooltip.nyx.blastproof=Résistant aux Explosions
+tooltip.nyx.celestial_emblem=Débordant d'une énergie célèste incroyable!
+tooltip.nyx.celestial_warhammer=Possède une portée d'attaque et un recul plus puissant. Maintenez clique-droit pour bondir dans les airs et créer une onde de choc à l'atterrissage infligeant Érosion Astrale (0:08) sur toutes les cibles.
+tooltip.nyx.cyber_crystal=Capable de concentrer et d'amplifier l'énergie.
+tooltip.nyx.fallen_star=Elle n'arrête pas de scintiller!
+tooltip.nyx.frezarite_armor=Équiper un set complet vous permet de respirer sous l'eau indéfiniment.
+tooltip.nyx.frezarite_tool=Toutes les attaques infligeront des dégâts de zone. Inflige Surgèle (0:08) sur toutes les cibles.
+tooltip.nyx.kreknorite_armor=Équiper un set complet vous rend Résistant au Feu indéfiniment.
+tooltip.nyx.kreknorite_tool=Toutes les attaques infligeront des dégâts de zone. Inflige Inferno (0:08) sur toutes les cibles.
+tooltip.nyx.meteor_detector=Vous dirige vers le site de crash de météore le plus proche.
+tooltip.nyx.meteor_detector.hint=Clique-droit pour savoir à quelle distance en blocs le site de crash de météore se situe.
+tooltip.nyx.meteor_detector.hint2=Shift + clique-droit pour supprimer le site de crash de météore actuellement sélectionné.
+tooltip.nyx.shift=Maintenez SHIFT pour voir plus d'infos...
+tooltip.nyx.tektite_bow=Tire de puissantes flèches très rapidement.
+tooltip.nyx.tektite_gem_cluster=Elles sont chargées d'électricité.
+tooltip.nyx.tektite_greatsword=Toutes les attaques ont une plus grande portée.
+
+# Potions
+effect.nyx.astral_erosion.name=Érosion Astrale
+effect.nyx.deep_freeze.name=Surgèle
+effect.nyx.inferno.name=Inferno
+effect.nyx.paralysis.name=Paralysie
+
+lingering_potion.effect.paralysis=Potion de Paralysie persistante
+potion.effect.paralysis=Potion de Paralysie
+splash_potion.effect.paralysis=Potion de Paralysie jetable
+tipped_arrow.effect.paralysis=Flèche de Paralysie
+
+# Mod Integration - JEI
+item.nyx.fallen_star.jei_desc=Les Étoiles Filantes peuvent être trouvées durant la nuit.\n\nSi vous entendez quelque chose de "magique" et apercevez dans le ciel une trainée de particules se dirigeant vers le sol, C'est une Étoile Filante.\n\nUne fois atterrie, elles émettent de la lumière et des particules, les rendant plus facile à trouver.
+item.nyx.frezarite_boots.jei_desc=Quand équipées, les Bottes en Frezarite gèleront temporairement l'eau en dessous de vous. Le rayon d'action est augmenté quand ces bottes sont enchantées avec Semelles Givrantes.
+item.nyx.tektite_gem_cluster.jei_desc=Les Amas de Gemmes de Tektite sont rarement trouvées après avoir miné n'importe quel type de roche venant de météore encore chaud.\n\nLes créatures trouvées exclusivement dans les sites de crash de météores peuvent aussi rarement en lâcher quand tuées.
+tile.nyx.cyber_crystal.jei_desc=Les Cyber Cristaux peuvent très rarement être trouvés dans les sites de crash de météores de n'importe quels types et sont immunisés contre les explosions.\n\nVous aurez besoin d'un outil de minage de niveau 4 pour les miner, les outils faits à partir de matériaux venant de météores sont assez fort.
+tile.nyx.frezarite_rock.jei_desc=Les Roches de Frezarite sont peu communément trouvées dans les sites de crash de météores, ces roches peuvent être minées pour des éclats mais refroidiront si laissées de côté trop longtemps.\n\nFortune ne marchera pas sur ces roches et vous aurez besoin d'un outil de minage de niveau 4 pour les miner.\n\nLes outils faits à partir de matériaux venant de météores sont assez fort.
+tile.nyx.kreknorite_rock.jei_desc=Les Roches de Kreknorite sont peu communément trouvées dans les sites de crash de météores, ces roches peuvent être minées pour des éclats mais refroidiront si laissées de côté trop longtemps.\n\nFortune ne marchera pas sur ces roches et vous aurez besoin d'un outil de minage de niveau 4 pour les miner.\n\nLes outils faits à partir de matériaux venant de météores sont assez fort.
+tile.nyx.meteorite_rock.jei_desc=Quand les Roches de Météorite Chaude ont refroidies, elles peuvent toujours être minées, et à une plus grande vitesse.\n\nCependant, vous n'aurez que 25% de chance d'obtenir un éclat.\n\n\nLes Roches de Frezarite et Kreknorite n'ont pas de variantes froides, à la place elles se transformeront respectivement en Glace compactée et Obsidienne.
+tile.nyx.meteorite_rock_hot.jei_desc=Les Roches de Météorite Chaude sont communément trouvées dans les sites de crash de météores, ces roches peuvent être minées pour des éclats mais refroidiront si laissées de côté trop longtemps.\n\nFortune ne marchera pas sur ces roches et vous aurez besoin d'un outil de minage de niveau 3 pour les miner.\n\nLes outils faits à partir de matériaux venant de météores sont assez fort.
+
+# Mod Integration - Tinkers' Antique (Tinkers' Construct)
+material.nyx.fallen_star.name=Étoilé
+material.nyx.cyber_crystal.name=Cyber Cristal
+material.nyx.frezarite.name=Frezarite
+material.nyx.kreknorite.name=Kreknorite
+material.nyx.meteorite.name=Météorite
+material.nyx.tektite.name=Tektite
+
+modifier.nyx.feint.name=Feinte
+modifier.nyx.feint.desc=§oPlus rapide que la lumière!§r\nVotre outil a 20% chance d'infliger +25% de dégâts supplémentaire qui ignorent complètement l'armure.
+modifier.nyx.frezarites_bane.name=Fléau de Frezarite
+modifier.nyx.frezarites_bane.desc=§oC'est un hiver nucléaire!§r\nLes coups portés réussis infligent Surgèle à votre cible au fûr et à mesure.
+modifier.nyx.gleaming.name=Étincelant
+modifier.nyx.gleaming.desc=§oPar le pouvoir du cristal!§r\n Votre outil inflige +40% de dégâts, plus votre santé est basse moins le bonus est important.
+modifier.nyx.kreknorites_bane.name=Fléau de Kreknorite
+modifier.nyx.kreknorites_bane.desc=§oL'enfer juste à votre porte!§r\nLes coups portés réussis infligent Inferno à votre cible au fûr et à mesure.
+modifier.nyx.stunlock.name=Étourdissant
+modifier.nyx.stunlock.desc=§oRestez où vous êtes!§r\nLes cibles touchées ont 7.5% chance d'être paralysées et complètement immobilisé pendant 5 secondes.
+modifier.nyx.supercharge.name=Superchargé
+modifier.nyx.supercharge.desc=§oSuperchargez-moi!§r\nFrapper une cible ou casser un bloc a 10% chance de vous appliquer Célérité III pendant 5 secondes!
+
+# Mod Integration - Antique Armory (Construct's Armory)
+modifier.nyx.astral_plating_armor.name=Revêtement Astral
+modifier.nyx.astral_plating_armor.desc=§oStar Command, Je vous écoute!§r\nVotre armure vous protègera complètement de 50% des dégâts de feu et de noyade.
+modifier.nyx.frezarites_ward_armor.name=Frezarite's Ward
+modifier.nyx.frezarites_ward_armor.desc=§oC'est un hiver nucléaire!§r\nÊtre blessé à une chance (10% par pièce d'armure) d'infliger Surgèle à votre agresseur au fûr et à mesure.
+modifier.nyx.gleaming_armor.name=Étincelant
+modifier.nyx.gleaming_armor.desc=§oPar le pouvoir du cristal!§r\nVotre armure vous protègera complètement de 40% de tout type de dégâts, plus votre santé est basse moins le bonus est important.
+modifier.nyx.kreknorites_ward_armor.name=Kreknorite's Ward
+modifier.nyx.kreknorites_ward_armor.desc=§oL'enfer juste à votre porte!§r\nÊtre blessé à une chance (10% par pièce d'armure) d'infliger Inferno à votre agresseur au fûr et à mesure.
+modifier.nyx.star_shield_armor.name=Bouclier Étoile
+modifier.nyx.star_shield_armor.desc=§oNe faites qu'un avec les étoiles!§r\nIl y a une chance (5% par pièce d'armure) que les dégâts reçu soient totalement ignorés, vous recevez aussi Résistance III pendant 5 secondes.
+modifier.nyx.stunlock_armor.name=Étourdissant
+modifier.nyx.stunlock_armor.desc=§oRestez où vous êtes!§r\nÊtre blessé à une chance (2.5% par pièce d'armure) de paralyser votre agresseur et de les rendre complètement immobile pendant 5 secondes.
+modifier.nyx.supercharge_armor.name=Superchargé
+modifier.nyx.supercharge_armor.desc=§oSuperchargez-moi!§r\nÊtre blessé à une chance (5% par pièce d'armure) de vous appliquer Célérité III and Vitesse III pendant 5 secondes!
+
+# Config Categories
+config.nyx.master_switches=Master Switches
+config.nyx.general=Général
+config.nyx.entities=Entités
+config.nyx.events_lunar=Évènements: Lunaire
+config.nyx.events_solar=Évènements: Solaire
+config.nyx.meteors=Météores
+config.nyx.falling_stars=Étoiles Filantes
+config.nyx.blood_moon=Lune De Sang
+config.nyx.blue_moon=Lune Bleue
+config.nyx.full_moon=Pleine Lune
+config.nyx.star_shower=Pluie d'Étoile
+config.nyx.grim_eclipse=Éclipse Sinistre
+config.nyx.red_giant=Géante Rouge
+config.nyx.eyezor=Eyezor
