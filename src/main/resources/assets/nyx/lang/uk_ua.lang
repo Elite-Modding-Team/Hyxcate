@@ -1,0 +1,248 @@
+ItemGroup.nyx=Hyxcate
+
+# Attributes
+attribute.name.nyx.generic.explosion_resistance=Опір вибухам
+attribute.name.nyx.generic.moon_damage=Місячна шкода
+attribute.name.nyx.generic.moon_ward=Місячний захист
+attribute.name.nyx.generic.magnetization=Магнетизм
+attribute.name.nyx.generic.paralysis=Шанс паралічу
+attribute.name.nyx.generic.sun_damage=Сонячна шкода
+attribute.name.nyx.generic.sun_ward=Сонячний захист
+
+# Blocks
+tile.nyx.star_block.name=Зоряний блок
+tile.nyx.chiseled_star_block.name=Тесаний зоряний блок
+tile.nyx.cracked_star_block.name=Тріснутий зоряний блок
+tile.nyx.star_stairs.name=Сходинки з зоряного блоку
+tile.nyx.star_slab.name=Плита з зоряного блоку
+tile.nyx.star_slab_double.name=Подвійна плита з зоряного блоку
+tile.nyx.cyber_crystal.name=Кіберкристал
+tile.nyx.frezarite_block.name=Блок фрезариту
+tile.nyx.frezarite_rock.name=Фрезаритова порода
+tile.nyx.kreknorite_block.name=Блок крекнориту
+tile.nyx.kreknorite_rock.name=Крекноритова порода
+tile.nyx.meteorite_block.name=Блок метеориту
+tile.nyx.meteorite_rock.name=Метеоритна порода
+tile.nyx.meteorite_rock_hot.name=Розпечена метеоритна порода
+tile.nyx.tektite_block.name=Блок тектиту
+tile.nyx.tektite_glass.name=Тектитове скло
+
+# Commands
+command.nyx.force.usage=/hyxcateforce <подія>, щоб викликати місячну/сонячну подію
+command.nyx.force.invalid=Місячної/сонячної події з назвою %s не існує
+command.nyx.force.success=%s відбудеться наступної можливої ночі/дня
+command.nyx.force.clear=Примусову подію скасовано
+command.nyx.meteor.usage=/hyxcatemeteor [x] [z] [розмір <1-3>] [тип <1-4>] [самонаведення <true/false>], щоб викликати метеорит
+command.nyx.meteor.success=Метеорит викликано на координатах %s, %s, %s
+
+# Death Messages
+death.attack.nyx_celestial=%1$s спопелено небесною енергією
+death.attack.nyx_deep_freeze=%1$s замерз на смерть
+death.attack.nyx_deep_freeze.player=%1$s замерз на смерть через %2$s
+death.attack.nyx_inferno=%1$s поглинуло пекельне полум'я
+death.attack.nyx_inferno.player=%1$s спалено на смерть гравцем %2$s
+death.attack.nyx_laser=%1$s випарувано лазерним променем
+death.attack.nyx_laser.player=%1$s випарувано лазерним променем %2$s
+death.attack.nyx_paralysis=%1$s не витримав напруги
+death.attack.nyx_paralysis.player=%1$s паралізовано на смерть гравцем %2$s
+
+# Enchantments
+enchantment.nyx.lunar_edge=Місячне вістря
+enchantment.nyx.lunar_edge.desc=Збільшує шкоду предмета вночі.
+enchantment.nyx.lunar_shield=Місячний щит
+enchantment.nyx.lunar_shield.desc=Повністю блокує певний відсоток шкоди вночі.
+enchantment.nyx.magnetization=Магнетизм
+enchantment.nyx.magnetization.desc=Притягує предмети до вас. Кожен рівень збільшує радіус і силу притягання.
+enchantment.nyx.solar_edge=Сонячне вістря
+enchantment.nyx.solar_edge.desc=Збільшує шкоду предмета вдень.
+enchantment.nyx.solar_shield=Сонячний щит
+enchantment.nyx.solar_shield.desc=Повністю блокує певний відсоток шкоди вдень.
+
+# Entities
+entity.nyx.alien_creeper.name=Іншопланетний кріпер
+entity.nyx.alien_kitty.name=Іншопланетне кошеня
+entity.nyx.comet_kitty.name=Кометне кошеня
+entity.nyx.eyezor.name=Айзор
+entity.nyx.falling_meteor.name=Падаючий метеорит
+entity.nyx.falling_star.name=Падаюча зірка
+entity.nyx.laser.name=Лазерний промінь
+entity.nyx.stellar_protector.name=Зоряний захисник
+
+# Fluids
+fluid.frezarite.name=Рідкий фрезарит
+fluid.kreknorite.name=Рідкий крекнорит
+fluid.meteorite.name=Рідкий метеорит
+
+# Info
+info.nyx.blue_moon=Сходить Блакитний Місяць...
+info.nyx.star_shower=З неба починає падати зоряний дощ...
+info.nyx.full_moon=Сходить Повний Місяць...
+info.nyx.blood_moon=Сходить Кривавий Місяць...
+info.nyx.blood_moon_sleeping=Думка про сон викликає у вас тривогу.
+info.nyx.meteor=Поблизу впав метеорит!
+info.nyx.meteor_far=Вдалині впав метеорит!
+info.nyx.meteor_verbose=Метеорит упав на
+info.nyx.red_giant=Сонце перетворилося на Червоного гіганта!
+info.nyx.grim_eclipse=Щось затьмарює сонце! Починається Похмуре затемнення...
+info.nyx.meteor_detector.none_found=Місць падіння метеоритів не знайдено!
+info.nyx.meteor_detector.distance=Найближче місце падіння метеорита за %s блоків звідси.
+info.nyx.meteor_detector.confirm=Видалити місце падіння метеорита на %d, %d, %d з бази даних?
+info.nyx.meteor_detector.sneak_confirm=[Присісти + ПКМ] для підтвердження.
+info.nyx.meteor_detector.no_pending=Немає записів для видалення або місце падіння метеорита занадто далеко.
+info.nyx.meteor_detector.expired=Час підтвердження минув.
+info.nyx.meteor_detector.wrong_dimension=Ви повинні бути в тому ж вимірі.
+info.nyx.meteor_detector.moved_too_far=Ви відійшли занадто далеко від своєї попередньої позиції.
+info.nyx.meteor_detector.deleted=Місце падіння метеорита на %d, %d, %d видалено!
+info.nyx.meteor_detector.reset=Будь ласка, зачекайте, поки детектор перезавантажиться.
+info.nyx.meteor_detector.already_gone=Це місце падіння метеорита більше не існує.
+
+# Items
+item.nyx.fallen_star.name=Упала зірка
+item.nyx.meteor_detector.name=Детектор метеоритів
+item.nyx.celestial_warhammer.name=Небесний бойовий молот
+item.nyx.tektite_bow.name=Лук зі швидкістю світла
+item.nyx.tektite_pickaxe.name=Тектитове кайло
+item.nyx.tektite_axe.name=Тектитова сокира
+item.nyx.tektite_shovel.name=Тектитова лопата
+item.nyx.tektite_hoe.name=Тектитова мотика
+item.nyx.tektite_sword.name=Тектитовий меч
+item.nyx.tektite_greatsword.name=Тектитовий дворучний меч
+item.nyx.tektite_helmet.name=Тектитовий шолом
+item.nyx.tektite_chestplate.name=Тектитовий нагрудник
+item.nyx.tektite_leggings.name=Тектитові поножі
+item.nyx.tektite_boots.name=Тектитові чоботи
+item.nyx.meteorite_shard.name=Осколок метеориту
+item.nyx.meteorite_ingot.name=Метеоритний злиток
+item.nyx.meteorite_pickaxe.name=Метеоритне кайло
+item.nyx.meteorite_axe.name=Метеоритна сокира
+item.nyx.meteorite_shovel.name=Метеоритна лопата
+item.nyx.meteorite_hoe.name=Метеоритна мотика
+item.nyx.meteorite_sword.name=Метеоритний меч
+item.nyx.meteorite_helmet.name=Метеоритний шолом
+item.nyx.meteorite_chestplate.name=Метеоритний нагрудник
+item.nyx.meteorite_leggings.name=Метеоритні поножі
+item.nyx.meteorite_boots.name=Метеоритні чоботи
+item.nyx.frezarite_crystal.name=Кристал фрезариту
+item.nyx.frezarite_ingot.name=Фрезаритовий злиток
+item.nyx.frezarite_pickaxe.name=Фрезаритове кайло
+item.nyx.frezarite_axe.name=Фрезаритова сокира
+item.nyx.frezarite_shovel.name=Фрезаритова лопата
+item.nyx.frezarite_hoe.name=Фрезаритова мотика
+item.nyx.frezarite_sword.name=Фрезаритовий меч
+item.nyx.frezarite_helmet.name=Фрезаритовий шолом
+item.nyx.frezarite_chestplate.name=Фрезаритовий нагрудник
+item.nyx.frezarite_leggings.name=Фрезаритові поножі
+item.nyx.frezarite_boots.name=Фрезаритові чоботи
+item.nyx.kreknorite_shard.name=Осколок крекнориту
+item.nyx.kreknorite_ingot.name=Крекноритовий злиток
+item.nyx.kreknorite_pickaxe.name=Крекноритове кайло
+item.nyx.kreknorite_axe.name=Крекноритова сокира
+item.nyx.kreknorite_shovel.name=Крекноритова лопата
+item.nyx.kreknorite_hoe.name=Крекноритова мотика
+item.nyx.kreknorite_sword.name=Крекноритовий меч
+item.nyx.kreknorite_helmet.name=Крекноритовий шолом
+item.nyx.kreknorite_chestplate.name=Крекноритовий нагрудник
+item.nyx.kreknorite_leggings.name=Крекноритові поножі
+item.nyx.kreknorite_boots.name=Крекноритові чоботи
+item.nyx.tektite_gem_cluster.name=Скупчення кристалів тектиту
+item.nyx.celestial_emblem.name=Небесна емблема
+item.nyx.fallen_star_beam_sword.name=Променевий меч типу S
+item.nyx.meteorite_beam_sword.name=Променевий меч типу M
+item.nyx.frezarite_beam_sword.name=Променевий меч типу F
+item.nyx.kreknorite_beam_sword.name=Променевий меч типу K
+item.nyx.tektite_beam_sword.name=Променевий меч типу T
+item.nyx.cyber_crystal_beam_sword.name=Променевий меч типу C
+
+# Tooltips
+tooltip.nyx.beam_sword=Завдяки яскравому сяйливому лезу ця зброя привертає увагу та смертоносна. Усі атаки повністю ігнорують броню та кадри невразливості.
+tooltip.nyx.blastproof=Стійке до вибухів
+tooltip.nyx.celestial_emblem=Пульсує колосальною небесною енергією!
+tooltip.nyx.celestial_warhammer=Збільшений радіус атаки та відкидання. Утримуйте праву кнопку миші, щоб злетіти в повітря та завдати нищівного удару, який накладає ефект «Астральна ерозія» (0:08) на всі цілі.
+tooltip.nyx.cyber_crystal=Здатний фокусувати та посилювати енергію.
+tooltip.nyx.fallen_star=Вона не припиняє мерехтіти!
+tooltip.nyx.frezarite_armor=Повний комплект надає нескінченне підводне дихання.
+tooltip.nyx.frezarite_tool=Усі атаки завдають шкоди по площі. Накладає ефект «Глибока заморозка» (0:08) на всі цілі.
+tooltip.nyx.kreknorite_armor=Повний комплект надає нескінченну вогнестійкість.
+tooltip.nyx.kreknorite_tool=Усі атаки завдають шкоди по площі. Накладає ефект «Пекельне полум'я» (0:08) на всі цілі.
+tooltip.nyx.meteor_detector=Вказує на найближчі місця падіння метеоритів.
+tooltip.nyx.meteor_detector.hint=Натисніть ПКМ, щоб дізнатися відстань до місця падіння метеорита в блоках.
+tooltip.nyx.meteor_detector.hint2=Натисніть Shift + ПКМ, щоб видалити поточне відстежуване місце падіння метеорита.
+tooltip.nyx.shift=Утримуйте SHIFT для деталей...
+tooltip.nyx.tektite_bow=Дуже швидко стріляє потужними стрілами.
+tooltip.nyx.tektite_gem_cluster=Вони заряджені електрикою.
+tooltip.nyx.tektite_greatsword=Усі атаки мають збільшений радіус.
+
+# Potions
+effect.nyx.astral_erosion.name=Астральна ерозія
+effect.nyx.deep_freeze.name=Глибока заморозка
+effect.nyx.inferno.name=Пекельне полум'я
+effect.nyx.paralysis.name=Параліч
+
+lingering_potion.effect.paralysis=Осіле зілля паралічу
+potion.effect.paralysis=Зілля паралічу
+splash_potion.effect.paralysis=Вибухове зілля паралічу
+tipped_arrow.effect.paralysis=Стріла паралічу
+
+# Mod Integration - JEI
+item.nyx.fallen_star.jei_desc=Упалі зірки можна знайти вночі.\n\nЯкщо ви чуєте магічні звуки та бачите в небі слід із часток, що прямує до землі — це упала зірка.\n\nПісля приземлення вона випромінює світло та випускає частки, що полегшує її пошук.
+item.nyx.frezarite_boots.jei_desc=Одягнені фрезаритові чоботи тимчасово перетворюють воду під вами на танучий лід. Радіус дії збільшується чарами «Морозохід».
+item.nyx.tektite_gem_cluster.jei_desc=Скупчення кристалів тектиту зрідка випадають під час успішного видобутку будь-якої розпеченої метеоритної породи.\n\nІстоти, що зустрічаються виключно на місцях падіння метеоритів, також можуть рідко залишити їх після смерті.
+tile.nyx.cyber_crystal.jei_desc=Кіберкристали вкрай рідко трапляються на місцях падіння будь-яких метеоритів і не піддаються вибухам.\n\nДля їх видобутку потрібен 4-й рівень видобутку; інструментів із метеоритних матеріалів цілком достатньо.
+tile.nyx.frezarite_rock.jei_desc=Фрезаритова порода зрідка трапляється на місцях падіння метеоритів. Її можна добути заради осколків, але якщо її довго не чіпати, вона охолоне.\n\n«Удача» не діє на цю породу, а для видобутку потрібен 4-й рівень видобутку.\n\nІнструментів із метеоритних матеріалів цілком достатньо.
+tile.nyx.kreknorite_rock.jei_desc=Крекноритова порода зрідка трапляється на місцях падіння метеоритів. Її можна добути заради осколків, але якщо її довго не чіпати, вона охолоне.\n\n«Удача» не діє на цю породу, а для видобутку потрібен 4-й рівень видобутку.\n\nІнструментів із метеоритних матеріалів цілком достатньо.
+tile.nyx.meteorite_rock.jei_desc=Остиглу метеоритну породу все ще можна добувати, причому значно швидше.\n\nПроте шанс випадання осколка знижується до 25%.\n\n\nПороди з фрезариту та крекнориту не мають остиглих варіантів — замість цього вони остигають у щільний лід та обсидіан відповідно.
+tile.nyx.meteorite_rock_hot.jei_desc=Розпечена метеоритна порода зустрічається на місцях падіння метеоритів. Її можна добути заради осколків, але якщо її довго не чіпати, вона охолоне.\n\n«Удача» не діє на цю породу, а для видобутку потрібен 3-й рівень видобутку.\n\nАлмазних інструментів цілком достатньо.
+
+# Mod Integration - Tinkers' Antique (Tinkers' Construct)
+material.nyx.fallen_star.name=Зоряний
+material.nyx.cyber_crystal.name=Кіберкристал
+material.nyx.frezarite.name=Фрезарит
+material.nyx.kreknorite.name=Крекнорит
+material.nyx.meteorite.name=Метеорит
+material.nyx.tektite.name=Тектит
+
+modifier.nyx.feint.name=Фінт
+modifier.nyx.feint.desc=§oШвидше за швидкість світла!§r\nВаш інструмент має 20% шанс завдати додаткових +25% шкоди, що пробиває броню.
+modifier.nyx.frezarites_bane.name=Згуба фрезариту
+modifier.nyx.frezarites_bane.desc=§oЦе ядерна зима!§r\nВлучні удари накладають і посилюють ефект «Глибока заморозка» на ціль.
+modifier.nyx.gleaming.name=Блиск
+modifier.nyx.gleaming.desc=§oСила кристалів!§r\nВаш інструмент завдає +40% шкоди. Бонусна шкода зменшується зі зниженням вашого здоров'я.
+modifier.nyx.kreknorites_bane.name=Згуба крекнориту
+modifier.nyx.kreknorites_bane.desc=§oПекло просто на порозі!§r\nВлучні удари накладають і посилюють ефект «Пекельне полум'я» на ціль.
+modifier.nyx.stunlock.name=Оглушення
+modifier.nyx.stunlock.desc=§oСтояти на місці!§r\nАтаковані цілі мають 7,5% шанс бути паралізованими та повністю знерухомленими на 5 секунд.
+modifier.nyx.supercharge.name=Надзаряд
+modifier.nyx.supercharge.desc=§oЗаряди мене!§r\nУдар по цілі або руйнування блоку має 10% шанс надати ефект «Поспіх III» на 5 секунд!
+
+# Mod Integration - Antique Armory (Construct's Armory)
+modifier.nyx.astral_plating_armor.name=Астральне покриття
+modifier.nyx.astral_plating_armor.desc=§oЗоряне командування, прийом!§r\nБроня повністю захищає від 50% шкоди від вогню та утоплення.
+modifier.nyx.frezarites_ward_armor.name=Оберіг фрезариту
+modifier.nyx.frezarites_ward_armor.desc=§oЦе ядерна зима!§r\nОтримання шкоди має шанс (10% за кожен елемент броні) накласти та посилити ефект «Глибока заморозка» на нападника.
+modifier.nyx.gleaming_armor.name=Блиск
+modifier.nyx.gleaming_armor.desc=§oСила кристалів!§r\nБроня повністю поглинає 40% загальної отриманої шкоди. Ефективність знижується зі зменшенням вашого здоров'я.
+modifier.nyx.kreknorites_ward_armor.name=Оберіг крекнориту
+modifier.nyx.kreknorites_ward_armor.desc=§oПекло просто на порозі!§r\nОтримання шкоди має шанс (10% за кожен елемент броні) накласти та посилити ефект «Пекельне полум'я» на нападника.
+modifier.nyx.star_shield_armor.name=Зоряний щит
+modifier.nyx.star_shield_armor.desc=§oЄдиний із зірками!§r\nІснує шанс (5% за кожен елемент броні) повністю проігнорувати шкоду, а також отримати ефект «Опір III» на 5 секунд.
+modifier.nyx.stunlock_armor.name=Оглушення
+modifier.nyx.stunlock_armor.desc=§oСтояти на місці!§r\nОтримання шкоди має шанс (2,5% за кожен елемент броні) паралізувати нападника та повністю знерухомити його на 5 секунд.
+modifier.nyx.supercharge_armor.name=Надзаряд
+modifier.nyx.supercharge_armor.desc=§oЗаряди мене!§r\nОтримання шкоди має шанс (5% за кожен елемент броні) надати вам ефекти «Поспіх III» та «Швидкість III» на 5 секунд!
+
+# Config Categories
+config.nyx.master_switches=Головні перемикачі
+config.nyx.general=Загальне
+config.nyx.entities=Істоти
+config.nyx.events_lunar=Події: місячні
+config.nyx.events_solar=Події: сонячні
+config.nyx.meteors=Метеорити
+config.nyx.mod_integration=Інтеграція модів
+config.nyx.falling_stars=Падаючі зірки
+config.nyx.blood_moon=Кривавий Місяць
+config.nyx.blue_moon=Блакитний Місяць
+config.nyx.full_moon=Повний Місяць
+config.nyx.star_shower=Зоряний дощ
+config.nyx.grim_eclipse=Похмуре затемнення
+config.nyx.red_giant=Червоний гігант
+config.nyx.eyezor=Айзор
