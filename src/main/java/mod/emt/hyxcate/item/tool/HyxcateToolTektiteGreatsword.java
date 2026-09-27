@@ -3,7 +3,8 @@ package mod.emt.hyxcate.item.tool;
 import mod.emt.hyxcate.init.HyxcatePotions;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
 import mod.emt.hyxcate.item.HyxcateItemSword;
-import mod.emt.hyxcate.util.HyxcateUtils;
+import mod.emt.hyxcate.util.RandomUtil;
+import mod.emt.hyxcate.util.helpers.NBTHelper;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -46,7 +47,7 @@ public class HyxcateToolTektiteGreatsword extends HyxcateItemSword {
                     float sweepCalculation = (this.getAttackDamage() + 4.0F) + EnchantmentHelper.getSweepingDamageRatio(attacker) * attribute;
                     float knockback = EnchantmentHelper.getKnockbackModifier(attacker);
 
-                    if (HyxcateUtils.setChance(this.paralysisChance.getAmount())) {
+                    if (RandomUtil.setChance(this.paralysisChance.getAmount())) {
                         nearbyLivingEntity.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), sweepCalculation);
                         nearbyLivingEntity.world.playSound(null, nearbyLivingEntity.posX, nearbyLivingEntity.posY, nearbyLivingEntity.posZ, HyxcateSoundEvents.EFFECT_PARALYSIS_START.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (nearbyLivingEntity.world.rand.nextFloat() * 0.4F + 1.2F));
                         nearbyLivingEntity.knockBack(attacker, knockback * 0.5F, MathHelper.sin(attacker.rotationYaw * 0.0175F), (-MathHelper.cos(attacker.rotationYaw * 0.0175F)));
@@ -89,7 +90,7 @@ public class HyxcateToolTektiteGreatsword extends HyxcateItemSword {
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> list) {
         if (this.isInCreativeTab(tab)) {
             ItemStack stack = new ItemStack(this);
-            HyxcateUtils.setUnbreakable(stack);
+            NBTHelper.setUnbreakable(stack);
             list.add(stack);
         }
     }

@@ -2,7 +2,8 @@ package mod.emt.hyxcate.item.tool;
 
 import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.item.HyxcateItemSword;
-import mod.emt.hyxcate.util.HyxcateUtils;
+import mod.emt.hyxcate.util.helpers.NBTHelper;
+import mod.emt.hyxcate.util.helpers.SoundHelper;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.gui.GuiScreen;
@@ -58,7 +59,7 @@ public class HyxcateToolBeamSword extends HyxcateItemSword {
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> list) {
         if (this.isInCreativeTab(tab)) {
             ItemStack stack = new ItemStack(this);
-            HyxcateUtils.setUnbreakable(stack);
+            NBTHelper.setUnbreakable(stack);
             list.add(stack);
         }
     }
@@ -73,7 +74,7 @@ public class HyxcateToolBeamSword extends HyxcateItemSword {
         boolean wasEquipped = tag.getBoolean("wasEquipped");
         if (isSelected) {
             if (!wasEquipped) {
-                HyxcateUtils.playClientSoundBeamSword(stack);
+                SoundHelper.playClientSoundBeamSword(stack);
                 tag.setBoolean("wasEquipped", true);
             }
         } else {

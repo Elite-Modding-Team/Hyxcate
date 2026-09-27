@@ -2,7 +2,7 @@ package mod.emt.hyxcate.compat.tconstruct.traits.armor;
 
 import c4.conarm.lib.traits.AbstractArmorTrait;
 import mod.emt.hyxcate.Hyxcate;
-import mod.emt.hyxcate.util.HyxcateUtils;
+import mod.emt.hyxcate.util.RandomUtil;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
@@ -21,7 +21,7 @@ public class TraitSuperchargeArmor extends AbstractArmorTrait {
 
     @Override
     public float onDamaged(ItemStack armor, EntityPlayer player, DamageSource source, float damage, float newDamage, LivingDamageEvent event) {
-        if (HyxcateUtils.setChance(0.05F)) {
+        if (RandomUtil.setChance(0.05F)) {
             if (!player.world.isRemote) {
                 if (player instanceof EntityPlayer) {
                     player.world.playSound(null, player.posX, player.posY, player.posZ, Sounds.shocking_discharge, SoundCategory.PLAYERS, 0.5F, 0.5F / (player.world.rand.nextFloat() * 0.4F + 1.2F));

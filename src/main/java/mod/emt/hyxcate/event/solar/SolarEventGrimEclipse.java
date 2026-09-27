@@ -1,6 +1,7 @@
 package mod.emt.hyxcate.event.solar;
 
 import mod.emt.hyxcate.Hyxcate;
+import mod.emt.hyxcate.api.event.HyxcateSolarEvent;
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;

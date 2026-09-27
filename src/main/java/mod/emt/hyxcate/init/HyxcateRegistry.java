@@ -21,7 +21,6 @@ import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber(modid = Hyxcate.ID)
 public final class HyxcateRegistry {
-
     public static final SoundType DENSE_CRYSTAL = new SoundType(1.0F, 1.0F, HyxcateSoundEvents.BLOCK_DENSE_CRYSTAL_BREAK.getSoundEvent(), HyxcateSoundEvents.BLOCK_LIGHT_CRYSTAL_STEP.getSoundEvent(), HyxcateSoundEvents.BLOCK_DENSE_CRYSTAL_PLACE.getSoundEvent(), HyxcateSoundEvents.BLOCK_LIGHT_CRYSTAL_HIT.getSoundEvent(), HyxcateSoundEvents.BLOCK_LIGHT_CRYSTAL_HIT.getSoundEvent());
     public static final SoundType LIGHT_CRYSTAL = new SoundType(1.0F, 1.0F, HyxcateSoundEvents.BLOCK_LIGHT_CRYSTAL_BREAK.getSoundEvent(), HyxcateSoundEvents.BLOCK_LIGHT_CRYSTAL_STEP.getSoundEvent(), HyxcateSoundEvents.BLOCK_LIGHT_CRYSTAL_PLACE.getSoundEvent(), HyxcateSoundEvents.BLOCK_LIGHT_CRYSTAL_HIT.getSoundEvent(), HyxcateSoundEvents.BLOCK_LIGHT_CRYSTAL_HIT.getSoundEvent());
     public static final SoundType METEORIC_ROCK = new SoundType(1.0F, 1.0F, HyxcateSoundEvents.BLOCK_METEORIC_ROCK_BREAK.getSoundEvent(), HyxcateSoundEvents.BLOCK_METEORIC_ROCK_STEP.getSoundEvent(), HyxcateSoundEvents.BLOCK_METEORIC_ROCK_PLACE.getSoundEvent(), HyxcateSoundEvents.BLOCK_METEORIC_ROCK_STEP.getSoundEvent(), HyxcateSoundEvents.BLOCK_METEORIC_ROCK_STEP.getSoundEvent());

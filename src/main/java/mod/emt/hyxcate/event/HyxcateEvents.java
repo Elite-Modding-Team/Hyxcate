@@ -26,7 +26,9 @@ import mod.emt.hyxcate.mixin.common.HyxcateEntityAccessor;
 import mod.emt.hyxcate.network.HyxcatePacketHandler;
 import mod.emt.hyxcate.network.HyxcatePacketWorld;
 import mod.emt.hyxcate.util.HyxcateDamageSource;
-import mod.emt.hyxcate.util.HyxcateUtils;
+import mod.emt.hyxcate.util.RandomUtil;
+import mod.emt.hyxcate.util.helpers.ConfigHelper;
+import mod.emt.hyxcate.util.helpers.SoundHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBed;
 import net.minecraft.block.state.IBlockState;
@@ -529,7 +531,7 @@ public final class HyxcateEvents {
             double spawnX = selectedPlayer.posX + MathHelper.nextDouble(event.world.rand, -HyxcateConfig.METEORS.spawnRadius, HyxcateConfig.METEORS.spawnRadius);
             double spawnZ = selectedPlayer.posZ + MathHelper.nextDouble(event.world.rand, -HyxcateConfig.METEORS.spawnRadius, HyxcateConfig.METEORS.spawnRadius);
             BlockPos spawnPos = new BlockPos(spawnX, 0, spawnZ);
-            double chance = HyxcateUtils.getMeteorChance(event.world, data);
+            double chance = ConfigHelper.getMeteorChance(event.world, data);
             MutableInt ticksInArea = data.playersPresentTicks.get(new ChunkPos(spawnPos));
             if (ticksInArea != null && ticksInArea.intValue() >= HyxcateConfig.METEORS.disallowTime)
                 chance /= Math.pow(2, ticksInArea.intValue() / (double) HyxcateConfig.METEORS.disallowTime);
@@ -641,19 +643,19 @@ public final class HyxcateEvents {
 
         if (Hyxcate.currentLunarEvent instanceof LunarEventBloodMoon) {
             if (HyxcateConfig.EVENTS_LUNAR.BLOOD_MOON.spawnsExtraChance > 0 && entity.world.rand.nextInt(HyxcateConfig.EVENTS_LUNAR.BLOOD_MOON.spawnsExtraChance) == 0) {
-                HyxcateUtils.handleExtraSpawn(entity, "blood_moon_spawn", HyxcateData.EXTRA_SPAWNS_BLOOD_MOON);
+                ConfigHelper.handleExtraSpawn(entity, "blood_moon_spawn", HyxcateData.EXTRA_SPAWNS_BLOOD_MOON);
             }
-            event.setCanceled(HyxcateUtils.handleReplacementSpawn(entity, "blood_moon_spawn", HyxcateData.REPLACEMENT_SPAWNS_BLOOD_MOON));
+            event.setCanceled(ConfigHelper.handleReplacementSpawn(entity, "blood_moon_spawn", HyxcateData.REPLACEMENT_SPAWNS_BLOOD_MOON));
         } else if (Hyxcate.currentLunarEvent instanceof LunarEventBlueMoon) {
             if (HyxcateConfig.EVENTS_LUNAR.BLUE_MOON.spawnsExtraChance > 0 && entity.world.rand.nextInt(HyxcateConfig.EVENTS_LUNAR.BLUE_MOON.spawnsExtraChance) == 0) {
-                HyxcateUtils.handleExtraSpawn(entity, "blue_moon_spawn", HyxcateData.EXTRA_SPAWNS_BLUE_MOON);
+                ConfigHelper.handleExtraSpawn(entity, "blue_moon_spawn", HyxcateData.EXTRA_SPAWNS_BLUE_MOON);
             }
-            event.setCanceled(HyxcateUtils.handleReplacementSpawn(entity, "blue_moon_spawn", HyxcateData.REPLACEMENT_SPAWNS_BLUE_MOON));
+            event.setCanceled(ConfigHelper.handleReplacementSpawn(entity, "blue_moon_spawn", HyxcateData.REPLACEMENT_SPAWNS_BLUE_MOON));
         } else if (Hyxcate.currentLunarEvent instanceof LunarEventFullMoon) {
             if (HyxcateConfig.EVENTS_LUNAR.FULL_MOON.spawnsExtraChance > 0 && entity.world.rand.nextInt(HyxcateConfig.EVENTS_LUNAR.FULL_MOON.spawnsExtraChance) == 0) {
-                HyxcateUtils.handleExtraSpawn(entity, "full_moon_spawn", HyxcateData.EXTRA_SPAWNS_FULL_MOON);
+                ConfigHelper.handleExtraSpawn(entity, "full_moon_spawn", HyxcateData.EXTRA_SPAWNS_FULL_MOON);
             }
-            event.setCanceled(HyxcateUtils.handleReplacementSpawn(entity, "full_moon_spawn", HyxcateData.REPLACEMENT_SPAWNS_FULL_MOON));
+            event.setCanceled(ConfigHelper.handleReplacementSpawn(entity, "full_moon_spawn", HyxcateData.REPLACEMENT_SPAWNS_FULL_MOON));
 
             // Set random effect
             if (HyxcateConfig.EVENTS_LUNAR.FULL_MOON.addPotionEffects) {
@@ -676,21 +678,21 @@ public final class HyxcateEvents {
             }
         } else if (Hyxcate.currentLunarEvent instanceof LunarEventStarShower) {
             if (HyxcateConfig.EVENTS_LUNAR.STAR_SHOWER.spawnsExtraChance > 0 && entity.world.rand.nextInt(HyxcateConfig.EVENTS_LUNAR.STAR_SHOWER.spawnsExtraChance) == 0) {
-                HyxcateUtils.handleExtraSpawn(entity, "star_shower_spawn", HyxcateData.EXTRA_SPAWNS_STAR_SHOWER);
+                ConfigHelper.handleExtraSpawn(entity, "star_shower_spawn", HyxcateData.EXTRA_SPAWNS_STAR_SHOWER);
             }
-            event.setCanceled(HyxcateUtils.handleReplacementSpawn(entity, "star_shower_spawn", HyxcateData.REPLACEMENT_SPAWNS_STAR_SHOWER));
+            event.setCanceled(ConfigHelper.handleReplacementSpawn(entity, "star_shower_spawn", HyxcateData.REPLACEMENT_SPAWNS_STAR_SHOWER));
         }
 
         if (Hyxcate.currentSolarEvent instanceof SolarEventGrimEclipse) {
             if (HyxcateConfig.EVENTS_SOLAR.GRIM_ECLIPSE.spawnsExtraChance > 0 && entity.world.rand.nextInt(HyxcateConfig.EVENTS_SOLAR.GRIM_ECLIPSE.spawnsExtraChance) == 0) {
-                HyxcateUtils.handleExtraSpawn(entity, "grim_eclipse_spawn", HyxcateData.EXTRA_SPAWNS_GRIM_ECLIPSE);
+                ConfigHelper.handleExtraSpawn(entity, "grim_eclipse_spawn", HyxcateData.EXTRA_SPAWNS_GRIM_ECLIPSE);
             }
-            event.setCanceled(HyxcateUtils.handleReplacementSpawn(entity, "grim_eclipse_spawn", HyxcateData.REPLACEMENT_SPAWNS_GRIM_ECLIPSE));
+            event.setCanceled(ConfigHelper.handleReplacementSpawn(entity, "grim_eclipse_spawn", HyxcateData.REPLACEMENT_SPAWNS_GRIM_ECLIPSE));
         } else if (Hyxcate.currentSolarEvent instanceof SolarEventRedGiant) {
             if (HyxcateConfig.EVENTS_SOLAR.RED_GIANT.spawnsExtraChance > 0 && entity.world.rand.nextInt(HyxcateConfig.EVENTS_SOLAR.RED_GIANT.spawnsExtraChance) == 0) {
-                HyxcateUtils.handleExtraSpawn(entity, "red_giant_spawn", HyxcateData.EXTRA_SPAWNS_RED_GIANT);
+                ConfigHelper.handleExtraSpawn(entity, "red_giant_spawn", HyxcateData.EXTRA_SPAWNS_RED_GIANT);
             }
-            event.setCanceled(HyxcateUtils.handleReplacementSpawn(entity, "red_giant_spawn", HyxcateData.REPLACEMENT_SPAWNS_RED_GIANT));
+            event.setCanceled(ConfigHelper.handleReplacementSpawn(entity, "red_giant_spawn", HyxcateData.REPLACEMENT_SPAWNS_RED_GIANT));
 
             // Increase health by 50%, make immune to fire
             IAttributeInstance maxHealthAttribute = entity.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
@@ -775,7 +777,7 @@ public final class HyxcateEvents {
                     paralysisValue += (float) attributemodifier.getAmount();
                 }
                 // Inflicts mob with Paralysis when the attribute is successful
-                if (paralysisValue > 0 && HyxcateUtils.setChance(paralysisValue)) {
+                if (paralysisValue > 0 && RandomUtil.setChance(paralysisValue)) {
                     entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, HyxcateSoundEvents.EFFECT_PARALYSIS_START.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
                     entity.addPotionEffect(new PotionEffect(HyxcatePotions.PARALYSIS, 8 * 20, 0));
                 }
@@ -920,9 +922,9 @@ public final class HyxcateEvents {
         if (!event.getWorld().isRemote) return;
 
         if (event.getEntity() instanceof EntityFallingMeteor) {
-            HyxcateUtils.playClientSoundFallingMeteor(event.getEntity());
+            SoundHelper.playClientSoundFallingMeteor(event.getEntity());
         } else if (event.getEntity() instanceof EntityFallingStar) {
-            HyxcateUtils.playClientSoundFallingStar(event.getEntity());
+            SoundHelper.playClientSoundFallingStar(event.getEntity());
         }
     }
 }

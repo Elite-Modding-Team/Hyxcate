@@ -8,7 +8,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 
 public final class HyxcatePacketHandler {
-
     private static SimpleNetworkWrapper network;
 
     public static void init() {

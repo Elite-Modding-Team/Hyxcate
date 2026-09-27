@@ -10,7 +10,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod.EventBusSubscriber(modid = Hyxcate.ID)
 public class HyxcateEnchantments {
-
     public static Enchantment lunarEdge;
     public static Enchantment lunarShield;
     public static Enchantment magnetization;

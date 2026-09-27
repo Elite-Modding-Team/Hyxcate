@@ -6,7 +6,6 @@ import net.minecraft.network.play.client.CPacketPlayerDigging;
 import net.minecraft.util.math.BlockPos;
 
 public class ClientProxy extends CommonProxy {
-
     @Override
     public void sendBreakPacket(BlockPos pos) {
         NetHandlerPlayClient netHandlerPlayClient = Minecraft.getMinecraft().getConnection();

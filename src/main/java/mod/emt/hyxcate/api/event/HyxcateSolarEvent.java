@@ -1,4 +1,4 @@
-package mod.emt.hyxcate.event.lunar;
+package mod.emt.hyxcate.api.event;
 
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import net.minecraft.nbt.NBTTagCompound;
@@ -7,13 +7,12 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.INBTSerializable;
 
-public abstract class HyxcateLunarEvent implements INBTSerializable<NBTTagCompound> {
-
+public abstract class HyxcateSolarEvent implements INBTSerializable<NBTTagCompound> {
     public final String name;
     protected final HyxcateWorld hyxcateWorld;
     protected final World world;
 
-    protected HyxcateLunarEvent(String name, HyxcateWorld hyxcateWorld) {
+    protected HyxcateSolarEvent(String name, HyxcateWorld hyxcateWorld) {
         this.name = name;
         this.hyxcateWorld = hyxcateWorld;
         this.world = hyxcateWorld.world;
@@ -25,12 +24,12 @@ public abstract class HyxcateLunarEvent implements INBTSerializable<NBTTagCompou
         return null;
     }
 
-    public abstract boolean shouldStart(boolean lastDaytime);
+    public abstract boolean shouldStart(boolean lastNighttime);
 
-    public abstract boolean shouldStop(boolean lastDaytime);
+    public abstract boolean shouldStop(boolean lastNighttime);
 
-    public boolean shouldStartBasic(boolean lastDaytime) {
-        return lastDaytime && !HyxcateWorld.isDaytime(this.world);
+    public boolean shouldStartBasic(boolean lastNighttime) {
+        return lastNighttime && !HyxcateWorld.isNighttime(this.world);
     }
 
     public int getSkyColor() {
@@ -45,11 +44,11 @@ public abstract class HyxcateLunarEvent implements INBTSerializable<NBTTagCompou
         return 0;
     }
 
-    public String getMoonTexture() {
+    public String getSunTexture() {
         return null;
     }
 
-    public void update(boolean lastDaytime) {
+    public void update(boolean lastNighttime) {
     }
 
     @Override
@@ -59,50 +58,48 @@ public abstract class HyxcateLunarEvent implements INBTSerializable<NBTTagCompou
 
     @Override
     public void deserializeNBT(NBTTagCompound nbt) {
+
     }
 
     public class ConfigImpl implements INBTSerializable<NBTTagCompound> {
-
         public int daysSinceLast;
         public int startDays;
         public int graceDays;
 
         public double chance;
-        public int startNight;
+        public int startDay;
         public int gracePeriod;
-        public int nightInterval;
+        public int dayInterval;
 
-        public ConfigImpl(double chance, int startNight, int gracePeriod, int nightInterval) {
+        public ConfigImpl(double chance, int startDay, int gracePeriod, int dayInterval) {
             this.chance = chance;
-            this.startNight = startNight;
+            this.startDay = startDay;
             this.gracePeriod = gracePeriod;
-            this.nightInterval = nightInterval;
+            this.dayInterval = dayInterval;
         }
 
-        public void update(boolean lastDaytime) {
-            if (HyxcateLunarEvent.this.hyxcateWorld.currentLunarEvent == HyxcateLunarEvent.this) {
+        public void update(boolean lastNighttime) {
+            if (HyxcateSolarEvent.this.hyxcateWorld.currentSolarEvent == HyxcateSolarEvent.this) {
                 this.daysSinceLast = 0;
                 this.graceDays = 0;
             }
 
-            if (!lastDaytime && HyxcateWorld.isDaytime(HyxcateLunarEvent.this.world)) {
+            if (!lastNighttime && HyxcateWorld.isNighttime(HyxcateSolarEvent.this.world)) {
                 this.daysSinceLast++;
-                if (this.startDays < this.startNight) this.startDays++;
+                if (this.startDays < this.startDay) this.startDays++;
                 if (this.graceDays < this.gracePeriod) this.graceDays++;
             }
         }
 
-        public boolean canStart(boolean useChance) {
-            if (HyxcateLunarEvent.this.hyxcateWorld.forcedLunarEvent == HyxcateLunarEvent.this) return true;
-            if (this.startDays < this.startNight) return false;
+        public boolean canStart() {
+            if (HyxcateSolarEvent.this.hyxcateWorld.forcedSolarEvent == HyxcateSolarEvent.this) return true;
+            if (this.startDays < this.startDay) return false;
             if (this.graceDays < this.gracePeriod) return false;
-            if (this.nightInterval > 0) return this.daysSinceLast >= this.nightInterval;
-            if (useChance) return HyxcateLunarEvent.this.world.rand.nextDouble() <= this.getChance();
-            return true;
-        }
-
-        public double getChance() {
-            return this.chance;
+            if (this.dayInterval > 0) {
+                return this.daysSinceLast >= this.dayInterval;
+            } else {
+                return HyxcateSolarEvent.this.world.rand.nextDouble() <= this.chance;
+            }
         }
 
         @Override

@@ -3,7 +3,7 @@ package mod.emt.hyxcate.mixin.client;
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.event.solar.SolarEventGrimEclipse;
-import mod.emt.hyxcate.util.HyxcateColorTransition;
+import mod.emt.hyxcate.util.ColorTransitionUtil;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -19,7 +19,7 @@ public abstract class HyxcateSunBrightnessBodyMixin {
     public abstract long getWorldTime();
 
     @Unique
-    private final HyxcateColorTransition hyxcate$brightnessTransition = new HyxcateColorTransition(HyxcateConfig.GENERAL.eventTintLightmapDuration);
+    private final ColorTransitionUtil hyxcate$brightnessTransition = new ColorTransitionUtil(HyxcateConfig.GENERAL.eventTintLightmapDuration);
 
     @Inject(method = "getSunBrightnessBody", at = @At("TAIL"), cancellable = true, remap = false)
     private void HyxcateSetSunBrightnessBody(float partialTicks, CallbackInfoReturnable<Float> cir) {
@@ -42,13 +42,13 @@ public abstract class HyxcateSunBrightnessBodyMixin {
                     new float[]{1, 0, 0},
                     new float[]{0, 0, 0},
                     worldTime,
-                    HyxcateColorTransition.TargetType.CUSTOM_COLOR
+                    ColorTransitionUtil.TargetType.CUSTOM_COLOR
             );
         } else {
             hyxcate$brightnessTransition.transition(
                     new float[]{1, 0, 0},
                     worldTime,
-                    HyxcateColorTransition.TargetType.DEFAULT_COLOR
+                    ColorTransitionUtil.TargetType.DEFAULT_COLOR
             );
         }
 

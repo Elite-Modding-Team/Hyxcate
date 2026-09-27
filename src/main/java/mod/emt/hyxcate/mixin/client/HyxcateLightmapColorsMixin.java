@@ -2,8 +2,8 @@ package mod.emt.hyxcate.mixin.client;
 
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
-import mod.emt.hyxcate.util.HyxcateColorTransition;
-import mod.emt.hyxcate.util.HyxcateColorUtils;
+import mod.emt.hyxcate.util.ColorTransitionUtil;
+import mod.emt.hyxcate.util.ColorUtil;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,7 +20,7 @@ public abstract class HyxcateLightmapColorsMixin {
     private static final float[] hyxcate$START_MULTIPLIER = new float[] {1, 1, 1};
 
     @Unique
-    private final HyxcateColorTransition hyxcate$colorTransition = new HyxcateColorTransition(HyxcateConfig.GENERAL.eventTintLightmapDuration);
+    private final ColorTransitionUtil hyxcate$colorTransition = new ColorTransitionUtil(HyxcateConfig.GENERAL.eventTintLightmapDuration);
 
     @Shadow
     protected World world;
@@ -43,22 +43,22 @@ public abstract class HyxcateLightmapColorsMixin {
         if(hyxcateWorld.currentSolarEvent != null && hyxcateWorld.currentSolarEvent.getLightmapColor() != 0) {
             hyxcate$colorTransition.transition(
                     hyxcate$START_MULTIPLIER,
-                    HyxcateColorUtils.getRgbIntAsFloatArray(HyxcateColorUtils.adjustBrightness(hyxcateWorld.currentSolarEvent.getLightmapColor(), 2.0F)),
+                    ColorUtil.getRgbIntAsFloatArray(ColorUtil.adjustBrightness(hyxcateWorld.currentSolarEvent.getLightmapColor(), 2.0F)),
                     worldTime,
-                    HyxcateColorTransition.TargetType.CUSTOM_COLOR
+                    ColorTransitionUtil.TargetType.CUSTOM_COLOR
             );
         } else if(hyxcateWorld.currentLunarEvent != null && hyxcateWorld.currentLunarEvent.getLightmapColor() != 0) {
             hyxcate$colorTransition.transition(
                     hyxcate$START_MULTIPLIER,
-                    HyxcateColorUtils.getRgbIntAsFloatArray(hyxcateWorld.currentLunarEvent.getLightmapColor()),
+                    ColorUtil.getRgbIntAsFloatArray(hyxcateWorld.currentLunarEvent.getLightmapColor()),
                     worldTime,
-                    HyxcateColorTransition.TargetType.CUSTOM_COLOR
+                    ColorTransitionUtil.TargetType.CUSTOM_COLOR
             );
         } else {
             hyxcate$colorTransition.transition(
                     hyxcate$START_MULTIPLIER,
                     worldTime,
-                    HyxcateColorTransition.TargetType.DEFAULT_COLOR
+                    ColorTransitionUtil.TargetType.DEFAULT_COLOR
             );
         }
 

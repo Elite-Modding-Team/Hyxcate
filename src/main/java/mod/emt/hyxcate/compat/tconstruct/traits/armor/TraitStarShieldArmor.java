@@ -3,7 +3,7 @@ package mod.emt.hyxcate.compat.tconstruct.traits.armor;
 import c4.conarm.lib.traits.AbstractArmorTrait;
 import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
-import mod.emt.hyxcate.util.HyxcateUtils;
+import mod.emt.hyxcate.util.RandomUtil;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
@@ -23,7 +23,7 @@ public class TraitStarShieldArmor extends AbstractArmorTrait {
     @Override
     public float onDamaged(ItemStack armor, EntityPlayer player, DamageSource source, float damage, float newDamage, LivingDamageEvent event) {
         // 5% chance per piece
-        if (HyxcateUtils.setChance(0.05F)) {
+        if (RandomUtil.setChance(0.05F)) {
             // Completely cancel out the damage
             event.setCanceled(true);
             player.world.playSound(null, player.getPosition(), HyxcateSoundEvents.ITEM_CELESTIAL_WARHAMMER_SMASH.getSoundEvent(), SoundCategory.PLAYERS, 0.85F, 2.0F / (player.world.rand.nextFloat() * 0.4F + 1.2F));

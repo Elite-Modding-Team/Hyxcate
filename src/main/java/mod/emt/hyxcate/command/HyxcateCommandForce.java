@@ -1,8 +1,8 @@
 package mod.emt.hyxcate.command;
 
 import mod.emt.hyxcate.capability.HyxcateWorld;
-import mod.emt.hyxcate.event.lunar.HyxcateLunarEvent;
-import mod.emt.hyxcate.event.solar.HyxcateSolarEvent;
+import mod.emt.hyxcate.api.event.HyxcateLunarEvent;
+import mod.emt.hyxcate.api.event.HyxcateSolarEvent;
 import net.minecraft.command.*;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;

@@ -3,7 +3,8 @@ package mod.emt.hyxcate.item;
 import com.invadermonky.futurefireproof.api.IFireproofItem;
 import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.init.HyxcateBlocks;
-import mod.emt.hyxcate.util.HyxcateUtils;
+import mod.emt.hyxcate.util.helpers.ConfigHelper;
+import mod.emt.hyxcate.util.helpers.SoundHelper;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.item.EntityItem;
@@ -35,7 +36,7 @@ public class HyxcateItemFallenStar extends Item implements IFireproofItem {
                 entityItem.world.spawnParticle(EnumParticleTypes.FIREWORKS_SPARK, true, entityItem.posX, entityItem.posY + 0.5F, entityItem.posZ, mX, mY, mZ);
             }
             if (entityItem.ticksExisted == 5 && FMLLaunchHandler.side().isClient()) {
-                HyxcateUtils.playClientSoundFallenStar(entityItem);
+                SoundHelper.playClientSoundFallenStar(entityItem);
             }
             return false;
         }

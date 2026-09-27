@@ -3,7 +3,7 @@ package mod.emt.hyxcate.compat.tconstruct.traits.armor;
 import c4.conarm.lib.traits.AbstractArmorTrait;
 import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.init.HyxcatePotions;
-import mod.emt.hyxcate.util.HyxcateUtils;
+import mod.emt.hyxcate.util.RandomUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,7 +19,7 @@ public class TraitFrezaritesWard extends AbstractArmorTrait {
 
     @Override
     public float onDamaged(ItemStack armor, EntityPlayer player, DamageSource source, float damage, float newDamage, LivingDamageEvent event) {
-        if (HyxcateUtils.setChance(0.1F)) {
+        if (RandomUtil.setChance(0.1F)) {
             Entity trueSource = source.getTrueSource();
 
             if (!player.world.isRemote) {

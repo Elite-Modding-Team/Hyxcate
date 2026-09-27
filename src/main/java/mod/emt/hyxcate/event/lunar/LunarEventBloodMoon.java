@@ -2,6 +2,7 @@ package mod.emt.hyxcate.event.lunar;
 
 import com.google.common.collect.Sets;
 import mod.emt.hyxcate.Hyxcate;
+import mod.emt.hyxcate.api.event.HyxcateLunarEvent;
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;

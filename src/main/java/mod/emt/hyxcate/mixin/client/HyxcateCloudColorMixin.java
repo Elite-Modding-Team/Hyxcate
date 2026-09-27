@@ -2,8 +2,8 @@ package mod.emt.hyxcate.mixin.client;
 
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
-import mod.emt.hyxcate.util.HyxcateColorTransition;
-import mod.emt.hyxcate.util.HyxcateColorUtils;
+import mod.emt.hyxcate.util.ColorTransitionUtil;
+import mod.emt.hyxcate.util.ColorUtil;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,7 +20,7 @@ public abstract class HyxcateCloudColorMixin {
     public abstract long getWorldTime();
 
     @Unique
-    private final HyxcateColorTransition hyxcate$colorTransition = new HyxcateColorTransition(HyxcateConfig.GENERAL.eventTintSkyColorDuration);
+    private final ColorTransitionUtil hyxcate$colorTransition = new ColorTransitionUtil(HyxcateConfig.GENERAL.eventTintSkyColorDuration);
 
     @Inject(method = "getCloudColorBody", at = @At("TAIL"), cancellable = true, remap = false)
     private void HyxcateSetCloudColor(float partialTicks, CallbackInfoReturnable<Vec3d> cir) {
@@ -35,34 +35,34 @@ public abstract class HyxcateCloudColorMixin {
             return;
         }
 
-        float[] initialColors = HyxcateColorUtils.getVec3dAsFloatArray(cir.getReturnValue());
+        float[] initialColors = ColorUtil.getVec3dAsFloatArray(cir.getReturnValue());
         long worldTime = getWorldTime();
 
         if(hyxcateWorld.currentSolarEvent != null && hyxcateWorld.currentSolarEvent.getCloudColor() != 0) {
             hyxcate$colorTransition.transition(
                     initialColors,
-                    HyxcateColorUtils.getRgbIntAsFloatArray(hyxcateWorld.currentSolarEvent.getCloudColor()),
+                    ColorUtil.getRgbIntAsFloatArray(hyxcateWorld.currentSolarEvent.getCloudColor()),
                     worldTime,
-                    HyxcateColorTransition.TargetType.CUSTOM_COLOR
+                    ColorTransitionUtil.TargetType.CUSTOM_COLOR
             );
         } else if(hyxcateWorld.currentLunarEvent != null && hyxcateWorld.currentLunarEvent.getCloudColor() != 0) {
             hyxcate$colorTransition.transition(
                     initialColors,
-                    HyxcateColorUtils.getRgbIntAsFloatArray(hyxcateWorld.currentLunarEvent.getCloudColor()),
+                    ColorUtil.getRgbIntAsFloatArray(hyxcateWorld.currentLunarEvent.getCloudColor()),
                     worldTime,
-                    HyxcateColorTransition.TargetType.CUSTOM_COLOR
+                    ColorTransitionUtil.TargetType.CUSTOM_COLOR
             );
         } else {
             hyxcate$colorTransition.transition(
                     initialColors,
                     worldTime,
-                    HyxcateColorTransition.TargetType.DEFAULT_COLOR
+                    ColorTransitionUtil.TargetType.DEFAULT_COLOR
             );
         }
 
         if(hyxcate$colorTransition.isOverriding()) {
             float[] customCloudColors = hyxcate$colorTransition.getCurrentColor(worldTime, partialTicks);
-            cir.setReturnValue(HyxcateColorUtils.getFloatArrayAsVec3d(customCloudColors));
+            cir.setReturnValue(ColorUtil.getFloatArrayAsVec3d(customCloudColors));
         }
 
     }

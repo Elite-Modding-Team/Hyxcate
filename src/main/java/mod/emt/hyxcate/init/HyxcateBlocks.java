@@ -18,7 +18,6 @@ import java.util.function.Function;
 
 @Mod.EventBusSubscriber(modid = Hyxcate.ID)
 public class HyxcateBlocks {
-
     public static Block starAir;
     public static Block starBlock;
     public static Block crackedStarBlock;

@@ -24,7 +24,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.function.Supplier;
 
 public class HyxcateItemSlab extends ItemBlock {
-
     private final Supplier<HyxcateBlockSlab> singleSlab;
     private final Supplier<HyxcateBlockSlab> doubleSlab;
 

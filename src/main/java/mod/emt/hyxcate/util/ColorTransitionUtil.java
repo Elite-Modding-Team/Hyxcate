@@ -2,8 +2,7 @@ package mod.emt.hyxcate.util;
 
 import mod.emt.hyxcate.event.HyxcateClientEvents;
 
-public class HyxcateColorTransition {
-
+public class ColorTransitionUtil {
     private final float[] startColor = new float[3];
     private final float[] targetColor = new float[]{-1, -1, -1};
     private final float[] currentColor = new float[3];
@@ -17,7 +16,7 @@ public class HyxcateColorTransition {
 
     private final int durationTicks;
 
-    public HyxcateColorTransition(int durationTicks) {
+    public ColorTransitionUtil(int durationTicks) {
         this.durationTicks = durationTicks;
     }
 
@@ -100,5 +99,4 @@ public class HyxcateColorTransition {
         DEFAULT_COLOR,
         CUSTOM_COLOR
     }
-
 }

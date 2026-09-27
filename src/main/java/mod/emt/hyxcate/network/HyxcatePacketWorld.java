@@ -15,7 +15,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.io.IOException;
 
 public class HyxcatePacketWorld implements IMessage {
-
     private NBTTagCompound info;
 
     public HyxcatePacketWorld(HyxcateWorld world) {
@@ -42,7 +41,6 @@ public class HyxcatePacketWorld implements IMessage {
     }
 
     public static class Handler implements IMessageHandler<HyxcatePacketWorld, IMessage> {
-
         @Override
         @SideOnly(Side.CLIENT)
         public IMessage onMessage(HyxcatePacketWorld message, MessageContext ctx) {
@@ -54,7 +52,6 @@ public class HyxcatePacketWorld implements IMessage {
                         Hyxcate.deserializeNBT(message.info, true);
                 }
             });
-
             return null;
         }
     }

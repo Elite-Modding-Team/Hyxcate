@@ -9,8 +9,8 @@ import mod.emt.hyxcate.init.HyxcateItems;
 import mod.emt.hyxcate.init.HyxcatePotions;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
 import mod.emt.hyxcate.item.HyxcateItemBow;
-import mod.emt.hyxcate.util.HyxcateColorTransition;
-import mod.emt.hyxcate.util.HyxcateColorUtils;
+import mod.emt.hyxcate.util.ColorTransitionUtil;
+import mod.emt.hyxcate.util.ColorUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -52,7 +52,7 @@ public final class HyxcateClientEvents {
     private static String lastSunTextures;
 
     /**
-     * Used mainly in {@link HyxcateColorTransition} to
+     * Used mainly in {@link ColorTransitionUtil} to
      * instantly transition on world join
      */
     public static long joinTime = -1;
@@ -114,7 +114,7 @@ public final class HyxcateClientEvents {
         }
     }
 
-    private static final HyxcateColorTransition fogColorTransition = new HyxcateColorTransition(HyxcateConfig.GENERAL.eventTintSkyColorDuration);
+    private static final ColorTransitionUtil fogColorTransition = new ColorTransitionUtil(HyxcateConfig.GENERAL.eventTintSkyColorDuration);
 
     @SubscribeEvent
     public static void onFogRender(EntityViewRenderEvent.FogColors event) {
@@ -141,22 +141,22 @@ public final class HyxcateClientEvents {
         if(hyxcateWorld.currentSolarEvent != null && hyxcateWorld.currentSolarEvent.getSkyColor() != 0) {
             fogColorTransition.transition(
                     initialColors,
-                    HyxcateColorUtils.getRgbIntAsFloatArray(hyxcateWorld.currentSolarEvent.getSkyColor()),
+                    ColorUtil.getRgbIntAsFloatArray(hyxcateWorld.currentSolarEvent.getSkyColor()),
                     worldTime,
-                    HyxcateColorTransition.TargetType.CUSTOM_COLOR
+                    ColorTransitionUtil.TargetType.CUSTOM_COLOR
             );
         } else if(hyxcateWorld.currentLunarEvent != null && hyxcateWorld.currentLunarEvent.getSkyColor() != 0) {
             fogColorTransition.transition(
                     initialColors,
-                    HyxcateColorUtils.getRgbIntAsFloatArray(hyxcateWorld.currentLunarEvent.getSkyColor()),
+                    ColorUtil.getRgbIntAsFloatArray(hyxcateWorld.currentLunarEvent.getSkyColor()),
                     worldTime,
-                    HyxcateColorTransition.TargetType.CUSTOM_COLOR
+                    ColorTransitionUtil.TargetType.CUSTOM_COLOR
             );
         } else {
             fogColorTransition.transition(
                     initialColors,
                     worldTime,
-                    HyxcateColorTransition.TargetType.DEFAULT_COLOR
+                    ColorTransitionUtil.TargetType.DEFAULT_COLOR
             );
         }
 

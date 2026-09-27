@@ -4,7 +4,8 @@ import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
 import mod.emt.hyxcate.item.HyxcateItemSword;
-import mod.emt.hyxcate.util.HyxcateUtils;
+import mod.emt.hyxcate.util.helpers.NBTHelper;
+import mod.emt.hyxcate.util.helpers.SoundHelper;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
@@ -105,7 +106,7 @@ public class HyxcateToolCelestialWarhammer extends HyxcateItemSword {
             world.playSound(null, entityLiving.getPosition(), HyxcateSoundEvents.ITEM_CELESTIAL_WARHAMMER_HIT.getSoundEvent(), SoundCategory.PLAYERS, 1.35F, 1.5F / (world.rand.nextFloat() * 0.4F + 0.8F));
             ((WorldServer) world).spawnParticle(EnumParticleTypes.END_ROD, false, entityLiving.posX, entityLiving.posY + entityLiving.getEyeHeight(), entityLiving.posZ, 30, 0.25, 0.25, 0.25, 0.05);
         } else if (FMLLaunchHandler.side().isClient()) {
-            HyxcateUtils.playClientSoundWarhammer(world);
+            SoundHelper.playClientSoundWarhammer(world);
         }
     }
 
@@ -134,7 +135,7 @@ public class HyxcateToolCelestialWarhammer extends HyxcateItemSword {
     public void getSubItems(@Nonnull CreativeTabs tab, @Nonnull NonNullList<ItemStack> list) {
         if (this.isInCreativeTab(tab)) {
             ItemStack stack = new ItemStack(this);
-            HyxcateUtils.setUnbreakable(stack);
+            NBTHelper.setUnbreakable(stack);
             list.add(stack);
         }
     }

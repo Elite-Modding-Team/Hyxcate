@@ -4,8 +4,7 @@ import net.minecraft.util.math.Vec3d;
 
 import java.awt.*;
 
-public class HyxcateColorUtils {
-
+public class ColorUtil {
     /**
      * Adjust the brightness of a given RGB integer.
      *
@@ -112,5 +111,4 @@ public class HyxcateColorUtils {
     public static Vec3d getFloatArrayAsVec3d(float[] rgb) {
         return new Vec3d(rgb[0], rgb[1], rgb[2]);
     }
-
 }

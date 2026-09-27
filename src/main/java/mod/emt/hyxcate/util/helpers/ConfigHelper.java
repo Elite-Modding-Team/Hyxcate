@@ -1,22 +1,13 @@
-package mod.emt.hyxcate.util;
+package mod.emt.hyxcate.util.helpers;
 
 import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.capability.HyxcateWorld;
-import mod.emt.hyxcate.client.sound.HyxcateSoundBeamSword;
-import mod.emt.hyxcate.client.sound.HyxcateSoundCelestialWarhammer;
-import mod.emt.hyxcate.client.sound.HyxcateSoundFallenEntity;
-import mod.emt.hyxcate.client.sound.HyxcateSoundFallingEntity;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
 import mod.emt.hyxcate.event.lunar.LunarEventStarShower;
-import mod.emt.hyxcate.init.HyxcateSoundEvents;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -24,58 +15,15 @@ import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEntitySpawner;
 import net.minecraftforge.event.ForgeEventFactory;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-// Courtesy of UeberallGebannt for the chance methods
-public class HyxcateUtils {
+public class ConfigHelper {
     public static final Random RANDOM = new Random();
 
-    public static ItemStack checkNBT(ItemStack stack) {
-        if (stack.getTagCompound() == null) {
-            stack.setTagCompound(new NBTTagCompound());
-        }
-
-        return stack;
-    }
-
-    /**
-     * Returns true with a certain chance
-     *
-     * @param chance The chance to return true
-     * @param random The random instance to be used
-     * @return true with a certain chance or false
-     */
-    public static boolean setChance(double chance, Random random) {
-        double value = random.nextDouble();
-        return value <= chance;
-    }
-
-    /**
-     * Returns true with a certain chance
-     *
-     * @param chance The chance to return true
-     * @return true with a certain chance or false
-     */
-    public static boolean setChance(double chance) {
-        return setChance(chance, RANDOM);
-    }
-
-    public static ItemStack setUnbreakable(ItemStack stack) {
-        checkNBT(stack);
-
-        if (!stack.getTagCompound().hasKey("Unbreakable")) {
-            stack.getTagCompound().setBoolean("Unbreakable", true);
-        }
-
-        return stack;
-    }
-
-    public static boolean handleExtraSpawn(Entity entity, String key, Map<ResourceLocation, List<ResourceLocation>> map) {
+    public static void handleExtraSpawn(Entity entity, String key, Map<ResourceLocation, List<ResourceLocation>> map) {
         ResourceLocation name = EntityList.getKey(entity);
         if (name != null && map.containsKey(name)) {
             List<ResourceLocation> extras = map.get(name);
@@ -83,11 +31,9 @@ public class HyxcateUtils {
                 Entity extra = EntityList.createEntityByIDFromName(extras.get(RANDOM.nextInt(extras.size())), entity.world);
                 if (extra instanceof EntityLiving) {
                     doExtraSpawn(entity, key, extra);
-                    return true;
                 }
             }
         }
-        return false;
     }
 
     public static void doExtraSpawn(Entity original, String key, Entity extra) {
@@ -166,30 +112,5 @@ public class HyxcateUtils {
             }
         }
         return visitedGate ? HyxcateConfig.METEORS.chanceAfterGateM : HyxcateConfig.METEORS.chanceM;
-    }
-
-    @SideOnly(Side.CLIENT)
-    public static void playClientSoundBeamSword(ItemStack stack) {
-        Minecraft.getMinecraft().getSoundHandler().playSound(new HyxcateSoundBeamSword(stack));
-    }
-
-    @SideOnly(Side.CLIENT)
-    public static void playClientSoundFallenStar(EntityItem entityItem) {
-        Minecraft.getMinecraft().getSoundHandler().playSound(new HyxcateSoundFallenEntity(entityItem, HyxcateSoundEvents.ENTITY_STAR_IDLE.getSoundEvent(), 1F));
-    }
-
-    @SideOnly(Side.CLIENT)
-    public static void playClientSoundFallingMeteor(Entity entity) {
-        Minecraft.getMinecraft().getSoundHandler().playSound(new HyxcateSoundFallingEntity(entity, HyxcateSoundEvents.ENTITY_METEOR_FALLING.getSoundEvent(), 5F));
-    }
-
-    @SideOnly(Side.CLIENT)
-    public static void playClientSoundFallingStar(Entity entity) {
-        Minecraft.getMinecraft().getSoundHandler().playSound(new HyxcateSoundFallingEntity(entity, HyxcateSoundEvents.ENTITY_STAR_FALLING.getSoundEvent(), (float) HyxcateConfig.FALLING_STARS.volumeAmbient));
-    }
-
-    @SideOnly(Side.CLIENT)
-    public static void playClientSoundWarhammer(World world) {
-        Minecraft.getMinecraft().getSoundHandler().playSound(new HyxcateSoundCelestialWarhammer(1.35F, 1.0F / (world.rand.nextFloat() * 0.4F + 0.8F)));
     }
 }

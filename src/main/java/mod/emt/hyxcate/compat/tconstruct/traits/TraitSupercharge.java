@@ -1,7 +1,7 @@
 package mod.emt.hyxcate.compat.tconstruct.traits;
 
 import mod.emt.hyxcate.Hyxcate;
-import mod.emt.hyxcate.util.HyxcateUtils;
+import mod.emt.hyxcate.util.RandomUtil;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
@@ -20,7 +20,7 @@ public class TraitSupercharge extends AbstractTrait {
 
     @Override
     public void afterBlockBreak(ItemStack tool, World world, IBlockState state, BlockPos pos, EntityLivingBase player, boolean wasEffective) {
-        if (HyxcateUtils.setChance(0.1F) && wasEffective) {
+        if (RandomUtil.setChance(0.1F) && wasEffective) {
             player.world.playSound(null, player.posX, player.posY, player.posZ, Sounds.shocking_discharge, SoundCategory.PLAYERS, 0.5F, 0.5F / (player.world.rand.nextFloat() * 0.4F + 1.2F));
             player.addPotionEffect(new PotionEffect(MobEffects.HASTE, 5 * 20, 2));
         }
@@ -28,7 +28,7 @@ public class TraitSupercharge extends AbstractTrait {
 
     @Override
     public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical, boolean wasHit) {
-        if (HyxcateUtils.setChance(0.1F) && wasHit) {
+        if (RandomUtil.setChance(0.1F) && wasHit) {
             player.world.playSound(null, player.posX, player.posY, player.posZ, Sounds.shocking_discharge, SoundCategory.PLAYERS, 0.5F, 0.5F / (player.world.rand.nextFloat() * 0.4F + 1.2F));
             player.addPotionEffect(new PotionEffect(MobEffects.HASTE, 5 * 20, 2));
         }
