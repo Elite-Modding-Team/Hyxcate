@@ -185,21 +185,21 @@ public class HyxcateItems {
     }
 
     public static void initMaterials() {
-        meteoriteToolMaterial = EnumHelper.addToolMaterial("meteorite", 4, 2500, 9.0F, 4.0F, 18);
-        meteoriteArmorMaterial = EnumHelper.addArmorMaterial("meteorite", Hyxcate.ID + ":meteorite", 42, new int[]{4, 7, 9, 4}, 18, HyxcateSoundEvents.EQUIP_METALLIC.getSoundEvent(), 3.0F);
+        meteoriteToolMaterial = EnumHelper.addToolMaterial("HYXCATE_METEORITE", 4, 2500, 9.0F, 4.0F, 18);
+        meteoriteArmorMaterial = EnumHelper.addArmorMaterial("HYXCATE_METEORITE", Hyxcate.ID + ":meteorite", 42, new int[]{4, 7, 9, 4}, 18, HyxcateSoundEvents.EQUIP_METALLIC.getSoundEvent(), 3.0F);
 
-        frezariteToolMaterial = EnumHelper.addToolMaterial("frezarite", 5, 3000, 10.0F, 5.0F, 20);
-        frezariteArmorMaterial = EnumHelper.addArmorMaterial("frezarite", Hyxcate.ID + ":frezarite", 48, new int[]{5, 8, 10, 5}, 20, HyxcateSoundEvents.EQUIP_CRYSTALLINE.getSoundEvent(), 4.0F);
+        frezariteToolMaterial = EnumHelper.addToolMaterial("HYXCATE_FREZARITE", 5, 3000, 10.0F, 5.0F, 20);
+        frezariteArmorMaterial = EnumHelper.addArmorMaterial("HYXCATE_FREZARITE", Hyxcate.ID + ":frezarite", 48, new int[]{5, 8, 10, 5}, 20, HyxcateSoundEvents.EQUIP_CRYSTALLINE.getSoundEvent(), 4.0F);
 
-        kreknoriteToolMaterial = EnumHelper.addToolMaterial("kreknorite", 5, 3000, 10.0F, 5.0F, 20);
-        kreknoriteArmorMaterial = EnumHelper.addArmorMaterial("kreknorite", Hyxcate.ID + ":kreknorite", 48, new int[]{5, 8, 10, 5}, 20, HyxcateSoundEvents.EQUIP_METALLIC.getSoundEvent(), 4.0F);
+        kreknoriteToolMaterial = EnumHelper.addToolMaterial("HYXCATE_KREKNORITE", 5, 3000, 10.0F, 5.0F, 20);
+        kreknoriteArmorMaterial = EnumHelper.addArmorMaterial("HYXCATE_KREKNORITE", Hyxcate.ID + ":kreknorite", 48, new int[]{5, 8, 10, 5}, 20, HyxcateSoundEvents.EQUIP_METALLIC.getSoundEvent(), 4.0F);
 
-        tektiteToolMaterial = EnumHelper.addToolMaterial("tektite", 5, 3500, 12.0F, 6.0F, 22);
-        tektiteArmorMaterial = EnumHelper.addArmorMaterial("tektite", Hyxcate.ID + ":tektite", 54, new int[]{6, 9, 11, 6}, 22, HyxcateSoundEvents.EQUIP_CRYSTALLINE.getSoundEvent(), 4.0F);
+        tektiteToolMaterial = EnumHelper.addToolMaterial("HYXCATE_TEKTITE", 5, 3500, 12.0F, 6.0F, 22);
+        tektiteArmorMaterial = EnumHelper.addArmorMaterial("HYXCATE_TEKTITE", Hyxcate.ID + ":tektite", 54, new int[]{6, 9, 11, 6}, 22, HyxcateSoundEvents.EQUIP_CRYSTALLINE.getSoundEvent(), 4.0F);
 
-        tektiteGreatswordToolMaterial = EnumHelper.addToolMaterial("tektite_greatsword", 5, 3500, 15.0F, 8.0F, 22);
-        celestialWarhammerToolMaterial = EnumHelper.addToolMaterial("celestial_warhammer", 5, 5500, 15.0F, 12.0F, 30);
-        beamSwordToolMaterial = EnumHelper.addToolMaterial("beam_sword", 5, 3500, 15.0F, 8.0F, 30);
+        tektiteGreatswordToolMaterial = EnumHelper.addToolMaterial("HYXCATE_TEKTITE_GREATSWORD", 5, 3500, 15.0F, 8.0F, 22);
+        celestialWarhammerToolMaterial = EnumHelper.addToolMaterial("HYXCATE_CELESTIAL_WARHAMMER", 5, 5500, 15.0F, 12.0F, 30);
+        beamSwordToolMaterial = EnumHelper.addToolMaterial("HYXCATE_BEAM_SWORD", 5, 3500, 15.0F, 8.0F, 30);
     }
 
     public static void setRepairItems() {
