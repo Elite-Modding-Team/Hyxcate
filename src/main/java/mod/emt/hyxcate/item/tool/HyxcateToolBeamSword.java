@@ -1,7 +1,6 @@
 package mod.emt.hyxcate.item.tool;
 
 import mod.emt.hyxcate.Hyxcate;
-import mod.emt.hyxcate.init.HyxcateSoundEvents;
 import mod.emt.hyxcate.item.HyxcateItemSword;
 import mod.emt.hyxcate.util.HyxcateUtils;
 import net.minecraft.block.state.IBlockState;
@@ -13,13 +12,11 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
@@ -37,29 +34,8 @@ public class HyxcateToolBeamSword extends HyxcateItemSword {
     }
 
     @Override
-    public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
-        super.hitEntity(stack, target, attacker);
-
-        if (attacker instanceof EntityPlayer) {
-            EntityPlayer player = (EntityPlayer) attacker;
-            player.world.playSound(null, player.posX, player.posY, player.posZ, HyxcateSoundEvents.ITEM_BEAM_SWORD_HIT.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.5F / (player.world.rand.nextFloat() * 0.4F + 1.2F));
-        }
-
-        return true;
-    }
-
-    @Override
     public void setDamage(ItemStack stack, int damage) {
         // Unbreakable
-    }
-
-    @Override
-    public boolean onEntitySwing(EntityLivingBase entityLiving, ItemStack stack) {
-        if (stack.getItemDamage() < stack.getMaxDamage() && entityLiving instanceof EntityPlayer && ((EntityPlayer) entityLiving).getCooledAttackStrength(0) > 0.1F) {
-            entityLiving.world.playSound(null, entityLiving.posX, entityLiving.posY, entityLiving.posZ, HyxcateSoundEvents.ITEM_BEAM_SWORD_SWING.getSoundEvent(), SoundCategory.PLAYERS, 0.5F, 1.5F / (entityLiving.world.rand.nextFloat() * 0.4F + 1.2F));
-        }
-
-        return super.onEntitySwing(entityLiving, stack);
     }
 
     @Override

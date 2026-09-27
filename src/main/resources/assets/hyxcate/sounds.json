@@ -235,25 +235,9 @@
       "hyxcate:event/star_shower"
     ]
   },
-  "item.beam_sword.hit": {
-    "sounds": [
-      "hyxcate:item/beam_sword/hit1",
-      "hyxcate:item/beam_sword/hit2",
-      "hyxcate:item/beam_sword/hit3",
-      "hyxcate:item/beam_sword/hit4"
-    ]
-  },
   "item.beam_sword.idle": {
     "sounds": [
       "hyxcate:item/beam_sword/idle_loop"
-    ]
-  },
-  "item.beam_sword.swing": {
-    "sounds": [
-      "hyxcate:item/beam_sword/swing1",
-      "hyxcate:item/beam_sword/swing2",
-      "hyxcate:item/beam_sword/swing3",
-      "hyxcate:item/beam_sword/swing4"
     ]
   },
   "item.celestial_emblem.create": {

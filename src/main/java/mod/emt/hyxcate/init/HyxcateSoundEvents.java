@@ -51,9 +51,7 @@ public enum HyxcateSoundEvents {
     EVENT_RED_SUN_START_SPECIAL("event.red_giant.start.special"),
 
     // Items
-    ITEM_BEAM_SWORD_HIT("item.beam_sword.hit"),
     ITEM_BEAM_SWORD_IDLE("item.beam_sword.idle"),
-    ITEM_BEAM_SWORD_SWING("item.beam_sword.swing"),
     ITEM_CELESTIAL_EMBLEM_CREATE("item.celestial_emblem.create"),
     ITEM_CELESTIAL_WARHAMMER_HIT("item.celestial_warhammer.hit"),
     ITEM_CELESTIAL_WARHAMMER_LAUNCH("item.celestial_warhammer.launch"),
