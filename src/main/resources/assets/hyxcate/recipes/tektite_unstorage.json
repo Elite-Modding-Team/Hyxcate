@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "hyxcate:tektite_block"
+    }
+  ],
+  "result": {
+    "item": "hyxcate:tektite_gem_cluster",
+    "count": 9
+  }
+}

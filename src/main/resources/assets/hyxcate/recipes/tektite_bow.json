@@ -1,0 +1,33 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:tektite_bow"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "TOT",
+    "CBC",
+    "TOT"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:bow",
+      "data": 32767
+    },
+    "T": {
+      "item": "hyxcate:tektite_gem_cluster"
+    },
+    "O": {
+      "type": "forge:ore_dict",
+      "ore": "obsidian"
+    },
+    "C": {
+      "item": "hyxcate:cyber_crystal"
+    }
+  },
+  "result": {
+    "item": "hyxcate:tektite_bow"
+  }
+}

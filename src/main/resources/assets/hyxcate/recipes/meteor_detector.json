@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:meteor_detector"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "STS",
+    "TCT",
+    "STS"
+  ],
+  "key": {
+    "S": {
+      "item": "hyxcate:fallen_star"
+    },
+    "T": {
+      "item": "hyxcate:tektite_gem_cluster"
+    },
+    "C": {
+      "item": "minecraft:compass"
+    }
+  },
+  "result": {
+    "item": "hyxcate:meteor_detector"
+  }
+}

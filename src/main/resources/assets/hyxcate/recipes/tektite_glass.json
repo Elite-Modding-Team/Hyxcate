@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "###",
+    "#T#",
+    "###"
+  ],
+  "key": {
+    "T": {
+      "item": "hyxcate:tektite_gem_cluster"
+    },
+    "#": {
+      "type": "forge:ore_dict",
+      "ore": "blockGlass"
+    }
+  },
+  "result": {
+    "item": "hyxcate:tektite_glass",
+    "count": 8
+  }
+}

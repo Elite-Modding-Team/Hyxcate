@@ -1,0 +1,32 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:celestial_warhammer"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "CEC",
+    "TBT",
+    " B "
+  ],
+  "key": {
+    "B": {
+      "type": "forge:ore_dict",
+      "ore": "blockStar"
+    },
+    "C": {
+      "item": "hyxcate:cyber_crystal"
+    },
+    "T": {
+      "item": "hyxcate:tektite_gem_cluster"
+    },
+    "E": {
+      "item": "hyxcate:celestial_emblem"
+    }
+  },
+  "result": {
+    "item": "hyxcate:celestial_warhammer"
+  }
+}

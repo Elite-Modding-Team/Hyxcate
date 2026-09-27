@@ -1,0 +1,247 @@
+itemGroup.hyxcate=Hyxcate
+
+# Attributes
+attribute.name.hyxcate.generic.explosion_resistance=Résistance aux Explosions
+attribute.name.hyxcate.generic.moon_damage=Dégâts Lunaire
+attribute.name.hyxcate.generic.moon_ward=Protection Lunaire
+attribute.name.hyxcate.generic.magnetization=Magnétisation
+attribute.name.hyxcate.generic.paralysis=Chance de Paralysie
+attribute.name.hyxcate.generic.sun_damage=Dégâts Solaire
+attribute.name.hyxcate.generic.sun_ward=Protection Solaire
+
+# Blocks
+tile.hyxcate.star_block.name=Bloc d'Étoile
+tile.hyxcate.chiseled_star_block.name=Bloc d'Étoile Taillé
+tile.hyxcate.cracked_star_block.name=Bloc d'Étoile Fissuré
+tile.hyxcate.star_stairs.name=Escalier en Bloc d'Étoile
+tile.hyxcate.star_slab.name=Dalle en Bloc d'Étoile
+tile.hyxcate.star_slab_double.name=Dalle en Bloc d'Étoile Double
+tile.hyxcate.cyber_crystal.name=Cyber Cristal
+tile.hyxcate.frezarite_block.name=Bloc de Frezarite
+tile.hyxcate.frezarite_rock.name=Roche de Frezarite
+tile.hyxcate.kreknorite_block.name=Bloc de Kreknorite
+tile.hyxcate.kreknorite_rock.name=Roche de Kreknorite
+tile.hyxcate.meteorite_block.name=Bloc de Météorite
+tile.hyxcate.meteorite_rock.name=Roche de Météorite
+tile.hyxcate.meteorite_rock_hot.name=Roche de Météorite Chaude
+tile.hyxcate.tektite_block.name=Bloc de Tektite
+tile.hyxcate.tektite_glass.name=Verre en Tektite
+
+# Commands
+command.hyxcate.force.usage=/hyxcateforce <event> pour déclencher un évènement Lunaire/Solaire
+command.hyxcate.force.invalid=Il n'y a aucun évènement Lunaire/Solaire avec le nom %s
+command.hyxcate.force.success=%s aura lieu au début de la prochaine nuit/jour
+command.hyxcate.force.clear=L'évènement forcé a été arrêté
+command.hyxcate.meteor.usage=/hyxcatemeteor [x] [z] [Taille <1-3>] [type <1-4>] [à tête chercheuse <true/false>] pour faire apparaître un météore
+command.hyxcate.meteor.success=Un météore est apparu aux coordonnées %s, %s, %s
+
+# Death Messages
+death.attack.hyxcate_celestial=%1$s a été réduit en cendre à coup d'énergie célèste
+death.attack.hyxcate_deep_freeze=%1$s a gelé jusqu'à la moëlle
+death.attack.hyxcate_deep_freeze.player=%1$s a été gelé jusqu'à la moëlle par %2$s
+death.attack.hyxcate_inferno=%1$s a été consumé par les enfers
+death.attack.hyxcate_inferno.player=%1$s a été envoyé en enfer par %2$s
+death.attack.hyxcate_laser=%1$s a été vaporisé par un rayon laser
+death.attack.hyxcate_laser.player=%1$s a été vaporisé par le rayon laser de %2$s
+death.attack.hyxcate_paralysis=%1$s n'a pas pu contenir la Puissance
+death.attack.hyxcate_paralysis.player=%1$s a été paralysé à mort par %2$s
+
+# Enchantments
+enchantment.hyxcate.lunar_edge=Tranchant Lunaire
+enchantment.hyxcate.lunar_edge.desc=Augmente les dégâts de cet objet durant la nuit.
+enchantment.hyxcate.lunar_shield=Bouclier Lunaire
+enchantment.hyxcate.lunar_shield.desc=Annule complètement un certain pourcentage des dégâts reçus durant la nuit.
+enchantment.hyxcate.magnetization=Magnétifère
+enchantment.hyxcate.magnetization.desc=Vous attirez les objets vers vous. Chaque niveaux augmentent le rayon et la puissance de l'attraction.
+enchantment.hyxcate.solar_edge=Tranchant Solaire
+enchantment.hyxcate.solar_edge.desc=Augmente les dégâts de cet objet durant le jour.
+enchantment.hyxcate.solar_shield=Bouclier Solaire
+enchantment.hyxcate.solar_shield.desc=Annule complètement un certain pourcentage des dégâts reçus durant le jour.
+
+# Entities
+entity.hyxcate.alien_creeper.name=Creeper Alien
+entity.hyxcate.alien_kitty.name=Chat Alien
+entity.hyxcate.comet_kitty.name=Chat Comète
+entity.hyxcate.eyezor.name=Eyezor
+entity.hyxcate.falling_meteor.name=Météore en Chute
+entity.hyxcate.falling_star.name=Étoile Filante
+entity.hyxcate.laser.name=Rayon Laser
+entity.hyxcate.stellar_protector.name=Protecteur Stellaire
+
+# Fluids
+fluid.frezarite.name=Frezarite Fondu
+fluid.kreknorite.name=Kreknorite Fondu
+fluid.meteorite.name=Météorite Fondue
+
+# Info
+info.hyxcate.blue_moon=La Lune Bleue se lève...
+info.hyxcate.star_shower=Des étoiles pleuvent du ciel...
+info.hyxcate.full_moon=La Pleine Lune se lève...
+info.hyxcate.blood_moon=La Lune De Sang se lève...
+info.hyxcate.blood_moon_sleeping=L'idée de dormir vous met mal à l'aise
+info.hyxcate.meteor=Un météore s'est écrasé tout près!
+info.hyxcate.meteor_far=Un météore s'est écrasé au loin!
+info.hyxcate.meteor_verbose=Un météore s'est écrasé à
+info.hyxcate.red_giant=Le soleil a grossi en une Géante Rouge!
+info.hyxcate.grim_eclipse=Quelque chose cache le soleil! Une Éclipse Sinistre commence...
+info.hyxcate.meteor_detector.none_found=Aucun site de crash de météore n'a été trouvé!
+info.hyxcate.meteor_detector.distance=Le site de crash de météore le plus proche est à %s blocs de distance.
+info.hyxcate.meteor_detector.confirm=Voulez-vous supprimer le site de crash de météore à %d, %d, %d de la base de données?
+info.hyxcate.meteor_detector.sneak_confirm=[Sneak + Right-Click] pour confirmer.
+info.hyxcate.meteor_detector.no_pending=Aucunes suppressions en attentes ou le site de crash de météore est trop loin.
+info.hyxcate.meteor_detector.expired=Délais de confirmation expiré.
+info.hyxcate.meteor_detector.wrong_dimension=Vous devez être dans la même dimension.
+info.hyxcate.meteor_detector.moved_too_far=Vous vous êtes trop éloigné de votre position précédente.
+info.hyxcate.meteor_detector.deleted=Le site de crash de météore à %d, %d, %d a été supprimé!
+info.hyxcate.meteor_detector.reset=Veuillez patienter pendant que le détecteur redémarre.
+info.hyxcate.meteor_detector.already_gone=Ce site de crash de météore n'existe plus.
+
+# Items
+item.hyxcate.fallen_star.name=Étoile
+item.hyxcate.meteor_detector.name=Détecteur de Météore
+item.hyxcate.celestial_warhammer.name=Marteau de Guerre Célèste
+item.hyxcate.tektite_bow.name=Arc de Vitesse Lumière
+item.hyxcate.tektite_pickaxe.name=Pioche en Tektite
+item.hyxcate.tektite_axe.name=Hache en Tektite
+item.hyxcate.tektite_shovel.name=Pelle en Tektite
+item.hyxcate.tektite_hoe.name=Houe en Tektite
+item.hyxcate.tektite_sword.name=Épée en Tektite
+item.hyxcate.tektite_greatsword.name=Grande Épée en Tektite
+item.hyxcate.tektite_helmet.name=Casque en Tektite
+item.hyxcate.tektite_chestplate.name=Plastron en Tektite
+item.hyxcate.tektite_leggings.name=Pantalon en Tektite
+item.hyxcate.tektite_boots.name=Bottes en Tektite
+item.hyxcate.meteorite_shard.name=Éclat de Météorite
+item.hyxcate.meteorite_ingot.name=Lingot de Météorite
+item.hyxcate.meteorite_pickaxe.name=Pioche enMétéorite
+item.hyxcate.meteorite_axe.name=Hache en Météorite
+item.hyxcate.meteorite_shovel.name=Pelle en Météorite
+item.hyxcate.meteorite_hoe.name=Houe en Météorite
+item.hyxcate.meteorite_sword.name=Épée en Météorite
+item.hyxcate.meteorite_helmet.name=Casque en Météorite
+item.hyxcate.meteorite_chestplate.name=Plastron en Météorite
+item.hyxcate.meteorite_leggings.name=Pantalon en Météorite
+item.hyxcate.meteorite_boots.name=Bottes en Météorite
+item.hyxcate.frezarite_crystal.name=Cristal de Frezarite
+item.hyxcate.frezarite_ingot.name=Lingot de Frezarite
+item.hyxcate.frezarite_pickaxe.name=Pioche en Frezarite
+item.hyxcate.frezarite_axe.name=Hache en Frezarite
+item.hyxcate.frezarite_shovel.name=Pelle en Frezarite
+item.hyxcate.frezarite_hoe.name=Houe en Frezarite
+item.hyxcate.frezarite_sword.name=Épée en Frezarite
+item.hyxcate.frezarite_helmet.name=Casque en Frezarite
+item.hyxcate.frezarite_chestplate.name=Plastron en Frezarite
+item.hyxcate.frezarite_leggings.name=Pantalon en Frezarite
+item.hyxcate.frezarite_boots.name=Bottes en Frezarite
+item.hyxcate.kreknorite_shard.name=Éclat de Kreknorite
+item.hyxcate.kreknorite_ingot.name=Lingot de Kreknorite
+item.hyxcate.kreknorite_pickaxe.name=Pioche en Kreknorite
+item.hyxcate.kreknorite_axe.name=Hache en Kreknorite
+item.hyxcate.kreknorite_shovel.name=Pelle en Kreknorite
+item.hyxcate.kreknorite_hoe.name=Houe en Kreknorite
+item.hyxcate.kreknorite_sword.name=Épée en Kreknorite
+item.hyxcate.kreknorite_helmet.name=Casque en Kreknorite
+item.hyxcate.kreknorite_chestplate.name=Plastron en Kreknorite
+item.hyxcate.kreknorite_leggings.name=Pantalon en Kreknorite
+item.hyxcate.kreknorite_boots.name=Bottes en Kreknorite
+item.hyxcate.tektite_gem_cluster.name=Amas de Gemmes de Tektite
+item.hyxcate.celestial_emblem.name=Emblème Célèste
+item.hyxcate.fallen_star_beam_sword.name=Épée Laser Type S
+item.hyxcate.meteorite_beam_sword.name=Épée Laser Type M
+item.hyxcate.frezarite_beam_sword.name=Épée Laser Type F
+item.hyxcate.kreknorite_beam_sword.name=Épée Laser Type K
+item.hyxcate.tektite_beam_sword.name=Épée Laser Type T
+item.hyxcate.cyber_crystal_beam_sword.name=Épée Laser Type C
+
+# Tooltips
+tooltip.hyxcate.beam_sword=Avec sa lame lumineuse distincte, cette arme est à la fois spéctaculaire et létale. Toutes les attaques ignorent complètement l'armure et les frames d'invincibilité.
+tooltip.hyxcate.blastproof=Résistant aux Explosions
+tooltip.hyxcate.celestial_emblem=Débordant d'une énergie célèste incroyable!
+tooltip.hyxcate.celestial_warhammer=Possède une portée d'attaque et un recul plus puissant. Maintenez clique-droit pour bondir dans les airs et créer une onde de choc à l'atterrissage infligeant Érosion Astrale (0:08) sur toutes les cibles.
+tooltip.hyxcate.cyber_crystal=Capable de concentrer et d'amplifier l'énergie.
+tooltip.hyxcate.fallen_star=Elle n'arrête pas de scintiller!
+tooltip.hyxcate.frezarite_armor=Équiper un set complet vous permet de respirer sous l'eau indéfiniment.
+tooltip.hyxcate.frezarite_tool=Toutes les attaques infligeront des dégâts de zone. Inflige Surgèle (0:08) sur toutes les cibles.
+tooltip.hyxcate.kreknorite_armor=Équiper un set complet vous rend Résistant au Feu indéfiniment.
+tooltip.hyxcate.kreknorite_tool=Toutes les attaques infligeront des dégâts de zone. Inflige Inferno (0:08) sur toutes les cibles.
+tooltip.hyxcate.meteor_detector=Vous dirige vers le site de crash de météore le plus proche.
+tooltip.hyxcate.meteor_detector.hint=Clique-droit pour savoir à quelle distance en blocs le site de crash de météore se situe.
+tooltip.hyxcate.meteor_detector.hint2=Shift + clique-droit pour supprimer le site de crash de météore actuellement sélectionné.
+tooltip.hyxcate.shift=Maintenez SHIFT pour voir plus d'infos...
+tooltip.hyxcate.tektite_bow=Tire de puissantes flèches très rapidement.
+tooltip.hyxcate.tektite_gem_cluster=Elles sont chargées d'électricité.
+tooltip.hyxcate.tektite_greatsword=Toutes les attaques ont une plus grande portée.
+
+# Potions
+effect.hyxcate.astral_erosion.name=Érosion Astrale
+effect.hyxcate.deep_freeze.name=Surgèle
+effect.hyxcate.inferno.name=Inferno
+effect.hyxcate.paralysis.name=Paralysie
+
+lingering_potion.effect.paralysis=Potion de Paralysie persistante
+potion.effect.paralysis=Potion de Paralysie
+splash_potion.effect.paralysis=Potion de Paralysie jetable
+tipped_arrow.effect.paralysis=Flèche de Paralysie
+
+# Mod Integration - JEI
+item.hyxcate.fallen_star.jei_desc=Les Étoiles Filantes peuvent être trouvées durant la nuit.\n\nSi vous entendez quelque chose de "magique" et apercevez dans le ciel une trainée de particules se dirigeant vers le sol, C'est une Étoile Filante.\n\nUne fois atterrie, elles émettent de la lumière et des particules, les rendant plus facile à trouver.
+item.hyxcate.frezarite_boots.jei_desc=Quand équipées, les Bottes en Frezarite gèleront temporairement l'eau en dessous de vous. Le rayon d'action est augmenté quand ces bottes sont enchantées avec Semelles Givrantes.
+item.hyxcate.tektite_gem_cluster.jei_desc=Les Amas de Gemmes de Tektite sont rarement trouvées après avoir miné n'importe quel type de roche venant de météore encore chaud.\n\nLes créatures trouvées exclusivement dans les sites de crash de météores peuvent aussi rarement en lâcher quand tuées.
+tile.hyxcate.cyber_crystal.jei_desc=Les Cyber Cristaux peuvent très rarement être trouvés dans les sites de crash de météores de n'importe quels types et sont immunisés contre les explosions.\n\nVous aurez besoin d'un outil de minage de niveau 4 pour les miner, les outils faits à partir de matériaux venant de météores sont assez fort.
+tile.hyxcate.frezarite_rock.jei_desc=Les Roches de Frezarite sont peu communément trouvées dans les sites de crash de météores, ces roches peuvent être minées pour des éclats mais refroidiront si laissées de côté trop longtemps.\n\nFortune ne marchera pas sur ces roches et vous aurez besoin d'un outil de minage de niveau 4 pour les miner.\n\nLes outils faits à partir de matériaux venant de météores sont assez fort.
+tile.hyxcate.kreknorite_rock.jei_desc=Les Roches de Kreknorite sont peu communément trouvées dans les sites de crash de météores, ces roches peuvent être minées pour des éclats mais refroidiront si laissées de côté trop longtemps.\n\nFortune ne marchera pas sur ces roches et vous aurez besoin d'un outil de minage de niveau 4 pour les miner.\n\nLes outils faits à partir de matériaux venant de météores sont assez fort.
+tile.hyxcate.meteorite_rock.jei_desc=Quand les Roches de Météorite Chaude ont refroidies, elles peuvent toujours être minées, et à une plus grande vitesse.\n\nCependant, vous n'aurez que 25% de chance d'obtenir un éclat.\n\n\nLes Roches de Frezarite et Kreknorite n'ont pas de variantes froides, à la place elles se transformeront respectivement en Glace compactée et Obsidienne.
+tile.hyxcate.meteorite_rock_hot.jei_desc=Les Roches de Météorite Chaude sont communément trouvées dans les sites de crash de météores, ces roches peuvent être minées pour des éclats mais refroidiront si laissées de côté trop longtemps.\n\nFortune ne marchera pas sur ces roches et vous aurez besoin d'un outil de minage de niveau 3 pour les miner.\n\nLes outils faits à partir de matériaux venant de météores sont assez fort.
+
+# Mod Integration - Tinkers' Antique (Tinkers' Construct)
+material.hyxcate.fallen_star.name=Étoilé
+material.hyxcate.cyber_crystal.name=Cyber Cristal
+material.hyxcate.frezarite.name=Frezarite
+material.hyxcate.kreknorite.name=Kreknorite
+material.hyxcate.meteorite.name=Météorite
+material.hyxcate.tektite.name=Tektite
+
+modifier.hyxcate.feint.name=Feinte
+modifier.hyxcate.feint.desc=§oPlus rapide que la lumière!§r\nVotre outil a 20% chance d'infliger +25% de dégâts supplémentaire qui ignorent complètement l'armure.
+modifier.hyxcate.frezarites_bane.name=Fléau de Frezarite
+modifier.hyxcate.frezarites_bane.desc=§oC'est un hiver nucléaire!§r\nLes coups portés réussis infligent Surgèle à votre cible au fûr et à mesure.
+modifier.hyxcate.gleaming.name=Étincelant
+modifier.hyxcate.gleaming.desc=§oPar le pouvoir du cristal!§r\n Votre outil inflige +40% de dégâts, plus votre santé est basse moins le bonus est important.
+modifier.hyxcate.kreknorites_bane.name=Fléau de Kreknorite
+modifier.hyxcate.kreknorites_bane.desc=§oL'enfer juste à votre porte!§r\nLes coups portés réussis infligent Inferno à votre cible au fûr et à mesure.
+modifier.hyxcate.stunlock.name=Étourdissant
+modifier.hyxcate.stunlock.desc=§oRestez où vous êtes!§r\nLes cibles touchées ont 7.5% chance d'être paralysées et complètement immobilisé pendant 5 secondes.
+modifier.hyxcate.supercharge.name=Superchargé
+modifier.hyxcate.supercharge.desc=§oSuperchargez-moi!§r\nFrapper une cible ou casser un bloc a 10% chance de vous appliquer Célérité III pendant 5 secondes!
+
+# Mod Integration - Antique Armory (Construct's Armory)
+modifier.hyxcate.astral_plating_armor.name=Revêtement Astral
+modifier.hyxcate.astral_plating_armor.desc=§oStar Command, Je vous écoute!§r\nVotre armure vous protègera complètement de 50% des dégâts de feu et de noyade.
+modifier.hyxcate.frezarites_ward_armor.name=Frezarite's Ward
+modifier.hyxcate.frezarites_ward_armor.desc=§oC'est un hiver nucléaire!§r\nÊtre blessé à une chance (10% par pièce d'armure) d'infliger Surgèle à votre agresseur au fûr et à mesure.
+modifier.hyxcate.gleaming_armor.name=Étincelant
+modifier.hyxcate.gleaming_armor.desc=§oPar le pouvoir du cristal!§r\nVotre armure vous protègera complètement de 40% de tout type de dégâts, plus votre santé est basse moins le bonus est important.
+modifier.hyxcate.kreknorites_ward_armor.name=Kreknorite's Ward
+modifier.hyxcate.kreknorites_ward_armor.desc=§oL'enfer juste à votre porte!§r\nÊtre blessé à une chance (10% par pièce d'armure) d'infliger Inferno à votre agresseur au fûr et à mesure.
+modifier.hyxcate.star_shield_armor.name=Bouclier Étoile
+modifier.hyxcate.star_shield_armor.desc=§oNe faites qu'un avec les étoiles!§r\nIl y a une chance (5% par pièce d'armure) que les dégâts reçu soient totalement ignorés, vous recevez aussi Résistance III pendant 5 secondes.
+modifier.hyxcate.stunlock_armor.name=Étourdissant
+modifier.hyxcate.stunlock_armor.desc=§oRestez où vous êtes!§r\nÊtre blessé à une chance (2.5% par pièce d'armure) de paralyser votre agresseur et de les rendre complètement immobile pendant 5 secondes.
+modifier.hyxcate.supercharge_armor.name=Superchargé
+modifier.hyxcate.supercharge_armor.desc=§oSuperchargez-moi!§r\nÊtre blessé à une chance (5% par pièce d'armure) de vous appliquer Célérité III and Vitesse III pendant 5 secondes!
+
+# Config Categories
+config.hyxcate.master_switches=Master Switches
+config.hyxcate.general=Général
+config.hyxcate.entities=Entités
+config.hyxcate.events_lunar=Évènements: Lunaire
+config.hyxcate.events_solar=Évènements: Solaire
+config.hyxcate.meteors=Météores
+config.hyxcate.falling_stars=Étoiles Filantes
+config.hyxcate.blood_moon=Lune De Sang
+config.hyxcate.blue_moon=Lune Bleue
+config.hyxcate.full_moon=Pleine Lune
+config.hyxcate.star_shower=Pluie d'Étoile
+config.hyxcate.grim_eclipse=Éclipse Sinistre
+config.hyxcate.red_giant=Géante Rouge
+config.hyxcate.eyezor=Eyezor

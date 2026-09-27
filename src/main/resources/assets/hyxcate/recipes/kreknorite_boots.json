@@ -1,0 +1,21 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:kreknorite_boots"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X X",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "hyxcate:kreknorite_ingot"
+    }
+  },
+  "result": {
+    "item": "hyxcate:kreknorite_boots"
+  }
+}

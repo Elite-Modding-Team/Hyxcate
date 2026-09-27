@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:fallen_star_beam_sword"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "#",
+    "C",
+    "E"
+  ],
+  "key": {
+    "E": {
+      "item": "hyxcate:celestial_emblem"
+    },
+    "C": {
+      "item": "hyxcate:cyber_crystal"
+    },
+    "#": {
+      "item": "hyxcate:fallen_star"
+    }
+  },
+  "result": {
+    "item": "hyxcate:fallen_star_beam_sword"
+  }
+}

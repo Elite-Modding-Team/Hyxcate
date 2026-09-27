@@ -1,0 +1,248 @@
+ItemGroup.hyxcate=Hyxcate
+
+# Attributes
+attribute.name.hyxcate.generic.explosion_resistance=Сопротивление взрывам
+attribute.name.hyxcate.generic.moon_damage=Лунный урон
+attribute.name.hyxcate.generic.moon_ward=Лунная защита
+attribute.name.hyxcate.generic.magnetization=Магнетизм
+attribute.name.hyxcate.generic.paralysis=Шанс паралича
+attribute.name.hyxcate.generic.sun_damage=Солнечный урон
+attribute.name.hyxcate.generic.sun_ward=Солнечная защита
+
+# Blocks
+tile.hyxcate.star_block.name=Звёздный блок
+tile.hyxcate.chiseled_star_block.name=Резной звёздный блок
+tile.hyxcate.cracked_star_block.name=Треснувший звёздный блок
+tile.hyxcate.star_stairs.name=Ступеньки из звёздного блока
+tile.hyxcate.star_slab.name=Плита из звёздного блока
+tile.hyxcate.star_slab_double.name=Двойная плита из звёздного блока
+tile.hyxcate.cyber_crystal.name=Киберкристалл
+tile.hyxcate.frezarite_block.name=Блок фрезарита
+tile.hyxcate.frezarite_rock.name=Фрезаритовая порода
+tile.hyxcate.kreknorite_block.name=Блок крекнорита
+tile.hyxcate.kreknorite_rock.name=Крекноритовая порода
+tile.hyxcate.meteorite_block.name=Блок метеорита
+tile.hyxcate.meteorite_rock.name=Метеоритная порода
+tile.hyxcate.meteorite_rock_hot.name=Раскалённая метеоритная порода
+tile.hyxcate.tektite_block.name=Блок тектита
+tile.hyxcate.tektite_glass.name=Тектитовое стекло
+
+# Commands
+command.hyxcate.force.usage=/hyxcateforce <событие>, чтобы вызвать лунное/солнечное событие
+command.hyxcate.force.invalid=Лунного/солнечного события с названием %s не существует
+command.hyxcate.force.success=%s произойдёт в следующую возможную ночь/день
+command.hyxcate.force.clear=Принудительное событие сброшено
+command.hyxcate.meteor.usage=/hyxcatemeteor [x] [z] [размер <1-3>] [тип <1-4>] [самонаведение <true/false>], чтобы призвать метеорит
+command.hyxcate.meteor.success=Метеорит призван на координатах %s, %s, %s
+
+# Death Messages
+death.attack.hyxcate_celestial=%1$s был испепелён небесной энергией
+death.attack.hyxcate_deep_freeze=%1$s замёрз насмерть
+death.attack.hyxcate_deep_freeze.player=%1$s был заморожен насмерть игроком %2$s
+death.attack.hyxcate_inferno=%1$s был поглощён адским пламенем
+death.attack.hyxcate_inferno.player=%1$s был сожжён заживо игроком %2$s
+death.attack.hyxcate_laser=%1$s был испарён лазерным лучом
+death.attack.hyxcate_laser.player=%1$s был испарён лазерным лучом игрока %2$s
+death.attack.hyxcate_paralysis=%1$s не совладал с напряжением
+death.attack.hyxcate_paralysis.player=%1$s был насмерть парализован игроком %2$s
+
+# Enchantments
+enchantment.hyxcate.lunar_edge=Лунное остриё
+enchantment.hyxcate.lunar_edge.desc=Увеличивает урон предмета в ночное время.
+enchantment.hyxcate.lunar_shield=Лунный щит
+enchantment.hyxcate.lunar_shield.desc=Полностью блокирует определённый процент урона в ночное время.
+enchantment.hyxcate.magnetization=Магнетизм
+enchantment.hyxcate.magnetization.desc=Притягивает предметы к вам. Каждый уровень увеличивает радиус и силу притяжения.
+enchantment.hyxcate.solar_edge=Солнечное остриё
+enchantment.hyxcate.solar_edge.desc=Увеличивает урон предмета в дневное время.
+enchantment.hyxcate.solar_shield=Солнечный щит
+enchantment.hyxcate.solar_shield.desc=Полностью блокирует определённый процент урона в дневное время.
+
+# Entities
+entity.hyxcate.alien_creeper.name=Инопланетный крипер
+entity.hyxcate.alien_kitty.name=Инопланетный котёнок
+entity.hyxcate.comet_kitty.name=Кометный котёнок
+entity.hyxcate.eyezor.name=Айзор
+entity.hyxcate.falling_meteor.name=Падающий метеорит
+entity.hyxcate.falling_star.name=Падающая звезда
+entity.hyxcate.laser.name=Лазерный луч
+entity.hyxcate.stellar_protector.name=Звёздный защитник
+
+# Fluids
+fluid.frezarite.name=Жидкий фрезарит
+fluid.kreknorite.name=Жидкий крекнорит
+fluid.meteorite.name=Жидкий метеорит
+
+# Info
+info.hyxcate.blue_moon=Восходит Голубая Луна...
+info.hyxcate.star_shower=С неба начинает идти звёздный дождь...
+info.hyxcate.full_moon=Восходит Полнолуние...
+info.hyxcate.blood_moon=Восходит Кровавая Луна...
+info.hyxcate.blood_moon_sleeping=Мысль о сне вызывает у вас тревогу.
+info.hyxcate.meteor=Поблизости упал метеорит!
+info.hyxcate.meteor_far=Вдалеке упал метеорит!
+info.hyxcate.meteor_verbose=Метеорит упал на
+info.hyxcate.red_giant=Солнце превратилось в Красного гиганта!
+info.hyxcate.grim_eclipse=Что-то затмевает солнце! Начинается Мрачное затмение...
+info.hyxcate.meteor_detector.none_found=Мест падения метеоритов не обнаружено!
+info.hyxcate.meteor_detector.distance=Ближайшее место падения метеорита в %s блоках отсюда.
+info.hyxcate.meteor_detector.confirm=Удалить место падения метеорита на %d, %d, %d из базы данных?
+info.hyxcate.meteor_detector.sneak_confirm=[Присесть + ПКМ] для подтверждения.
+info.hyxcate.meteor_detector.no_pending=Нет ожидающих удаления записей или место падения метеорита слишком далеко.
+info.hyxcate.meteor_detector.expired=Время подтверждения истекло.
+info.hyxcate.meteor_detector.wrong_dimension=Вы должны находиться в том же измерении.
+info.hyxcate.meteor_detector.moved_too_far=Вы отошли слишком далеко от своей предыдущей позиции.
+info.hyxcate.meteor_detector.deleted=Место падения метеорита на %d, %d, %d удалено!
+info.hyxcate.meteor_detector.reset=Пожалуйста, подождите, пока детектор перезагрузится.
+info.hyxcate.meteor_detector.already_gone=Это место падения метеорита больше не существует.
+
+# Items
+item.hyxcate.fallen_star.name=Упавшая звезда
+item.hyxcate.meteor_detector.name=Детектор метеоритов
+item.hyxcate.celestial_warhammer.name=Небесный боевой молот
+item.hyxcate.tektite_bow.name=Лук со скоростью света
+item.hyxcate.tektite_pickaxe.name=Тектитовая кирка
+item.hyxcate.tektite_axe.name=Тектитовый топор
+item.hyxcate.tektite_shovel.name=Тектитовая лопата
+item.hyxcate.tektite_hoe.name=Тектитовая мотыга
+item.hyxcate.tektite_sword.name=Тектитовый меч
+item.hyxcate.tektite_greatsword.name=Тектитовый двуручный меч
+item.hyxcate.tektite_helmet.name=Тектитовый шлем
+item.hyxcate.tektite_chestplate.name=Тектитовый нагрудник
+item.hyxcate.tektite_leggings.name=Тектитовые поножи
+item.hyxcate.tektite_boots.name=Тектитовые ботинки
+item.hyxcate.meteorite_shard.name=Осколок метеорита
+item.hyxcate.meteorite_ingot.name=Метеоритный слиток
+item.hyxcate.meteorite_pickaxe.name=Метеоритная кирка
+item.hyxcate.meteorite_axe.name=Метеоритный топор
+item.hyxcate.meteorite_shovel.name=Метеоритная лопата
+item.hyxcate.meteorite_hoe.name=Метеоритная мотыга
+item.hyxcate.meteorite_sword.name=Метеоритный меч
+item.hyxcate.meteorite_helmet.name=Метеоритный шлем
+item.hyxcate.meteorite_chestplate.name=Метеоритный нагрудник
+item.hyxcate.meteorite_leggings.name=Метеоритные поножи
+item.hyxcate.meteorite_boots.name=Метеоритные ботинки
+item.hyxcate.frezarite_crystal.name=Кристалл фрезарита
+item.hyxcate.frezarite_ingot.name=Фрезаритовый слиток
+item.hyxcate.frezarite_pickaxe.name=Фрезаритовая кирка
+item.hyxcate.frezarite_axe.name=Фрезаритовый топор
+item.hyxcate.frezarite_shovel.name=Фрезаритовая лопата
+item.hyxcate.frezarite_hoe.name=Фрезаритовая мотыга
+item.hyxcate.frezarite_sword.name=Фрезаритовый меч
+item.hyxcate.frezarite_helmet.name=Фрезаритовый шлем
+item.hyxcate.frezarite_chestplate.name=Фрезаритовый нагрудник
+item.hyxcate.frezarite_leggings.name=Фрезаритовые поножи
+item.hyxcate.frezarite_boots.name=Фрезаритовые ботинки
+item.hyxcate.kreknorite_shard.name=Осколок крекнорита
+item.hyxcate.kreknorite_ingot.name=Крекноритовый слиток
+item.hyxcate.kreknorite_pickaxe.name=Крекноритовая кирка
+item.hyxcate.kreknorite_axe.name=Крекноритовый топор
+item.hyxcate.kreknorite_shovel.name=Крекноритовая лопата
+item.hyxcate.kreknorite_hoe.name=Крекноритовая мотыга
+item.hyxcate.kreknorite_sword.name=Крекноритовый меч
+item.hyxcate.kreknorite_helmet.name=Крекноритовый шлем
+item.hyxcate.kreknorite_chestplate.name=Крекноритовый нагрудник
+item.hyxcate.kreknorite_leggings.name=Крекноритовые поножи
+item.hyxcate.kreknorite_boots.name=Крекноритовые ботинки
+item.hyxcate.tektite_gem_cluster.name=Скопление кристаллов тектита
+item.hyxcate.celestial_emblem.name=Небесная эмблема
+item.hyxcate.fallen_star_beam_sword.name=Лучевой меч тип S
+item.hyxcate.meteorite_beam_sword.name=Лучевой меч тип M
+item.hyxcate.frezarite_beam_sword.name=Лучевой меч тип F
+item.hyxcate.kreknorite_beam_sword.name=Лучевой меч тип K
+item.hyxcate.tektite_beam_sword.name=Лучевой меч тип T
+item.hyxcate.cyber_crystal_beam_sword.name=Лучевой меч тип C
+
+# Tooltips
+tooltip.hyxcate.beam_sword=Благодаря ярко светящемуся лезвию это оружие бросается в глаза и смертоносно. Все атаки полностью игнорируют броню и кадры неуязвимости.
+tooltip.hyxcate.blastproof=Взрывоустойчиво
+tooltip.hyxcate.celestial_emblem=Пульсирует колоссальной небесной энергией!
+tooltip.hyxcate.celestial_warhammer=Увеличенный радиус атаки и отбрасывание. Удерживайте правую кнопку мыши, чтобы взмыть в воздух и совершить сокрушительный удар, накладывающий эффект «Астральная эрозия» (0:08) на все цели.
+tooltip.hyxcate.cyber_crystal=Способен фокусировать и усиливать энергию.
+tooltip.hyxcate.fallen_star=Она не перестаёт мерцать!
+tooltip.hyxcate.frezarite_armor=Полный комплект даёт бесконечное подводное дыхание.
+tooltip.hyxcate.frezarite_tool=Все атаки наносят урон по площади. Накладывает эффект «Глубокая заморозка» (0:08) на все цели.
+tooltip.hyxcate.kreknorite_armor=Полный комплект даёт бесконечную огнестойкость.
+tooltip.hyxcate.kreknorite_tool=Все атаки наносят урон по площади. Накладывает эффект «Адское пламя» (0:08) на все цели.
+tooltip.hyxcate.meteor_detector=Указывает на ближайшие места падения метеоритов.
+tooltip.hyxcate.meteor_detector.hint=Нажмите ПКМ, чтобы узнать расстояние до места падения метеорита в блоках.
+tooltip.hyxcate.meteor_detector.hint2=Нажмите Shift + ПКМ, чтобы удалить отслеживаемое место падения метеорита.
+tooltip.hyxcate.shift=Удерживайте SHIFT для подробностей...
+tooltip.hyxcate.tektite_bow=Очень быстро стреляет мощными стрелами.
+tooltip.hyxcate.tektite_gem_cluster=Они заряжены электричеством.
+tooltip.hyxcate.tektite_greatsword=Все атаки имеют увеличенный радиус.
+
+# Potions
+effect.hyxcate.astral_erosion.name=Астральная эрозия
+effect.hyxcate.deep_freeze.name=Глубокая заморозка
+effect.hyxcate.inferno.name=Адское пламя
+effect.hyxcate.paralysis.name=Паралич
+
+lingering_potion.effect.paralysis=Оседающее зелье паралича
+potion.effect.paralysis=Зелье паралича
+splash_potion.effect.paralysis=Взрывное зелье паралича
+tipped_arrow.effect.paralysis=Стрела паралича
+
+# Mod Integration - JEI
+item.hyxcate.fallen_star.jei_desc=Упавшие звёзды можно встретить ночью.\n\nЕсли вы слышите магические звуки и видите в небе след из частиц, устремлённый к земле — это упавшая звезда.\n\nПосле приземления она излучает свет и испускает частицы, что облегчает её поиск.
+item.hyxcate.frezarite_boots.jei_desc=Надетые фрезаритовые ботинки временно превращают воду под вами в тающий лёд. Радиус действия увеличивается чарами «Ледоход».
+item.hyxcate.tektite_gem_cluster.jei_desc=Скопления кристаллов тектита изредка выпадают при успешной добыче любого типа раскалённой метеоритной породы.\n\nСущества, обитающие исключительно на местах падения метеоритов, также могут с редким шансом оставить их после смерти.
+tile.hyxcate.cyber_crystal.jei_desc=Киберкристаллы крайне редко встречаются на местах падения любых типов метеоритов и невосприимчивы к взрывам.\n\nДля их добычи требуется 4-й уровень добычи; инструментов из метеоритных материалов вполне достаточно.
+tile.hyxcate.frezarite_rock.jei_desc=Фрезаритовая порода изредка встречается на местах падения метеоритов. Её можно добыть ради осколков, но со временем она остывает.\n\n«Удача» не действует на эту породу, а для добычи требуется 4-й уровень добычи.\n\nИнструментов из метеоритных материалов вполне достаточно.
+tile.hyxcate.kreknorite_rock.jei_desc=Крекноритовая порода изредка встречается на местах падения метеоритов. Её можно добыть ради осколков, но со временем она остывает.\n\n«Удача» не действует на эту породу, а для добычи требуется 4-й уровень добычи.\n\nИнструментов из метеоритных материалов вполне достаточно.
+tile.hyxcate.meteorite_rock.jei_desc=Остывшую метеоритную породу по-прежнему можно добывать, причём значительно быстрее.\n\nОднако шанс выпадения осколка снижается до 25%.\n\n\nПороды из фрезарита и крекнорита не имеют остывших вариантов — вместо этого они остывают в плотный лёд и обсидиан соответственно.
+tile.hyxcate.meteorite_rock_hot.jei_desc=Раскалённая метеоритная порода встречается на местах падения метеоритов. Её можно добыть ради осколков, но со временем она остывает.\n\n«Удача» не действует на эту породу, а для добычи требуется 3-й уровень добычи.\n\nАлмазных инструментов вполне достаточно.
+
+# Mod Integration - Tinkers' Antique (Tinkers' Construct)
+material.hyxcate.fallen_star.name=Звёздный
+material.hyxcate.cyber_crystal.name=Киберкристалл
+material.hyxcate.frezarite.name=Фрезарит
+material.hyxcate.kreknorite.name=Крекнорит
+material.hyxcate.meteorite.name=Метеорит
+material.hyxcate.tektite.name=Тектит
+
+modifier.hyxcate.feint.name=Финт
+modifier.hyxcate.feint.desc=§oБыстрее скорости света!§r\nИнструмент имеет шанс 20% нанести дополнительные +25% урона, игнорирующего броню.
+modifier.hyxcate.frezarites_bane.name=Погибель фрезарита
+modifier.hyxcate.frezarites_bane.desc=§oЯдерная зима!§r\nУспешные удары накладывают и усиливают эффект «Глубокая заморозка» на цели.
+modifier.hyxcate.gleaming.name=Блеск
+modifier.hyxcate.gleaming.desc=§oСила кристаллов!§r\nИнструмент наносит +40% урона. Бонусный урон снижается по мере уменьшения вашего здоровья.
+modifier.hyxcate.kreknorites_bane.name=Погибель крекнорита
+modifier.hyxcate.kreknorites_bane.desc=§oПреисподняя у вашего порога!§r\nУспешные удары накладывают и усиливают эффект «Адское пламя» на цели.
+modifier.hyxcate.stunlock.name=Оглушение
+modifier.hyxcate.stunlock.desc=§oСтоять на месте!§r\nАтакованные цели имеют шанс 7,5% получить паралич и стать полностью неподвижными на 5 секунд.
+modifier.hyxcate.supercharge.name=Сверхзаряд
+modifier.hyxcate.supercharge.desc=§oЗаряди меня!§r\nУдар по цели или разрушение блока имеет шанс 10% наложить эффект «Спешка III» на 5 секунд!
+
+# Mod Integration - Antique Armory (Construct's Armory)
+modifier.hyxcate.astral_plating_armor.name=Астральное покрытие
+modifier.hyxcate.astral_plating_armor.desc=§oЗвёздная команда, приём!§r\nБроня полностью поглощает 50% урона от огня и утопления.
+modifier.hyxcate.frezarites_ward_armor.name=Оберег фрезарита
+modifier.hyxcate.frezarites_ward_armor.desc=§oЯдерная зима!§r\nПолучение урона имеет шанс (10% за каждый элемент брони) наложить и усилить эффект «Глубокая заморозка» на атакующего.
+modifier.hyxcate.gleaming_armor.name=Блеск
+modifier.hyxcate.gleaming_armor.desc=§oСила кристаллов!§r\nБроня полностью поглощает 40% всего получаемого урона. Эффективность снижается по мере уменьшения вашего здоровья.
+modifier.hyxcate.kreknorites_ward_armor.name=Оберег крекнорита
+modifier.hyxcate.kreknorites_ward_armor.desc=§oПреисподняя у вашего порога!§r\nПолучение урона имеет шанс (10% за каждый элемент брони) наложить и усилить эффект «Адское пламя» на атакующего.
+modifier.hyxcate.star_shield_armor.name=Звёздный щит
+modifier.hyxcate.star_shield_armor.desc=§oЕдин со звёздами!§r\nЕсть шанс (5% за каждый элемент брони) полностью проигнорировать урон, а также получить эффект «Сопротивление III» на 5 секунд.
+modifier.hyxcate.stunlock_armor.name=Оглушение
+modifier.hyxcate.stunlock_armor.desc=§oСтоять на месте!§r\nПолучение урона имеет шанс (2,5% за каждый элемент брони) парализовать атакующего и сделать его полностью неподвижным на 5 секунд.
+modifier.hyxcate.supercharge_armor.name=Сверхзаряд
+modifier.hyxcate.supercharge_armor.desc=§oЗаряди меня!§r\nПолучение урона имеет шанс (5% за каждый элемент брони) наложить на вас эффекты «Спешка III» и «Скорость III» на 5 секунд!
+
+# Config Categories
+config.hyxcate.master_switches=Главные переключатели
+config.hyxcate.general=Общее
+config.hyxcate.entities=Сущности
+config.hyxcate.events_lunar=События: лунные
+config.hyxcate.events_solar=События: солнечные
+config.hyxcate.meteors=Метеориты
+config.hyxcate.mod_integration=Интеграция модов
+config.hyxcate.falling_stars=Падающие звёзды
+config.hyxcate.blood_moon=Кровавая Луна
+config.hyxcate.blue_moon=Голубая Луна
+config.hyxcate.full_moon=Полнолуние
+config.hyxcate.star_shower=Звёздный дождь
+config.hyxcate.grim_eclipse=Мрачное затмение
+config.hyxcate.red_giant=Красный гигант
+config.hyxcate.eyezor=Айзор

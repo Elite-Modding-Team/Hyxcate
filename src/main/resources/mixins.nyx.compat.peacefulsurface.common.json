@@ -1,7 +1,0 @@
-{
-  "package": "de.ellpeck.nyx.compat.peacefulsurface.mixin.common",
-  "refmap": "mixins.nyx.refmap.json",
-  "mixins": [
-    "PSEntitySpawnFilterMixin"
-  ]
-}

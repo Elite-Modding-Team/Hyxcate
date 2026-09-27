@@ -1,0 +1,219 @@
+itemGroup.hyxcate=宙蚀之刻
+# ↑我知道这个词看起来和hyxcate这个原词不一致，但是这个译名我和作者讨论过了
+# Attributes
+attribute.name.hyxcate.generic.explosion_resistance=爆炸抗性
+attribute.name.hyxcate.generic.magnetization=磁性
+attribute.name.hyxcate.generic.paralysis=麻痹概率
+
+# Blocks
+tile.hyxcate.star_block.name=流星块
+tile.hyxcate.chiseled_star_block.name=錾制流星块
+tile.hyxcate.cracked_star_block.name=裂纹流星块
+tile.hyxcate.star_stairs.name=流星楼梯
+tile.hyxcate.star_slab.name=流星台阶
+tile.hyxcate.star_slab_double.name=流星双层台阶
+tile.hyxcate.cyber_crystal.name=赛博水晶
+tile.hyxcate.frezarite_block.name=霜冻陨石块
+tile.hyxcate.frezarite_rock.name=霜冻陨石
+tile.hyxcate.kreknorite_block.name=炽燃陨石块
+tile.hyxcate.kreknorite_rock.name=炽燃陨石
+tile.hyxcate.meteorite_block.name=陨石块
+tile.hyxcate.meteorite_rock.name=陨石
+tile.hyxcate.meteorite_rock_hot.name=炽热陨石
+tile.hyxcate.tektite_block.name=玻陨石块
+tile.hyxcate.tektite_glass.name=玻陨石玻璃
+
+# 命令
+command.hyxcate.force.usage=/hyxcateforce <事件名> 触发一次月相/日相事件
+command.hyxcate.force.invalid=不存在名为 %s 的月相/日相事件
+command.hyxcate.force.success=%s 将在下一个可用的夜晚/白天发生
+command.hyxcate.force.clear=已清除强制触发的事件
+command.hyxcate.meteor.usage=/hyxcatemeteor [x坐标] [z坐标] [大小 <1-3>] [类型 <1-4>] [追踪 <true/false>] 生成一颗陨石
+command.hyxcate.meteor.success=已在 %s, %s, %s 生成陨石
+
+# 死亡信息
+death.attack.hyxcate_celestial=%1$s 被天体能量化为灰烬
+death.attack.hyxcate_deep_freeze=%1$s 冻结而亡
+death.attack.hyxcate_deep_freeze.player=%1$s 被 %2$s 冻结致死
+death.attack.hyxcate_inferno=%1$s 被炼狱之火吞噬
+death.attack.hyxcate_inferno.player=%1$s 被 %2$s 用炼狱之火焚烧致死
+death.attack.hyxcate_paralysis=%1$s 无法掌控电能
+death.attack.hyxcate_paralysis.player=%1$s 被 %2$s 麻痹致死
+
+# 附魔
+enchantment.hyxcate.lunar_edge=月刃
+enchantment.hyxcate.lunar_edge.desc=提升物品伤害，效果强度受当前月相影响
+enchantment.hyxcate.lunar_shield=月盾
+enchantment.hyxcate.lunar_shield.desc=降低大多数来源的伤害，效果强度受当前月相影响
+enchantment.hyxcate.magnetization=磁性
+enchantment.hyxcate.magnetization.desc=将物品吸附至自身，每级提升吸附范围和吸力
+
+# 实体
+entity.hyxcate.alien_creeper.name=外星爬行者
+entity.hyxcate.alien_kitty.name=外星猫咪
+entity.hyxcate.comet_kitty.name=彗星猫咪
+entity.hyxcate.falling_meteor.name=坠落的陨石
+entity.hyxcate.falling_star.name=坠落的流星
+entity.hyxcate.stellar_protector.name=星际守护者
+
+# 流体
+fluid.frezarite.name=熔融霜冻陨石
+fluid.kreknorite.name=熔融炽燃陨石
+fluid.meteorite.name=熔融陨石
+
+# 信息提示
+info.hyxcate.blue_moon=蓝月正在升起...
+info.hyxcate.star_shower=流星开始从天际坠落...
+info.hyxcate.full_moon=满月正在升起...
+info.hyxcate.blood_moon=血月正在升起...
+info.hyxcate.blood_moon_sleeping=入睡的想法使你感到不安
+info.hyxcate.meteor=附近有一颗陨石坠落！
+info.hyxcate.meteor_far=远方有一颗陨石坠落！
+info.hyxcate.meteor_verbose=陨石坠落于
+info.hyxcate.red_giant=太阳已演变为红巨星！
+info.hyxcate.grim_eclipse=有物体遮蔽了太阳！幽暗日食即将开始...
+info.hyxcate.meteor_detector.none_found=未发现陨石坠落点！
+info.hyxcate.meteor_detector.distance=最近的陨石坠落点距离你 %s 格。
+info.hyxcate.meteor_detector.confirm=是否从数据库中删除坐标 %d, %d, %d 处的陨石坠落点？
+info.hyxcate.meteor_detector.sneak_confirm=[潜行+右键点击]确认删除。
+info.hyxcate.meteor_detector.no_pending=无待删除项，或陨石坠落点距离过远。
+info.hyxcate.meteor_detector.expired=确认已过期。
+info.hyxcate.meteor_detector.wrong_dimension=你必须处于同一维度。
+info.hyxcate.meteor_detector.moved_too_far=你已偏离之前的位置过远。
+info.hyxcate.meteor_detector.deleted=坐标 %d, %d, %d 处的陨石坠落点已删除！
+info.hyxcate.meteor_detector.reset=探测器重置中，请稍候。
+info.hyxcate.meteor_detector.already_gone=该陨石坠落点已不存在。
+
+# 物品
+item.hyxcate.fallen_star.name=流星
+item.hyxcate.meteor_detector.name=陨石探测器
+item.hyxcate.celestial_warhammer.name=天体战锤
+item.hyxcate.tektite_bow.name=光速之弓
+item.hyxcate.tektite_pickaxe.name=玻陨石镐
+item.hyxcate.tektite_axe.name=玻陨石斧
+item.hyxcate.tektite_shovel.name=玻陨石铲
+item.hyxcate.tektite_hoe.name=玻陨石锄
+item.hyxcate.tektite_sword.name=玻陨石剑
+item.hyxcate.tektite_greatsword.name=玻陨石大剑
+item.hyxcate.tektite_helmet.name=玻陨石头盔
+item.hyxcate.tektite_chestplate.name=玻陨石胸甲
+item.hyxcate.tektite_leggings.name=玻陨石护腿
+item.hyxcate.tektite_boots.name=玻陨石靴子
+item.hyxcate.meteorite_shard.name=陨石碎片
+item.hyxcate.meteorite_ingot.name=陨石锭
+item.hyxcate.meteorite_pickaxe.name=陨石镐
+item.hyxcate.meteorite_axe.name=陨石斧
+item.hyxcate.meteorite_shovel.name=陨石铲
+item.hyxcate.meteorite_hoe.name=陨石锄
+item.hyxcate.meteorite_sword.name=陨石剑
+item.hyxcate.meteorite_helmet.name=陨石头盔
+item.hyxcate.meteorite_chestplate.name=陨石胸甲
+item.hyxcate.meteorite_leggings.name=陨石护腿
+item.hyxcate.meteorite_boots.name=陨石靴子
+item.hyxcate.frezarite_crystal.name=霜冻陨石晶体
+item.hyxcate.frezarite_ingot.name=霜冻陨石锭
+item.hyxcate.frezarite_pickaxe.name=霜冻陨石镐
+item.hyxcate.frezarite_axe.name=霜冻陨石斧
+item.hyxcate.frezarite_shovel.name=霜冻陨石铲
+item.hyxcate.frezarite_hoe.name=霜冻陨石锄
+item.hyxcate.frezarite_sword.name=霜冻陨石剑
+item.hyxcate.frezarite_helmet.name=霜冻陨石头盔
+item.hyxcate.frezarite_chestplate.name=霜冻陨石胸甲
+item.hyxcate.frezarite_leggings.name=霜冻陨石护腿
+item.hyxcate.frezarite_boots.name=霜冻陨石靴子
+item.hyxcate.kreknorite_shard.name=炽燃陨石碎片
+item.hyxcate.kreknorite_ingot.name=炽燃陨石锭
+item.hyxcate.kreknorite_pickaxe.name=炽燃陨石镐
+item.hyxcate.kreknorite_axe.name=炽燃陨石斧
+item.hyxcate.kreknorite_shovel.name=炽燃陨石铲
+item.hyxcate.kreknorite_hoe.name=炽燃陨石锄
+item.hyxcate.kreknorite_sword.name=炽燃陨石剑
+item.hyxcate.kreknorite_helmet.name=炽燃陨石头盔
+item.hyxcate.kreknorite_chestplate.name=炽燃陨石胸甲
+item.hyxcate.kreknorite_leggings.name=炽燃陨石护腿
+item.hyxcate.kreknorite_boots.name=炽燃陨石靴子
+item.hyxcate.tektite_gem_cluster.name=玻陨石晶簇
+item.hyxcate.celestial_emblem.name=天体徽章
+item.hyxcate.fallen_star_beam_sword.name=光束剑·S型
+item.hyxcate.meteorite_beam_sword.name=光束剑·M型
+item.hyxcate.frezarite_beam_sword.name=光束剑·F型
+item.hyxcate.kreknorite_beam_sword.name=光束剑·K型
+item.hyxcate.tektite_beam_sword.name=光束剑·T型
+item.hyxcate.cyber_crystal_beam_sword.name=光束剑·C型
+
+# Tooltips
+tooltip.hyxcate.beam_sword=刀刃散发独特光芒，夺目且致命。所有攻击可完全无视盔甲与无敌帧。
+tooltip.hyxcate.blastproof=防爆
+tooltip.hyxcate.celestial_emblem=蕴含澎湃的天体能量，散发着脉动光芒！
+tooltip.hyxcate.celestial_warhammer=攻击范围更广，击退效果更强。按住右键可跃至空中发动重击，对所有目标施加星界侵蚀（0:08）。
+tooltip.hyxcate.cyber_crystal=能够汇聚并增幅能量。
+tooltip.hyxcate.fallen_star=闪烁不止！
+tooltip.hyxcate.frezarite_armor=装备全套可获得无限水下呼吸效果。
+tooltip.hyxcate.frezarite_tool=所有攻击附带范围伤害，对所有目标施加深度冻结（0:08）。
+tooltip.hyxcate.kreknorite_armor=装备全套可获得无限火焰抗性效果。
+tooltip.hyxcate.kreknorite_tool=所有攻击附带范围伤害，对所有目标施加炼狱之火（0:08）。
+tooltip.hyxcate.meteor_detector=指引你前往附近的陨石坠落点。
+tooltip.hyxcate.meteor_detector.hint=右键点击可追踪陨石坠落点的距离（单位：格）。
+tooltip.hyxcate.meteor_detector.hint2=潜行+右键点击可删除当前追踪的陨石坠落点。
+tooltip.hyxcate.shift=按住SHIFT查看更多信息...
+tooltip.hyxcate.tektite_bow=发射速度极快的强力箭矢。
+tooltip.hyxcate.tektite_gem_cluster=蕴含大量电能。
+tooltip.hyxcate.tektite_greatsword=所有攻击的范围更广。
+
+# 药水效果
+effect.hyxcate.astral_erosion.name=星界侵蚀
+effect.hyxcate.deep_freeze.name=深度冻结
+effect.hyxcate.inferno.name=炼狱之火
+effect.hyxcate.paralysis.name=麻痹
+
+lingering_potion.effect.paralysis=滞留型麻痹药水
+potion.effect.paralysis=麻痹药水
+splash_potion.effect.paralysis=喷溅型麻痹药水
+tipped_arrow.effect.paralysis=麻痹之箭
+
+# 模组集成 - JEI
+item.hyxcate.fallen_star.jei_desc=流星仅在夜间出现。\n\n若你听到神秘声响，且看到天空中有粒子轨迹向地面坠落，那便是流星\n\n落地后，陨星会发出光芒并释放粒子效果，便于你寻找。
+item.hyxcate.frezarite_boots.jei_desc=装备霜冻陨石靴时，会将你下方的水暂时冻结为霜冰。\n若靴子附魔冰霜行者，冻结范围将扩大。
+item.hyxcate.tektite_gem_cluster.jei_desc=成功挖掘任何类型的炽热陨石时，有极低概率掉落玻陨石晶簇。\n\n仅在陨石坠落点生成的生物，被击杀后也有极低概率掉落。
+tile.hyxcate.cyber_crystal.jei_desc=赛博水晶在所有类型的陨石坠落点中极为稀有，且免疫爆炸。\n\n挖掘需4级挖掘等级，陨石材质工具可满足要求。
+tile.hyxcate.frezarite_rock.jei_desc=霜冻陨石在陨石坠落点中属于不常见生成，挖掘可获得碎片，但放置过久会冷却。\n\n时运附魔对此类方块无效，挖掘需4级挖掘等级。\n\n陨石材质工具可满足挖掘要求。
+tile.hyxcate.kreknorite_rock.jei_desc=炽燃陨石在陨石坠落点中属于不常见生成，挖掘可获得碎片，但放置过久会冷却。\n\n时运附魔对此类方块无效，挖掘需4级挖掘等级。\n\n陨石材质工具可满足挖掘要求。
+tile.hyxcate.meteorite_rock.jei_desc=炽热陨石冷却后，挖掘速度会大幅提升。\n\n但此时仅25%的概率掉落碎片。\n\n\n霜冻陨石和炽燃陨石无冷却变种，冷却后会分别转化为浮冰和黑曜石。
+tile.hyxcate.meteorite_rock_hot.jei_desc=炽热陨石生成于陨石坠落点，挖掘可获得碎片，但放置过久会冷却。\n\n时运附魔对此类方块无效，挖掘需3级挖掘等级。\n\n钻石材质工具可满足挖掘要求。
+
+# 模组集成 - 匠魂怀古
+material.hyxcate.fallen_star.name=流星
+material.hyxcate.cyber_crystal.name=赛博水晶
+material.hyxcate.frezarite.name=霜冻陨石
+material.hyxcate.kreknorite.name=炽燃陨石
+material.hyxcate.meteorite.name=陨石
+material.hyxcate.tektite.name=玻陨石
+
+modifier.hyxcate.feint.name=佯攻
+modifier.hyxcate.feint.desc=§o超越光速！§r\n你的工具拥有20%概率造成额外25%且可穿透盔甲的伤害。
+modifier.hyxcate.frezarites_bane.name=霜冻之咒
+modifier.hyxcate.frezarites_bane.desc=§o核冬日降临！§r\n成功命中目标时，会持续为其施加深度冻结效果。
+modifier.hyxcate.gleaming.name=璀璨
+modifier.hyxcate.gleaming.desc=§o水晶之力！§r\n你的工具造成伤害增加40%，生命值越低，额外伤害加成越少。
+modifier.hyxcate.kreknorites_bane.name=炽燃之咒
+modifier.hyxcate.kreknorites_bane.desc=§o这是献给你们的地狱！§r\n成功命中目标时，会持续为其施加炼狱之火效果。
+modifier.hyxcate.stunlock.name=眩晕禁锢
+modifier.hyxcate.stunlock.desc=§o待着别动！§r\n命中目标时有15%概率使其麻痹，8秒内完全无法反抗。
+modifier.hyxcate.supercharge.name=超级充能
+modifier.hyxcate.supercharge.desc=§o§o启动超载!§r\n命中目标或破坏方块时有10%概率获得急迫III效果，持续5秒！
+
+# 模组集成 - 匠魂盔甲怀古
+modifier.hyxcate.astral_plating_armor.name=星界镀层
+modifier.hyxcate.astral_plating_armor.desc=§o呼叫银河总部！§r\n你的盔甲可完全抵消50%的火焰伤害与溺水伤害。
+modifier.hyxcate.frezarites_ward_armor.name=霜冻之护
+modifier.hyxcate.frezarites_ward_armor.desc=§o核冬日降临！§r\n受到伤害时有概率（每件盔甲10%）持续为攻击者施加深度冻结效果。
+modifier.hyxcate.gleaming_armor.name=璀璨
+modifier.hyxcate.gleaming_armor.desc=§o水晶之力！§r\n你的盔甲可完全抵消40%的总伤害，生命值越低，伤害减免效果越弱。
+modifier.hyxcate.kreknorites_ward_armor.name=炽燃之护
+modifier.hyxcate.kreknorites_ward_armor.desc=§o这是献给你们的地狱！§r\n受到伤害时有概率（每件盔甲10%）持续为攻击者施加炼狱之火效果。
+modifier.hyxcate.star_shield_armor.name=星辰之护
+modifier.hyxcate.star_shield_armor.desc=§o与星同芒！§r\n受到伤害时有概率（每件盔甲5%）完全无视该次伤害，并获得抗性III效果，持续5秒。
+modifier.hyxcate.stunlock_armor.name=眩晕禁锢
+modifier.hyxcate.stunlock_armor.desc=§o待着别动！§r\n受到伤害时有概率（每件盔甲5%）使攻击者麻痹，8秒内完全无法反抗。
+modifier.hyxcate.supercharge_armor.name=过载
+modifier.hyxcate.supercharge_armor.desc=§o启动超载!§r\n受到伤害时有概率（每件盔甲5%）获得急迫III与速度III效果，持续5秒！

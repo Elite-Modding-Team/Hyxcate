@@ -1,0 +1,22 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:kreknorite_chestplate"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X X",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "hyxcate:kreknorite_ingot"
+    }
+  },
+  "result": {
+    "item": "hyxcate:kreknorite_chestplate"
+  }
+}

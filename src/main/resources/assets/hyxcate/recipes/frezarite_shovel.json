@@ -1,0 +1,26 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:frezarite_shovel"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "X": {
+      "item": "hyxcate:frezarite_ingot"
+    }
+  },
+  "result": {
+    "item": "hyxcate:frezarite_shovel"
+  }
+}

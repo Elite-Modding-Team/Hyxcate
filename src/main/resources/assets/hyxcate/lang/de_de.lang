@@ -1,0 +1,219 @@
+itemGroup.hyxcate=Hyxcate
+
+# Attributes
+attribute.name.hyxcate.generic.explosion_resistance=Explosionsresistenz
+attribute.name.hyxcate.generic.magnetization=Magnetisierung
+attribute.name.hyxcate.generic.paralysis=Lähmungswahrscheinlichkeit
+
+# Blocks
+tile.hyxcate.star_block.name=Sternenblock
+tile.hyxcate.chiseled_star_block.name=Gemeißelter Sternenblock
+tile.hyxcate.cracked_star_block.name=Gerissener Sternenblock
+tile.hyxcate.star_stairs.name=Sternenblocktreppe
+tile.hyxcate.star_slab.name=Sternenblockstufe
+tile.hyxcate.star_slab_double.name=Doppelte Sternenblockstufe
+tile.hyxcate.cyber_crystal.name=Cyberkristall
+tile.hyxcate.frezarite_block.name=Frezaritblock
+tile.hyxcate.frezarite_rock.name=Frezaritgestein
+tile.hyxcate.kreknorite_block.name=Kreknoritblock
+tile.hyxcate.kreknorite_rock.name=Kreknoritgestein
+tile.hyxcate.meteorite_block.name=Meteoritenblock
+tile.hyxcate.meteorite_rock.name=Meteoritengestein
+tile.hyxcate.meteorite_rock_hot.name=Heißes Meteoritengestein
+tile.hyxcate.tektite_block.name=Tektitblock
+tile.hyxcate.tektite_glass.name=Tektitglas
+
+# Commands
+command.hyxcate.force.usage=/hyxcateforce <event> um ein Mond-/Sonnenereignis auszulösen
+command.hyxcate.force.invalid=Es gibt kein Mond-/Sonnenereignis mit dem Namen %s
+command.hyxcate.force.success=%s wird in der nächsten möglichen Nacht/Tag stattfinden
+command.hyxcate.force.clear=Erzwungenes Ereignis wurde zurückgesetzt
+command.hyxcate.meteor.usage=/hyxcatemeteor [x] [z] [size <1-3>] [type <1-4>] [homing <true/false>] um einen Meteor zu spawnen
+command.hyxcate.meteor.success=Meteor bei %s, %s, %s gespawnt
+
+# Death Messages
+death.attack.hyxcate_celestial=%1$s ist durch himmlische Energie zu Asche geworden
+death.attack.hyxcate_deep_freeze=%1$s ist erfroren
+death.attack.hyxcate_deep_freeze.player=%1$s wurde von %2$s zu Tode gefroren
+death.attack.hyxcate_inferno=%1$s wurde vom Inferno verschlungen
+death.attack.hyxcate_inferno.player=%1$s wurde von %2$s infernalisiert
+death.attack.hyxcate_paralysis=%1$s konnte die Wattstunde nicht bändigen
+death.attack.hyxcate_paralysis.player=%1$s wurde von %2$s zu Tode gelähmt
+
+# Enchantments
+enchantment.hyxcate.lunar_edge=Mondklinge
+enchantment.hyxcate.lunar_edge.desc=Erhöht den Schaden des Gegenstands. Die Stärke hängt von der aktuellen Mondphase ab.
+enchantment.hyxcate.lunar_shield=Mondschild
+enchantment.hyxcate.lunar_shield.desc=Reduziert Schaden von den meisten Quellen. Die Stärke hängt von der aktuellen Mondphase ab.
+enchantment.hyxcate.magnetization=Magnetisierung
+enchantment.hyxcate.magnetization.desc=Zieht Gegenstände zu dir. Jede Stufe erhöht den Radius und die Stärke.
+
+# Entities
+entity.hyxcate.alien_creeper.name=Aliencreeper
+entity.hyxcate.alien_kitty.name=Alienkätzchen
+entity.hyxcate.comet_kitty.name=Kometenkätzchen
+entity.hyxcate.falling_meteor.name=Fallender Meteor
+entity.hyxcate.falling_star.name=Sternschnuppe
+entity.hyxcate.stellar_protector.name=Sternenschützer
+
+# Fluids
+fluid.frezarite.name=Geschmolzener Frezarit
+fluid.kreknorite.name=Geschmolzener Kreknorit
+fluid.meteorite.name=Geschmolzener Meteorit
+
+# Info
+info.hyxcate.blue_moon=Der Blaue Mond geht auf...
+info.hyxcate.star_shower=Sterne beginnen vom Himmel zu regnen...
+info.hyxcate.full_moon=Der Vollmond geht auf...
+info.hyxcate.blood_moon=Der Blutmond geht auf...
+info.hyxcate.blood_moon_sleeping=Beim Gedanken an Schlaf wird dir unwohl
+info.hyxcate.meteor=Ein Meteor ist in der Nähe eingeschlagen!
+info.hyxcate.meteor_far=Ein Meteor ist in der Ferne eingeschlagen!
+info.hyxcate.meteor_verbose=Ein Meteor ist eingeschlagen bei
+info.hyxcate.red_giant=Die Sonne ist zu einem Roten Riesen gewachsen!
+info.hyxcate.grim_eclipse=Etwas blockiert die Sonne! Eine düstere Sonnenfinsternis beginnt...
+info.hyxcate.meteor_detector.none_found=Keine Meteor-Einschlagstellen gefunden!
+info.hyxcate.meteor_detector.distance=Nächste Meteor-Einschlagstelle ist %s Blöcke entfernt.
+info.hyxcate.meteor_detector.confirm=Meteor-Einschlagstelle bei %d, %d, %d aus der Datenbank löschen?
+info.hyxcate.meteor_detector.sneak_confirm=[Schleichen + Rechtsklick] zum Bestätigen.
+info.hyxcate.meteor_detector.no_pending=Keine ausstehenden Löschungen oder die Einschlagstelle ist zu weit entfernt.
+info.hyxcate.meteor_detector.expired=Bestätigung abgelaufen.
+info.hyxcate.meteor_detector.wrong_dimension=Du musst dich in derselben Dimension befinden.
+info.hyxcate.meteor_detector.moved_too_far=Du hast dich zu weit von deiner vorherigen Position entfernt.
+info.hyxcate.meteor_detector.deleted=Meteor-Einschlagstelle bei %d, %d, %d gelöscht!
+info.hyxcate.meteor_detector.reset=Bitte warte, bis der Detektor zurückgesetzt ist.
+info.hyxcate.meteor_detector.already_gone=Diese Meteor-Einschlagstelle existiert nicht mehr.
+
+# Items
+item.hyxcate.fallen_star.name=Gefallener Stern
+item.hyxcate.meteor_detector.name=Meteordetektor
+item.hyxcate.celestial_warhammer.name=Himmlischer Kriegshammer
+item.hyxcate.tektite_bow.name=Lichtgeschwindigkeitsbogen
+item.hyxcate.tektite_pickaxe.name=Tektitspitzhacke
+item.hyxcate.tektite_axe.name=Tektitaxt
+item.hyxcate.tektite_shovel.name=Tektitschaufel
+item.hyxcate.tektite_hoe.name=Tektithacke
+item.hyxcate.tektite_sword.name=Tektitschwert
+item.hyxcate.tektite_greatsword.name=Tektitgroßschwert
+item.hyxcate.tektite_helmet.name=Tektithelm
+item.hyxcate.tektite_chestplate.name=Tektitharnisch
+item.hyxcate.tektite_leggings.name=Tektitbeinschutz
+item.hyxcate.tektite_boots.name=Tektitstiefel
+item.hyxcate.meteorite_shard.name=Meteoritenscherbe
+item.hyxcate.meteorite_ingot.name=Meteoritenbarren
+item.hyxcate.meteorite_pickaxe.name=Meteoritenspitzhacke
+item.hyxcate.meteorite_axe.name=Meteoritenaxt
+item.hyxcate.meteorite_shovel.name=Meteoritenschaufel
+item.hyxcate.meteorite_hoe.name=Meteoritenhacke
+item.hyxcate.meteorite_sword.name=Meteoritenschwert
+item.hyxcate.meteorite_helmet.name=Meteoritenhelm
+item.hyxcate.meteorite_chestplate.name=Meteoritenharnisch
+item.hyxcate.meteorite_leggings.name=Meteoritenbeinschutz
+item.hyxcate.meteorite_boots.name=Meteoritenstiefel
+item.hyxcate.frezarite_crystal.name=Frezaritkristall
+item.hyxcate.frezarite_ingot.name=Frezaritbarren
+item.hyxcate.frezarite_pickaxe.name=Frezaritspitzhacke
+item.hyxcate.frezarite_axe.name=Frezaritaxt
+item.hyxcate.frezarite_shovel.name=Frezaritschaufel
+item.hyxcate.frezarite_hoe.name=Frezarithacke
+item.hyxcate.frezarite_sword.name=Frezaritschwert
+item.hyxcate.frezarite_helmet.name=Frezarithelm
+item.hyxcate.frezarite_chestplate.name=Frezaritharnisch
+item.hyxcate.frezarite_leggings.name=Frezaritbeinschutz
+item.hyxcate.frezarite_boots.name=Frezaritstiefel
+item.hyxcate.kreknorite_shard.name=Kreknoritscherbe
+item.hyxcate.kreknorite_ingot.name=Kreknoritbarren
+item.hyxcate.kreknorite_pickaxe.name=Kreknoritspitzhacke
+item.hyxcate.kreknorite_axe.name=Kreknoritaxt
+item.hyxcate.kreknorite_shovel.name=Kreknoritschaufel
+item.hyxcate.kreknorite_hoe.name=Kreknorithacke
+item.hyxcate.kreknorite_sword.name=Kreknoritschwert
+item.hyxcate.kreknorite_helmet.name=Kreknorithelm
+item.hyxcate.kreknorite_chestplate.name=Kreknoritharnisch
+item.hyxcate.kreknorite_leggings.name=Kreknoritbeinschutz
+item.hyxcate.kreknorite_boots.name=Kreknoritstiefel
+item.hyxcate.tektite_gem_cluster.name=Tektit-Edelsteinhaufen
+item.hyxcate.celestial_emblem.name=Himmlisches Emblem
+item.hyxcate.fallen_star_beam_sword.name=Lichtschwert Typ S
+item.hyxcate.meteorite_beam_sword.name=Lichtschwert Typ M
+item.hyxcate.frezarite_beam_sword.name=Lichtschwert Typ F
+item.hyxcate.kreknorite_beam_sword.name=Lichtschwert Typ K
+item.hyxcate.tektite_beam_sword.name=Lichtschwert Typ T
+item.hyxcate.cyber_crystal_beam_sword.name=Lichtschwert Typ C
+
+# Tooltips
+tooltip.hyxcate.beam_sword=Mit seiner markanten leuchtenden Klinge ist diese Waffe auffällig und tödlich. Alle Angriffe ignorieren Rüstung und Unverwundbarkeits-Frames.
+tooltip.hyxcate.blastproof=Explosionssicher
+tooltip.hyxcate.celestial_emblem=Pulsiert mit enormer himmlischer Energie!
+tooltip.hyxcate.celestial_warhammer=Größere Angriffsreichweite und Rückstoß. Halte Rechtsklick, um in die Luft zu springen und einen Smash-Angriff auszuführen, der allen Zielen Astrale Erosion (0:08) zufügt.
+tooltip.hyxcate.cyber_crystal=Ableitung und Verstärkung von Energie möglich.
+tooltip.hyxcate.fallen_star=Es hört nicht auf zu funkeln!
+tooltip.hyxcate.frezarite_armor=Das Tragen eines vollständigen Sets gewährt unendliche Wasseratmung.
+tooltip.hyxcate.frezarite_tool=Alle Angriffe verursachen Flächenschaden. Fügt allen Zielen Tiefes Einfrieren (0:08) zu.
+tooltip.hyxcate.kreknorite_armor=Das Tragen eines vollständigen Sets gewährt unendliche Feuerresistenz.
+tooltip.hyxcate.kreknorite_tool=Alle Angriffe verursachen Flächenschaden. Fügt allen Zielen Inferno (0:08) zu.
+tooltip.hyxcate.meteor_detector=Zeigt auf nahegelegene Meteor-Einschlagstellen.
+tooltip.hyxcate.meteor_detector.hint=Rechtsklick, um die Entfernung zur Einschlagstelle in Blöcken zu verfolgen.
+tooltip.hyxcate.meteor_detector.hint2=Shift + Rechtsklick, um die aktuell verfolgte Einschlagstelle zu löschen.
+tooltip.hyxcate.shift=Halte SHIFT, um mehr Informationen zu erhalten...
+tooltip.hyxcate.tektite_bow=Schießt sehr schnell starke Pfeile.
+tooltip.hyxcate.tektite_gem_cluster=Sie sind voller Elektrizität.
+tooltip.hyxcate.tektite_greatsword=Alle Angriffe haben eine größere Reichweite.
+
+# Potions
+effect.hyxcate.astral_erosion.name=Astrale Erosion
+effect.hyxcate.deep_freeze.name=Tiefes Einfrieren
+effect.hyxcate.inferno.name=Inferno
+effect.hyxcate.paralysis.name=Lähmung
+
+lingering_potion.effect.paralysis=Verweiltrank der Lähmung
+potion.effect.paralysis=Trank der Lähmung
+splash_potion.effect.paralysis=Wurftrank der Lähmung
+tipped_arrow.effect.paralysis=Pfeil der Lähmung
+
+# Mod Integration - JEI
+item.hyxcate.fallen_star.jei_desc=Sternschnuppen können nachts angetroffen werden.\n\nWenn du etwas Magisches hörst und eine Partikelspur am Himmel zur Erde siehst, ist es eine Sternschnuppe.\n\nNach der Landung geben sie Licht und Partikel von sich, was die Suche erleichtert.
+item.hyxcate.frezarite_boots.jei_desc=Die Frezaritstiefel gefrieren Wasser unter dir temporär zu brüchigem Eis, während sie ausgerüstet sind. Der Radius wird erhöht, wenn die Stiefel mit Eisläufer verzaubert sind.
+item.hyxcate.tektite_gem_cluster.jei_desc=Tektit-Edelsteinhaufen werden selten beim erfolgreichen Abbau von heißem Meteorgestein gedroppt.\n\nKreaturen, die ausschließlich an Meteor-Einschlagstellen vorkommen, können sie ebenfalls selten droppen, wenn sie getötet werden.
+tile.hyxcate.cyber_crystal.jei_desc=Cyberkristalle sind sehr selten an Meteor-Einschlagstellen jeglicher Art zu finden und resistent gegen Explosionen.\n\nDu benötigst eine Abbaustufe von 4, um sie abzubauen, Werkzeuge aus Meteor-Materialien sind stark genug.
+tile.hyxcate.frezarite_rock.jei_desc=Frezaritgestein ist weniger häufig an Meteor-Einschlagstellen zu finden, diese Gesteine können für Scherben abgebaut werden, kühlen jedoch ab, wenn sie zu lange unberührt bleiben.\n\nGlück funktioniert bei diesen Gesteinen nicht, und du benötigst eine Abbaustufe von 4.\n\nWerkzeuge aus Meteor-Materialien sind stark genug.
+tile.hyxcate.kreknorite_rock.jei_desc=Kreknoritgestein ist weniger häufig an Meteor-Einschlagstellen zu finden, diese Gesteine können für Scherben abgebaut werden, kühlen jedoch ab, wenn sie zu lange unberührt bleiben.\n\nGlück funktioniert bei diesen Gesteinen nicht, und du benötigst eine Abbaustufe von 4.\n\nWerkzeuge aus Meteor-Materialien sind stark genug.
+tile.hyxcate.meteorite_rock.jei_desc=Wenn heißes Meteoritengestein abgekühlt ist, kann es viel schneller abgebaut werden.\n\nEs hat jedoch nur eine 25%ige Chance, eine Scherbe zu droppen.\n\nGesteine aus Frezarit und Kreknorit haben keine abgekühlten Varianten, sie kühlen stattdessen zu Packeis bzw. Obsidian ab.
+tile.hyxcate.meteorite_rock_hot.jei_desc=Heißes Meteoritengestein ist an Meteor-Einschlagstellen zu finden, diese Gesteine können für Scherben abgebaut werden, kühlen jedoch ab, wenn sie zu lange unberührt bleiben.\n\nGlück funktioniert bei diesen Gesteinen nicht, und du benötigst eine Abbaustufe von 3.\n\nWerkzeuge aus Diamant sind stark genug.
+
+# Mod Integration - Tinkers' Antique (Tinkers' Construct)
+material.hyxcate.fallen_star.name=Sternenbesetzt
+material.hyxcate.cyber_crystal.name=Cyberkristall
+material.hyxcate.frezarite.name=Frezarit
+material.hyxcate.kreknorite.name=Kreknorit
+material.hyxcate.meteorite.name=Meteorit
+material.hyxcate.tektite.name=Tektit
+
+modifier.hyxcate.feint.name=Täuschung
+modifier.hyxcate.feint.desc=§oSchneller als das Licht!§r\nDein Werkzeug hat eine 20%ige Chance, zusätzlichen +25% Schaden zu verursachen, der Rüstung durchdringt.
+modifier.hyxcate.frezarites_bane.name=Frezaritfluch
+modifier.hyxcate.frezarites_bane.desc=§oEin nuklearer Winter!§r\nErfolgreiche Treffer fügen deinem Ziel fortwährend Tiefes Einfrieren zu.
+modifier.hyxcate.gleaming.name=Glänzend
+modifier.hyxcate.gleaming.desc=§oKristallkraft!§r\nDein Werkzeug verursacht +40% Schaden, weniger Bonusschaden wird verursacht, je niedriger deine Gesundheit ist.
+modifier.hyxcate.kreknorites_bane.name=Kreknoritfluch
+modifier.hyxcate.kreknorites_bane.desc=§oHölle direkt vor deiner Tür!§r\nErfolgreiche Treffer fügen deinem Ziel fortwährend Inferno zu.
+modifier.hyxcate.stunlock.name=Betäubung
+modifier.hyxcate.stunlock.desc=§oBleib stehen!§r\nGetroffene Ziele haben eine 15%ige Chance, für 8 Sekunden gelähmt und völlig unbeweglich zu werden.
+modifier.hyxcate.supercharge.name=Superaufladung
+modifier.hyxcate.supercharge.desc=§oLade mich auf!§r\nDas Treffen eines Ziels oder das Abbauen eines Blocks hat eine 10%ige Chance, dich für 5 Sekunden mit Eile III aufzuladen!
+
+# Mod Integration - Antique Armory (Construct's Armory)
+modifier.hyxcate.astral_plating_armor.name=Astrale Panzerung
+modifier.hyxcate.astral_plating_armor.desc=§oHerein, Sternenkommando!§r\nDeine Rüstung schützt dich komplett vor 50% von Schaden durch Feuer oder Ertrinken.
+modifier.hyxcate.frezarites_ward_armor.name=Frezaritschutz
+modifier.hyxcate.frezarites_ward_armor.desc=§oEin nuklearer Winter!§r\nVerletzungen haben eine Chance (10% pro Rüstungsteil), deinem Angreifer fortwährend Tiefes Einfrieren zuzufügen.
+modifier.hyxcate.gleaming_armor.name=Glänzend
+modifier.hyxcate.gleaming_armor.desc=§oKristallkraft!§r\nDeine Rüstung schützt dich komplett vor 40% des gesamten erlittenen Schadens, dies wird weniger effektiv, je niedriger deine Gesundheit ist.
+modifier.hyxcate.kreknorites_ward_armor.name=Kreknoritschutz
+modifier.hyxcate.kreknorites_ward_armor.desc=§oHölle direkt vor deiner Tür!§r\nVerletzungen haben eine Chance (10% pro Rüstungsteil), deinem Angreifer fortwährend Inferno zuzufügen.
+modifier.hyxcate.star_shield_armor.name=Sternenschild
+modifier.hyxcate.star_shield_armor.desc=§oEins mit den Sternen!§r\nEs besteht eine Chance (5% pro Rüstungsteil), dass Schaden komplett ignoriert wird, und du erhältst Resistenz III für 5 Sekunden.
+modifier.hyxcate.stunlock_armor.name=Betäubung
+modifier.hyxcate.stunlock_armor.desc=§oBleib stehen!§r\nVerletzungen haben eine Chance (5% pro Rüstungsteil), deinen Angreifer zu lähmen und für 8 Sekunden völlig unbeweglich zu machen.
+modifier.hyxcate.supercharge_armor.name=Superaufladung
+modifier.hyxcate.supercharge_armor.desc=§oLade mich auf!§r\nVerletzungen haben eine Chance (5% pro Rüstungsteil), dich für 5 Sekunden mit Eile III und Schnelligkeit III aufzuladen!

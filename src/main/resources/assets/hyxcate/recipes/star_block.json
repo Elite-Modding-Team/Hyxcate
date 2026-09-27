@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "hyxcate:fallen_star"
+    }
+  },
+  "result": {
+    "item": "hyxcate:star_block",
+    "count": 4
+  }
+}

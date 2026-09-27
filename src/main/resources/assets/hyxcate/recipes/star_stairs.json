@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "hyxcate:star_block"
+    }
+  },
+  "result": {
+    "item": "hyxcate:star_stairs",
+    "count": 4
+  }
+}

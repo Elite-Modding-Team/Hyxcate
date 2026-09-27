@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:cyber_crystal_beam_sword"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "C",
+    "C",
+    "E"
+  ],
+  "key": {
+    "E": {
+      "item": "hyxcate:celestial_emblem"
+    },
+    "C": {
+      "item": "hyxcate:cyber_crystal"
+    }
+  },
+  "result": {
+    "item": "hyxcate:cyber_crystal_beam_sword"
+  }
+}

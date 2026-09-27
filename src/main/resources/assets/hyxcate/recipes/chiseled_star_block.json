@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "hyxcate:star_slab"
+    }
+  },
+  "result": {
+    "item": "hyxcate:chiseled_star_block"
+  }
+}

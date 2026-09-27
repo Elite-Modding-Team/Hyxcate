@@ -1,7 +1,0 @@
-{
-  "package": "de.ellpeck.nyx.compat.urkazmoontools.mixin.client",
-  "refmap": "mixins.nyx.refmap.json",
-  "client": [
-    "UMTMoonClockItemMixin"
-  ]
-}

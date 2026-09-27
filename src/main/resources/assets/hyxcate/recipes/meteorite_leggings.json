@@ -1,0 +1,22 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:meteorite_leggings"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "XXX",
+    "X X",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "hyxcate:meteorite_ingot"
+    }
+  },
+  "result": {
+    "item": "hyxcate:meteorite_leggings"
+  }
+}

@@ -1,7 +1,0 @@
-{
-  "package": "de.ellpeck.nyx.compat.b3m.mixin.client",
-  "refmap": "mixins.nyx.refmap.json",
-  "client": [
-    "B3MCelestialTexturesMixin"
-  ]
-}

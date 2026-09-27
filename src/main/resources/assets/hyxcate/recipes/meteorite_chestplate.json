@@ -1,0 +1,22 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:meteorite_chestplate"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X X",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "hyxcate:meteorite_ingot"
+    }
+  },
+  "result": {
+    "item": "hyxcate:meteorite_chestplate"
+  }
+}

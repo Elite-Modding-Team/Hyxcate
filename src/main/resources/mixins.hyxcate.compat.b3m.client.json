@@ -1,0 +1,7 @@
+{
+  "package": "mod.emt.hyxcate.compat.b3m.mixin.client",
+  "refmap": "mixins.hyxcate.refmap.json",
+  "client": [
+    "B3MCelestialTexturesMixin"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:tektite_leggings"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "XXX",
+    "X X",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "hyxcate:tektite_gem_cluster"
+    }
+  },
+  "result": {
+    "item": "hyxcate:tektite_leggings"
+  }
+}

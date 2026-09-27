@@ -1,0 +1,22 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:frezarite_chestplate"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X X",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "hyxcate:frezarite_ingot"
+    }
+  },
+  "result": {
+    "item": "hyxcate:frezarite_chestplate"
+  }
+}

@@ -6,7 +6,7 @@
 
 ![Hyxcate Banner](docs/banner.png)
 
-**Hyxcate** (a portmanteau of the Greek goddess names Nyx and Hecate) is a grand sci-fi themed adventure mod that mainly introduces new events for day and night to make Survival even more challenging, as well as meteors containing special endgame materials. Originally it started off as a fork of **Nyx** for the **Hexxit II** modpack, it has now evolved into its own standalone mod with many features originating from Nyx being reworked or removed.
+**Hyxcate** (a portmanteau of the Greek goddess names Nyx and Hecate) is a grand sci-fi themed adventure mod that mainly introduces new events for day and night to make Survival even more challenging, as well as meteors containing special endgame materials. Originally it started off as a fork of **Nyx** for the **Hexxit II** modpack, it has since evolved into its own standalone mod and is no longer a fork.
 
 #### **_IMPORTANT: This mod is going to stay on 1.12.2, there are no plans for porting from our side! The mod is currently in Beta, things are subject to change and even be removed!_**
 
@@ -121,7 +121,7 @@
 
 ### 🙏 Special Thanks
 
-- Originally creating [**Nyx**](https://www.curseforge.com/minecraft/mc-mods/nyx) (licensed under MIT) ~ Ellpeck
+- Originally creating [**Nyx**](https://www.curseforge.com/minecraft/mc-mods/nyx) (licensed under MIT) which this mod was originally based off of ~ Ellpeck
 - Ideas from [**Falling Meteors**](https://www.curseforge.com/minecraft/mc-mods/falling-meteors-mod) ~ AlexDGr8r
 - Cat texture from [**Xyn**](https://www.curseforge.com/minecraft/mc-mods/xyn-fork) ~ TheSlayer5934
 - Creating the [**Hexxit edition of Red's Pack**](https://www.planetminecraft.com/texture-pack/reds-pack-hexxit-edition/), a few textures were used as a base for some parts of the mod ~ DeadDirtyRed
@@ -139,6 +139,14 @@ Want to help translating? Submit a [**Pull Request**](https://github.com/Elite-M
 ### 🔊 Sound Credits
 - Sci-Fi Computer Sounds and Beeps by Michel Baradari -- https://opengameart.org/content/9-sci-fi-computer-sounds-and-beeps -- License: CC-BY 3.0
 - Red Sun in the Sky - Note Block Cover by Jimmy145 -- https://youtu.be/PCERgEtiX7c
+
+---
+
+## Licensing
+
+All code and assets specifically made for this mod are licensed as All Rights Reserved. All other assets, including those derived from Minecraft or third-party sources, remain the property of their respective owners.
+
+You may not upload a fork or utilize the assets without permission. You are however free to include this mod in any modpacks of yours, make addons with the mod as a dependency, learn from the code, or modify it privately.
 
 ---
 

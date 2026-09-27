@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom": {
+      "model": "hyxcate:star_slab"
+    },
+    "half=top": {
+      "model": "hyxcate:star_slab_top"
+    }
+  }
+}

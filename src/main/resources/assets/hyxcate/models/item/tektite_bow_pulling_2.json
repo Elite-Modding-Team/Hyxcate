@@ -1,0 +1,6 @@
+{
+  "parent": "item/bow",
+  "textures": {
+    "layer0": "hyxcate:items/tektite_bow_pulling_2"
+  }
+}

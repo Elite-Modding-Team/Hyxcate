@@ -1,0 +1,22 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "SCS",
+    "CTC",
+    "SCS"
+  ],
+  "key": {
+    "S": {
+      "item": "hyxcate:fallen_star"
+    },
+    "C": {
+      "item": "hyxcate:cyber_crystal"
+    },
+    "T": {
+      "item": "hyxcate:tektite_gem_cluster"
+    }
+  },
+  "result": {
+    "item": "hyxcate:celestial_emblem"
+  }
+}

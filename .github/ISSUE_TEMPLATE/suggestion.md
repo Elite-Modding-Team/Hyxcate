@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-This is the repository of Hyxcate exclusively for 1.12.2 and is not affiliated with Nyx and its other forks. Suggestions meant for these projects will immediately be closed and marked as invalid.
+This is the repository of Hyxcate exclusively for 1.12.2 and is not affiliated with other similar mods like Nyx. Suggestions meant for these projects will immediately be closed and marked as invalid.
 
 Note that before making a suggestion, the following will not be taken into consideration:
 

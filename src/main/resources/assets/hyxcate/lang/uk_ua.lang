@@ -1,0 +1,248 @@
+ItemGroup.nyx=Hyxcate
+
+# Attributes
+attribute.name.hyxcate.generic.explosion_resistance=Опір вибухам
+attribute.name.hyxcate.generic.moon_damage=Місячна шкода
+attribute.name.hyxcate.generic.moon_ward=Місячний захист
+attribute.name.hyxcate.generic.magnetization=Магнетизм
+attribute.name.hyxcate.generic.paralysis=Шанс паралічу
+attribute.name.hyxcate.generic.sun_damage=Сонячна шкода
+attribute.name.hyxcate.generic.sun_ward=Сонячний захист
+
+# Blocks
+tile.hyxcate.star_block.name=Зоряний блок
+tile.hyxcate.chiseled_star_block.name=Тесаний зоряний блок
+tile.hyxcate.cracked_star_block.name=Тріснутий зоряний блок
+tile.hyxcate.star_stairs.name=Сходинки з зоряного блоку
+tile.hyxcate.star_slab.name=Плита з зоряного блоку
+tile.hyxcate.star_slab_double.name=Подвійна плита з зоряного блоку
+tile.hyxcate.cyber_crystal.name=Кіберкристал
+tile.hyxcate.frezarite_block.name=Блок фрезариту
+tile.hyxcate.frezarite_rock.name=Фрезаритова порода
+tile.hyxcate.kreknorite_block.name=Блок крекнориту
+tile.hyxcate.kreknorite_rock.name=Крекноритова порода
+tile.hyxcate.meteorite_block.name=Блок метеориту
+tile.hyxcate.meteorite_rock.name=Метеоритна порода
+tile.hyxcate.meteorite_rock_hot.name=Розпечена метеоритна порода
+tile.hyxcate.tektite_block.name=Блок тектиту
+tile.hyxcate.tektite_glass.name=Тектитове скло
+
+# Commands
+command.hyxcate.force.usage=/hyxcateforce <подія>, щоб викликати місячну/сонячну подію
+command.hyxcate.force.invalid=Місячної/сонячної події з назвою %s не існує
+command.hyxcate.force.success=%s відбудеться наступної можливої ночі/дня
+command.hyxcate.force.clear=Примусову подію скасовано
+command.hyxcate.meteor.usage=/hyxcatemeteor [x] [z] [розмір <1-3>] [тип <1-4>] [самонаведення <true/false>], щоб викликати метеорит
+command.hyxcate.meteor.success=Метеорит викликано на координатах %s, %s, %s
+
+# Death Messages
+death.attack.hyxcate_celestial=%1$s спопелено небесною енергією
+death.attack.hyxcate_deep_freeze=%1$s замерз на смерть
+death.attack.hyxcate_deep_freeze.player=%1$s замерз на смерть через %2$s
+death.attack.hyxcate_inferno=%1$s поглинуло пекельне полум'я
+death.attack.hyxcate_inferno.player=%1$s спалено на смерть гравцем %2$s
+death.attack.hyxcate_laser=%1$s випарувано лазерним променем
+death.attack.hyxcate_laser.player=%1$s випарувано лазерним променем %2$s
+death.attack.hyxcate_paralysis=%1$s не витримав напруги
+death.attack.hyxcate_paralysis.player=%1$s паралізовано на смерть гравцем %2$s
+
+# Enchantments
+enchantment.hyxcate.lunar_edge=Місячне вістря
+enchantment.hyxcate.lunar_edge.desc=Збільшує шкоду предмета вночі.
+enchantment.hyxcate.lunar_shield=Місячний щит
+enchantment.hyxcate.lunar_shield.desc=Повністю блокує певний відсоток шкоди вночі.
+enchantment.hyxcate.magnetization=Магнетизм
+enchantment.hyxcate.magnetization.desc=Притягує предмети до вас. Кожен рівень збільшує радіус і силу притягання.
+enchantment.hyxcate.solar_edge=Сонячне вістря
+enchantment.hyxcate.solar_edge.desc=Збільшує шкоду предмета вдень.
+enchantment.hyxcate.solar_shield=Сонячний щит
+enchantment.hyxcate.solar_shield.desc=Повністю блокує певний відсоток шкоди вдень.
+
+# Entities
+entity.hyxcate.alien_creeper.name=Іншопланетний кріпер
+entity.hyxcate.alien_kitty.name=Іншопланетне кошеня
+entity.hyxcate.comet_kitty.name=Кометне кошеня
+entity.hyxcate.eyezor.name=Айзор
+entity.hyxcate.falling_meteor.name=Падаючий метеорит
+entity.hyxcate.falling_star.name=Падаюча зірка
+entity.hyxcate.laser.name=Лазерний промінь
+entity.hyxcate.stellar_protector.name=Зоряний захисник
+
+# Fluids
+fluid.frezarite.name=Рідкий фрезарит
+fluid.kreknorite.name=Рідкий крекнорит
+fluid.meteorite.name=Рідкий метеорит
+
+# Info
+info.hyxcate.blue_moon=Сходить Блакитний Місяць...
+info.hyxcate.star_shower=З неба починає падати зоряний дощ...
+info.hyxcate.full_moon=Сходить Повний Місяць...
+info.hyxcate.blood_moon=Сходить Кривавий Місяць...
+info.hyxcate.blood_moon_sleeping=Думка про сон викликає у вас тривогу.
+info.hyxcate.meteor=Поблизу впав метеорит!
+info.hyxcate.meteor_far=Вдалині впав метеорит!
+info.hyxcate.meteor_verbose=Метеорит упав на
+info.hyxcate.red_giant=Сонце перетворилося на Червоного гіганта!
+info.hyxcate.grim_eclipse=Щось затьмарює сонце! Починається Похмуре затемнення...
+info.hyxcate.meteor_detector.none_found=Місць падіння метеоритів не знайдено!
+info.hyxcate.meteor_detector.distance=Найближче місце падіння метеорита за %s блоків звідси.
+info.hyxcate.meteor_detector.confirm=Видалити місце падіння метеорита на %d, %d, %d з бази даних?
+info.hyxcate.meteor_detector.sneak_confirm=[Присісти + ПКМ] для підтвердження.
+info.hyxcate.meteor_detector.no_pending=Немає записів для видалення або місце падіння метеорита занадто далеко.
+info.hyxcate.meteor_detector.expired=Час підтвердження минув.
+info.hyxcate.meteor_detector.wrong_dimension=Ви повинні бути в тому ж вимірі.
+info.hyxcate.meteor_detector.moved_too_far=Ви відійшли занадто далеко від своєї попередньої позиції.
+info.hyxcate.meteor_detector.deleted=Місце падіння метеорита на %d, %d, %d видалено!
+info.hyxcate.meteor_detector.reset=Будь ласка, зачекайте, поки детектор перезавантажиться.
+info.hyxcate.meteor_detector.already_gone=Це місце падіння метеорита більше не існує.
+
+# Items
+item.hyxcate.fallen_star.name=Упала зірка
+item.hyxcate.meteor_detector.name=Детектор метеоритів
+item.hyxcate.celestial_warhammer.name=Небесний бойовий молот
+item.hyxcate.tektite_bow.name=Лук зі швидкістю світла
+item.hyxcate.tektite_pickaxe.name=Тектитове кайло
+item.hyxcate.tektite_axe.name=Тектитова сокира
+item.hyxcate.tektite_shovel.name=Тектитова лопата
+item.hyxcate.tektite_hoe.name=Тектитова мотика
+item.hyxcate.tektite_sword.name=Тектитовий меч
+item.hyxcate.tektite_greatsword.name=Тектитовий дворучний меч
+item.hyxcate.tektite_helmet.name=Тектитовий шолом
+item.hyxcate.tektite_chestplate.name=Тектитовий нагрудник
+item.hyxcate.tektite_leggings.name=Тектитові поножі
+item.hyxcate.tektite_boots.name=Тектитові чоботи
+item.hyxcate.meteorite_shard.name=Осколок метеориту
+item.hyxcate.meteorite_ingot.name=Метеоритний злиток
+item.hyxcate.meteorite_pickaxe.name=Метеоритне кайло
+item.hyxcate.meteorite_axe.name=Метеоритна сокира
+item.hyxcate.meteorite_shovel.name=Метеоритна лопата
+item.hyxcate.meteorite_hoe.name=Метеоритна мотика
+item.hyxcate.meteorite_sword.name=Метеоритний меч
+item.hyxcate.meteorite_helmet.name=Метеоритний шолом
+item.hyxcate.meteorite_chestplate.name=Метеоритний нагрудник
+item.hyxcate.meteorite_leggings.name=Метеоритні поножі
+item.hyxcate.meteorite_boots.name=Метеоритні чоботи
+item.hyxcate.frezarite_crystal.name=Кристал фрезариту
+item.hyxcate.frezarite_ingot.name=Фрезаритовий злиток
+item.hyxcate.frezarite_pickaxe.name=Фрезаритове кайло
+item.hyxcate.frezarite_axe.name=Фрезаритова сокира
+item.hyxcate.frezarite_shovel.name=Фрезаритова лопата
+item.hyxcate.frezarite_hoe.name=Фрезаритова мотика
+item.hyxcate.frezarite_sword.name=Фрезаритовий меч
+item.hyxcate.frezarite_helmet.name=Фрезаритовий шолом
+item.hyxcate.frezarite_chestplate.name=Фрезаритовий нагрудник
+item.hyxcate.frezarite_leggings.name=Фрезаритові поножі
+item.hyxcate.frezarite_boots.name=Фрезаритові чоботи
+item.hyxcate.kreknorite_shard.name=Осколок крекнориту
+item.hyxcate.kreknorite_ingot.name=Крекноритовий злиток
+item.hyxcate.kreknorite_pickaxe.name=Крекноритове кайло
+item.hyxcate.kreknorite_axe.name=Крекноритова сокира
+item.hyxcate.kreknorite_shovel.name=Крекноритова лопата
+item.hyxcate.kreknorite_hoe.name=Крекноритова мотика
+item.hyxcate.kreknorite_sword.name=Крекноритовий меч
+item.hyxcate.kreknorite_helmet.name=Крекноритовий шолом
+item.hyxcate.kreknorite_chestplate.name=Крекноритовий нагрудник
+item.hyxcate.kreknorite_leggings.name=Крекноритові поножі
+item.hyxcate.kreknorite_boots.name=Крекноритові чоботи
+item.hyxcate.tektite_gem_cluster.name=Скупчення кристалів тектиту
+item.hyxcate.celestial_emblem.name=Небесна емблема
+item.hyxcate.fallen_star_beam_sword.name=Променевий меч типу S
+item.hyxcate.meteorite_beam_sword.name=Променевий меч типу M
+item.hyxcate.frezarite_beam_sword.name=Променевий меч типу F
+item.hyxcate.kreknorite_beam_sword.name=Променевий меч типу K
+item.hyxcate.tektite_beam_sword.name=Променевий меч типу T
+item.hyxcate.cyber_crystal_beam_sword.name=Променевий меч типу C
+
+# Tooltips
+tooltip.hyxcate.beam_sword=Завдяки яскравому сяйливому лезу ця зброя привертає увагу та смертоносна. Усі атаки повністю ігнорують броню та кадри невразливості.
+tooltip.hyxcate.blastproof=Стійке до вибухів
+tooltip.hyxcate.celestial_emblem=Пульсує колосальною небесною енергією!
+tooltip.hyxcate.celestial_warhammer=Збільшений радіус атаки та відкидання. Утримуйте праву кнопку миші, щоб злетіти в повітря та завдати нищівного удару, який накладає ефект «Астральна ерозія» (0:08) на всі цілі.
+tooltip.hyxcate.cyber_crystal=Здатний фокусувати та посилювати енергію.
+tooltip.hyxcate.fallen_star=Вона не припиняє мерехтіти!
+tooltip.hyxcate.frezarite_armor=Повний комплект надає нескінченне підводне дихання.
+tooltip.hyxcate.frezarite_tool=Усі атаки завдають шкоди по площі. Накладає ефект «Глибока заморозка» (0:08) на всі цілі.
+tooltip.hyxcate.kreknorite_armor=Повний комплект надає нескінченну вогнестійкість.
+tooltip.hyxcate.kreknorite_tool=Усі атаки завдають шкоди по площі. Накладає ефект «Пекельне полум'я» (0:08) на всі цілі.
+tooltip.hyxcate.meteor_detector=Вказує на найближчі місця падіння метеоритів.
+tooltip.hyxcate.meteor_detector.hint=Натисніть ПКМ, щоб дізнатися відстань до місця падіння метеорита в блоках.
+tooltip.hyxcate.meteor_detector.hint2=Натисніть Shift + ПКМ, щоб видалити поточне відстежуване місце падіння метеорита.
+tooltip.hyxcate.shift=Утримуйте SHIFT для деталей...
+tooltip.hyxcate.tektite_bow=Дуже швидко стріляє потужними стрілами.
+tooltip.hyxcate.tektite_gem_cluster=Вони заряджені електрикою.
+tooltip.hyxcate.tektite_greatsword=Усі атаки мають збільшений радіус.
+
+# Potions
+effect.hyxcate.astral_erosion.name=Астральна ерозія
+effect.hyxcate.deep_freeze.name=Глибока заморозка
+effect.hyxcate.inferno.name=Пекельне полум'я
+effect.hyxcate.paralysis.name=Параліч
+
+lingering_potion.effect.paralysis=Осіле зілля паралічу
+potion.effect.paralysis=Зілля паралічу
+splash_potion.effect.paralysis=Вибухове зілля паралічу
+tipped_arrow.effect.paralysis=Стріла паралічу
+
+# Mod Integration - JEI
+item.hyxcate.fallen_star.jei_desc=Упалі зірки можна знайти вночі.\n\nЯкщо ви чуєте магічні звуки та бачите в небі слід із часток, що прямує до землі — це упала зірка.\n\nПісля приземлення вона випромінює світло та випускає частки, що полегшує її пошук.
+item.hyxcate.frezarite_boots.jei_desc=Одягнені фрезаритові чоботи тимчасово перетворюють воду під вами на танучий лід. Радіус дії збільшується чарами «Морозохід».
+item.hyxcate.tektite_gem_cluster.jei_desc=Скупчення кристалів тектиту зрідка випадають під час успішного видобутку будь-якої розпеченої метеоритної породи.\n\nІстоти, що зустрічаються виключно на місцях падіння метеоритів, також можуть рідко залишити їх після смерті.
+tile.hyxcate.cyber_crystal.jei_desc=Кіберкристали вкрай рідко трапляються на місцях падіння будь-яких метеоритів і не піддаються вибухам.\n\nДля їх видобутку потрібен 4-й рівень видобутку; інструментів із метеоритних матеріалів цілком достатньо.
+tile.hyxcate.frezarite_rock.jei_desc=Фрезаритова порода зрідка трапляється на місцях падіння метеоритів. Її можна добути заради осколків, але якщо її довго не чіпати, вона охолоне.\n\n«Удача» не діє на цю породу, а для видобутку потрібен 4-й рівень видобутку.\n\nІнструментів із метеоритних матеріалів цілком достатньо.
+tile.hyxcate.kreknorite_rock.jei_desc=Крекноритова порода зрідка трапляється на місцях падіння метеоритів. Її можна добути заради осколків, але якщо її довго не чіпати, вона охолоне.\n\n«Удача» не діє на цю породу, а для видобутку потрібен 4-й рівень видобутку.\n\nІнструментів із метеоритних матеріалів цілком достатньо.
+tile.hyxcate.meteorite_rock.jei_desc=Остиглу метеоритну породу все ще можна добувати, причому значно швидше.\n\nПроте шанс випадання осколка знижується до 25%.\n\n\nПороди з фрезариту та крекнориту не мають остиглих варіантів — замість цього вони остигають у щільний лід та обсидіан відповідно.
+tile.hyxcate.meteorite_rock_hot.jei_desc=Розпечена метеоритна порода зустрічається на місцях падіння метеоритів. Її можна добути заради осколків, але якщо її довго не чіпати, вона охолоне.\n\n«Удача» не діє на цю породу, а для видобутку потрібен 3-й рівень видобутку.\n\nАлмазних інструментів цілком достатньо.
+
+# Mod Integration - Tinkers' Antique (Tinkers' Construct)
+material.hyxcate.fallen_star.name=Зоряний
+material.hyxcate.cyber_crystal.name=Кіберкристал
+material.hyxcate.frezarite.name=Фрезарит
+material.hyxcate.kreknorite.name=Крекнорит
+material.hyxcate.meteorite.name=Метеорит
+material.hyxcate.tektite.name=Тектит
+
+modifier.hyxcate.feint.name=Фінт
+modifier.hyxcate.feint.desc=§oШвидше за швидкість світла!§r\nВаш інструмент має 20% шанс завдати додаткових +25% шкоди, що пробиває броню.
+modifier.hyxcate.frezarites_bane.name=Згуба фрезариту
+modifier.hyxcate.frezarites_bane.desc=§oЦе ядерна зима!§r\nВлучні удари накладають і посилюють ефект «Глибока заморозка» на ціль.
+modifier.hyxcate.gleaming.name=Блиск
+modifier.hyxcate.gleaming.desc=§oСила кристалів!§r\nВаш інструмент завдає +40% шкоди. Бонусна шкода зменшується зі зниженням вашого здоров'я.
+modifier.hyxcate.kreknorites_bane.name=Згуба крекнориту
+modifier.hyxcate.kreknorites_bane.desc=§oПекло просто на порозі!§r\nВлучні удари накладають і посилюють ефект «Пекельне полум'я» на ціль.
+modifier.hyxcate.stunlock.name=Оглушення
+modifier.hyxcate.stunlock.desc=§oСтояти на місці!§r\nАтаковані цілі мають 7,5% шанс бути паралізованими та повністю знерухомленими на 5 секунд.
+modifier.hyxcate.supercharge.name=Надзаряд
+modifier.hyxcate.supercharge.desc=§oЗаряди мене!§r\nУдар по цілі або руйнування блоку має 10% шанс надати ефект «Поспіх III» на 5 секунд!
+
+# Mod Integration - Antique Armory (Construct's Armory)
+modifier.hyxcate.astral_plating_armor.name=Астральне покриття
+modifier.hyxcate.astral_plating_armor.desc=§oЗоряне командування, прийом!§r\nБроня повністю захищає від 50% шкоди від вогню та утоплення.
+modifier.hyxcate.frezarites_ward_armor.name=Оберіг фрезариту
+modifier.hyxcate.frezarites_ward_armor.desc=§oЦе ядерна зима!§r\nОтримання шкоди має шанс (10% за кожен елемент броні) накласти та посилити ефект «Глибока заморозка» на нападника.
+modifier.hyxcate.gleaming_armor.name=Блиск
+modifier.hyxcate.gleaming_armor.desc=§oСила кристалів!§r\nБроня повністю поглинає 40% загальної отриманої шкоди. Ефективність знижується зі зменшенням вашого здоров'я.
+modifier.hyxcate.kreknorites_ward_armor.name=Оберіг крекнориту
+modifier.hyxcate.kreknorites_ward_armor.desc=§oПекло просто на порозі!§r\nОтримання шкоди має шанс (10% за кожен елемент броні) накласти та посилити ефект «Пекельне полум'я» на нападника.
+modifier.hyxcate.star_shield_armor.name=Зоряний щит
+modifier.hyxcate.star_shield_armor.desc=§oЄдиний із зірками!§r\nІснує шанс (5% за кожен елемент броні) повністю проігнорувати шкоду, а також отримати ефект «Опір III» на 5 секунд.
+modifier.hyxcate.stunlock_armor.name=Оглушення
+modifier.hyxcate.stunlock_armor.desc=§oСтояти на місці!§r\nОтримання шкоди має шанс (2,5% за кожен елемент броні) паралізувати нападника та повністю знерухомити його на 5 секунд.
+modifier.hyxcate.supercharge_armor.name=Надзаряд
+modifier.hyxcate.supercharge_armor.desc=§oЗаряди мене!§r\nОтримання шкоди має шанс (5% за кожен елемент броні) надати вам ефекти «Поспіх III» та «Швидкість III» на 5 секунд!
+
+# Config Categories
+config.hyxcate.master_switches=Головні перемикачі
+config.hyxcate.general=Загальне
+config.hyxcate.entities=Істоти
+config.hyxcate.events_lunar=Події: місячні
+config.hyxcate.events_solar=Події: сонячні
+config.hyxcate.meteors=Метеорити
+config.hyxcate.mod_integration=Інтеграція модів
+config.hyxcate.falling_stars=Падаючі зірки
+config.hyxcate.blood_moon=Кривавий Місяць
+config.hyxcate.blue_moon=Блакитний Місяць
+config.hyxcate.full_moon=Повний Місяць
+config.hyxcate.star_shower=Зоряний дощ
+config.hyxcate.grim_eclipse=Похмуре затемнення
+config.hyxcate.red_giant=Червоний гігант
+config.hyxcate.eyezor=Айзор

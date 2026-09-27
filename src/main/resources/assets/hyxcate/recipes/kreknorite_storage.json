@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "hyxcate:kreknorite_ingot"
+    }
+  },
+  "result": {
+    "item": "hyxcate:kreknorite_block"
+  }
+}

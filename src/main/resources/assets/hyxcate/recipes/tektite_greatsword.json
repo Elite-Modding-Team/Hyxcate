@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:tektite_greatsword"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X",
+    "X",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "hyxcate:celestial_emblem"
+    },
+    "X": {
+      "item": "hyxcate:tektite_block"
+    }
+  },
+  "result": {
+    "item": "hyxcate:tektite_greatsword"
+  }
+}

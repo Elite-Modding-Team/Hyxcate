@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "hyxcate:meteorite_block"
+    }
+  ],
+  "result": {
+    "item": "hyxcate:meteorite_ingot",
+    "count": 9
+  }
+}

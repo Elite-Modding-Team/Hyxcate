@@ -1,0 +1,26 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:tektite_pickaxe"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "XXX",
+    " # ",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "type": "forge:ore_dict",
+      "ore": "obsidian"
+    },
+    "X": {
+      "item": "hyxcate:tektite_gem_cluster"
+    }
+  },
+  "result": {
+    "item": "hyxcate:tektite_pickaxe"
+  }
+}

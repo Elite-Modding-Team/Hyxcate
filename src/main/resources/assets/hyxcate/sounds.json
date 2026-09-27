@@ -1,0 +1,335 @@
+{
+  "block.dense_crystal.break": {
+    "sounds": [
+      "hyxcate:block/dense_crystal/break1",
+      "hyxcate:block/dense_crystal/break2",
+      "hyxcate:block/dense_crystal/break3",
+      "hyxcate:block/dense_crystal/break4"
+    ]
+  },
+  "block.dense_crystal.place": {
+    "sounds": [
+      "hyxcate:block/dense_crystal/place1",
+      "hyxcate:block/dense_crystal/place2",
+      "hyxcate:block/dense_crystal/place3",
+      "hyxcate:block/dense_crystal/place4"
+    ]
+  },
+  "block.light_crystal.break": {
+    "sounds": [
+      "hyxcate:block/light_crystal/break1",
+      "hyxcate:block/light_crystal/break2",
+      "hyxcate:block/light_crystal/break3",
+      "hyxcate:block/light_crystal/break4"
+    ]
+  },
+  "block.light_crystal.hit": {
+    "sounds": [
+      "hyxcate:block/light_crystal/hit1",
+      "hyxcate:block/light_crystal/hit2",
+      "hyxcate:block/light_crystal/hit3",
+      "hyxcate:block/light_crystal/hit4"
+    ]
+  },
+  "block.light_crystal.place": {
+    "sounds": [
+      "hyxcate:block/light_crystal/place1",
+      "hyxcate:block/light_crystal/place2",
+      "hyxcate:block/light_crystal/place3",
+      "hyxcate:block/light_crystal/place4"
+    ]
+  },
+  "block.light_crystal.step": {
+    "sounds": [
+      "hyxcate:block/light_crystal/step1",
+      "hyxcate:block/light_crystal/step2",
+      "hyxcate:block/light_crystal/step3",
+      "hyxcate:block/light_crystal/step4",
+      "hyxcate:block/light_crystal/step5",
+      "hyxcate:block/light_crystal/step6"
+    ]
+  },
+  "block.meteoric_rock.break": {
+    "sounds": [
+      "hyxcate:block/meteoric_rock/break1",
+      "hyxcate:block/meteoric_rock/break2",
+      "hyxcate:block/meteoric_rock/break3",
+      "hyxcate:block/meteoric_rock/break4",
+      "hyxcate:block/meteoric_rock/break5",
+      "hyxcate:block/meteoric_rock/break6"
+    ]
+  },
+  "block.meteoric_rock.place": {
+    "sounds": [
+      "hyxcate:block/meteoric_rock/place1",
+      "hyxcate:block/meteoric_rock/place2",
+      "hyxcate:block/meteoric_rock/place3",
+      "hyxcate:block/meteoric_rock/place4"
+    ]
+  },
+  "block.meteoric_rock.step": {
+    "sounds": [
+      "hyxcate:block/meteoric_rock/step1",
+      "hyxcate:block/meteoric_rock/step2",
+      "hyxcate:block/meteoric_rock/step3",
+      "hyxcate:block/meteoric_rock/step4",
+      "hyxcate:block/meteoric_rock/step5",
+      "hyxcate:block/meteoric_rock/step6"
+    ]
+  },
+  "effect.deep_freeze.start": {
+    "sounds": [
+      "hyxcate:effect/deep_freeze/start1",
+      "hyxcate:effect/deep_freeze/start2",
+      "hyxcate:effect/deep_freeze/start3",
+      "hyxcate:effect/deep_freeze/start4"
+    ]
+  },
+  "effect.inferno.start": {
+    "sounds": [
+      "hyxcate:effect/inferno/start1",
+      "hyxcate:effect/inferno/start2",
+      "hyxcate:effect/inferno/start3",
+      "hyxcate:effect/inferno/start4"
+    ]
+  },
+  "effect.paralysis.start": {
+    "sounds": [
+      "hyxcate:effect/paralysis/start1",
+      "hyxcate:effect/paralysis/start2",
+      "hyxcate:effect/paralysis/start3",
+      "hyxcate:effect/paralysis/start4"
+    ]
+  },
+  "effect.paralysis.zap": {
+    "sounds": [
+      "hyxcate:effect/paralysis/zap1",
+      "hyxcate:effect/paralysis/zap2",
+      "hyxcate:effect/paralysis/zap3",
+      "hyxcate:effect/paralysis/zap4"
+    ]
+  },
+  "entity.alien_creeper.idle": {
+    "sounds": [
+      "hyxcate:entity/alien_creeper/idle1",
+      "hyxcate:entity/alien_creeper/idle2",
+      "hyxcate:entity/alien_creeper/idle3",
+      "hyxcate:entity/alien_creeper/idle4"
+    ]
+  },
+  "entity.alien_kitty.idle": {
+    "sounds": [
+      "hyxcate:entity/alien_kitty/idle1",
+      "hyxcate:entity/alien_kitty/idle2",
+      "hyxcate:entity/alien_kitty/idle3",
+      "hyxcate:entity/alien_kitty/idle4"
+    ]
+  },
+  "entity.comet_kitty.idle": {
+    "sounds": [
+      "hyxcate:entity/comet_kitty/idle1",
+      "hyxcate:entity/comet_kitty/idle2",
+      "hyxcate:entity/comet_kitty/idle3",
+      "hyxcate:entity/comet_kitty/idle4",
+      "hyxcate:entity/comet_kitty/idle5"
+    ]
+  },
+  "entity.eyezor.death": {
+    "sounds": [
+      "hyxcate:entity/eyezor/death"
+    ]
+  },
+  "entity.eyezor.hurt": {
+    "sounds": [
+      "hyxcate:entity/eyezor/hurt1",
+      "hyxcate:entity/eyezor/hurt2",
+      "hyxcate:entity/eyezor/hurt3",
+      "hyxcate:entity/eyezor/hurt4"
+    ]
+  },
+  "entity.meteor.falling": {
+    "sounds": [
+      "hyxcate:entity/meteor/falling_loop"
+    ]
+  },
+  "entity.meteor.impact.far": {
+    "sounds": [
+      "hyxcate:entity/meteor/impact_far1",
+      "hyxcate:entity/meteor/impact_far2",
+      "hyxcate:entity/meteor/impact_far3",
+      "hyxcate:entity/meteor/impact_far4"
+    ]
+  },
+  "entity.meteor.impact": {
+    "sounds": [
+      "hyxcate:entity/meteor/impact1",
+      "hyxcate:entity/meteor/impact2"
+    ]
+  },
+  "entity.star.falling": {
+    "sounds": [
+      "hyxcate:entity/star/falling_loop"
+    ]
+  },
+  "entity.star.idle": {
+    "sounds": [
+      "hyxcate:entity/star/idle_loop"
+    ]
+  },
+  "entity.star.impact": {
+    "sounds": [
+      "hyxcate:entity/star/impact1",
+      "hyxcate:entity/star/impact2",
+      "hyxcate:entity/star/impact3",
+      "hyxcate:entity/star/impact4"
+    ]
+  },
+  "equip.crystalline": {
+    "sounds": [
+      "hyxcate:equip/crystalline/equip1",
+      "hyxcate:equip/crystalline/equip2",
+      "hyxcate:equip/crystalline/equip3",
+      "hyxcate:equip/crystalline/equip4"
+    ]
+  },
+  "equip.metallic": {
+    "sounds": [
+      "hyxcate:equip/metallic/equip1",
+      "hyxcate:equip/metallic/equip2",
+      "hyxcate:equip/metallic/equip3",
+      "hyxcate:equip/metallic/equip4"
+    ]
+  },
+  "event.blood_moon.start": {
+    "sounds": [
+      "hyxcate:event/blood_moon"
+    ]
+  },
+  "event.blue_moon.start": {
+    "sounds": [
+      "hyxcate:event/blue_moon"
+    ]
+  },
+  "event.full_moon.start": {
+    "sounds": [
+      "hyxcate:event/full_moon"
+    ]
+  },
+  "event.grim_eclipse.start": {
+    "sounds": [
+      "hyxcate:event/grim_eclipse"
+    ]
+  },
+  "event.red_giant.start": {
+    "sounds": [
+      "hyxcate:event/red_giant"
+    ]
+  },
+  "event.red_giant.start.special": {
+    "sounds": [
+      "hyxcate:event/red_giant_special"
+    ]
+  },
+  "event.star_shower.start": {
+    "sounds": [
+      "hyxcate:event/star_shower"
+    ]
+  },
+  "item.beam_sword.hit": {
+    "sounds": [
+      "hyxcate:item/beam_sword/hit1",
+      "hyxcate:item/beam_sword/hit2",
+      "hyxcate:item/beam_sword/hit3",
+      "hyxcate:item/beam_sword/hit4"
+    ]
+  },
+  "item.beam_sword.idle": {
+    "sounds": [
+      "hyxcate:item/beam_sword/idle_loop"
+    ]
+  },
+  "item.beam_sword.swing": {
+    "sounds": [
+      "hyxcate:item/beam_sword/swing1",
+      "hyxcate:item/beam_sword/swing2",
+      "hyxcate:item/beam_sword/swing3",
+      "hyxcate:item/beam_sword/swing4"
+    ]
+  },
+  "item.celestial_emblem.create": {
+    "sounds": [
+      "hyxcate:item/celestial_emblem/create"
+    ]
+  },
+  "item.celestial_warhammer.hit": {
+    "sounds": [
+      "hyxcate:item/celestial_warhammer/hit1",
+      "hyxcate:item/celestial_warhammer/hit2",
+      "hyxcate:item/celestial_warhammer/hit3",
+      "hyxcate:item/celestial_warhammer/hit4"
+    ]
+  },
+  "item.celestial_warhammer.launch": {
+    "sounds": [
+      "hyxcate:item/celestial_warhammer/launch1",
+      "hyxcate:item/celestial_warhammer/launch2",
+      "hyxcate:item/celestial_warhammer/launch3",
+      "hyxcate:item/celestial_warhammer/launch4"
+    ]
+  },
+  "item.celestial_warhammer.smash": {
+    "sounds": [
+      "hyxcate:item/celestial_warhammer/smash1",
+      "hyxcate:item/celestial_warhammer/smash2",
+      "hyxcate:item/celestial_warhammer/smash3",
+      "hyxcate:item/celestial_warhammer/smash4"
+    ]
+  },
+  "item.laser_gun.shoot": {
+    "sounds": [
+      "hyxcate:item/laser_gun/shoot1",
+      "hyxcate:item/laser_gun/shoot2",
+      "hyxcate:item/laser_gun/shoot3",
+      "hyxcate:item/laser_gun/shoot4"
+    ]
+  },
+  "item.meteor_detector.cancel": {
+    "sounds": [
+      "hyxcate:item/meteor_detector/cancel"
+    ]
+  },
+  "item.meteor_detector.confirm": {
+    "sounds": [
+      "hyxcate:item/meteor_detector/confirm"
+    ]
+  },
+  "item.meteor_detector.prompt": {
+    "sounds": [
+      "hyxcate:item/meteor_detector/prompt"
+    ]
+  },
+  "random.laser": {
+    "sounds": [
+      "hyxcate:random/laser1",
+      "hyxcate:random/laser2",
+      "hyxcate:random/laser3",
+      "hyxcate:random/laser4"
+    ]
+  },
+  "random.star_aura": {
+    "sounds": [
+      "hyxcate:random/star_aura1",
+      "hyxcate:random/star_aura2",
+      "hyxcate:random/star_aura3",
+      "hyxcate:random/star_aura4"
+    ]
+  },
+  "random.star_explode": {
+    "sounds": [
+      "hyxcate:random/star_explode1",
+      "hyxcate:random/star_explode2",
+      "hyxcate:random/star_explode3",
+      "hyxcate:random/star_explode4"
+    ]
+  }
+}

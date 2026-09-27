@@ -1,0 +1,10 @@
+{
+  "package": "mod.emt.hyxcate.mixin.common",
+  "refmap": "mixins.hyxcate.refmap.json",
+  "mixins": [
+    "HyxcateEntityAccessor",
+    "HyxcateEntityBrightnessMixin",
+    "HyxcateMobValidLightLevelMixin",
+    "HyxcateSunBrightnessFactorMixin"
+  ]
+}

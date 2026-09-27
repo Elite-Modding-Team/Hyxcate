@@ -1,0 +1,26 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:meteorite_pickaxe"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "XXX",
+    " # ",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "X": {
+      "item": "hyxcate:meteorite_ingot"
+    }
+  },
+  "result": {
+    "item": "hyxcate:meteorite_pickaxe"
+  }
+}

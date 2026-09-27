@@ -1,0 +1,11 @@
+{
+  "package": "mod.emt.hyxcate.mixin.client",
+  "refmap": "mixins.hyxcate.refmap.json",
+  "client": [
+    "HyxcateCloudColorMixin",
+    "HyxcateLightmapColorsMixin",
+    "HyxcateRenderSkyMixin",
+    "HyxcateSkyColorMixin",
+    "HyxcateSunBrightnessBodyMixin"
+  ]
+}

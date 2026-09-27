@@ -1,0 +1,21 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "hyxcate:frezarite_helmet"
+    }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "XXX",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "hyxcate:frezarite_ingot"
+    }
+  },
+  "result": {
+    "item": "hyxcate:frezarite_helmet"
+  }
+}
