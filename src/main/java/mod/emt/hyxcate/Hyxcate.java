@@ -4,13 +4,16 @@ import mod.emt.hyxcate.command.HyxcateCommandForce;
 import mod.emt.hyxcate.command.HyxcateCommandMeteor;
 import mod.emt.hyxcate.compat.HyxcateCompatHandler;
 import mod.emt.hyxcate.compat.datafixes.HyxcateBlockDataFixer;
+import mod.emt.hyxcate.compat.datafixes.HyxcateEntityDataFixer;
 import mod.emt.hyxcate.compat.datafixes.HyxcateItemDataFixer;
+import mod.emt.hyxcate.compat.datafixes.HyxcateMiscDataFixer;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
 import mod.emt.hyxcate.init.HyxcateRegistry;
 import mod.emt.hyxcate.network.HyxcatePacketHandler;
 import mod.emt.hyxcate.proxy.CommonProxy;
 import net.minecraft.util.datafix.FixTypes;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.ModFixs;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -59,6 +62,8 @@ public class Hyxcate {
         ModFixs modFixer = FMLCommonHandler.instance().getDataFixer().init(ID, 1);
         modFixer.registerFix(FixTypes.BLOCK_ENTITY, new HyxcateBlockDataFixer());
         modFixer.registerFix(FixTypes.ITEM_INSTANCE, new HyxcateItemDataFixer());
+        modFixer.registerFix(FixTypes.ENTITY, new HyxcateEntityDataFixer());
+        MinecraftForge.EVENT_BUS.register(new HyxcateMiscDataFixer());
     }
 
     @EventHandler

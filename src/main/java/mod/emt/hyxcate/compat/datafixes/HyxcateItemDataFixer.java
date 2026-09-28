@@ -68,6 +68,11 @@ public class HyxcateItemDataFixer implements IFixableData {
                 if (newItem != null) {
                     entry.remap(newItem);
                 }
+            } else if (entry.key.getNamespace().equals("nyx")) {
+                Item newItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(Hyxcate.ID, entry.key.getPath()));
+                if (newItem != null) {
+                    entry.remap(newItem);
+                }
             }
         }
     }

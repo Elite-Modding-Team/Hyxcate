@@ -51,6 +51,11 @@ public class HyxcateBlockDataFixer implements IFixableData {
                 if (newBlock != null) {
                     entry.remap(newBlock);
                 }
+            } else if (entry.key.getNamespace().equals("nyx")) {
+                Block newBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Hyxcate.ID, entry.key.getPath()));
+                if (newBlock != null) {
+                    entry.remap(newBlock);
+                }
             }
         }
     }
@@ -62,6 +67,11 @@ public class HyxcateBlockDataFixer implements IFixableData {
             ResourceLocation newName = BLOCK_NAME_MAPPINGS.get(oldName);
             if (newName != null) {
                 Item newItem = ForgeRegistries.ITEMS.getValue(newName);
+                if (newItem != null) {
+                    entry.remap(newItem);
+                }
+            } else if (entry.key.getNamespace().equals("nyx")) {
+                Item newItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(Hyxcate.ID, entry.key.getPath()));
                 if (newItem != null) {
                     entry.remap(newItem);
                 }
