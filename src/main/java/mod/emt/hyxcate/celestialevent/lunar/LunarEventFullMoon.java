@@ -5,6 +5,7 @@ import mod.emt.hyxcate.api.celestialevent.HyxcateLunarEvent;
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
+import mod.emt.hyxcate.util.WorldUtil;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
@@ -29,12 +30,12 @@ public class LunarEventFullMoon extends HyxcateLunarEvent {
     @Override
     public boolean shouldStart(boolean lastDaytime) {
         if (!HyxcateConfig.EVENTS_LUNAR.FULL_MOON.actAsEvent) return false;
-        if (!lastDaytime || HyxcateWorld.isDaytime(this.world)) return false;
+        if (!lastDaytime || WorldUtil.isDaytime(this.world)) return false;
         return this.world.getCurrentMoonPhaseFactor() >= 1;
     }
 
     @Override
     public boolean shouldStop(boolean lastDaytime) {
-        return HyxcateWorld.isDaytime(this.world);
+        return WorldUtil.isDaytime(this.world);
     }
 }

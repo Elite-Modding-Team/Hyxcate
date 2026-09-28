@@ -7,6 +7,7 @@ import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
+import mod.emt.hyxcate.util.WorldUtil;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
@@ -64,13 +65,13 @@ public class LunarEventBloodMoon extends HyxcateLunarEvent {
     @Override
     public boolean shouldStart(boolean lastDaytime) {
         if (HyxcateConfig.EVENTS_LUNAR.BLOOD_MOON.onFullMoon && this.world.getCurrentMoonPhaseFactor() < 1) return false;
-        if (!lastDaytime || HyxcateWorld.isDaytime(this.world)) return false;
+        if (!lastDaytime || WorldUtil.isDaytime(this.world)) return false;
         return this.config.canStart(true);
     }
 
     @Override
     public boolean shouldStop(boolean lastDaytime) {
-        return HyxcateWorld.isDaytime(this.world);
+        return WorldUtil.isDaytime(this.world);
     }
 
     @Override

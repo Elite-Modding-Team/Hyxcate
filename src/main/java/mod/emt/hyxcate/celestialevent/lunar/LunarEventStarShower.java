@@ -5,6 +5,7 @@ import mod.emt.hyxcate.api.celestialevent.HyxcateLunarEvent;
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
+import mod.emt.hyxcate.util.WorldUtil;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
@@ -33,13 +34,13 @@ public class LunarEventStarShower extends HyxcateLunarEvent {
     @Override
     public boolean shouldStart(boolean lastDaytime) {
         if (HyxcateConfig.EVENTS_LUNAR.STAR_SHOWER.onFullMoon && this.world.getCurrentMoonPhaseFactor() < 1) return false;
-        if (!lastDaytime || HyxcateWorld.isDaytime(this.world)) return false;
+        if (!lastDaytime || WorldUtil.isDaytime(this.world)) return false;
         return this.config.canStart(true);
     }
 
     @Override
     public boolean shouldStop(boolean lastDaytime) {
-        return HyxcateWorld.isDaytime(this.world);
+        return WorldUtil.isDaytime(this.world);
     }
 
     @Override

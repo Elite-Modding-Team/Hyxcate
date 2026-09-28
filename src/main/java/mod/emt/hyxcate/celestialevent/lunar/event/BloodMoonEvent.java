@@ -5,6 +5,7 @@ import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.celestialevent.lunar.LunarEventBloodMoon;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
+import mod.emt.hyxcate.util.WorldUtil;
 import mod.emt.hyxcate.util.helpers.ConfigHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBed;
@@ -33,7 +34,7 @@ public class BloodMoonEvent {
     public void onLivingTick(LivingEvent.LivingUpdateEvent event) {
         EntityLivingBase entity = event.getEntityLiving();
         // Deletes monsters spawned by the blood moon after the event is over
-        if (HyxcateConfig.EVENTS_LUNAR.BLOOD_MOON.mobsVanish && !entity.world.isRemote && HyxcateWorld.isDaytime(entity.world) && entity.getEntityData().getBoolean(Hyxcate.ID + ":blood_moon_spawn")) {
+        if (HyxcateConfig.EVENTS_LUNAR.BLOOD_MOON.mobsVanish && !entity.world.isRemote && WorldUtil.isDaytime(entity.world) && entity.getEntityData().getBoolean(Hyxcate.ID + ":blood_moon_spawn")) {
             ((WorldServer) entity.world).spawnParticle(EnumParticleTypes.SMOKE_LARGE, entity.posX, entity.posY, entity.posZ, 10, 0.5, 1, 0.5, 0);
             entity.setDead();
         }

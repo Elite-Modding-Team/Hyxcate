@@ -6,6 +6,7 @@ import mod.emt.hyxcate.compat.gamestages.GameStages;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
 import mod.emt.hyxcate.entity.EntityFallingStar;
+import mod.emt.hyxcate.util.WorldUtil;
 import mod.emt.hyxcate.util.helpers.SoundHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
@@ -26,7 +27,7 @@ public class FallingStarEvent {
         data.update();
 
         // Falling Stars
-        if (!event.world.isRemote && !HyxcateWorld.isDaytime(event.world) && event.world.getTotalWorldTime() % 1200 == 0) {
+        if (!event.world.isRemote && !WorldUtil.isDaytime(event.world) && event.world.getTotalWorldTime() % 1200 == 0) {
             int dimension = event.world.provider.getDimensionType().getId();
             if (HyxcateData.ALLOWED_DIMENSIONS_LUNAR.contains(dimension)) {
                 for (EntityPlayer player : event.world.playerEntities) {

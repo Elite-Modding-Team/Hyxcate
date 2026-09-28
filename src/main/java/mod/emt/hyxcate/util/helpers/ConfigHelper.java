@@ -5,6 +5,7 @@ import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
 import mod.emt.hyxcate.celestialevent.lunar.LunarEventStarShower;
+import mod.emt.hyxcate.util.WorldUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
@@ -104,7 +105,7 @@ public class ConfigHelper {
         if (dim == DimensionType.THE_END) return HyxcateConfig.METEORS.chanceEndM;
         if (!HyxcateData.ALLOWED_DIMENSIONS_LUNAR.contains(dim.getId())) return 0;
         boolean visitedGate = data.visitedDimensions.contains(DimensionType.getById(HyxcateConfig.METEORS.gateDimension).getName());
-        if (!HyxcateWorld.isDaytime(world)) {
+        if (!WorldUtil.isDaytime(world)) {
             if (data.currentLunarEvent instanceof LunarEventStarShower) {
                 return HyxcateConfig.METEORS.chanceStarShowerM;
             } else {
