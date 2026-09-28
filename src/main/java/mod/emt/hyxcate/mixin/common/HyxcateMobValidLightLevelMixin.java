@@ -1,7 +1,7 @@
 package mod.emt.hyxcate.mixin.common;
 
 import mod.emt.hyxcate.capability.HyxcateWorld;
-import mod.emt.hyxcate.event.solar.SolarEventGrimEclipse;
+import mod.emt.hyxcate.celestialevent.solar.SolarEventGrimEclipse;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;

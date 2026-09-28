@@ -1,8 +1,8 @@
 package mod.emt.hyxcate.compat.urkazmoontools;
 
 import mod.emt.hyxcate.capability.HyxcateWorld;
-import mod.emt.hyxcate.event.lunar.LunarEventBloodMoon;
-import mod.emt.hyxcate.event.lunar.LunarEventBlueMoon;
+import mod.emt.hyxcate.celestialevent.lunar.LunarEventBloodMoon;
+import mod.emt.hyxcate.celestialevent.lunar.LunarEventBlueMoon;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.IItemPropertyGetter;

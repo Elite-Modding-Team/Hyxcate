@@ -1,7 +1,7 @@
-package mod.emt.hyxcate.event.lunar;
+package mod.emt.hyxcate.celestialevent.lunar;
 
 import mod.emt.hyxcate.Hyxcate;
-import mod.emt.hyxcate.api.event.HyxcateLunarEvent;
+import mod.emt.hyxcate.api.celestialevent.HyxcateLunarEvent;
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;

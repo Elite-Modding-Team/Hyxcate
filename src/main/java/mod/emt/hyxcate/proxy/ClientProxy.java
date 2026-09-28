@@ -7,6 +7,21 @@ import net.minecraft.util.math.BlockPos;
 
 public class ClientProxy extends CommonProxy {
     @Override
+    public void preInit() {
+        super.preInit();
+    }
+
+    @Override
+    public void init() {
+        super.init();
+    }
+
+    @Override
+    public void postInit() {
+        super.postInit();
+    }
+
+    @Override
     public void sendBreakPacket(BlockPos pos) {
         NetHandlerPlayClient netHandlerPlayClient = Minecraft.getMinecraft().getConnection();
         assert netHandlerPlayClient != null;

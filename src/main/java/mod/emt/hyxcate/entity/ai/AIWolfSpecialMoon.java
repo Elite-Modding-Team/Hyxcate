@@ -1,8 +1,8 @@
 package mod.emt.hyxcate.entity.ai;
 
 import mod.emt.hyxcate.capability.HyxcateWorld;
-import mod.emt.hyxcate.event.lunar.LunarEventBloodMoon;
-import mod.emt.hyxcate.event.lunar.LunarEventFullMoon;
+import mod.emt.hyxcate.celestialevent.lunar.LunarEventBloodMoon;
+import mod.emt.hyxcate.celestialevent.lunar.LunarEventFullMoon;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAITargetNonTamed;
 import net.minecraft.entity.monster.EntitySkeleton;

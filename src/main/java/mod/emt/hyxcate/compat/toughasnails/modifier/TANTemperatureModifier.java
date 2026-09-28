@@ -2,7 +2,7 @@ package mod.emt.hyxcate.compat.toughasnails.modifier;
 
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
-import mod.emt.hyxcate.event.solar.SolarEventRedGiant;
+import mod.emt.hyxcate.celestialevent.solar.SolarEventRedGiant;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import toughasnails.api.temperature.IModifierMonitor;

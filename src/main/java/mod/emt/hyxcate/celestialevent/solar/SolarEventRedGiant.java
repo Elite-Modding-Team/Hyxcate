@@ -1,7 +1,7 @@
-package mod.emt.hyxcate.event.solar;
+package mod.emt.hyxcate.celestialevent.solar;
 
 import mod.emt.hyxcate.Hyxcate;
-import mod.emt.hyxcate.api.event.HyxcateSolarEvent;
+import mod.emt.hyxcate.api.celestialevent.HyxcateSolarEvent;
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
@@ -12,21 +12,21 @@ import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 
-public class SolarEventGrimEclipse extends HyxcateSolarEvent {
-    private final ConfigImpl config = new ConfigImpl(HyxcateConfig.EVENTS_SOLAR.GRIM_ECLIPSE.chance, HyxcateConfig.EVENTS_SOLAR.GRIM_ECLIPSE.startDay, HyxcateConfig.EVENTS_SOLAR.GRIM_ECLIPSE.gracePeriod, HyxcateConfig.EVENTS_SOLAR.GRIM_ECLIPSE.dayInterval);
+public class SolarEventRedGiant extends HyxcateSolarEvent {
+    private final ConfigImpl config = new ConfigImpl(HyxcateConfig.EVENTS_SOLAR.RED_GIANT.chance, HyxcateConfig.EVENTS_SOLAR.RED_GIANT.startDay, HyxcateConfig.EVENTS_SOLAR.RED_GIANT.gracePeriod, HyxcateConfig.EVENTS_SOLAR.RED_GIANT.dayInterval);
 
-    public SolarEventGrimEclipse(HyxcateWorld HyxcateWorld) {
-        super("grim_eclipse", HyxcateWorld);
+    public SolarEventRedGiant(HyxcateWorld HyxcateWorld) {
+        super("red_giant", HyxcateWorld);
     }
 
     @Override
     public ITextComponent getStartMessage() {
-        return new TextComponentTranslation("info." + Hyxcate.ID + ".grim_eclipse").setStyle(new Style().setColor(TextFormatting.DARK_GRAY).setItalic(true));
+        return new TextComponentTranslation("info." + Hyxcate.ID + ".red_giant").setStyle(new Style().setColor(TextFormatting.RED).setItalic(true));
     }
 
     @Override
     public SoundEvent getStartSound() {
-        return HyxcateSoundEvents.EVENT_GRIM_ECLIPSE_START.getSoundEvent();
+        return this.world.rand.nextInt(100) < 1 ? HyxcateSoundEvents.EVENT_RED_SUN_START_SPECIAL.getSoundEvent() : HyxcateSoundEvents.EVENT_RED_SUN_START.getSoundEvent();
     }
 
     @Override
@@ -42,22 +42,22 @@ public class SolarEventGrimEclipse extends HyxcateSolarEvent {
 
     @Override
     public int getSkyColor() {
-        return HyxcateConfig.EVENTS_SOLAR.GRIM_ECLIPSE.skyColor;
+        return HyxcateConfig.EVENTS_SOLAR.RED_GIANT.skyColor;
     }
 
     @Override
     public int getCloudColor() {
-        return HyxcateConfig.EVENTS_SOLAR.GRIM_ECLIPSE.cloudColor;
+        return HyxcateConfig.EVENTS_SOLAR.RED_GIANT.cloudColor;
     }
 
     @Override
     public int getLightmapColor() {
-        return HyxcateConfig.EVENTS_SOLAR.GRIM_ECLIPSE.lightmapColor;
+        return HyxcateConfig.EVENTS_SOLAR.RED_GIANT.lightmapColor;
     }
 
     @Override
     public String getSunTexture() {
-        return "grim_eclipse";
+        return "red_giant";
     }
 
     @Override

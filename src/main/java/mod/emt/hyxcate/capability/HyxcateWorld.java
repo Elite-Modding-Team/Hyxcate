@@ -1,14 +1,14 @@
 package mod.emt.hyxcate.capability;
 
-import mod.emt.hyxcate.api.event.HyxcateLunarEvent;
+import mod.emt.hyxcate.api.celestialevent.HyxcateLunarEvent;
 import mod.emt.hyxcate.compat.astralsorcery.AstralSorcery;
 import mod.emt.hyxcate.compat.gamestages.GameStages;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
-import mod.emt.hyxcate.event.lunar.*;
-import mod.emt.hyxcate.event.solar.SolarEventGrimEclipse;
-import mod.emt.hyxcate.api.event.HyxcateSolarEvent;
-import mod.emt.hyxcate.event.solar.SolarEventRedGiant;
+import mod.emt.hyxcate.celestialevent.lunar.*;
+import mod.emt.hyxcate.celestialevent.solar.SolarEventGrimEclipse;
+import mod.emt.hyxcate.api.celestialevent.HyxcateSolarEvent;
+import mod.emt.hyxcate.celestialevent.solar.SolarEventRedGiant;
 import mod.emt.hyxcate.init.HyxcateRegistry;
 import mod.emt.hyxcate.network.HyxcatePacketHandler;
 import mod.emt.hyxcate.network.HyxcatePacketWorld;

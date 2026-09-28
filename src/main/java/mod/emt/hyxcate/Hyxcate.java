@@ -22,15 +22,20 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
-@Mod(modid = Hyxcate.ID, name = Hyxcate.NAME, version = Hyxcate.VERSION, dependencies = "required-after:mixinbooter@[10.2,);required-after:expandedevents;after:tconstruct;after:conarm")
+@Mod(modid = Hyxcate.ID, name = Hyxcate.NAME, version = Hyxcate.VERSION, dependencies = Hyxcate.DEPENDENCIES)
 public class Hyxcate {
     public static final String ID = Tags.MOD_ID;
     public static final String NAME = Tags.NAME;
     public static final String VERSION = Tags.VERSION;
+    public static final String DEPENDENCIES = "required-after:mixinbooter@[10.2,)" + ";required-after:expandedevents" + ";after:tconstruct" + ";after:conarm";
+
+    public static final String CLIENT_PROXY = "mod.emt.hyxcate.proxy.ClientProxy";
+    public static final String COMMON_PROXY = "mod.emt.hyxcate.proxy.CommonProxy";
 
     @Mod.Instance
     public static Hyxcate instance;
-    @SidedProxy(clientSide = "mod.emt.hyxcate.proxy.ClientProxy", serverSide = "mod.emt.hyxcate.proxy.CommonProxy")
+
+    @SidedProxy(clientSide = CLIENT_PROXY, serverSide = COMMON_PROXY)
     public static CommonProxy proxy;
 
     static {
@@ -39,6 +44,7 @@ public class Hyxcate {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        proxy.preInit();
         HyxcateRegistry.preInit();
         HyxcatePacketHandler.init();
         HyxcateCompatHandler.preInit();
@@ -46,6 +52,7 @@ public class Hyxcate {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+        proxy.init();
         HyxcateRegistry.init();
         HyxcateCompatHandler.init();
 
@@ -56,6 +63,7 @@ public class Hyxcate {
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+        proxy.postInit();
         HyxcateData.initConfigLists();
         HyxcateCompatHandler.postInit();
     }

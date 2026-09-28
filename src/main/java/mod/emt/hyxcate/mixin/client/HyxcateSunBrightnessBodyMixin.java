@@ -2,7 +2,7 @@ package mod.emt.hyxcate.mixin.client;
 
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
-import mod.emt.hyxcate.event.solar.SolarEventGrimEclipse;
+import mod.emt.hyxcate.celestialevent.solar.SolarEventGrimEclipse;
 import mod.emt.hyxcate.util.ColorTransitionUtil;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;

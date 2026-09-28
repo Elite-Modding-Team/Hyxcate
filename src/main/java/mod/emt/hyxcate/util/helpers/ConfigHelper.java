@@ -4,7 +4,7 @@ import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
-import mod.emt.hyxcate.event.lunar.LunarEventStarShower;
+import mod.emt.hyxcate.celestialevent.lunar.LunarEventStarShower;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;

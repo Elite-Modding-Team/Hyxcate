@@ -2,19 +2,35 @@ package mod.emt.hyxcate.init;
 
 import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.client.renderer.*;
+import mod.emt.hyxcate.entity.*;
+import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.ItemMeshDefinition;
+import net.minecraft.client.renderer.block.model.ModelBakery;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
@@ -82,6 +98,50 @@ public final class HyxcateRegistry {
     public static void onSoundEventRegistry(RegistryEvent.Register<SoundEvent> event) {
         for (HyxcateSoundEvents soundEvents : HyxcateSoundEvents.values()) {
             event.getRegistry().register(soundEvents.getSoundEvent());
+        }
+    }
+
+    @SideOnly(Side.CLIENT)
+    @SubscribeEvent
+    public static void onModelRegistry(ModelRegistryEvent event) {
+        RenderingRegistry.registerEntityRenderingHandler(EntityFallingStar.class, RenderEmpty::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityFallingMeteor.class, RenderMeteor::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityAlienCreeper.class, RenderAlienCreeper::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityCometKitty.class, RenderCometKitty::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityAlienKitty.class, RenderAlienKitty::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityEyezor.class, RenderEyezor::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityLaser.class, RenderLaser::new);
+        //RenderingRegistry.registerEntityRenderingHandler(EntityStellarProtector.class, RenderStelarProtector::new);
+
+        for (Item item : HyxcateItems.MOD_ITEMS)
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+    }
+
+    @SideOnly(Side.CLIENT)
+    public static void registerFluidRenderer(Fluid fluid) {
+        Block block = fluid.getBlock();
+        Item item = Item.getItemFromBlock(block);
+        FluidStateMapper mapper = new FluidStateMapper(fluid);
+        ModelBakery.registerItemVariants(item);
+        ModelLoader.setCustomMeshDefinition(item, mapper);
+        ModelLoader.setCustomStateMapper(block, mapper);
+    }
+
+    private static class FluidStateMapper extends StateMapperBase implements ItemMeshDefinition {
+        private final ModelResourceLocation location;
+
+        public FluidStateMapper(Fluid fluid) {
+            this.location = new ModelResourceLocation(new ResourceLocation(Hyxcate.ID, "fluids"), fluid.getName());
+        }
+
+        @Override
+        protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
+            return this.location;
+        }
+
+        @Override
+        public ModelResourceLocation getModelLocation(ItemStack stack) {
+            return this.location;
         }
     }
 }

@@ -1,4 +1,4 @@
-package mod.emt.hyxcate.api.event;
+package mod.emt.hyxcate.api.celestialevent;
 
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import net.minecraft.nbt.NBTTagCompound;

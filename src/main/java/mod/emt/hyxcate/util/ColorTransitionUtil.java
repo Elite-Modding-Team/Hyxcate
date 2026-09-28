@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.util;
 
-import mod.emt.hyxcate.event.HyxcateClientEvents;
+import mod.emt.hyxcate.event.client.CelestialWorldEvent;
 
 public class ColorTransitionUtil {
     private final float[] startColor = new float[3];
@@ -23,8 +23,8 @@ public class ColorTransitionUtil {
     public void transition(float[] startColor, float[] targetColor, long currentTime, TargetType targetType) {
 
         // Skip transition when joining world
-        if(HyxcateClientEvents.joinTime != lastJoinTime) {
-            lastJoinTime = HyxcateClientEvents.joinTime;
+        if(CelestialWorldEvent.joinTime != lastJoinTime) {
+            lastJoinTime = CelestialWorldEvent.joinTime;
 
             System.arraycopy(targetColor, 0, this.currentColor, 0, 3);
 

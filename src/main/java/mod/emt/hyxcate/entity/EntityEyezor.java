@@ -2,7 +2,7 @@ package mod.emt.hyxcate.entity;
 
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
-import mod.emt.hyxcate.event.lunar.LunarEventStarShower;
+import mod.emt.hyxcate.celestialevent.lunar.LunarEventStarShower;
 import mod.emt.hyxcate.init.HyxcateLootTables;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
 import net.minecraft.entity.*;

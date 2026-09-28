@@ -1,7 +1,7 @@
 package mod.emt.hyxcate.mixin.client;
 
 import mod.emt.hyxcate.capability.HyxcateWorld;
-import mod.emt.hyxcate.event.solar.SolarEventRedGiant;
+import mod.emt.hyxcate.celestialevent.solar.SolarEventRedGiant;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.RenderGlobal;
 import org.spongepowered.asm.mixin.Mixin;

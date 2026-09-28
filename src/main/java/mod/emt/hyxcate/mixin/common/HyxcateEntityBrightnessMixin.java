@@ -1,7 +1,7 @@
 package mod.emt.hyxcate.mixin.common;
 
 import mod.emt.hyxcate.capability.HyxcateWorld;
-import mod.emt.hyxcate.event.solar.SolarEventRedGiant;
+import mod.emt.hyxcate.celestialevent.solar.SolarEventRedGiant;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.world.World;
