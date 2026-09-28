@@ -5,6 +5,7 @@ import mod.emt.hyxcate.api.celestialevent.HyxcateSolarEvent;
 import mod.emt.hyxcate.capability.HyxcateWorld;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
+import mod.emt.hyxcate.util.WorldUtil;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
@@ -31,13 +32,8 @@ public class SolarEventRedGiant extends HyxcateSolarEvent {
 
     @Override
     public boolean shouldStart(boolean lastNighttime) {
-        if (!lastNighttime || HyxcateWorld.isNighttime(this.world)) return false;
+        super.shouldStart(lastNighttime);
         return this.config.canStart();
-    }
-
-    @Override
-    public boolean shouldStop(boolean lastNighttime) {
-        return HyxcateWorld.isNighttime(this.world);
     }
 
     @Override

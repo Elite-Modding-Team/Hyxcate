@@ -12,6 +12,7 @@ import mod.emt.hyxcate.celestialevent.solar.SolarEventRedGiant;
 import mod.emt.hyxcate.init.HyxcateRegistry;
 import mod.emt.hyxcate.network.HyxcatePacketHandler;
 import mod.emt.hyxcate.network.HyxcatePacketWorld;
+import mod.emt.hyxcate.util.WorldUtil;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -37,7 +38,6 @@ import java.util.*;
 
 @SuppressWarnings("unchecked")
 public class HyxcateWorld implements ICapabilityProvider, INBTSerializable<NBTTagCompound> {
-
     public static float moonPhase;
 
     public final World world;
@@ -65,18 +65,6 @@ public class HyxcateWorld implements ICapabilityProvider, INBTSerializable<NBTTa
         this.lunarEvents.add(new LunarEventBloodMoon(this));
         // This needs to stay at the end to prioritize random events
         this.lunarEvents.add(new LunarEventFullMoon(this));
-    }
-
-    public static boolean isDaytime(World world) {
-        return !isNighttime(world);
-    }
-
-    public static boolean isNighttime(World world) {
-        // https://minecraft.wiki/w/Daylight_cycle#24-hour_Minecraft_day
-        // 12786: Solar zenith angle is 0 (beginning of night)
-        // 23216: Solar zenith angle is 0 (end of night)
-        long time = world.getWorldTime() % 24000;
-        return time >= 12786 && time < 23216;
     }
 
     public static HyxcateWorld get(World world) {
@@ -179,7 +167,7 @@ public class HyxcateWorld implements ICapabilityProvider, INBTSerializable<NBTTa
 
                 if (isDirty) this.sendToClients();
 
-                this.wasDaytime = isDaytime(this.world);
+                this.wasDaytime = WorldUtil.isDaytime(this.world);
             }
         }
     }
@@ -234,7 +222,7 @@ public class HyxcateWorld implements ICapabilityProvider, INBTSerializable<NBTTa
 
                 if (isDirty) this.sendToClients();
 
-                this.wasNighttime = isNighttime(this.world);
+                this.wasNighttime = WorldUtil.isNighttime(this.world);
             }
         }
     }
@@ -321,7 +309,7 @@ public class HyxcateWorld implements ICapabilityProvider, INBTSerializable<NBTTa
         }
 
         // Lunar events
-        String nameLunar = compound.getString("event");
+        String nameLunar = compound.getString("eventLunar");
         this.currentLunarEvent = this.lunarEvents.stream().filter(e -> e.name.equals(nameLunar)).findFirst().orElse(null);
         this.wasDaytime = compound.getBoolean("was_daytime");
         for (HyxcateLunarEvent event : this.lunarEvents)

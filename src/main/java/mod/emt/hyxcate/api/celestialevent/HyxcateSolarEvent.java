@@ -1,6 +1,7 @@
 package mod.emt.hyxcate.api.celestialevent;
 
 import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.util.WorldUtil;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
@@ -24,12 +25,16 @@ public abstract class HyxcateSolarEvent implements INBTSerializable<NBTTagCompou
         return null;
     }
 
-    public abstract boolean shouldStart(boolean lastNighttime);
+    public boolean shouldStart(boolean lastNighttime) {
+        return (!lastNighttime || !WorldUtil.isNighttime(this.world));
+    }
 
-    public abstract boolean shouldStop(boolean lastNighttime);
+    public boolean shouldStop(boolean lastNighttime) {
+        return WorldUtil.isNighttime(this.world);
+    }
 
     public boolean shouldStartBasic(boolean lastNighttime) {
-        return lastNighttime && !HyxcateWorld.isNighttime(this.world);
+        return lastNighttime && WorldUtil.isDaytime(this.world);
     }
 
     public int getSkyColor() {
@@ -84,7 +89,7 @@ public abstract class HyxcateSolarEvent implements INBTSerializable<NBTTagCompou
                 this.graceDays = 0;
             }
 
-            if (!lastNighttime && HyxcateWorld.isNighttime(HyxcateSolarEvent.this.world)) {
+            if (!lastNighttime && WorldUtil.isNighttime(HyxcateSolarEvent.this.world)) {
                 this.daysSinceLast++;
                 if (this.startDays < this.startDay) this.startDays++;
                 if (this.graceDays < this.gracePeriod) this.graceDays++;
