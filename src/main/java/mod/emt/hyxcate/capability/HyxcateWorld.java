@@ -1,18 +1,22 @@
 package mod.emt.hyxcate.capability;
 
 import mod.emt.hyxcate.api.celestialevent.HyxcateLunarEvent;
+import mod.emt.hyxcate.api.celestialevent.HyxcateSolarEvent;
+import mod.emt.hyxcate.celestialevent.lunar.LunarEventBloodMoon;
+import mod.emt.hyxcate.celestialevent.lunar.LunarEventBlueMoon;
+import mod.emt.hyxcate.celestialevent.lunar.LunarEventFullMoon;
+import mod.emt.hyxcate.celestialevent.lunar.LunarEventStarShower;
+import mod.emt.hyxcate.celestialevent.solar.SolarEventGrimEclipse;
+import mod.emt.hyxcate.celestialevent.solar.SolarEventRedGiant;
 import mod.emt.hyxcate.compat.astralsorcery.AstralSorcery;
 import mod.emt.hyxcate.compat.gamestages.GameStages;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
-import mod.emt.hyxcate.celestialevent.lunar.*;
-import mod.emt.hyxcate.celestialevent.solar.SolarEventGrimEclipse;
-import mod.emt.hyxcate.api.celestialevent.HyxcateSolarEvent;
-import mod.emt.hyxcate.celestialevent.solar.SolarEventRedGiant;
 import mod.emt.hyxcate.init.HyxcateRegistry;
 import mod.emt.hyxcate.network.HyxcatePacketHandler;
 import mod.emt.hyxcate.network.HyxcatePacketWorld;
 import mod.emt.hyxcate.util.WorldUtil;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -23,13 +27,14 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 import javax.annotation.Nonnull;
@@ -144,19 +149,6 @@ public class HyxcateWorld implements ICapabilityProvider, INBTSerializable<NBTTa
                         if (this.world.isRaining() || this.world.isThundering()) {
                             this.world.provider.resetRainAndThunder();
                         }
-
-                        ITextComponent text = this.currentLunarEvent.getStartMessage();
-                        for (EntityPlayer player : this.world.playerEntities) {
-
-                            if (HyxcateConfig.GENERAL.eventNotifications) {
-                                player.sendMessage(text);
-                            }
-
-                            if (this.currentLunarEvent.getStartSound() != null && HyxcateConfig.GENERAL.eventIntroSounds) {
-                                this.world.playSound(null, player.posX, player.posY, player.posZ, this.currentLunarEvent.getStartSound(), SoundCategory.AMBIENT, 10.0F, 1.0F);
-
-                            }
-                        }
                     }
                 }
 
@@ -200,17 +192,6 @@ public class HyxcateWorld implements ICapabilityProvider, INBTSerializable<NBTTa
 
                         if (this.world.isRaining() || this.world.isThundering()) {
                             this.world.provider.resetRainAndThunder();
-                        }
-
-                        ITextComponent text = this.currentSolarEvent.getStartMessage();
-                        for (EntityPlayer player : this.world.playerEntities) {
-                            if (HyxcateConfig.GENERAL.eventNotifications) {
-                                player.sendMessage(text);
-                            }
-
-                            if (this.currentSolarEvent.getStartSound() != null && HyxcateConfig.GENERAL.eventIntroSounds) {
-                                this.world.playSound(null, player.posX, player.posY, player.posZ, this.currentSolarEvent.getStartSound(), SoundCategory.AMBIENT, 10.0F, 1.0F);
-                            }
                         }
                     }
                 }
@@ -332,5 +313,27 @@ public class HyxcateWorld implements ICapabilityProvider, INBTSerializable<NBTTa
     @Override
     public <T> T getCapability(@Nonnull Capability<T> capability, @Nullable EnumFacing facing) {
         return capability == HyxcateRegistry.worldCapability ? (T) this : null;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void onClientSync(HyxcateLunarEvent oldLunar, HyxcateSolarEvent oldSolar) {
+        if (oldLunar == null && this.currentLunarEvent != null) {
+            if (HyxcateConfig.GENERAL.eventNotifications) {
+                Minecraft.getMinecraft().player.sendMessage(this.currentLunarEvent.getStartMessage());
+            }
+            if (this.currentLunarEvent.getStartSound() != null && HyxcateConfig.GENERAL.eventIntroSounds) {
+                EntityPlayer player = Minecraft.getMinecraft().player;
+                this.world.playSound(player, player.posX, player.posY, player.posZ, this.currentLunarEvent.getStartSound(), SoundCategory.AMBIENT, 10.0F, 1.0F);
+            }
+        }
+        if (oldSolar == null && this.currentSolarEvent != null) {
+            if (HyxcateConfig.GENERAL.eventNotifications) {
+                Minecraft.getMinecraft().player.sendMessage(this.currentSolarEvent.getStartMessage());
+            }
+            if (this.currentSolarEvent.getStartSound() != null && HyxcateConfig.GENERAL.eventIntroSounds) {
+                EntityPlayer player = Minecraft.getMinecraft().player;
+                this.world.playSound(player, player.posX, player.posY, player.posZ, this.currentSolarEvent.getStartSound(), SoundCategory.AMBIENT, 10.0F, 1.0F);
+            }
+        }
     }
 }

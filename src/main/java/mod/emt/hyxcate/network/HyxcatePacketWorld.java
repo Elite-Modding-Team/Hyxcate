@@ -1,7 +1,9 @@
 package mod.emt.hyxcate.network;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
 import io.netty.buffer.ByteBuf;
+import mod.emt.hyxcate.api.celestialevent.HyxcateLunarEvent;
+import mod.emt.hyxcate.api.celestialevent.HyxcateSolarEvent;
+import mod.emt.hyxcate.capability.HyxcateWorld;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
@@ -47,9 +49,13 @@ public class HyxcatePacketWorld implements IMessage {
             Minecraft.getMinecraft().addScheduledTask(() -> {
                 World world = Minecraft.getMinecraft().world;
                 if (world != null) {
-                    HyxcateWorld Hyxcate = HyxcateWorld.get(world);
-                    if (Hyxcate != null)
-                        Hyxcate.deserializeNBT(message.info, true);
+                    HyxcateWorld hyxcate = HyxcateWorld.get(world);
+                    if (hyxcate != null) {
+                        HyxcateLunarEvent oldLunar = hyxcate.currentLunarEvent;
+                        HyxcateSolarEvent oldSolar = hyxcate.currentSolarEvent;
+                        hyxcate.deserializeNBT(message.info, true);
+                        hyxcate.onClientSync(oldLunar, oldSolar);
+                    }
                 }
             });
             return null;
