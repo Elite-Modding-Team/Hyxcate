@@ -18,13 +18,11 @@ import mod.emt.hyxcate.event.tool.KreknoriteToolEvent;
 import mod.emt.hyxcate.event.world.FallingMeteorEvent;
 import mod.emt.hyxcate.event.world.FallingStarEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class HyxcateEvents {
     public static void registerEvents() {
-        if (HyxcateConfig.GENERAL.f3Info) {
-            MinecraftForge.EVENT_BUS.register(new F3InfoEvent());
-        }
-
         if (HyxcateConfig.MASTER_SWITCHES.beamSwordsEnabled) {
             MinecraftForge.EVENT_BUS.register(new BeamSwordEvent());
         }
@@ -72,9 +70,6 @@ public class HyxcateEvents {
         MinecraftForge.EVENT_BUS.register(new SolarDamageEvent());
         MinecraftForge.EVENT_BUS.register(new SolarWardEvent());
 
-        // Client
-        MinecraftForge.EVENT_BUS.register(new BowFOVEvent());
-
         // Entities
         MinecraftForge.EVENT_BUS.register(new EyezorEvent());
 
@@ -83,7 +78,19 @@ public class HyxcateEvents {
         MinecraftForge.EVENT_BUS.register(new ParalysisEvent());
 
         // World
-        MinecraftForge.EVENT_BUS.register(new CelestialWorldEvent());
         MinecraftForge.EVENT_BUS.register(new WorldEvent());
+    }
+
+    @SideOnly(Side.CLIENT)
+    public static void registerClientEvents() {
+        if (HyxcateConfig.GENERAL.f3Info) {
+            MinecraftForge.EVENT_BUS.register(new F3InfoEvent());
+        }
+
+        // Bow
+        MinecraftForge.EVENT_BUS.register(new BowFOVEvent());
+
+        // World
+        MinecraftForge.EVENT_BUS.register(new CelestialWorldEvent());
     }
 }

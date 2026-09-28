@@ -1,5 +1,6 @@
 package mod.emt.hyxcate.proxy;
 
+import mod.emt.hyxcate.init.HyxcateEvents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.network.NetHandlerPlayClient;
 import net.minecraft.network.play.client.CPacketPlayerDigging;
@@ -14,6 +15,7 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void init() {
         super.init();
+        HyxcateEvents.registerClientEvents();
     }
 
     @Override
