@@ -40,7 +40,7 @@ public class HyxcateBlockMeteorRock extends Block implements IFireproofBlock {
             CapabilityCelestialEvent data = CapabilityCelestialEvent.get(world);
             if (data != null) {
                 data.meteorLandingSites.remove(pos);
-                data.sendToClients();
+                data.sendWorldToClients();
             }
         }
     }

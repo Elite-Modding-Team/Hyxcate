@@ -13,6 +13,7 @@ public final class HyxcatePacketHandler {
     public static void init() {
         network = new SimpleNetworkWrapper(Hyxcate.ID);
         network.registerMessage(HyxcatePacketWorld.Handler.class, HyxcatePacketWorld.class, 0, Side.CLIENT);
+        network.registerMessage(HyxcatePacketEventStart.Handler.class, HyxcatePacketEventStart.class, 1, Side.CLIENT);
     }
 
     public static void sendTo(EntityPlayer player, IMessage message) {

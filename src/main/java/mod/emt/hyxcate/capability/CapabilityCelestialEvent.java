@@ -8,17 +8,16 @@ import mod.emt.hyxcate.compat.gamestages.GameStages;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
 import mod.emt.hyxcate.init.HyxcateRegistry;
+import mod.emt.hyxcate.network.HyxcatePacketEventStart;
 import mod.emt.hyxcate.network.HyxcatePacketHandler;
 import mod.emt.hyxcate.network.HyxcatePacketWorld;
 import mod.emt.hyxcate.util.WorldUtil;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.nbt.NBTTagLong;
 import net.minecraft.nbt.NBTTagString;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
@@ -28,8 +27,6 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 import javax.annotation.Nonnull;
@@ -119,7 +116,8 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
                 event.update(this.wasDaytime);
 
             if (!this.world.isRemote) {
-                boolean isDirty = false;
+                boolean eventStart = false;
+                boolean eventStop = false;
 
                 if (this.currentLunarEvent == null) {
                     if (this.forcedLunarEvent != null && this.forcedLunarEvent.shouldStartBasic(this.wasDaytime)) {
@@ -134,7 +132,7 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
                         }
                     }
                     if (this.currentLunarEvent != null) {
-                        isDirty = true;
+                        eventStart = true;
 
                         if (this.world.isRaining() || this.world.isThundering()) {
                             this.world.provider.resetRainAndThunder();
@@ -144,10 +142,16 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
 
                 if (this.currentLunarEvent != null && this.currentLunarEvent.shouldStop(this.wasDaytime)) {
                     this.currentLunarEvent = null;
-                    isDirty = true;
+                    eventStop = true;
                 }
 
-                if (isDirty) this.sendToClients();
+                if (eventStart) {
+                    this.sendWorldToClients();
+                    this.sendEventStartToClients(true);
+                }
+                if (eventStop) {
+                    this.sendWorldToClients();
+                }
 
                 this.wasDaytime = WorldUtil.isDaytime(this.world);
             }
@@ -162,7 +166,8 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
                 event.update(this.wasNighttime);
 
             if (!this.world.isRemote) {
-                boolean isDirty = false;
+                boolean eventStart = false;
+                boolean eventStop = false;
 
                 if (this.currentSolarEvent == null) {
                     if (this.forcedSolarEvent != null && this.forcedSolarEvent.shouldStartBasic(this.wasNighttime)) {
@@ -178,7 +183,7 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
                     }
 
                     if (this.currentSolarEvent != null) {
-                        isDirty = true;
+                        eventStart = true;
 
                         if (this.world.isRaining() || this.world.isThundering()) {
                             this.world.provider.resetRainAndThunder();
@@ -188,19 +193,30 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
 
                 if (this.currentSolarEvent != null && this.currentSolarEvent.shouldStop(this.wasNighttime)) {
                     this.currentSolarEvent = null;
-                    isDirty = true;
+                    eventStop = true;
                 }
 
-                if (isDirty) this.sendToClients();
+                if (eventStart) {
+                    this.sendWorldToClients();
+                    this.sendEventStartToClients(false);
+                }
+                if (eventStop) {
+                    this.sendWorldToClients();
+                }
 
                 this.wasNighttime = WorldUtil.isNighttime(this.world);
             }
         }
     }
 
-    public void sendToClients() {
+    public void sendWorldToClients() {
         for (EntityPlayer player : this.world.playerEntities)
             HyxcatePacketHandler.sendTo(player, new HyxcatePacketWorld(this));
+    }
+
+    public void sendEventStartToClients(boolean lunar) {
+        for (EntityPlayer player : this.world.playerEntities)
+            HyxcatePacketHandler.sendTo(player, new HyxcatePacketEventStart(lunar));
     }
 
     @Override
@@ -303,27 +319,5 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
     @Override
     public <T> T getCapability(@Nonnull Capability<T> capability, @Nullable EnumFacing facing) {
         return capability == HyxcateRegistry.worldCapability ? (T) this : null;
-    }
-
-    @SideOnly(Side.CLIENT)
-    public void onClientSync(HyxcateLunarEvent oldLunar, HyxcateSolarEvent oldSolar) {
-        if (oldLunar == null && this.currentLunarEvent != null) {
-            if (HyxcateConfig.GENERAL.eventNotifications) {
-                Minecraft.getMinecraft().player.sendMessage(this.currentLunarEvent.getStartMessage());
-            }
-            if (this.currentLunarEvent.getStartSound() != null && HyxcateConfig.GENERAL.eventIntroSounds) {
-                EntityPlayer player = Minecraft.getMinecraft().player;
-                this.world.playSound(player, player.posX, player.posY, player.posZ, this.currentLunarEvent.getStartSound(), SoundCategory.AMBIENT, 10.0F, 1.0F);
-            }
-        }
-        if (oldSolar == null && this.currentSolarEvent != null) {
-            if (HyxcateConfig.GENERAL.eventNotifications) {
-                Minecraft.getMinecraft().player.sendMessage(this.currentSolarEvent.getStartMessage());
-            }
-            if (this.currentSolarEvent.getStartSound() != null && HyxcateConfig.GENERAL.eventIntroSounds) {
-                EntityPlayer player = Minecraft.getMinecraft().player;
-                this.world.playSound(player, player.posX, player.posY, player.posZ, this.currentSolarEvent.getStartSound(), SoundCategory.AMBIENT, 10.0F, 1.0F);
-            }
-        }
     }
 }

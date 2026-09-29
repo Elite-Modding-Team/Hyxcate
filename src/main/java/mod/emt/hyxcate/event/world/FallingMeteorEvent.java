@@ -44,7 +44,7 @@ public class FallingMeteorEvent {
             if (!event.world.isBlockLoaded(spawnPos, false)) {
                 // Add meteor information to cache
                 data.cachedMeteorPositions.add(spawnPos);
-                data.sendToClients();
+                data.sendWorldToClients();
             } else {
                 // Spawn meteor entity
                 EntityFallingMeteor.spawn(data.world, spawnPos);
@@ -67,6 +67,6 @@ public class FallingMeteorEvent {
             EntityFallingMeteor.spawn(data.world, pos);
         }
         meteors.forEach(data.cachedMeteorPositions::remove);
-        data.sendToClients();
+        data.sendWorldToClients();
     }
 }

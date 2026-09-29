@@ -213,7 +213,7 @@ public class HyxcateToolMeteorDetector extends Item {
 
         boolean removed = data.meteorLandingSites.remove(pending.pos) | data.cachedMeteorPositions.remove(pending.pos);
         if (removed) {
-            data.sendToClients();
+            data.sendWorldToClients();
             player.sendMessage(new TextComponentTranslation("info.hyxcate.meteor_detector.deleted", pending.pos.getX(), pending.pos.getY(), pending.pos.getZ()).setStyle(new Style().setColor(TextFormatting.GREEN)));
             player.sendMessage(new TextComponentTranslation("info.hyxcate.meteor_detector.reset", pending.pos.getX(), pending.pos.getY(), pending.pos.getZ()).setStyle(new Style().setColor(TextFormatting.YELLOW)));
             player.world.playSound(null, player.getPosition(), HyxcateSoundEvents.ITEM_METEOR_DETECTOR_CONFIRM.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F);

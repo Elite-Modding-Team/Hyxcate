@@ -191,7 +191,7 @@ public class EntityFallingMeteor extends EntityFallingStar {
                 }
 
                 data.meteorLandingSites.add(this.getPosition());
-                data.sendToClients();
+                data.sendWorldToClients();
                 this.setDead();
 
                 this.spawnMeteorMobs(world, exp.getAffectedBlockPositions());
