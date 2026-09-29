@@ -2,6 +2,7 @@ package mod.emt.hyxcate.item.tool;
 
 import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.config.HyxcateConfig;
+import mod.emt.hyxcate.init.HyxcatePotions;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
 import mod.emt.hyxcate.item.HyxcateItemSword;
 import mod.emt.hyxcate.util.ColorUtil;
@@ -22,12 +23,12 @@ import net.minecraft.init.Enchantments;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.IRarity;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
@@ -54,6 +55,7 @@ public class HyxcateToolCelestialWarhammer extends HyxcateItemSword {
 
                     nearbyLivingEntity.knockBack(attacker, knockback, MathHelper.sin(attacker.rotationYaw * 0.02F), (-MathHelper.cos(attacker.rotationYaw * 0.02F)));
                     nearbyLivingEntity.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), sweepCalculation);
+                    nearbyLivingEntity.addPotionEffect(new PotionEffect(HyxcatePotions.ASTRAL_EROSION, 8 * 20, 0, false, false));
                 }
             }
 
