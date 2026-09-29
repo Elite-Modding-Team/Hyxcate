@@ -1,8 +1,7 @@
 package mod.emt.hyxcate.event.client;
 
 import mod.emt.hyxcate.Hyxcate;
-import mod.emt.hyxcate.capability.HyxcateWorld;
-import mod.emt.hyxcate.config.HyxcateConfig;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -19,7 +18,7 @@ public class F3InfoEvent {
         Minecraft mc = Minecraft.getMinecraft();
         if (!mc.gameSettings.showDebugInfo) return;
         event.getLeft().add("");
-        HyxcateWorld world = HyxcateWorld.get(mc.world);
+        CapabilityCelestialEvent world = CapabilityCelestialEvent.get(mc.world);
         String pre = TextFormatting.GREEN + "[" + Hyxcate.NAME + "]" + TextFormatting.RESET;
         String name = "None";
         if (world.currentLunarEvent != null) {

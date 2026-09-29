@@ -2,7 +2,7 @@ package mod.emt.hyxcate.compat.urkazmoontools.mixin.common;
 
 import com.urkaz.moontools.ModSettings;
 import com.urkaz.moontools.block.MoonSensorBlock;
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.celestialevent.lunar.LunarEventBloodMoon;
 import mod.emt.hyxcate.celestialevent.lunar.LunarEventBlueMoon;
 import net.minecraft.util.math.BlockPos;
@@ -26,7 +26,7 @@ public abstract class UMTMoonSensorBlockMixin {
             boolean isBloodMoon = false;
             boolean isHarvestMoon = false;
             if (ModSettings.EmmitExtraRedstoneOnLunarEvent) {
-                HyxcateWorld Hyxcate = HyxcateWorld.get(worldIn);
+                CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(worldIn);
                 if (Hyxcate != null && Hyxcate.currentLunarEvent instanceof LunarEventBlueMoon) {
                     isHarvestMoon = true;
                 }

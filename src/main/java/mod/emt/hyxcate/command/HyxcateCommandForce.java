@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.command;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.api.celestialevent.HyxcateLunarEvent;
 import mod.emt.hyxcate.api.celestialevent.HyxcateSolarEvent;
 import net.minecraft.command.*;
@@ -35,7 +35,7 @@ public class HyxcateCommandForce extends CommandBase {
     @Override
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
         if (args.length != 1) throw new WrongUsageException(this.getUsage(sender));
-        HyxcateWorld world = HyxcateWorld.get(sender.getEntityWorld());
+        CapabilityCelestialEvent world = CapabilityCelestialEvent.get(sender.getEntityWorld());
         if (world == null) return;
         if ("clear".equals(args[0])) {
             world.forcedLunarEvent = null;
@@ -55,7 +55,7 @@ public class HyxcateCommandForce extends CommandBase {
     @Override
     public List<String> getTabCompletions(MinecraftServer server, ICommandSender sender, String[] args, @Nullable BlockPos targetPos) {
         if (args.length != 1) return Collections.emptyList();
-        HyxcateWorld world = HyxcateWorld.get(sender.getEntityWorld());
+        CapabilityCelestialEvent world = CapabilityCelestialEvent.get(sender.getEntityWorld());
         if (world == null) return Collections.emptyList();
         List<String> ret = world.lunarEvents.stream().map(e -> e.name).collect(Collectors.toList());
         ret.addAll(world.solarEvents.stream().map(e -> e.name).collect(Collectors.toList()));

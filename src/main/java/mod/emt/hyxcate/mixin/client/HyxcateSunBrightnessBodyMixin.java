@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.mixin.client;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.celestialevent.solar.SolarEventGrimEclipse;
 import mod.emt.hyxcate.util.ColorTransitionUtil;
@@ -24,7 +24,7 @@ public abstract class HyxcateSunBrightnessBodyMixin {
     @Inject(method = "getSunBrightnessBody", at = @At("TAIL"), cancellable = true, remap = false)
     private void HyxcateSetSunBrightnessBody(float partialTicks, CallbackInfoReturnable<Float> cir) {
 
-        HyxcateWorld hyxcateWorld = HyxcateWorld.get((World) (Object) this);
+        CapabilityCelestialEvent hyxcateWorld = CapabilityCelestialEvent.get((World) (Object) this);
 
         if(hyxcateWorld == null) {
             return;

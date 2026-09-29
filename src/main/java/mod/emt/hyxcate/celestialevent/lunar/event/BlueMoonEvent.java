@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.celestialevent.lunar.event;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.celestialevent.lunar.LunarEventBlueMoon;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
@@ -25,7 +25,7 @@ public class BlueMoonEvent {
     public void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase != TickEvent.Phase.END) return;
         EntityPlayer player = event.player;
-        if (Objects.requireNonNull(HyxcateWorld.get(player.world)).currentLunarEvent instanceof LunarEventBlueMoon) {
+        if (Objects.requireNonNull(CapabilityCelestialEvent.get(player.world)).currentLunarEvent instanceof LunarEventBlueMoon) {
             // Adds Luck II to all players while the blue moon is active
             player.addPotionEffect(new PotionEffect(MobEffects.LUCK, 2, 1, false, false));
         }
@@ -34,7 +34,7 @@ public class BlueMoonEvent {
     @SubscribeEvent
     public void onCheckSpawn(LivingSpawnEvent.CheckSpawn event) {
         EntityLivingBase entity = event.getEntityLiving();
-        HyxcateWorld Hyxcate = HyxcateWorld.get(entity.world);
+        CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(entity.world);
         if (Hyxcate == null || !(entity instanceof IMob || entity instanceof EntityMob)) return;
         if (event.getSpawner() == null && entity.world.canSeeSky(entity.getPosition())) {
             ResourceLocation name = EntityList.getKey(entity);
@@ -49,7 +49,7 @@ public class BlueMoonEvent {
     @SubscribeEvent
     public void onSpawn(LivingSpawnEvent.SpecialSpawn event) {
         EntityLivingBase entity = event.getEntityLiving();
-        HyxcateWorld Hyxcate = HyxcateWorld.get(entity.world);
+        CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(entity.world);
         if (Hyxcate == null) return;
         if (Hyxcate.currentLunarEvent instanceof LunarEventBlueMoon) {
             if (HyxcateConfig.EVENTS_LUNAR.BLUE_MOON.spawnsExtraChance > 0 && entity.world.rand.nextInt(HyxcateConfig.EVENTS_LUNAR.BLUE_MOON.spawnsExtraChance) == 0) {

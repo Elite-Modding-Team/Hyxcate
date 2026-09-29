@@ -2,10 +2,9 @@ package mod.emt.hyxcate.celestialevent.solar;
 
 import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.api.celestialevent.HyxcateSolarEvent;
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
-import mod.emt.hyxcate.util.WorldUtil;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
@@ -16,7 +15,7 @@ import net.minecraft.util.text.TextFormatting;
 public class SolarEventGrimEclipse extends HyxcateSolarEvent {
     private final ConfigImpl config = new ConfigImpl(HyxcateConfig.EVENTS_SOLAR.GRIM_ECLIPSE.chance, HyxcateConfig.EVENTS_SOLAR.GRIM_ECLIPSE.startDay, HyxcateConfig.EVENTS_SOLAR.GRIM_ECLIPSE.gracePeriod, HyxcateConfig.EVENTS_SOLAR.GRIM_ECLIPSE.dayInterval);
 
-    public SolarEventGrimEclipse(HyxcateWorld HyxcateWorld) {
+    public SolarEventGrimEclipse(CapabilityCelestialEvent HyxcateWorld) {
         super("grim_eclipse", HyxcateWorld);
     }
 

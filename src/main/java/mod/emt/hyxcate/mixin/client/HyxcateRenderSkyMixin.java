@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.mixin.client;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.celestialevent.solar.SolarEventRedGiant;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.RenderGlobal;
@@ -17,7 +17,7 @@ public abstract class HyxcateRenderSkyMixin {
 
     @ModifyConstant(method = "renderSky(FI)V", constant = @Constant(floatValue = 30.0F, ordinal = 6))
     private float HyxcateRenderSky(float constant) {
-        HyxcateWorld hyxcateWorld = HyxcateWorld.get(this.world);
+        CapabilityCelestialEvent hyxcateWorld = CapabilityCelestialEvent.get(this.world);
         if (hyxcateWorld != null && hyxcateWorld.currentSolarEvent instanceof SolarEventRedGiant) {
             return 90.0F;
         }

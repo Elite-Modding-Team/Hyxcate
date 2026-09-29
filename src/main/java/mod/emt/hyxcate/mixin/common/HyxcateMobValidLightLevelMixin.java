@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.mixin.common;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.celestialevent.solar.SolarEventGrimEclipse;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.world.World;
@@ -13,7 +13,7 @@ public abstract class HyxcateMobValidLightLevelMixin {
 
     @Redirect(method = "isValidLightLevel", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;isThundering()Z"))
     private boolean HyxcateSetValidLightLevel(World world) {
-        HyxcateWorld hyxcateWorld = HyxcateWorld.get(world);
+        CapabilityCelestialEvent hyxcateWorld = CapabilityCelestialEvent.get(world);
         if (hyxcateWorld != null && hyxcateWorld.currentSolarEvent instanceof SolarEventGrimEclipse) {
             return true;
         }

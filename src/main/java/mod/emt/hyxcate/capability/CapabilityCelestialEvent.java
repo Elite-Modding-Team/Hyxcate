@@ -1,13 +1,8 @@
 package mod.emt.hyxcate.capability;
 
+import mod.emt.hyxcate.api.celestialevent.HyxcateCelestialEventRegistry;
 import mod.emt.hyxcate.api.celestialevent.HyxcateLunarEvent;
 import mod.emt.hyxcate.api.celestialevent.HyxcateSolarEvent;
-import mod.emt.hyxcate.celestialevent.lunar.LunarEventBloodMoon;
-import mod.emt.hyxcate.celestialevent.lunar.LunarEventBlueMoon;
-import mod.emt.hyxcate.celestialevent.lunar.LunarEventFullMoon;
-import mod.emt.hyxcate.celestialevent.lunar.LunarEventStarShower;
-import mod.emt.hyxcate.celestialevent.solar.SolarEventGrimEclipse;
-import mod.emt.hyxcate.celestialevent.solar.SolarEventRedGiant;
 import mod.emt.hyxcate.compat.astralsorcery.AstralSorcery;
 import mod.emt.hyxcate.compat.gamestages.GameStages;
 import mod.emt.hyxcate.config.HyxcateConfig;
@@ -42,7 +37,7 @@ import javax.annotation.Nullable;
 import java.util.*;
 
 @SuppressWarnings("unchecked")
-public class HyxcateWorld implements ICapabilityProvider, INBTSerializable<NBTTagCompound> {
+public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerializable<NBTTagCompound> {
     public static float moonPhase;
 
     public final World world;
@@ -60,21 +55,16 @@ public class HyxcateWorld implements ICapabilityProvider, INBTSerializable<NBTTa
     private boolean wasDaytime;
     private boolean wasNighttime;
 
-    public HyxcateWorld(World world) {
+    public CapabilityCelestialEvent(World world) {
         this.world = world;
-        this.solarEvents.add(new SolarEventRedGiant(this));
-        this.solarEvents.add(new SolarEventGrimEclipse(this));
-
-        this.lunarEvents.add(new LunarEventBlueMoon(this));
-        this.lunarEvents.add(new LunarEventStarShower(this));
-        this.lunarEvents.add(new LunarEventBloodMoon(this));
-        // This needs to stay at the end to prioritize random events
-        this.lunarEvents.add(new LunarEventFullMoon(this));
+        this.lunarEvents.addAll(HyxcateCelestialEventRegistry.createLunarEvents(this));
+        this.solarEvents.addAll(HyxcateCelestialEventRegistry.createSolarEvents(this));
     }
 
-    public static HyxcateWorld get(World world) {
-        if (world.hasCapability(HyxcateRegistry.worldCapability, null))
+    public static CapabilityCelestialEvent get(World world) {
+        if (world.hasCapability(HyxcateRegistry.worldCapability, null)) {
             return world.getCapability(HyxcateRegistry.worldCapability, null);
+        }
         return null;
     }
 
@@ -247,7 +237,7 @@ public class HyxcateWorld implements ICapabilityProvider, INBTSerializable<NBTTa
         }
 
         // Lunar events
-        if (this.currentLunarEvent != null) compound.setString("event", this.currentLunarEvent.name);
+        if (this.currentLunarEvent != null) compound.setString("eventLunar", this.currentLunarEvent.name);
         compound.setBoolean("was_daytime", this.wasDaytime);
         for (HyxcateLunarEvent event : this.lunarEvents)
             compound.setTag(event.name, event.serializeNBT());

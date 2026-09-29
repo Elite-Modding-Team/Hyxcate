@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.item.tool;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
@@ -100,7 +100,7 @@ public class HyxcateToolMeteorDetector extends Item {
             @SideOnly(Side.CLIENT)
             private double getSpawnToAngle(World world, Entity e) {
                 if (this.meteorPos == null || world.getTotalWorldTime() % 100 == 0) {
-                    HyxcateWorld data = HyxcateWorld.get(world);
+                    CapabilityCelestialEvent data = CapabilityCelestialEvent.get(world);
                     if (data == null || (data.meteorLandingSites.isEmpty() && data.cachedMeteorPositions.isEmpty())) {
                         this.meteorPos = null;
                         return Double.NaN;
@@ -147,7 +147,7 @@ public class HyxcateToolMeteorDetector extends Item {
     }
 
     private EnumActionResult tellDistance(EntityPlayer player, World world) {
-        HyxcateWorld data = HyxcateWorld.get(world);
+        CapabilityCelestialEvent data = CapabilityCelestialEvent.get(world);
         if (data == null) return EnumActionResult.PASS;
 
         BlockPos nearest = Stream.concat(data.meteorLandingSites.stream(), data.cachedMeteorPositions.stream()).min(Comparator.comparingDouble(player::getDistanceSq)).orElse(null);
@@ -164,7 +164,7 @@ public class HyxcateToolMeteorDetector extends Item {
     }
 
     private EnumActionResult handleDeletion(EntityPlayer player, World world) {
-        HyxcateWorld data = HyxcateWorld.get(world);
+        CapabilityCelestialEvent data = CapabilityCelestialEvent.get(world);
         if (data == null) return EnumActionResult.PASS;
 
         PendingDeletion pending = PENDING_DELETIONS.remove(player.getUniqueID());

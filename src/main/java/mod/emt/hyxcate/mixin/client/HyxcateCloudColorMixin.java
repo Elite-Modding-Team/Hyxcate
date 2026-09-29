@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.mixin.client;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.util.ColorTransitionUtil;
 import mod.emt.hyxcate.util.ColorUtil;
@@ -29,7 +29,7 @@ public abstract class HyxcateCloudColorMixin {
             return;
         }
 
-        HyxcateWorld hyxcateWorld = HyxcateWorld.get((World) (Object) this);
+        CapabilityCelestialEvent hyxcateWorld = CapabilityCelestialEvent.get((World) (Object) this);
 
         if(hyxcateWorld == null) {
             return;

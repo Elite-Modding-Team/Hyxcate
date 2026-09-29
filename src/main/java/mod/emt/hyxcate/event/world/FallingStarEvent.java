@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.event.world;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.celestialevent.lunar.LunarEventStarShower;
 import mod.emt.hyxcate.compat.gamestages.GameStages;
 import mod.emt.hyxcate.config.HyxcateConfig;
@@ -17,7 +17,7 @@ public class FallingStarEvent {
     @SubscribeEvent
     public void onWorldTick(TickEvent.WorldTickEvent event) {
         if (event.phase != TickEvent.Phase.START) return;
-        HyxcateWorld data = HyxcateWorld.get(event.world);
+        CapabilityCelestialEvent data = CapabilityCelestialEvent.get(event.world);
         if (data == null) return;
         data.update();
 

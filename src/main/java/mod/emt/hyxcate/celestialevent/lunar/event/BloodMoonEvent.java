@@ -1,7 +1,7 @@
 package mod.emt.hyxcate.celestialevent.lunar.event;
 
 import mod.emt.hyxcate.Hyxcate;
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.celestialevent.lunar.LunarEventBloodMoon;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
@@ -43,7 +43,7 @@ public class BloodMoonEvent {
     @SubscribeEvent
     public void onCheckSpawn(LivingSpawnEvent.CheckSpawn event) {
         EntityLivingBase entity = event.getEntityLiving();
-        HyxcateWorld Hyxcate = HyxcateWorld.get(entity.world);
+        CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(entity.world);
         if (Hyxcate == null || !(entity instanceof IMob || entity instanceof EntityMob)) return;
         if (event.getSpawner() == null && entity.world.canSeeSky(entity.getPosition())) {
             ResourceLocation name = EntityList.getKey(entity);
@@ -58,7 +58,7 @@ public class BloodMoonEvent {
     @SubscribeEvent
     public void onSpawn(LivingSpawnEvent.SpecialSpawn event) {
         EntityLivingBase entity = event.getEntityLiving();
-        HyxcateWorld Hyxcate = HyxcateWorld.get(entity.world);
+        CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(entity.world);
         if (Hyxcate == null) return;
         if (Hyxcate.currentLunarEvent instanceof LunarEventBloodMoon) {
             if (HyxcateConfig.EVENTS_LUNAR.BLOOD_MOON.spawnsExtraChance > 0 && entity.world.rand.nextInt(HyxcateConfig.EVENTS_LUNAR.BLOOD_MOON.spawnsExtraChance) == 0) {
@@ -75,7 +75,7 @@ public class BloodMoonEvent {
         BlockPos pos = event.getPos();
         IBlockState state = world.getBlockState(pos);
         Block block = state.getBlock();
-        HyxcateWorld hyxcate = HyxcateWorld.get(world);
+        CapabilityCelestialEvent hyxcate = CapabilityCelestialEvent.get(world);
 
         // Prevents sleeping during a blood moon
         if (hyxcate != null && hyxcate.currentLunarEvent instanceof LunarEventBloodMoon && !HyxcateConfig.EVENTS_LUNAR.BLOOD_MOON.sleeping && block instanceof BlockBed) {
@@ -86,7 +86,7 @@ public class BloodMoonEvent {
     @SubscribeEvent
     public static void onSleep(PlayerSleepInBedEvent event) {
         EntityPlayer player = event.getEntityPlayer();
-        HyxcateWorld Hyxcate = HyxcateWorld.get(player.world);
+        CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(player.world);
         if (Hyxcate != null) {
             if (Hyxcate.currentLunarEvent instanceof LunarEventBloodMoon && !HyxcateConfig.EVENTS_LUNAR.BLOOD_MOON.sleeping) {
                 event.setResult(EntityPlayer.SleepResult.OTHER_PROBLEM);

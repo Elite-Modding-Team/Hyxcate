@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.entity.ai;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.celestialevent.lunar.LunarEventBloodMoon;
 import mod.emt.hyxcate.celestialevent.lunar.LunarEventFullMoon;
 import net.minecraft.entity.EntityLivingBase;
@@ -30,7 +30,7 @@ public class AIWolfSpecialMoon extends EntityAITargetNonTamed<EntityLivingBase> 
     }
 
     private boolean shouldHappen() {
-        HyxcateWorld Hyxcate = HyxcateWorld.get(this.taskOwner.world);
+        CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(this.taskOwner.world);
         if (Hyxcate == null) return false;
         return Hyxcate.currentLunarEvent instanceof LunarEventFullMoon || Hyxcate.currentLunarEvent instanceof LunarEventBloodMoon;
     }

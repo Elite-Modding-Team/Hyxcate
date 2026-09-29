@@ -1,7 +1,7 @@
 package mod.emt.hyxcate.event.client;
 
 import mod.emt.hyxcate.Hyxcate;
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.util.ColorTransitionUtil;
 import mod.emt.hyxcate.util.ColorUtil;
@@ -48,7 +48,7 @@ public class CelestialWorldEvent {
             joinTime = world.getWorldTime();
         }
 
-        HyxcateWorld hyxcate = HyxcateWorld.get(world);
+        CapabilityCelestialEvent hyxcate = CapabilityCelestialEvent.get(world);
         if (hyxcate == null) return;
         hyxcate.update();
 
@@ -82,7 +82,7 @@ public class CelestialWorldEvent {
             return;
         }
 
-        HyxcateWorld hyxcateWorld = HyxcateWorld.get(world);
+        CapabilityCelestialEvent hyxcateWorld = CapabilityCelestialEvent.get(world);
         if (hyxcateWorld == null) {
             return;
         }

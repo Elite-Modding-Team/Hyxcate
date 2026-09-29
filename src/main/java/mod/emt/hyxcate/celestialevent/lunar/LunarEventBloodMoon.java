@@ -3,7 +3,7 @@ package mod.emt.hyxcate.celestialevent.lunar;
 import com.google.common.collect.Sets;
 import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.api.celestialevent.HyxcateLunarEvent;
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
@@ -39,7 +39,7 @@ public class LunarEventBloodMoon extends HyxcateLunarEvent {
 
     private final ConfigImpl config = new ConfigImpl(HyxcateConfig.EVENTS_LUNAR.BLOOD_MOON.chance, HyxcateConfig.EVENTS_LUNAR.BLOOD_MOON.startNight, HyxcateConfig.EVENTS_LUNAR.BLOOD_MOON.gracePeriod, HyxcateConfig.EVENTS_LUNAR.BLOOD_MOON.nightInterval);
 
-    public LunarEventBloodMoon(HyxcateWorld HyxcateWorld) {
+    public LunarEventBloodMoon(CapabilityCelestialEvent HyxcateWorld) {
         super("blood_moon", HyxcateWorld);
     }
 

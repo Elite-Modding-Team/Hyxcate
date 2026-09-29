@@ -1,7 +1,7 @@
 package mod.emt.hyxcate.init;
 
 import mod.emt.hyxcate.Hyxcate;
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.client.renderer.*;
 import mod.emt.hyxcate.entity.*;
 import net.minecraft.block.Block;
@@ -48,21 +48,21 @@ public final class HyxcateRegistry {
         }
     };
 
-    @CapabilityInject(HyxcateWorld.class)
-    public static Capability<HyxcateWorld> worldCapability;
+    @CapabilityInject(CapabilityCelestialEvent.class)
+    public static Capability<CapabilityCelestialEvent> worldCapability;
 
     public static void preInit() {
         HyxcateItems.initMaterials();
 
-        CapabilityManager.INSTANCE.register(HyxcateWorld.class, new Capability.IStorage<HyxcateWorld>() {
+        CapabilityManager.INSTANCE.register(CapabilityCelestialEvent.class, new Capability.IStorage<CapabilityCelestialEvent>() {
             @Nullable
             @Override
-            public NBTBase writeNBT(Capability<HyxcateWorld> capability, HyxcateWorld instance, EnumFacing side) {
+            public NBTBase writeNBT(Capability<CapabilityCelestialEvent> capability, CapabilityCelestialEvent instance, EnumFacing side) {
                 return null;
             }
 
             @Override
-            public void readNBT(Capability<HyxcateWorld> capability, HyxcateWorld instance, EnumFacing side, NBTBase nbt) {
+            public void readNBT(Capability<CapabilityCelestialEvent> capability, CapabilityCelestialEvent instance, EnumFacing side, NBTBase nbt) {
 
             }
         }, () -> null);

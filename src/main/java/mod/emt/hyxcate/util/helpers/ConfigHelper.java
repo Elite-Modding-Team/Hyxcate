@@ -1,7 +1,7 @@
 package mod.emt.hyxcate.util.helpers;
 
 import mod.emt.hyxcate.Hyxcate;
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
 import mod.emt.hyxcate.celestialevent.lunar.LunarEventStarShower;
@@ -100,7 +100,7 @@ public class ConfigHelper {
         }
     }
 
-    public static double getMeteorChance(World world, HyxcateWorld data) {
+    public static double getMeteorChance(World world, CapabilityCelestialEvent data) {
         DimensionType dim = world.provider.getDimensionType();
         if (dim == DimensionType.THE_END) return HyxcateConfig.METEORS.chanceEndM;
         if (!HyxcateData.ALLOWED_DIMENSIONS_LUNAR.contains(dim.getId())) return 0;

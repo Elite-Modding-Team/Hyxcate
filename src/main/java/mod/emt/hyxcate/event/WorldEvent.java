@@ -1,7 +1,7 @@
 package mod.emt.hyxcate.event;
 
 import mod.emt.hyxcate.Hyxcate;
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.network.HyxcatePacketHandler;
 import mod.emt.hyxcate.network.HyxcatePacketWorld;
 import net.minecraft.entity.Entity;
@@ -18,7 +18,7 @@ public class WorldEvent {
         Entity entity = event.getEntity();
         World world = entity.getEntityWorld();
         if (world.isRemote) return;
-        HyxcateWorld Hyxcate = HyxcateWorld.get(world);
+        CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(world);
         if (Hyxcate == null) return;
         if (entity instanceof EntityPlayerMP) {
             HyxcatePacketWorld packet = new HyxcatePacketWorld(Hyxcate);
@@ -28,6 +28,6 @@ public class WorldEvent {
 
     @SubscribeEvent
     public void onWorldCapabilities(AttachCapabilitiesEvent<World> event) {
-        event.addCapability(new ResourceLocation(Hyxcate.ID, "world_cap"), new HyxcateWorld(event.getObject()));
+        event.addCapability(new ResourceLocation(Hyxcate.ID, "world_cap"), new CapabilityCelestialEvent(event.getObject()));
     }
 }

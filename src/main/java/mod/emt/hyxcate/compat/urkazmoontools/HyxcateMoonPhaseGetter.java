@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.compat.urkazmoontools;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.celestialevent.lunar.LunarEventBloodMoon;
 import mod.emt.hyxcate.celestialevent.lunar.LunarEventBlueMoon;
 import net.minecraft.entity.Entity;
@@ -29,7 +29,7 @@ public class HyxcateMoonPhaseGetter implements IItemPropertyGetter {
             int moonFactor;
             if (worldIn.provider.isSurfaceWorld()) {
                 int extras = 0;
-                HyxcateWorld Hyxcate = HyxcateWorld.get(worldIn);
+                CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(worldIn);
                 if (Hyxcate != null && Hyxcate.currentLunarEvent instanceof LunarEventBlueMoon) {
                     extras += 100;
                 }

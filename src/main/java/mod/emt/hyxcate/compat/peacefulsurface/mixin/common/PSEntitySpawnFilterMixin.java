@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.compat.peacefulsurface.mixin.common;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import lain.mods.peacefulsurface.PeacefulSurface;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
@@ -14,7 +14,7 @@ public abstract class PSEntitySpawnFilterMixin {
     @Inject(method = "CheckSpawn", at = @At("HEAD"), cancellable = true)
     private void psCheckSpawn(LivingSpawnEvent.CheckSpawn event, CallbackInfo ci) {
         if (HyxcateConfig.MOD_INTEGRATION.peacefulSurfaceIntegration) {
-            HyxcateWorld Hyxcate = HyxcateWorld.get(event.getWorld());
+            CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(event.getWorld());
             if (Hyxcate != null && (Hyxcate.currentSolarEvent != null || Hyxcate.currentLunarEvent != null)) {
                 ci.cancel();
             }

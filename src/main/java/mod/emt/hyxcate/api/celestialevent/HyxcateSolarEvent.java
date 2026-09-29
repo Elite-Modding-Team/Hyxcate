@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.api.celestialevent;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.util.WorldUtil;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.SoundEvent;
@@ -10,10 +10,10 @@ import net.minecraftforge.common.util.INBTSerializable;
 
 public abstract class HyxcateSolarEvent implements INBTSerializable<NBTTagCompound> {
     public final String name;
-    protected final HyxcateWorld hyxcateWorld;
+    protected final CapabilityCelestialEvent hyxcateWorld;
     protected final World world;
 
-    protected HyxcateSolarEvent(String name, HyxcateWorld hyxcateWorld) {
+    protected HyxcateSolarEvent(String name, CapabilityCelestialEvent hyxcateWorld) {
         this.name = name;
         this.hyxcateWorld = hyxcateWorld;
         this.world = hyxcateWorld.world;

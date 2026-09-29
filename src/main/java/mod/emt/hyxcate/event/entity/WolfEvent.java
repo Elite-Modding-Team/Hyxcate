@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.event.entity;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.entity.ai.AIWolfSpecialMoon;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.EntityWolf;
@@ -14,7 +14,7 @@ public class WolfEvent {
         Entity entity = event.getEntity();
         World world = entity.getEntityWorld();
         if (world.isRemote) return;
-        HyxcateWorld Hyxcate = HyxcateWorld.get(world);
+        CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(world);
         if (Hyxcate == null) return;
         if (entity instanceof EntityWolf) {
             EntityWolf wolf = (EntityWolf) entity;

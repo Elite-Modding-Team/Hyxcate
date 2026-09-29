@@ -2,7 +2,7 @@ package mod.emt.hyxcate.celestialevent.lunar;
 
 import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.api.celestialevent.HyxcateLunarEvent;
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
 import mod.emt.hyxcate.util.WorldUtil;
@@ -13,7 +13,7 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 
 public class LunarEventFullMoon extends HyxcateLunarEvent {
-    public LunarEventFullMoon(HyxcateWorld HyxcateWorld) {
+    public LunarEventFullMoon(CapabilityCelestialEvent HyxcateWorld) {
         super("full_moon", HyxcateWorld);
     }
 

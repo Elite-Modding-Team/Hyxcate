@@ -3,7 +3,7 @@ package mod.emt.hyxcate.network;
 import io.netty.buffer.ByteBuf;
 import mod.emt.hyxcate.api.celestialevent.HyxcateLunarEvent;
 import mod.emt.hyxcate.api.celestialevent.HyxcateSolarEvent;
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
@@ -19,7 +19,7 @@ import java.io.IOException;
 public class HyxcatePacketWorld implements IMessage {
     private NBTTagCompound info;
 
-    public HyxcatePacketWorld(HyxcateWorld world) {
+    public HyxcatePacketWorld(CapabilityCelestialEvent world) {
         this.info = world.serializeNBT(true);
     }
 
@@ -49,7 +49,7 @@ public class HyxcatePacketWorld implements IMessage {
             Minecraft.getMinecraft().addScheduledTask(() -> {
                 World world = Minecraft.getMinecraft().world;
                 if (world != null) {
-                    HyxcateWorld hyxcate = HyxcateWorld.get(world);
+                    CapabilityCelestialEvent hyxcate = CapabilityCelestialEvent.get(world);
                     if (hyxcate != null) {
                         HyxcateLunarEvent oldLunar = hyxcate.currentLunarEvent;
                         HyxcateSolarEvent oldSolar = hyxcate.currentSolarEvent;

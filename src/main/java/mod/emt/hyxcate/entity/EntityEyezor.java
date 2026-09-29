@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.entity;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.celestialevent.lunar.LunarEventStarShower;
 import mod.emt.hyxcate.init.HyxcateLootTables;
@@ -78,7 +78,7 @@ public class EntityEyezor extends EntityZombie implements IRangedAttackMob {
     @Nullable
     @Override
     public IEntityLivingData onInitialSpawn(@Nonnull DifficultyInstance difficulty, @Nullable IEntityLivingData entityLivingData) {
-        HyxcateWorld Hyxcate = HyxcateWorld.get(world);
+        CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(world);
         if (Hyxcate != null) {
             if (Hyxcate.currentLunarEvent instanceof LunarEventStarShower) {
                 this.setType(1);

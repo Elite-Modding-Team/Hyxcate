@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.celestialevent.solar.event;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.celestialevent.solar.SolarEventGrimEclipse;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
@@ -20,7 +20,7 @@ public class GrimEclipseEvent {
     @SubscribeEvent
     public void onCheckSpawn(LivingSpawnEvent.CheckSpawn event) {
         EntityLivingBase entity = event.getEntityLiving();
-        HyxcateWorld Hyxcate = HyxcateWorld.get(entity.world);
+        CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(entity.world);
         if (Hyxcate == null || !(entity instanceof IMob || entity instanceof EntityMob)) return;
         if (event.getSpawner() == null && entity.world.canSeeSky(entity.getPosition())) {
             ResourceLocation name = EntityList.getKey(entity);
@@ -35,7 +35,7 @@ public class GrimEclipseEvent {
     @SubscribeEvent
     public void onSpawn(LivingSpawnEvent.SpecialSpawn event) {
         EntityLivingBase entity = event.getEntityLiving();
-        HyxcateWorld Hyxcate = HyxcateWorld.get(entity.world);
+        CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(entity.world);
         if (Hyxcate == null) return;
         if (Hyxcate.currentSolarEvent instanceof SolarEventGrimEclipse) {
             if (HyxcateConfig.EVENTS_SOLAR.GRIM_ECLIPSE.spawnsExtraChance > 0 && entity.world.rand.nextInt(HyxcateConfig.EVENTS_SOLAR.GRIM_ECLIPSE.spawnsExtraChance) == 0) {
@@ -48,7 +48,7 @@ public class GrimEclipseEvent {
     @SubscribeEvent
     public void onSleep(PlayerSleepInBedEvent event) {
         EntityPlayer player = event.getEntityPlayer();
-        HyxcateWorld Hyxcate = HyxcateWorld.get(player.world);
+        CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(player.world);
         if (Hyxcate != null) {
             if (Hyxcate.currentSolarEvent instanceof SolarEventGrimEclipse) {
                 event.setResult(EntityPlayer.SleepResult.NOT_POSSIBLE_NOW); // TODO: Make conditional?

@@ -1,6 +1,6 @@
 package mod.emt.hyxcate.celestialevent.lunar.event;
 
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.celestialevent.lunar.LunarEventFullMoon;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
@@ -22,7 +22,7 @@ public class FullMoonEvent {
     @SubscribeEvent
     public void onCheckSpawn(LivingSpawnEvent.CheckSpawn event) {
         EntityLivingBase entity = event.getEntityLiving();
-        HyxcateWorld Hyxcate = HyxcateWorld.get(entity.world);
+        CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(entity.world);
         if (Hyxcate == null || !(entity instanceof IMob || entity instanceof EntityMob)) return;
         if (event.getSpawner() == null && entity.world.canSeeSky(entity.getPosition())) {
             ResourceLocation name = EntityList.getKey(entity);
@@ -37,7 +37,7 @@ public class FullMoonEvent {
     @SubscribeEvent
     public void onSpawn(LivingSpawnEvent.SpecialSpawn event) {
         EntityLivingBase entity = event.getEntityLiving();
-        HyxcateWorld Hyxcate = HyxcateWorld.get(entity.world);
+        CapabilityCelestialEvent Hyxcate = CapabilityCelestialEvent.get(entity.world);
         if (Hyxcate == null) return;
         if (Hyxcate.currentLunarEvent instanceof LunarEventFullMoon) {
             if (HyxcateConfig.EVENTS_LUNAR.FULL_MOON.spawnsExtraChance > 0 && entity.world.rand.nextInt(HyxcateConfig.EVENTS_LUNAR.FULL_MOON.spawnsExtraChance) == 0) {

@@ -2,7 +2,7 @@ package mod.emt.hyxcate.celestialevent.lunar;
 
 import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.api.celestialevent.HyxcateLunarEvent;
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
 import mod.emt.hyxcate.util.WorldUtil;
@@ -24,7 +24,7 @@ public class LunarEventBlueMoon extends HyxcateLunarEvent {
 
     private final ConfigImpl config = new ConfigImpl(HyxcateConfig.EVENTS_LUNAR.BLUE_MOON.chance, HyxcateConfig.EVENTS_LUNAR.BLUE_MOON.startNight, HyxcateConfig.EVENTS_LUNAR.BLUE_MOON.gracePeriod, HyxcateConfig.EVENTS_LUNAR.BLUE_MOON.nightInterval);
 
-    public LunarEventBlueMoon(HyxcateWorld HyxcateWorld) {
+    public LunarEventBlueMoon(CapabilityCelestialEvent HyxcateWorld) {
         super("blue_moon", HyxcateWorld);
     }
 

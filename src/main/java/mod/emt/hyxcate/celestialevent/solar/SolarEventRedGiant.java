@@ -2,10 +2,9 @@ package mod.emt.hyxcate.celestialevent.solar;
 
 import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.api.celestialevent.HyxcateSolarEvent;
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
-import mod.emt.hyxcate.util.WorldUtil;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
@@ -16,7 +15,7 @@ import net.minecraft.util.text.TextFormatting;
 public class SolarEventRedGiant extends HyxcateSolarEvent {
     private final ConfigImpl config = new ConfigImpl(HyxcateConfig.EVENTS_SOLAR.RED_GIANT.chance, HyxcateConfig.EVENTS_SOLAR.RED_GIANT.startDay, HyxcateConfig.EVENTS_SOLAR.RED_GIANT.gracePeriod, HyxcateConfig.EVENTS_SOLAR.RED_GIANT.dayInterval);
 
-    public SolarEventRedGiant(HyxcateWorld HyxcateWorld) {
+    public SolarEventRedGiant(CapabilityCelestialEvent HyxcateWorld) {
         super("red_giant", HyxcateWorld);
     }
 

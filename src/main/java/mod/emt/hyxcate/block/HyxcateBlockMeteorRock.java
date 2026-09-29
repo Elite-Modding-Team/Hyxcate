@@ -1,7 +1,7 @@
 package mod.emt.hyxcate.block;
 
 import com.invadermonky.futurefireproof.api.IFireproofBlock;
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -37,7 +37,7 @@ public class HyxcateBlockMeteorRock extends Block implements IFireproofBlock {
     @Override
     public void onBlockHarvested(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
         if (!world.isRemote) {
-            HyxcateWorld data = HyxcateWorld.get(world);
+            CapabilityCelestialEvent data = CapabilityCelestialEvent.get(world);
             if (data != null) {
                 data.meteorLandingSites.remove(pos);
                 data.sendToClients();

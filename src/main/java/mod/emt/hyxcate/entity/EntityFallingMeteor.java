@@ -1,12 +1,11 @@
 package mod.emt.hyxcate.entity;
 
 import mod.emt.hyxcate.Hyxcate;
-import mod.emt.hyxcate.capability.HyxcateWorld;
+import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
 import mod.emt.hyxcate.init.HyxcateBlocks;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockSnow;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.monster.EntityBlaze;
@@ -141,7 +140,7 @@ public class EntityFallingMeteor extends EntityFallingStar {
                 // if we removed trees, we want to continue flying after until we hit the ground
                 if (this.removeObstacles(this.getPosition())) return;
 
-                HyxcateWorld data = HyxcateWorld.get(this.world);
+                CapabilityCelestialEvent data = CapabilityCelestialEvent.get(this.world);
                 if (data == null) return;
 
                 Explosion exp = this.world.createExplosion(null, this.posX + 0.5, this.posY + 0.5, this.posZ + 0.5, this.dataManager.get(SIZE) * 4, true);
