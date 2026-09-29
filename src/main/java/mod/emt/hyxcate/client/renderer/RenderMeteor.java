@@ -44,6 +44,13 @@ public class RenderMeteor extends Render<EntityFallingMeteor> {
         float size = entity.getDataManager().get(EntityFallingMeteor.SIZE);
         GlStateManager.scale(size, size, size);
         GlStateManager.translate(-1, -1, -1);
+        float ticks = entity.ticksExisted + partialTicks;
+        float rotationX = ticks * 1.1F;
+        float rotationY = ticks * 1.5F;
+        float rotationZ = ticks * 0.9F;
+        GlStateManager.rotate(rotationX, 1.0F, 0.0F, 0.0F);
+        GlStateManager.rotate(rotationY, 0.0F, 1.0F, 0.0F);
+        GlStateManager.rotate(rotationZ, 0.0F, 0.0F, 1.0F);
         this.bindTexture(this.getEntityTexture(entity));
         this.model.render();
         GlStateManager.enableLighting();
@@ -51,12 +58,11 @@ public class RenderMeteor extends Render<EntityFallingMeteor> {
     }
 
     @Override
-    public boolean shouldRender(EntityFallingMeteor livingEntity, ICamera camera, double camX, double camY, double camZ) {
+    public boolean shouldRender(EntityFallingMeteor entity, ICamera camera, double camX, double camY, double camZ) {
         return true;
     }
 
     private static class ModelOverlay extends ModelBase {
-
         private final ModelRenderer box;
 
         public ModelOverlay() {
