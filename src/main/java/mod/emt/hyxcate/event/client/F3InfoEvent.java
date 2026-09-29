@@ -20,12 +20,15 @@ public class F3InfoEvent {
         event.getLeft().add("");
         CapabilityCelestialEvent world = CapabilityCelestialEvent.get(mc.world);
         String pre = TextFormatting.GREEN + "[" + Hyxcate.NAME + "]" + TextFormatting.RESET;
-        String name = "None";
+        String nameL = "None";
+        String nameS = "None";
         if (world.currentLunarEvent != null) {
-            name = world.currentLunarEvent.name;
-        } else if (world.currentSolarEvent != null) {
-            name = world.currentSolarEvent.name;
+            nameL = world.currentLunarEvent.name;
         }
-        event.getLeft().add(pre + " Current Event: " + name);
+        if (world.currentSolarEvent != null) {
+            nameS = world.currentSolarEvent.name;
+        }
+        event.getLeft().add(pre + " Current Lunar Event: " + nameL);
+        event.getLeft().add(pre + " Current Solar Event: " + nameS);
     }
 }
