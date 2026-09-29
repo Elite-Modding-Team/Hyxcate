@@ -6,6 +6,8 @@ import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
 import mod.emt.hyxcate.init.HyxcateBlocks;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
+import mod.emt.hyxcate.util.ColorUtil;
+import mod.emt.hyxcate.util.ParticleUtil;
 import net.minecraft.block.BlockSnow;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.monster.EntityBlaze;
@@ -17,7 +19,6 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SPacketSoundEffect;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -242,7 +243,7 @@ public class EntityFallingMeteor extends EntityFallingStar {
         } else if (this.isLoaded()) {
             // we only want to display particles if we're loaded
             float size = this.dataManager.get(SIZE) / 2F + 1;
-            for (int i = 0; i < 60; i++) {
+            for (int i = 0; i < 5; i++) {
                 double x = this.posX + MathHelper.nextDouble(this.world.rand, -size, size);
                 double y = this.posY + MathHelper.nextDouble(this.world.rand, -size, size);
                 double z = this.posZ + MathHelper.nextDouble(this.world.rand, -size, size);
@@ -250,20 +251,23 @@ public class EntityFallingMeteor extends EntityFallingStar {
                 double mY = -this.motionY + this.world.rand.nextGaussian() * 0.02;
                 double mZ = -this.motionZ + this.world.rand.nextGaussian() * 0.02;
 
-                EnumParticleTypes type;
-                float f = this.world.rand.nextFloat();
+                float particleScale = this.dataManager.get(SIZE) * 30.0F;
+                int[][] color;
 
-                if (f >= 0.65F) {
-                    type = this.dataManager.get(TYPE) == 2 ? EnumParticleTypes.SNOW_SHOVEL : EnumParticleTypes.FLAME;
-                } else if (f >= 0.45F) {
-                    type = this.dataManager.get(TYPE) == 2 ? EnumParticleTypes.SNOWBALL : EnumParticleTypes.LAVA;
-                } else if (f >= 0.3F) {
-                    type = this.dataManager.get(TYPE) == 2 ? EnumParticleTypes.CLOUD : EnumParticleTypes.SMOKE_NORMAL;
+                if (this.dataManager.get(TYPE) == 1) {
+                    color = ColorUtil.METEOR_METEORITE;
+                } else if (this.dataManager.get(TYPE) == 2) {
+                    color = ColorUtil.METEOR_FREZARITE;
+                } else if (this.dataManager.get(TYPE) == 3) {
+                    color = ColorUtil.METEOR_KREKNORITE;
+                } else if (this.dataManager.get(TYPE) == 4) {
+                    float hue = (world.getTotalWorldTime() % 40L) / 40.0F;
+                    color = ColorUtil.RAINBOW(hue);
                 } else {
-                    type = this.dataManager.get(TYPE) == 2 ? EnumParticleTypes.EXPLOSION_NORMAL : EnumParticleTypes.SMOKE_LARGE;
+                    color = ColorUtil.METEOR_METEORITE;
                 }
 
-                this.world.spawnParticle(type, true, x, y, z, mX, mY, mZ);
+                ParticleUtil.spawnParticleFire(this.world, (float) x, (float) y, (float) z, (float) mX, (float) mY, (float) mZ, 0.2F, particleScale, 125, color);
             }
         }
     }

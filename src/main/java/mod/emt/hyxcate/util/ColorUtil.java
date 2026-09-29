@@ -5,6 +5,36 @@ import net.minecraft.util.math.Vec3d;
 import java.awt.*;
 
 public class ColorUtil {
+    public static int[][] METEOR_FREZARITE = {
+            {7, 77, 177},
+            {26, 96, 255},
+            {93, 177, 255},
+            {143, 189, 255},
+            {169, 204, 255}
+    };
+
+    public static int[][] METEOR_KREKNORITE = {
+            {167, 2, 2},
+            {212, 99, 39},
+            {223, 132, 64},
+            {211, 148, 59},
+            {209, 193, 73}
+    };
+
+    public static int[][] METEOR_METEORITE = {
+            {202, 113, 4},
+            {219, 156, 23},
+            {241, 219, 28},
+            {243, 224, 142},
+            {242, 233, 198}
+    };
+
+    public static int[][] RAINBOW(float hue) {
+        int rgb = Color.HSBtoRGB(hue, 1.0F, 1.0F);
+        return new int[][] {{(rgb >> 16) & 0xFF, (rgb >> 8) & 0xFF, rgb & 0xFF}
+        };
+    }
+
     public static int[][] SHOOTING_STAR = {
             {255, 233, 124},
             {101, 201, 198},

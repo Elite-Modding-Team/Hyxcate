@@ -31,6 +31,7 @@ public class ParticlesEvent {
 
     @SubscribeEvent
     public void onTextureStitch(TextureStitchEvent.Pre event) {
+        event.getMap().registerSprite(new ResourceLocation(Hyxcate.ID, "particle/fire"));
         event.getMap().registerSprite(new ResourceLocation(Hyxcate.ID, "particle/glow"));
         event.getMap().registerSprite(new ResourceLocation(Hyxcate.ID, "particle/star"));
     }
