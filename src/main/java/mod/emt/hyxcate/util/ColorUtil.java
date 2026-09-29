@@ -5,6 +5,15 @@ import net.minecraft.util.math.Vec3d;
 import java.awt.*;
 
 public class ColorUtil {
+    public static int[][] SHOOTING_STAR = {
+            {255, 233, 124},
+            {101, 201, 198},
+            {241, 219, 28},
+            {167, 247, 255},
+            {251, 233, 142},
+            {163, 83, 114}
+    };
+
     /**
      * Adjust the brightness of a given RGB integer.
      *
@@ -26,6 +35,34 @@ public class ColorUtil {
 
         // Convert back to RGB
         return Color.HSBtoRGB(hsbVals[0], hsbVals[1], hsbVals[2]);
+    }
+
+    public static int[] colorTransition(int[][] colors, float progress) {
+        if (colors.length == 0) {
+            return new int[]{255, 255, 255};
+        }
+
+        if (colors.length == 1) {
+            return colors[0];
+        }
+
+        progress = Math.max(0.0F, Math.min(1.0F, progress));
+        float scaled = progress * (colors.length - 1);
+        int index = (int) Math.floor(scaled);
+
+        if (index >= colors.length - 1) {
+            return colors[colors.length - 1];
+        }
+
+        float localProgress = scaled - index;
+        int[] current = colors[index];
+        int[] next = colors[index + 1];
+
+        return new int[] {
+                (int) (current[0] + (next[0] - current[0]) * localProgress),
+                (int) (current[1] + (next[1] - current[1]) * localProgress),
+                (int) (current[2] + (next[2] - current[2]) * localProgress)
+        };
     }
 
     /**

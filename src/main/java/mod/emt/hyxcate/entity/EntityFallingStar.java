@@ -3,12 +3,13 @@ package mod.emt.hyxcate.entity;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.init.HyxcateItems;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
+import mod.emt.hyxcate.util.ColorUtil;
+import mod.emt.hyxcate.util.ParticleUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -49,7 +50,7 @@ public class EntityFallingStar extends Entity {
                 double mX = -this.motionX + this.world.rand.nextGaussian() * 0.05;
                 double mY = -this.motionY + this.world.rand.nextGaussian() * 0.05;
                 double mZ = -this.motionZ + this.world.rand.nextGaussian() * 0.05;
-                this.world.spawnParticle(EnumParticleTypes.FIREWORKS_SPARK, true, this.posX, this.posY, this.posZ, mX, mY, mZ);
+                ParticleUtil.spawnStarSpark(this.world, (float) this.posX, (float) this.posY + 0.5F, (float) this.posZ, (float) mX, (float) mY, (float) mZ, 0.8F, 4.0F, 150, ColorUtil.SHOOTING_STAR);
             }
         }
     }

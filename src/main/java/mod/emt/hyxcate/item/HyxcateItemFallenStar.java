@@ -3,7 +3,8 @@ package mod.emt.hyxcate.item;
 import com.invadermonky.futurefireproof.api.IFireproofItem;
 import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.init.HyxcateBlocks;
-import mod.emt.hyxcate.util.helpers.ConfigHelper;
+import mod.emt.hyxcate.util.ColorUtil;
+import mod.emt.hyxcate.util.ParticleUtil;
 import mod.emt.hyxcate.util.helpers.SoundHelper;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -11,7 +12,6 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
@@ -29,11 +29,11 @@ public class HyxcateItemFallenStar extends Item implements IFireproofItem {
     @Override
     public boolean onEntityItemUpdate(EntityItem entityItem) {
         if (entityItem.world.isRemote) {
-            if (entityItem.world.rand.nextFloat() >= 0.7F) {
+            if (entityItem.world.rand.nextFloat() >= 0.5F) {
                 double mX = entityItem.world.rand.nextGaussian() * 0.05;
                 double mY = entityItem.world.rand.nextFloat() * 0.4;
                 double mZ = entityItem.world.rand.nextGaussian() * 0.05;
-                entityItem.world.spawnParticle(EnumParticleTypes.FIREWORKS_SPARK, true, entityItem.posX, entityItem.posY + 0.5F, entityItem.posZ, mX, mY, mZ);
+                ParticleUtil.spawnStarSpark(entityItem.world, (float) entityItem.posX, (float) entityItem.posY + 0.5F, (float) entityItem.posZ, (float) mX, (float) mY, (float) mZ, 0.8F, 4.0F, 150, ColorUtil.SHOOTING_STAR);
             }
             if (entityItem.ticksExisted == 5 && FMLLaunchHandler.side().isClient()) {
                 SoundHelper.playClientSoundFallenStar(entityItem);
