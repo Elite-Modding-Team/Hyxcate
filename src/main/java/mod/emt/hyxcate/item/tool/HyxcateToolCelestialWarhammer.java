@@ -4,6 +4,8 @@ import mod.emt.hyxcate.Hyxcate;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
 import mod.emt.hyxcate.item.HyxcateItemSword;
+import mod.emt.hyxcate.util.ColorUtil;
+import mod.emt.hyxcate.util.ParticleUtil;
 import mod.emt.hyxcate.util.helpers.NBTHelper;
 import mod.emt.hyxcate.util.helpers.SoundHelper;
 import net.minecraft.block.state.IBlockState;
@@ -55,6 +57,15 @@ public class HyxcateToolCelestialWarhammer extends HyxcateItemSword {
                 }
             }
 
+            for (int i = 0; i < 8; i++) {
+                float speed = 0.12F + attacker.world.rand.nextFloat() * 0.10F;
+                double vx = (attacker.world.rand.nextDouble() - 0.5D) * speed;
+                double vy = (attacker.world.rand.nextDouble() - 0.5D) * speed;
+                double vz = (attacker.world.rand.nextDouble() - 0.5D) * speed;
+                ParticleUtil.spawnStarSpark(attacker.world, (float) target.posX + (attacker.world.rand.nextFloat() - 0.5F) * 0.4F, (float) target.posY + target.height * 0.75F, (float) target.posZ + (attacker.world.rand.nextFloat() - 0.5F) * 0.4F,
+                        (float) vx, (float) vy, (float) vz, 0.8F, 5.0F, 100, ColorUtil.SHOOTING_STAR);
+            }
+
             attacker.world.playSound(null, attacker.posX, attacker.posY, attacker.posZ, HyxcateSoundEvents.ITEM_CELESTIAL_WARHAMMER_HIT.getSoundEvent(), SoundCategory.PLAYERS, 1.35F, 1.0F / (attacker.world.rand.nextFloat() * 0.4F + 1.2F));
             ((EntityPlayer) attacker).spawnSweepParticles();
         }
@@ -102,9 +113,14 @@ public class HyxcateToolCelestialWarhammer extends HyxcateItemSword {
             ((EntityPlayer) entityLiving).getCooldownTracker().setCooldown(this, 2 * 20);
         }
 
+        for (int i = 0; i < 20; i++) {
+            float speed = 0.4F + world.rand.nextFloat() * 0.04F;
+            ParticleUtil.spawnStarSpark(world, (float) entityLiving.posX + (world.rand.nextFloat() - 0.5F), (float) entityLiving.posY + entityLiving.height * 0.5F, (float) entityLiving.posZ + (world.rand.nextFloat() - 0.5F),
+                    (world.rand.nextFloat() - 0.5F) * speed, (world.rand.nextFloat() - 0.5F) * speed, (world.rand.nextFloat() - 0.5F) * speed, 0.8F, 5.0F, 100, ColorUtil.SHOOTING_STAR);
+        }
+
         if (!world.isRemote) {
             world.playSound(null, entityLiving.getPosition(), HyxcateSoundEvents.ITEM_CELESTIAL_WARHAMMER_HIT.getSoundEvent(), SoundCategory.PLAYERS, 1.35F, 1.5F / (world.rand.nextFloat() * 0.4F + 0.8F));
-            ((WorldServer) world).spawnParticle(EnumParticleTypes.END_ROD, false, entityLiving.posX, entityLiving.posY + entityLiving.getEyeHeight(), entityLiving.posZ, 30, 0.25, 0.25, 0.25, 0.05);
         } else if (FMLLaunchHandler.side().isClient()) {
             SoundHelper.playClientSoundWarhammer(world);
         }
