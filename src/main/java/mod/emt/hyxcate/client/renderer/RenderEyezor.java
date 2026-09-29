@@ -39,7 +39,6 @@ public class RenderEyezor extends RenderBiped<EntityEyezor> {
 
     protected void preRenderCallback(EntityEyezor entity, float partialTickTime) {
         GlStateManager.scale(1.0625F, 1.0625F, 1.0625F);
-        if (entity.isChild()) GlStateManager.scale(0.505F, 0.505F, 0.505F);
     }
 
     @Override
