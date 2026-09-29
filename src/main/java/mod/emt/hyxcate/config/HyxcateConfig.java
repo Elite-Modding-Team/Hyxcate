@@ -120,6 +120,10 @@ public class HyxcateConfig {
         @Config.Comment("If celestial events should be announced in chat when they start")
         public boolean eventNotifications = true;
 
+        @Config.Name("Event Notifications Verbose")
+        @Config.Comment("If effects of celestial events should be additionally announced in chat when they start")
+        public boolean eventNotificationsVerbose = false;
+
         @Config.Name("Event Intro Sounds")
         @Config.Comment("If celestial events should play a unique sound when they start")
         public boolean eventIntroSounds = true;

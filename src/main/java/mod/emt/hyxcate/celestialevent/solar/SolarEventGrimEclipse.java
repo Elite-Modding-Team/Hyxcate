@@ -21,7 +21,14 @@ public class SolarEventGrimEclipse extends HyxcateSolarEvent {
 
     @Override
     public ITextComponent getStartMessage() {
-        return new TextComponentTranslation("info." + Hyxcate.ID + ".grim_eclipse").setStyle(new Style().setColor(TextFormatting.DARK_GRAY).setItalic(true));
+        String key = "info." + Hyxcate.ID + "." + this.name;
+        ITextComponent text = new TextComponentTranslation(key).setStyle(new Style().setColor(TextFormatting.DARK_GRAY).setItalic(true));
+        if (HyxcateConfig.GENERAL.eventNotificationsVerbose) {
+            key += "_verbose";
+            text.appendText("\n");
+            text.appendSibling(new TextComponentTranslation(key));
+        }
+        return text;
     }
 
     @Override

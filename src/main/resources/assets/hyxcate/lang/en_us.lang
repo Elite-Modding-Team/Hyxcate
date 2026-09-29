@@ -75,15 +75,21 @@ fluid.meteorite.name=Molten Meteorite
 
 # Info
 info.hyxcate.blue_moon=The Blue Moon is rising...
+info.hyxcate.blue_moon_verbose=Crops are growing faster and player luck is increased while hostile mobs are kept at bay.
 info.hyxcate.star_shower=Stars are starting to rain from the sky...
+info.hyxcate.star_shower_verbose=Falling stars are much more likely to appear.
 info.hyxcate.full_moon=The Full Moon is rising...
+info.hyxcate.full_moon_verbose=Hostile mobs spawn more frequently and may have potion effects applied. Untamed wolves will become hostile.
 info.hyxcate.blood_moon=The Blood Moon is rising...
 info.hyxcate.blood_moon_sleeping=The thought of sleep makes you uncomfortable.
+info.hyxcate.blood_moon_verbose=Hostile mobs spawn much more frequently and it's not possible to sleep.
 info.hyxcate.meteor=A meteor has fallen nearby!
 info.hyxcate.meteor_far=A meteor has fallen in the distance!
 info.hyxcate.meteor_verbose=A meteor has fallen at
 info.hyxcate.red_giant=The sun has grown into a Red Giant!
+info.hyxcate.red_giant_verbose=Hostile mobs gain health and become immune to fire, some spawn as their "hot" equivalents.
 info.hyxcate.grim_eclipse=Something is blocking the sun! A Grim Eclipse is beginning...
+info.hyxcate.grim_eclipse_verbose=Hostile mobs will continue to spawn and not be able to burn under the sun as if it were an extended night.
 info.hyxcate.meteor_detector.none_found=No meteor crash sites found!
 info.hyxcate.meteor_detector.distance=Nearest meteor crash site is %s blocks away.
 info.hyxcate.meteor_detector.confirm=Delete meteor crash site at %d, %d, %d from database?

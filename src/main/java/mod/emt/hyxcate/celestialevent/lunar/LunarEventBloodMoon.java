@@ -54,7 +54,14 @@ public class LunarEventBloodMoon extends HyxcateLunarEvent {
 
     @Override
     public ITextComponent getStartMessage() {
-        return new TextComponentTranslation("info." + Hyxcate.ID + ".blood_moon").setStyle(new Style().setColor(TextFormatting.DARK_RED).setItalic(true));
+        String key = "info." + Hyxcate.ID + "." + this.name;
+        ITextComponent text = new TextComponentTranslation(key).setStyle(new Style().setColor(TextFormatting.DARK_RED).setItalic(true));
+        if (HyxcateConfig.GENERAL.eventNotificationsVerbose) {
+            key += "_verbose";
+            text.appendText("\n");
+            text.appendSibling(new TextComponentTranslation(key));
+        }
+        return text;
     }
 
     @Override
