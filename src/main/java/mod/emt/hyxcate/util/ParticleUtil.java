@@ -4,6 +4,10 @@ import mod.emt.hyxcate.Hyxcate;
 import net.minecraft.world.World;
 
 public class ParticleUtil {
+    public static void spawnCrystalEnergy(World world, float x, float y, float z, double angle, double radius, double rotationSpeed, float a, float scale, int lifetime, int[][] transitionColors) {
+        Hyxcate.proxy.spawnCrystalEnergy(world, x, y, z, angle, radius, rotationSpeed, a, scale, lifetime, transitionColors);
+    }
+
     public static void spawnParticleFire(World world, float x, float y, float z, float vx, float vy, float vz, float a, float scale, int lifetime, int[][] transitionColors) {
         Hyxcate.proxy.spawnParticleFire(world, x, y, z, vx, vy, vz, a, scale, lifetime, transitionColors);
     }

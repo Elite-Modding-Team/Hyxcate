@@ -21,6 +21,9 @@ public class CommonProxy {
     }
 
     /* Particles */
+    public void spawnCrystalEnergy(World world, float x, float y, float z, double angle, double radius, double rotationSpeed, float a, float scale, int lifetime, int[][] transitionColors) {
+    }
+
     public void spawnParticleFire(World world, float x, float y, float z, float vx, float vy, float vz, float a, float scale, int lifetime, int[][] transitionColors) {
     }
 

@@ -5,6 +5,19 @@ import net.minecraft.util.math.Vec3d;
 import java.awt.*;
 
 public class ColorUtil {
+    public static int[][] CYBER_CRYSTAL = {
+            {64, 106, 136},
+            {194, 232, 255},
+            {64, 106, 136},
+            {194, 232, 255},
+            {64, 106, 136},
+            {194, 232, 255},
+            {64, 106, 136},
+            {194, 232, 255},
+            {64, 106, 136},
+            {194, 232, 255}
+    };
+
     public static int[][] METEOR_FREZARITE = {
             {7, 77, 177},
             {26, 96, 255},

@@ -1,9 +1,6 @@
 package mod.emt.hyxcate.proxy;
 
-import mod.emt.hyxcate.client.particle.ParticleFire;
-import mod.emt.hyxcate.client.particle.ParticleGlow;
-import mod.emt.hyxcate.client.particle.ParticleRenderer;
-import mod.emt.hyxcate.client.particle.ParticleStarSpark;
+import mod.emt.hyxcate.client.particle.*;
 import mod.emt.hyxcate.init.HyxcateEvents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.network.NetHandlerPlayClient;
@@ -42,6 +39,14 @@ public class ClientProxy extends CommonProxy {
     }
 
     /* Particles */
+    @Override
+    public void spawnCrystalEnergy(World world, float x, float y, float z, double angle, double radius, double rotationSpeed, float a, float scale, int lifetime, int[][] transitionColors) {
+        particleCounter += random.nextInt(3);
+        if (particleCounter % (Minecraft.getMinecraft().gameSettings.particleSetting == 0 ? 1 : 2 * Minecraft.getMinecraft().gameSettings.particleSetting) == 0) {
+            ParticleRenderer.INSTANCE.addParticle(new ParticleCrystalEnergy(world, x, y, z, angle, radius, rotationSpeed, a, scale, lifetime, transitionColors));
+        }
+    }
+
     @Override
     public void spawnParticleFire(World world, float x, float y, float z, float vx, float vy, float vz, float a, float scale, int lifetime, int[][] transitionColors) {
         particleCounter += random.nextInt(3);

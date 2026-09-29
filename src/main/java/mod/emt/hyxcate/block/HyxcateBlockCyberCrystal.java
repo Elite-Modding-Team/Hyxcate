@@ -3,6 +3,8 @@ package mod.emt.hyxcate.block;
 import com.invadermonky.futurefireproof.api.IFireproofBlock;
 import mod.emt.hyxcate.init.HyxcateBlocks;
 import mod.emt.hyxcate.init.HyxcateRegistry;
+import mod.emt.hyxcate.util.ColorUtil;
+import mod.emt.hyxcate.util.ParticleUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -12,7 +14,6 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
@@ -75,12 +76,13 @@ public class HyxcateBlockCyberCrystal extends Block implements IFireproofBlock {
     @Override
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rand) {
-        for (int i = 0; i < 3; i++) {
-            boolean side = rand.nextBoolean();
-            float x = side ? rand.nextFloat() : rand.nextBoolean() ? 1 : 0;
-            float z = !side ? rand.nextFloat() : rand.nextBoolean() ? 1 : 0;
-            float y = rand.nextBoolean() ? 1 : 0;
-            world.spawnParticle(EnumParticleTypes.TOWN_AURA, pos.getX() + x, pos.getY() + y, pos.getZ() + z, 0, 0, 0);
+        for (int i = 0; i < 1; i++) {
+            double centerX = pos.getX() + 0.5D;
+            double centerY = pos.getY() + 0.5D;
+            double centerZ = pos.getZ() + 0.5D;
+            double angle = rand.nextDouble() * Math.PI * 2.0D;
+            double radius = 0.35D + rand.nextDouble() * 0.25D;
+            ParticleUtil.spawnCrystalEnergy(world, (float) centerX, (float) centerY, (float) centerZ, angle, radius, 0.08D, 0.8F, 0.5F, 300, ColorUtil.CYBER_CRYSTAL);
         }
     }
 
