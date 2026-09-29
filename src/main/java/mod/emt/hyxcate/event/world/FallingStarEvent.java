@@ -7,16 +7,11 @@ import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.config.HyxcateData;
 import mod.emt.hyxcate.entity.EntityFallingStar;
 import mod.emt.hyxcate.util.WorldUtil;
-import mod.emt.hyxcate.util.helpers.SoundHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class FallingStarEvent {
     @SubscribeEvent
@@ -42,15 +37,6 @@ public class FallingStarEvent {
                     event.world.spawnEntity(star);
                 }
             }
-        }
-    }
-
-    @SideOnly(Side.CLIENT)
-    @SubscribeEvent(priority = EventPriority.LOWEST)
-    public void onEntityJoinClient(EntityJoinWorldEvent event) {
-        if (!event.getWorld().isRemote) return;
-        if (event.getEntity() instanceof EntityFallingStar) {
-            SoundHelper.playClientSoundFallingStar(event.getEntity());
         }
     }
 }

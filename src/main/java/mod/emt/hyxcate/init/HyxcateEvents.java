@@ -6,6 +6,7 @@ import mod.emt.hyxcate.event.attribute.*;
 import mod.emt.hyxcate.event.client.BowFOVEvent;
 import mod.emt.hyxcate.event.client.CelestialWorldEvent;
 import mod.emt.hyxcate.event.client.F3InfoEvent;
+import mod.emt.hyxcate.event.client.FallingObjectSoundEvent;
 import mod.emt.hyxcate.event.enchantment.*;
 import mod.emt.hyxcate.event.entity.EyezorEvent;
 import mod.emt.hyxcate.event.entity.WolfEvent;
@@ -92,5 +93,6 @@ public class HyxcateEvents {
 
         // World
         MinecraftForge.EVENT_BUS.register(new CelestialWorldEvent());
+        MinecraftForge.EVENT_BUS.register(new FallingObjectSoundEvent());
     }
 }

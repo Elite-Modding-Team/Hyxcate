@@ -5,20 +5,15 @@ import mod.emt.hyxcate.compat.gamestages.GameStages;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.entity.EntityFallingMeteor;
 import mod.emt.hyxcate.util.helpers.ConfigHelper;
-import mod.emt.hyxcate.util.helpers.SoundHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.world.ChunkEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 import java.util.List;
@@ -73,14 +68,5 @@ public class FallingMeteorEvent {
         }
         meteors.forEach(data.cachedMeteorPositions::remove);
         data.sendToClients();
-    }
-
-    @SideOnly(Side.CLIENT)
-    @SubscribeEvent(priority = EventPriority.LOWEST)
-    public void onEntityJoinClient(EntityJoinWorldEvent event) {
-        if (!event.getWorld().isRemote) return;
-        if (event.getEntity() instanceof EntityFallingMeteor) {
-            SoundHelper.playClientSoundFallingMeteor(event.getEntity());
-        }
     }
 }
