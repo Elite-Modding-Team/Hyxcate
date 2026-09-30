@@ -6,7 +6,6 @@ import mod.emt.hyxcate.celestialevent.lunar.LunarEventStarShower;
 import mod.emt.hyxcate.init.HyxcateLootTables;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.EntityAIAttackRanged;
 import net.minecraft.entity.ai.attributes.IAttribute;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.nbt.NBTTagCompound;
@@ -23,7 +22,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class EntityEyezor extends EntityZombie implements IRangedAttackMob {
+public class EntityEyezor extends EntityZombie {
     public static final DataParameter<Integer> TYPE = EntityDataManager.createKey(EntityEyezor.class, DataSerializers.VARINT);
 
     public EntityEyezor(World world) {
@@ -34,13 +33,6 @@ public class EntityEyezor extends EntityZombie implements IRangedAttackMob {
     protected void entityInit() {
         super.entityInit();
         this.dataManager.register(TYPE, 0);
-    }
-
-    @Override
-    protected void initEntityAI() {
-        super.initEntityAI();
-        // TODO: Turn into unique hybrid AI
-        this.tasks.addTask(2, new EntityAIAttackRanged(this, 1.0D, 30, 16.0F));
     }
 
     @Override
@@ -84,7 +76,6 @@ public class EntityEyezor extends EntityZombie implements IRangedAttackMob {
                 this.setType(1);
             }
         }
-
         return super.onInitialSpawn(difficulty, entityLivingData);
     }
 
@@ -106,15 +97,32 @@ public class EntityEyezor extends EntityZombie implements IRangedAttackMob {
     }
 
     @Override
-    public void attackEntityWithRangedAttack(EntityLivingBase target, float distanceFactor) {
+    public void onUpdate() {
+        super.onUpdate();
+        this.rotationYaw = this.rotationYawHead;
+        if (!this.isDead && this.getHealth() > 0 && !this.isAIDisabled() && this.getAttackTarget() != null && !this.world.isRemote) {
+            float health = this.getHealth();
+            float maxHealth = this.getMaxHealth();
+            float healthPercent = health / maxHealth;
+            int attackDelay = (int) (10.0F + 90.0F * healthPercent);
+            if (this.ticksExisted % attackDelay == 0) {
+                EntityLaser laser = getLaser();
+                this.world.playSound(null, this.posX, this.posY, this.posZ, HyxcateSoundEvents.RANDOM_LASER.getSoundEvent(), SoundCategory.HOSTILE, 1.0F, 0.4F + this.rand.nextFloat() * 0.4F);
+                this.world.spawnEntity(laser);
+            }
+        }
+    }
+
+    @Nonnull
+    private EntityLaser getLaser() {
+        EntityLivingBase target = this.getAttackTarget();
         double d0 = target.posY + (double) target.getEyeHeight() - 2.0D;
         double d1 = target.posX + target.motionX - this.posX;
         double d2 = d0 - this.posY;
         double d3 = target.posZ + target.motionZ - this.posZ;
-        EntityLaser laser = new EntityLaser(this.world, this, 8.0F, HyxcateConfig.ENTITIES.EYEZOR.laserColor);
+        EntityLaser laser = new EntityLaser(this.world, this, 6.0F, HyxcateConfig.ENTITIES.EYEZOR.laserColor);
         laser.shoot(d1, d2, d3, 1.0F, 1.0F);
-        this.world.playSound(null, this.posX, this.posY, this.posZ, HyxcateSoundEvents.RANDOM_LASER.getSoundEvent(), SoundCategory.HOSTILE, 1.0F, 0.8F + this.rand.nextFloat() * 0.4F);
-        this.world.spawnEntity(laser);
+        return laser;
     }
 
     @Override
@@ -130,10 +138,6 @@ public class EntityEyezor extends EntityZombie implements IRangedAttackMob {
         } else {
             return false;
         }
-    }
-
-    @Override
-    public void setSwingingArms(boolean swingingArms) {
     }
 
     @Nullable
