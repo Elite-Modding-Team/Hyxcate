@@ -134,6 +134,11 @@
       "hyxcate:entity/comet_kitty/idle5"
     ]
   },
+  "entity.comet_kitty.idle_special": {
+    "sounds": [
+      "hyxcate:entity/comet_kitty/idle_special"
+    ]
+  },
   "entity.eyezor.death": {
     "sounds": [
       "hyxcate:entity/eyezor/death"
