@@ -1,8 +1,10 @@
 package mod.emt.hyxcate.entity;
 
 import mod.emt.hyxcate.client.particle.HyxcateParticleHandler;
+import mod.emt.hyxcate.util.ColorUtil;
 import mod.emt.hyxcate.util.HyxcateDamageSource;
 import io.netty.buffer.ByteBuf;
+import mod.emt.hyxcate.util.ParticleUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
@@ -19,6 +21,7 @@ public class EntityLaser extends EntityThrowable implements IEntityAdditionalSpa
     private static final DataParameter<Integer> COLOR = EntityDataManager.createKey(EntityLaser.class, DataSerializers.VARINT);
 
     private float damage;
+    private boolean pierceBlocks = false;
 
     public EntityLaser(World world) {
         super(world);
@@ -61,6 +64,14 @@ public class EntityLaser extends EntityThrowable implements IEntityAdditionalSpa
         return this.dataManager.get(COLOR);
     }
 
+    public void setPierceBlocks(boolean pierceBlocks) {
+        this.pierceBlocks = pierceBlocks;
+    }
+
+    public boolean canPierceBlocks() {
+        return this.pierceBlocks;
+    }
+
     @Override
     public void readEntityFromNBT(NBTTagCompound compound) {
         if (compound.hasKey("LaserColor")) {
@@ -75,6 +86,21 @@ public class EntityLaser extends EntityThrowable implements IEntityAdditionalSpa
 
     @Override
     protected void onImpact(RayTraceResult result) {
+        if (result.typeOfHit == RayTraceResult.Type.BLOCK && !canPierceBlocks()) {
+            for (int i = 0; i < 10; ++i) {
+                int colorInt = this.getLaserColor();
+                float r = (float) (colorInt >> 16 & 255) / 255.0F;
+                float g = (float) (colorInt >> 8 & 255) / 255.0F;
+                float b = (float) (colorInt & 255) / 255.0F;
+                double vx = (this.world.rand.nextDouble() - 0.5D) * 0.05D;
+                double vy = (this.world.rand.nextDouble() - 0.5D) * 0.05D;
+                double vz = (this.world.rand.nextDouble() - 0.5D) * 0.05D;
+                ParticleUtil.spawnParticleGlow(this.world, (float) this.posX, (float) this.posY, (float) this.posZ, (float) vx, (float) vy, (float) vz, r, g, b, 0.8F, 1.0F, 30);
+            }
+            this.setDead();
+            return;
+        }
+
         if (!this.world.isRemote) {
             EntityLivingBase shooter = this.thrower;
             Entity target = result.entityHit;
@@ -102,8 +128,11 @@ public class EntityLaser extends EntityThrowable implements IEntityAdditionalSpa
             float g = (float) (colorInt >> 8 & 255) / 255.0F;
             float b = (float) (colorInt & 255) / 255.0F;
 
-            for (int i = 0; i < 12; ++i) {
-                HyxcateParticleHandler.spawnLaserParticles(this.world, this.posX, this.posY, this.posZ, r, g, b);
+            for (int i = 0; i < 5; ++i) {
+                double vx = (this.world.rand.nextDouble() - 0.5D) * 0.05D;
+                double vy = (this.world.rand.nextDouble() - 0.5D) * 0.05D;
+                double vz = (this.world.rand.nextDouble() - 0.5D) * 0.05D;
+                ParticleUtil.spawnParticleGlow(this.world, (float) this.posX, (float) this.posY, (float) this.posZ, (float) vx, (float) vy, (float) vz, r, g, b, 0.8F, 1.0F, 30);
             }
         }
     }
