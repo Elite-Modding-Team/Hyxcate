@@ -109,7 +109,7 @@ public class HyxcateConfig {
         })
         @Config.RangeInt(min = -1)
         @Config.RequiresMcRestart
-        public int eventTintLightmapDuration = 20 * 12;
+        public int eventTintLightmapDuration = 120;
 
         @Config.Name("Event Tint Sky Color transition duration")
         @Config.Comment({
@@ -118,7 +118,7 @@ public class HyxcateConfig {
         })
         @Config.RangeInt(min = -1)
         @Config.RequiresMcRestart
-        public int eventTintSkyColorDuration = 20 * 15;
+        public int eventTintSkyColorDuration = 120;
 
         @Config.Name("Event Notifications")
         @Config.Comment("If celestial events should be announced in chat when they start")
