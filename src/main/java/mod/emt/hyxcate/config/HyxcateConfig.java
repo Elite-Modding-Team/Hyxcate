@@ -90,6 +90,10 @@ public class HyxcateConfig {
                 "Disable if you prefer to launch upwards directly"})
         public boolean celestialWarhammerForwardLaunch = true;
 
+        @Config.Name("Easter Eggs")
+        @Config.Comment("Not for the more serious lore friendly players")
+        public boolean easterEggs = true;
+
         @Config.Name("Event Tint")
         @Config.Comment("If celestial events should tint the sky")
         public boolean eventTint = true;

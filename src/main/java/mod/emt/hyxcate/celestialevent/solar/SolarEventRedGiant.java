@@ -5,6 +5,7 @@ import mod.emt.hyxcate.api.celestialevent.HyxcateSolarEvent;
 import mod.emt.hyxcate.capability.CapabilityCelestialEvent;
 import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
+import mod.emt.hyxcate.util.RandomUtil;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
@@ -33,7 +34,7 @@ public class SolarEventRedGiant extends HyxcateSolarEvent {
 
     @Override
     public SoundEvent getStartSound() {
-        return this.world.rand.nextInt(100) < 1 ? HyxcateSoundEvents.EVENT_RED_SUN_START_SPECIAL.getSoundEvent() : HyxcateSoundEvents.EVENT_RED_SUN_START.getSoundEvent();
+        return (HyxcateConfig.GENERAL.easterEggs && RandomUtil.setChance(0.05D)) ? HyxcateSoundEvents.EVENT_RED_SUN_START_SPECIAL.getSoundEvent() : HyxcateSoundEvents.EVENT_RED_SUN_START.getSoundEvent();
     }
 
     @Override
