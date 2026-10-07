@@ -5,6 +5,7 @@ import mod.emt.hyxcate.config.HyxcateConfig;
 import mod.emt.hyxcate.celestialevent.lunar.LunarEventStarShower;
 import mod.emt.hyxcate.init.HyxcateLootTables;
 import mod.emt.hyxcate.init.HyxcateSoundEvents;
+import mod.emt.hyxcate.util.ParticleUtil;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttribute;
 import net.minecraft.entity.monster.EntityZombie;
@@ -120,7 +121,17 @@ public class EntityEyezor extends EntityZombie {
         double d1 = target.posX + target.motionX - this.posX;
         double d2 = d0 - this.posY;
         double d3 = target.posZ + target.motionZ - this.posZ;
-        EntityLaser laser = new EntityLaser(this.world, this, 6.0F, HyxcateConfig.ENTITIES.EYEZOR.laserColor);
+        int laserColor = HyxcateConfig.ENTITIES.EYEZOR.laserColor;
+        EntityLaser laser = new EntityLaser(this.world, this, 6.0F, laserColor);
+        for (int i = 0; i < 10; ++i) {
+            float r = (float) (laserColor >> 16 & 255) / 255.0F;
+            float g = (float) (laserColor >> 8 & 255) / 255.0F;
+            float b = (float) (laserColor & 255) / 255.0F;
+            double vx = (this.world.rand.nextDouble() - 0.5D) * 0.05D;
+            double vy = (this.world.rand.nextDouble() - 0.5D) * 0.05D;
+            double vz = (this.world.rand.nextDouble() - 0.5D) * 0.05D;
+            ParticleUtil.spawnParticleGlow(this.world, (float) this.posX, (float) this.posY + this.getEyeHeight(), (float) this.posZ, (float) vx, (float) vy, (float) vz, r, g, b, 0.8F, 1.0F, 30);
+        }
         laser.shoot(d1, d2, d3, 1.0F, 1.0F);
         return laser;
     }
