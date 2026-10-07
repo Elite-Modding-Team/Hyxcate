@@ -15,56 +15,73 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(World.class)
 public abstract class HyxcateCloudColorMixin {
-
-    @Shadow
-    public abstract long getWorldTime();
+    @Unique
+    private final ColorTransitionUtil hyxcate$colorTransition = new ColorTransitionUtil();
 
     @Unique
-    private final ColorTransitionUtil hyxcate$colorTransition = new ColorTransitionUtil(HyxcateConfig.GENERAL.eventTintSkyColorDuration);
+    private long hyxcate$lastTransitionStartTime = Long.MIN_VALUE;
+
+    @Shadow
+    public abstract long getTotalWorldTime();
 
     @Inject(method = "getCloudColorBody", at = @At("TAIL"), cancellable = true, remap = false)
     private void HyxcateSetCloudColor(float partialTicks, CallbackInfoReturnable<Vec3d> cir) {
-
-        if(!HyxcateConfig.GENERAL.eventTint) {
+        if (!HyxcateConfig.GENERAL.eventTint) {
             return;
         }
 
-        CapabilityCelestialEvent hyxcateWorld = CapabilityCelestialEvent.get((World) (Object) this);
+        CapabilityCelestialEvent cap = CapabilityCelestialEvent.get((World) (Object) this);
 
-        if(hyxcateWorld == null) {
+        if (cap == null) {
             return;
         }
 
-        float[] initialColors = ColorUtil.getVec3dAsFloatArray(cir.getReturnValue());
-        long worldTime = getWorldTime();
+        float[] defaultColor = ColorUtil.getVec3dAsFloatArray(cir.getReturnValue());
+        boolean active = false;
+        float[] targetColor = null;
+        boolean stopping = false;
+        float[] previousEventColor = null;
+        long transitionStartTime = -1;
 
-        if(hyxcateWorld.currentSolarEvent != null && hyxcateWorld.currentSolarEvent.getCloudColor() != 0) {
-            hyxcate$colorTransition.transition(
-                    initialColors,
-                    ColorUtil.getRgbIntAsFloatArray(hyxcateWorld.currentSolarEvent.getCloudColor()),
-                    worldTime,
-                    ColorTransitionUtil.TargetType.CUSTOM_COLOR
-            );
-        } else if(hyxcateWorld.currentLunarEvent != null && hyxcateWorld.currentLunarEvent.getCloudColor() != 0) {
-            hyxcate$colorTransition.transition(
-                    initialColors,
-                    ColorUtil.getRgbIntAsFloatArray(hyxcateWorld.currentLunarEvent.getCloudColor()),
-                    worldTime,
-                    ColorTransitionUtil.TargetType.CUSTOM_COLOR
-            );
-        } else {
-            hyxcate$colorTransition.transition(
-                    initialColors,
-                    worldTime,
-                    ColorTransitionUtil.TargetType.DEFAULT_COLOR
-            );
+        if (cap.currentSolarEvent != null && cap.currentSolarEvent.getCloudColor() != 0) {
+            active = true;
+            targetColor = ColorUtil.getRgbIntAsFloatArray(cap.currentSolarEvent.getCloudColor());
+            transitionStartTime = cap.solarTransitionStartTime;
+        } else if (cap.currentLunarEvent != null && cap.currentLunarEvent.getCloudColor() != 0) {
+            active = true;
+            targetColor = ColorUtil.getRgbIntAsFloatArray(cap.currentLunarEvent.getCloudColor());
+            transitionStartTime = cap.lunarTransitionStartTime;
+        } else if (cap.currentSolarEvent == null && cap.currentLunarEvent == null && cap.lastSolarEvent != null && cap.solarTransitionStopping && cap.solarTransitionStartTime >= 0 && cap.lastSolarEvent.getCloudColor() != 0) {
+            stopping = true;
+            previousEventColor = ColorUtil.getRgbIntAsFloatArray(cap.lastSolarEvent.getCloudColor());
+            transitionStartTime = cap.solarTransitionStartTime;
+        } else if (cap.currentSolarEvent == null && cap.currentLunarEvent == null && cap.lastLunarEvent != null && cap.lunarTransitionStopping && cap.lunarTransitionStartTime >= 0 && cap.lastLunarEvent.getCloudColor() != 0) {
+            stopping = true;
+            previousEventColor = ColorUtil.getRgbIntAsFloatArray(cap.lastLunarEvent.getCloudColor());
+            transitionStartTime = cap.lunarTransitionStartTime;
         }
 
-        if(hyxcate$colorTransition.isOverriding()) {
-            float[] customCloudColors = hyxcate$colorTransition.getCurrentColor(worldTime, partialTicks);
-            cir.setReturnValue(ColorUtil.getFloatArrayAsVec3d(customCloudColors));
+        if (transitionStartTime >= 0 && transitionStartTime != hyxcate$lastTransitionStartTime) {
+            if (active) {
+                hyxcate$colorTransition.forceTransition(defaultColor, targetColor, ColorTransitionUtil.TargetType.CUSTOM_COLOR);
+            } else if (stopping) {
+                hyxcate$colorTransition.forceTransition(previousEventColor, defaultColor, ColorTransitionUtil.TargetType.DEFAULT_COLOR);
+            }
+
+            hyxcate$lastTransitionStartTime = transitionStartTime;
         }
 
+        if (!hyxcate$colorTransition.isOverriding()) {
+            return;
+        }
+
+        if (transitionStartTime < 0) {
+            return;
+        }
+
+        int duration = HyxcateConfig.GENERAL.eventTintSkyColorDuration;
+        float progress = duration == -1.0F ? 1.0F : Math.max(0.0F, Math.min(1.0F, (getTotalWorldTime() + partialTicks - transitionStartTime) / (float) duration));
+        float[] result = hyxcate$colorTransition.getCurrentColor(progress);
+        cir.setReturnValue(ColorUtil.getFloatArrayAsVec3d(result));
     }
-
 }

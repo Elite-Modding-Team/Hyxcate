@@ -48,9 +48,14 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
     public HyxcateLunarEvent forcedLunarEvent;
     public HyxcateSolarEvent currentSolarEvent;
     public HyxcateSolarEvent forcedSolarEvent;
-
     private boolean wasDaytime;
     private boolean wasNighttime;
+    public long lunarTransitionStartTime = -1;
+    public long solarTransitionStartTime = -1;
+    public boolean lunarTransitionStopping = false;
+    public boolean solarTransitionStopping = false;
+    public HyxcateLunarEvent lastLunarEvent;
+    public HyxcateSolarEvent lastSolarEvent;
 
     public CapabilityCelestialEvent(World world) {
         this.world = world;
@@ -120,7 +125,7 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
                 boolean eventStop = false;
 
                 if (this.currentLunarEvent == null) {
-                    if (this.forcedLunarEvent != null && this.forcedLunarEvent.shouldStartBasic(this.wasDaytime)) {
+                    if (this.forcedLunarEvent != null && WorldUtil.shouldStartLunar(this.world, this.wasDaytime)) {
                         this.currentLunarEvent = this.forcedLunarEvent;
                         this.forcedLunarEvent = null;
                     } else if (!Loader.isModLoaded("astralsorcery") || !AstralSorcery.isDayOfLunarEclipse(this.world)) {
@@ -131,7 +136,11 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
                             }
                         }
                     }
+
                     if (this.currentLunarEvent != null) {
+                        this.lastLunarEvent = this.currentLunarEvent;
+                        this.lunarTransitionStartTime = this.world.getTotalWorldTime();
+                        this.lunarTransitionStopping = false;
                         eventStart = true;
 
                         if (this.world.isRaining() || this.world.isThundering()) {
@@ -142,6 +151,8 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
 
                 if (this.currentLunarEvent != null && this.currentLunarEvent.shouldStop(this.wasDaytime)) {
                     this.currentLunarEvent = null;
+                    this.lunarTransitionStartTime = this.world.getTotalWorldTime();
+                    this.lunarTransitionStopping = true;
                     eventStop = true;
                 }
 
@@ -170,7 +181,7 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
                 boolean eventStop = false;
 
                 if (this.currentSolarEvent == null) {
-                    if (this.forcedSolarEvent != null && this.forcedSolarEvent.shouldStartBasic(this.wasNighttime)) {
+                    if (this.forcedSolarEvent != null && WorldUtil.shouldStartSolar(this.world, this.wasNighttime)) {
                         this.currentSolarEvent = this.forcedSolarEvent;
                         this.forcedSolarEvent = null;
                     } else if (!Loader.isModLoaded("astralsorcery") || !AstralSorcery.isDayOfSolarEclipse(this.world)) {
@@ -183,6 +194,9 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
                     }
 
                     if (this.currentSolarEvent != null) {
+                        this.lastSolarEvent = this.currentSolarEvent;
+                        this.solarTransitionStartTime = this.world.getTotalWorldTime();
+                        this.solarTransitionStopping = false;
                         eventStart = true;
 
                         if (this.world.isRaining() || this.world.isThundering()) {
@@ -193,6 +207,8 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
 
                 if (this.currentSolarEvent != null && this.currentSolarEvent.shouldStop(this.wasNighttime)) {
                     this.currentSolarEvent = null;
+                    this.solarTransitionStartTime = this.world.getTotalWorldTime();
+                    this.solarTransitionStopping = true;
                     eventStop = true;
                 }
 
@@ -254,12 +270,18 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
 
         // Lunar events
         if (this.currentLunarEvent != null) compound.setString("eventLunar", this.currentLunarEvent.name);
+        if (this.lastLunarEvent != null) compound.setString("last_event_lunar", this.lastLunarEvent.name);
+        compound.setLong("lunar_transition_start", this.lunarTransitionStartTime);
+        compound.setBoolean("lunar_transition_stopping", this.lunarTransitionStopping);
         compound.setBoolean("was_daytime", this.wasDaytime);
         for (HyxcateLunarEvent event : this.lunarEvents)
             compound.setTag(event.name, event.serializeNBT());
 
         // Solar events
         if (this.currentSolarEvent != null) compound.setString("eventSolar", this.currentSolarEvent.name);
+        if (this.lastSolarEvent != null) compound.setString("last_event_solar", this.lastSolarEvent.name);
+        compound.setLong("solar_transition_start", this.solarTransitionStartTime);
+        compound.setBoolean("solar_transition_stopping", this.solarTransitionStopping);
         compound.setBoolean("was_nighttime", this.wasNighttime);
         for (HyxcateSolarEvent event : this.solarEvents)
             compound.setTag(event.name, event.serializeNBT());
@@ -298,6 +320,10 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
         // Lunar events
         String nameLunar = compound.getString("eventLunar");
         this.currentLunarEvent = this.lunarEvents.stream().filter(e -> e.name.equals(nameLunar)).findFirst().orElse(null);
+        String lastNameLunar = compound.getString("last_event_lunar");
+        this.lastLunarEvent = this.lunarEvents.stream().filter(e -> e.name.equals(lastNameLunar)).findFirst().orElse(null);
+        this.lunarTransitionStartTime = compound.getLong("lunar_transition_start");
+        this.lunarTransitionStopping = compound.getBoolean("lunar_transition_stopping");
         this.wasDaytime = compound.getBoolean("was_daytime");
         for (HyxcateLunarEvent event : this.lunarEvents)
             event.deserializeNBT(compound.getCompoundTag(event.name));
@@ -305,6 +331,10 @@ public class CapabilityCelestialEvent implements ICapabilityProvider, INBTSerial
         // Solar events
         String nameSolar = compound.getString("eventSolar");
         this.currentSolarEvent = this.solarEvents.stream().filter(e -> e.name.equals(nameSolar)).findFirst().orElse(null);
+        String lastNameSolar = compound.getString("last_event_solar");
+        this.lastSolarEvent = this.solarEvents.stream().filter(e -> e.name.equals(lastNameSolar)).findFirst().orElse(null);
+        this.solarTransitionStartTime = compound.getLong("solar_transition_start");
+        this.solarTransitionStopping = compound.getBoolean("solar_transition_stopping");
         this.wasNighttime = compound.getBoolean("was_nighttime");
         for (HyxcateSolarEvent event : this.solarEvents)
             event.deserializeNBT(compound.getCompoundTag(event.name));

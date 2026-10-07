@@ -29,10 +29,6 @@ public abstract class HyxcateLunarEvent implements INBTSerializable<NBTTagCompou
 
     public abstract boolean shouldStop(boolean lastDaytime);
 
-    public boolean shouldStartBasic(boolean lastDaytime) {
-        return lastDaytime && WorldUtil.isNighttime(this.world);
-    }
-
     public int getSkyColor() {
         return 0;
     }
@@ -92,7 +88,6 @@ public abstract class HyxcateLunarEvent implements INBTSerializable<NBTTagCompou
         }
 
         public boolean canStart(boolean useChance) {
-            if (HyxcateLunarEvent.this.hyxcateWorld.forcedLunarEvent == HyxcateLunarEvent.this) return true;
             if (this.startDays < this.startNight) return false;
             if (this.graceDays < this.gracePeriod) return false;
             if (this.nightInterval > 0) return this.daysSinceLast >= this.nightInterval;

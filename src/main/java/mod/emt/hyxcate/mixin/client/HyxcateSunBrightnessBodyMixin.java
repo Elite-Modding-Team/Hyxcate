@@ -14,49 +14,53 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(World.class)
 public abstract class HyxcateSunBrightnessBodyMixin {
-
     @Shadow
-    public abstract long getWorldTime();
+    public abstract long getTotalWorldTime();
 
     @Unique
-    private final ColorTransitionUtil hyxcate$brightnessTransition = new ColorTransitionUtil(HyxcateConfig.GENERAL.eventTintLightmapDuration);
+    private final ColorTransitionUtil hyxcate$brightnessTransition = new ColorTransitionUtil();
+
+    @Unique
+    private long hyxcate$lastTransitionStartTime = Long.MIN_VALUE;
 
     @Inject(method = "getSunBrightnessBody", at = @At("TAIL"), cancellable = true, remap = false)
     private void HyxcateSetSunBrightnessBody(float partialTicks, CallbackInfoReturnable<Float> cir) {
+        CapabilityCelestialEvent cap = CapabilityCelestialEvent.get((World) (Object) this);
 
-        CapabilityCelestialEvent hyxcateWorld = CapabilityCelestialEvent.get((World) (Object) this);
-
-        if(hyxcateWorld == null) {
+        if (cap == null) {
             return;
         }
 
-        long worldTime = getWorldTime();
+        boolean active = cap.currentSolarEvent instanceof SolarEventGrimEclipse;
+        boolean stopping = !active && cap.currentLunarEvent == null && cap.lastSolarEvent instanceof SolarEventGrimEclipse && cap.solarTransitionStopping && cap.solarTransitionStartTime >= 0;
+        long transitionStartTime = -1;
 
-        // Re-using HyxcateColorTransition even tho this isn’t technically a color.
-        // Since I'm using the brightness purely as a multiplier factor
-        // (similar to the Lightmap mixin, where it’s split into RGB channels though),
-        // only the first channel is used, the others are kept to 0.
-
-        if(hyxcateWorld.currentSolarEvent instanceof SolarEventGrimEclipse) {
-            hyxcate$brightnessTransition.transition(
-                    new float[]{1, 0, 0},
-                    new float[]{0, 0, 0},
-                    worldTime,
-                    ColorTransitionUtil.TargetType.CUSTOM_COLOR
-            );
-        } else {
-            hyxcate$brightnessTransition.transition(
-                    new float[]{1, 0, 0},
-                    worldTime,
-                    ColorTransitionUtil.TargetType.DEFAULT_COLOR
-            );
+        if (active) {
+            transitionStartTime = cap.solarTransitionStartTime;
+        } else if (stopping) {
+            transitionStartTime = cap.solarTransitionStartTime;
         }
 
-        if(hyxcate$brightnessTransition.isOverriding()) {
-            float customBrightness = hyxcate$brightnessTransition.getCurrentColor(worldTime, partialTicks)[0];
-            cir.setReturnValue(cir.getReturnValue() * customBrightness);
+        if (transitionStartTime >= 0 && transitionStartTime != hyxcate$lastTransitionStartTime) {
+            if (active) {
+                hyxcate$brightnessTransition.forceTransition(new float[]{1.0F, 0.0F, 0.0F}, new float[]{0.0F, 0.0F, 0.0F}, ColorTransitionUtil.TargetType.CUSTOM_COLOR);
+            } else if (stopping) {
+                hyxcate$brightnessTransition.forceTransition(new float[]{0.0F, 0.0F, 0.0F}, new float[]{1.0F, 0.0F, 0.0F}, ColorTransitionUtil.TargetType.DEFAULT_COLOR);
+            }
+            hyxcate$lastTransitionStartTime = transitionStartTime;
         }
 
+        if (!hyxcate$brightnessTransition.isOverriding()) {
+            return;
+        }
+
+        if (transitionStartTime < 0) {
+            return;
+        }
+
+        int duration = HyxcateConfig.GENERAL.eventTintLightmapDuration;
+        float progress = duration == -1.0F ? 1.0F : Math.max(0.0F, Math.min(1.0F, (getTotalWorldTime() + partialTicks - transitionStartTime) / (float) duration));
+        float customBrightness = hyxcate$brightnessTransition.getCurrentColor(progress)[0];
+        cir.setReturnValue(cir.getReturnValue() * customBrightness);
     }
-
 }

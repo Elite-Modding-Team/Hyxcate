@@ -14,4 +14,12 @@ public class WorldUtil {
         long time = world.getWorldTime() % 24000;
         return time >= 12786 && time < 23216;
     }
+
+    public static boolean shouldStartLunar(World world, boolean wasDaytime) {
+        return wasDaytime && isNighttime(world);
+    }
+
+    public static boolean shouldStartSolar(World world, boolean wasNighttime) {
+        return wasNighttime && isDaytime(world);
+    }
 }

@@ -11,7 +11,6 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 @Mixin(RenderGlobal.class)
 public abstract class HyxcateRenderSkyMixin {
-
     @Shadow
     private WorldClient world;
 

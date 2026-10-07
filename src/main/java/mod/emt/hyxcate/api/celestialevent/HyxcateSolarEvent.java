@@ -33,10 +33,6 @@ public abstract class HyxcateSolarEvent implements INBTSerializable<NBTTagCompou
         return WorldUtil.isNighttime(this.world);
     }
 
-    public boolean shouldStartBasic(boolean lastNighttime) {
-        return lastNighttime && WorldUtil.isDaytime(this.world);
-    }
-
     public int getSkyColor() {
         return 0;
     }
@@ -97,7 +93,6 @@ public abstract class HyxcateSolarEvent implements INBTSerializable<NBTTagCompou
         }
 
         public boolean canStart() {
-            if (HyxcateSolarEvent.this.hyxcateWorld.forcedSolarEvent == HyxcateSolarEvent.this) return true;
             if (this.startDays < this.startDay) return false;
             if (this.graceDays < this.gracePeriod) return false;
             if (this.dayInterval > 0) {
