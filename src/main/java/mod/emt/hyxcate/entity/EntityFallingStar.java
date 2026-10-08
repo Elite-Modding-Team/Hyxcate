@@ -47,10 +47,10 @@ public class EntityFallingStar extends Entity {
             }
         } else {
             for (int i = 0; i < 2; i++) {
-                double mX = -this.motionX + this.world.rand.nextGaussian() * 0.05;
-                double mY = -this.motionY + this.world.rand.nextGaussian() * 0.05;
-                double mZ = -this.motionZ + this.world.rand.nextGaussian() * 0.05;
-                ParticleUtil.spawnStarSpark(this.world, (float) this.posX, (float) this.posY + 0.5F, (float) this.posZ, (float) mX, (float) mY, (float) mZ, 0.8F, 4.0F, 150, ColorUtil.SHOOTING_STAR);
+                double mX = this.motionX + this.world.rand.nextGaussian() * 0.05;
+                double mY = this.motionY + this.world.rand.nextGaussian() * 0.05;
+                double mZ = this.motionZ + this.world.rand.nextGaussian() * 0.05;
+                ParticleUtil.spawnStarShooting(this.world, (float) this.posX, (float) this.posY + 0.5F, (float) this.posZ, (float) mX, (float) mY, (float) mZ, 0.8F, 4.0F, 150, ColorUtil.SHOOTING_STAR);
             }
         }
     }

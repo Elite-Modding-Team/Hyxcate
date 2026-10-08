@@ -28,6 +28,10 @@ public class ParticleUtil {
         Hyxcate.proxy.spawnParticleGlowBurst(world, x, y, z, vx, vy, vz, r, g, b, a, scale, lifetime, growth);
     }
 
+    public static void spawnStarShooting(World world, float x, float y, float z, float vx, float vy, float vz, float a, float scale, int lifetime, int[][] transitionColors) {
+        Hyxcate.proxy.spawnStarShooting(world, x, y, z, vx, vy, vz, a, scale, lifetime, transitionColors);
+    }
+
     public static void spawnStarSpark(World world, float x, float y, float z, float vx, float vy, float vz, float a, float scale, int lifetime, int[][] transitionColors) {
         Hyxcate.proxy.spawnStarSpark(world, x, y, z, vx, vy, vz, a, scale, lifetime, transitionColors);
     }

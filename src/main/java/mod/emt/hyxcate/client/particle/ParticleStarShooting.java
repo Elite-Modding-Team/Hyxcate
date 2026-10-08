@@ -5,16 +5,20 @@ import mod.emt.hyxcate.util.ColorUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class ParticleStarSpark extends ParticleGlow {
-    public static final ResourceLocation texture = new ResourceLocation(Hyxcate.ID, "particle/star_4");
+public class ParticleStarShooting extends ParticleGlow {
+    public static final ResourceLocation texture = new ResourceLocation(Hyxcate.ID, "particle/star_5");
+    private final float rotationSpeed;
 
-    public ParticleStarSpark(World world, double x, double y, double z, double vx, double vy, double vz, float a, float scale, int lifetime, int[][] transitionColors) {
+    public ParticleStarShooting(World world, double x, double y, double z, double vx, double vy, double vz, float a, float scale, int lifetime, int[][] transitionColors) {
         super(world, x, y, z, vx, vy, vz, a, scale, lifetime, transitionColors);
         this.motionX = vx;
         this.motionY = vy;
         this.motionZ = vz;
-        this.particleAngle = 0.0F;
-        this.prevParticleAngle = 0.0F;
+        float angle = (float) Math.atan2(this.motionZ, this.motionX);
+        this.particleAngle = angle;
+        this.prevParticleAngle = angle;
+        // 50% chance to rotate either direction
+        this.rotationSpeed = this.world.rand.nextBoolean() ? 0.15F : -0.15F;
     }
 
     @Override
@@ -44,8 +48,8 @@ public class ParticleStarSpark extends ParticleGlow {
             this.setRBGColorF(color[0] / 255.0F, color[1] / 255.0F, color[2] / 255.0F);
         }
 
-        this.particleAngle = 0.0F;
-        this.prevParticleAngle = 0.0F;
+        this.prevParticleAngle = this.particleAngle;
+        this.particleAngle += this.rotationSpeed;
     }
 
     private float getScale() {

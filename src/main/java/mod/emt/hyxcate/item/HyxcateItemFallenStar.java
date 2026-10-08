@@ -33,7 +33,7 @@ public class HyxcateItemFallenStar extends Item implements IFireproofItem {
                 double mX = entityItem.world.rand.nextGaussian() * 0.05;
                 double mY = entityItem.world.rand.nextFloat() * 0.4;
                 double mZ = entityItem.world.rand.nextGaussian() * 0.05;
-                ParticleUtil.spawnStarSpark(entityItem.world, (float) entityItem.posX, (float) entityItem.posY + 0.5F, (float) entityItem.posZ, (float) mX, (float) mY, (float) mZ, 0.8F, 4.0F, 150, ColorUtil.SHOOTING_STAR);
+                ParticleUtil.spawnStarShooting(entityItem.world, (float) entityItem.posX, (float) entityItem.posY + 0.5F, (float) entityItem.posZ, (float) mX, (float) mY, (float) mZ, 0.8F, 2.0F, 150, ColorUtil.SHOOTING_STAR);
             }
             if (entityItem.ticksExisted == 5 && FMLLaunchHandler.side().isClient()) {
                 SoundHelper.playClientSoundFallenStar(entityItem);
