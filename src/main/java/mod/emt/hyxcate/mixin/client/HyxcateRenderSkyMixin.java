@@ -28,28 +28,28 @@ public abstract class HyxcateRenderSkyMixin {
             return NORMAL_SUN_SIZE;
         }
 
-        CapabilityCelestialEvent celestial = CapabilityCelestialEvent.get(this.world);
+        CapabilityCelestialEvent cap = CapabilityCelestialEvent.get(this.world);
 
-        if (celestial == null) {
+        if (cap == null) {
             return NORMAL_SUN_SIZE;
         }
 
         if (!HyxcateConfig.GENERAL.eventSunGrowthAnimation) {
-            return celestial.currentSolarEvent != null ? celestial.currentSolarEvent.getSunSize() : NORMAL_SUN_SIZE;
+            return cap.currentSolarEvent != null ? cap.currentSolarEvent.getSunSize() : NORMAL_SUN_SIZE;
         }
 
-        if (celestial.solarTransitionStartTime < 0) {
-            return celestial.currentSolarEvent != null ? celestial.currentSolarEvent.getSunSize() : NORMAL_SUN_SIZE;
+        if (cap.solarTransitionStartTime < 0) {
+            return cap.currentSolarEvent != null ? cap.currentSolarEvent.getSunSize() : NORMAL_SUN_SIZE;
         }
 
-        float progress = hyxcate$getProgress(celestial);
+        float progress = hyxcate$getProgress(cap);
 
-        if (!celestial.solarTransitionStopping) {
-            float targetSize = celestial.currentSolarEvent != null ? celestial.currentSolarEvent.getSunSize() : NORMAL_SUN_SIZE;
+        if (!cap.solarTransitionStopping) {
+            float targetSize = cap.currentSolarEvent != null ? cap.currentSolarEvent.getSunSize() : NORMAL_SUN_SIZE;
             return NORMAL_SUN_SIZE + (targetSize - NORMAL_SUN_SIZE) * progress;
         }
 
-        float startSize = celestial.lastSolarEvent != null ? celestial.lastSolarEvent.getSunSize() : NORMAL_SUN_SIZE;
+        float startSize = cap.lastSolarEvent != null ? cap.lastSolarEvent.getSunSize() : NORMAL_SUN_SIZE;
         return startSize + (NORMAL_SUN_SIZE - startSize) * progress;
     }
 

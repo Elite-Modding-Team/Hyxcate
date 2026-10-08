@@ -5,6 +5,7 @@
     "HyxcateCloudColorMixin",
     "HyxcateLightmapColorsMixin",
     "HyxcateRenderSkyMixin",
+    "HyxcateRenderStarMixin",
     "HyxcateSkyColorMixin",
     "HyxcateSunBrightnessBodyMixin"
   ]
