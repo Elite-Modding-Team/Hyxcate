@@ -496,7 +496,7 @@ public class HyxcateConfig {
 
             @Config.Name("Sky Color")
             @Config.Comment("The hex code of the Grim Eclipse's sky color")
-            public int skyColor = 0x111111;
+            public int skyColor = 0x0F0F09;
 
             @Config.Name("Replacement Spawns")
             @Config.Comment({"The registry names of entities that should replace other entities during the event", "Syntax: originalEntity;replacementEntity"})
