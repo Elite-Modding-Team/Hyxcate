@@ -9,7 +9,10 @@ This is a massive update that overhauls the entire mod. The mod id has been chan
 - Added more easter eggs!
 - Added (back) the Eyezor,  a zombie variant that is faster and can shoot lasers! It can be found in most active events
 - Added config option to disable F3 debug info added by Hyxcate
+- Added config option to disable easter eggs
 - Added a new animation for falling meteors
+- Added a new growth animation to the sun when affected by events like Red Giant
+- Added the ability to adjust the sun size for all solar events (API)
 - Added fr_fr.lang (courtesy of Demani)
 - Added ru_ru.lang (courtesy of GitNell)
 - Added uk_ua.lang (courtesy of GitNell)
@@ -25,10 +28,17 @@ This is a massive update that overhauls the entire mod. The mod id has been chan
 - Updated Celestial Warhammer particles, also added particles when a mob is hit with it
 - Updated all meteor type particles, there are different particle colors depending on the variant of meteor
 - Updated Cyber Crystal particles
+- Event color transitions are now faster by default
+- Tweaked Grim Eclipse sky color
 ### Fixed
 - Fixed meteor block config lists not accepting metadata
 - Fixed event notifications and event intro sounds not being client-sided
 - Fixed Eyezor AI
+- Hopefully fixed Celestial Emblem crafting sound not working under specific circumstances
+- Fixed event color transitions not working with the `/hyxcateforce` command
+- Fixed event color transitions sometimes not transitioning properly after the event ends
+- Fixed event colors immediately reverting back when switching dimensions in the middle of an event
+- Fixed night event sky color not actually working at all
 ### Removed
 - Removed beam sword swing and hit sounds, these were relocated to another project
 ---
