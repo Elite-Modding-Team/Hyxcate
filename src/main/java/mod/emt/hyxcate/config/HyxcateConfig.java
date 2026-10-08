@@ -132,6 +132,10 @@ public class HyxcateConfig {
         @Config.Comment("If celestial events should play a unique sound when they start")
         public boolean eventIntroSounds = true;
 
+        @Config.Name("Event Sun Growth Animation")
+        @Config.Comment("If the sun should emit a growth animation when its size gets changed by events")
+        public boolean eventSunGrowthAnimation = true;
+
         @Config.Name("F3 Info")
         @Config.Comment("Displays the current active event on the F3 screen")
         public boolean f3Info = true;

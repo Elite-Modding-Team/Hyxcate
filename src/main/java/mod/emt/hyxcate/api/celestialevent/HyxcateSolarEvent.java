@@ -45,6 +45,10 @@ public abstract class HyxcateSolarEvent implements INBTSerializable<NBTTagCompou
         return 0;
     }
 
+    public float getSunSize() {
+        return 30.0F;
+    }
+
     public String getSunTexture() {
         return null;
     }

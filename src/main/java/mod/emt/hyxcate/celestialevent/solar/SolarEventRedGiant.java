@@ -59,6 +59,11 @@ public class SolarEventRedGiant extends HyxcateSolarEvent {
     }
 
     @Override
+    public float getSunSize() {
+        return 90.0F;
+    }
+
+    @Override
     public String getSunTexture() {
         return "red_giant";
     }
