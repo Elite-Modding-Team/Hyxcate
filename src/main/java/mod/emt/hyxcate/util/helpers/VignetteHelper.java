@@ -19,6 +19,7 @@ public final class VignetteHelper {
         }
 
         Minecraft mc = Minecraft.getMinecraft();
+        GlStateManager.pushMatrix();
         GlStateManager.pushAttrib();
         mc.getTextureManager().bindTexture(VIGNETTE);
         GlStateManager.enableBlend();
@@ -34,6 +35,11 @@ public final class VignetteHelper {
         buffer.pos(resolution.getScaledWidth(), 0, 0).tex(1.0D, 0.0D).endVertex();
         buffer.pos(0, 0, 0).tex(0.0D, 0.0D).endVertex();
         tessellator.draw();
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+        GlStateManager.depthMask(true);
+        GlStateManager.enableDepth();
+        GlStateManager.disableBlend();
         GlStateManager.popAttrib();
+        GlStateManager.popMatrix();
     }
 }
