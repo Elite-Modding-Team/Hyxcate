@@ -4,6 +4,7 @@
   "mixins": [
     "HyxcateEntityAccessor",
     "HyxcateEntityBrightnessMixin",
+    "HyxcateEntityGlowingMixin",
     "HyxcateMobValidLightLevelMixin",
     "HyxcateSunBrightnessFactorMixin"
   ]
