@@ -30,12 +30,6 @@ public class HyxcatePotion extends Potion {
         return false;
     }
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public boolean shouldRenderHUD(PotionEffect effect) {
-        return true;
-    }
-
     @SideOnly(Side.CLIENT)
     @Override
     public void renderInventoryEffect(int x, int y, PotionEffect effect, Minecraft mc) {
