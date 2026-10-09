@@ -92,6 +92,7 @@ public class HyxcateEvents {
         MinecraftForge.EVENT_BUS.register(new CelestialWorldEvent());
         MinecraftForge.EVENT_BUS.register(new FallingObjectSoundEvent());
         MinecraftForge.EVENT_BUS.register(new ParticlesEvent());
+        MinecraftForge.EVENT_BUS.register(new VignetteEvent());
     }
 
     @SideOnly(Side.CLIENT)
