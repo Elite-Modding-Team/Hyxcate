@@ -9,6 +9,7 @@ import net.minecraftforge.event.entity.living.PotionEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+// TODO: Rework how it applies the glowing effect
 @EventBusSubscriber(modid = Hyxcate.ID)
 public class HyxcatePotionCelestialErasure extends HyxcatePotion {
     public HyxcatePotionCelestialErasure(String name, boolean isBadEffect, int liquidColor) {
