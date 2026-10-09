@@ -46,8 +46,7 @@ public abstract class HyxcateLightmapColorsMixin {
         if (cap.currentSolarEvent != null && cap.currentSolarEvent.getLightmapColor() != 0) {
             active = true;
             targetColor = ColorUtil.getRgbIntAsFloatArray(ColorUtil.adjustBrightness(cap.currentSolarEvent.getLightmapColor(), 2.0F));
-            transitionStartTime =
-                    cap.solarTransitionStartTime;
+            transitionStartTime = cap.solarTransitionStartTime;
         } else if (cap.currentLunarEvent != null && cap.currentLunarEvent.getLightmapColor() != 0) {
             active = true;
             targetColor = ColorUtil.getRgbIntAsFloatArray(cap.currentLunarEvent.getLightmapColor());

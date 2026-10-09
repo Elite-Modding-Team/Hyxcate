@@ -9,6 +9,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+@SuppressWarnings("deprecation")
 public class HyxcatePotion extends Potion {
     private final ResourceLocation iconTexture;
 
@@ -27,6 +28,12 @@ public class HyxcatePotion extends Potion {
     @Override
     public boolean hasStatusIcon() {
         return false;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public boolean shouldRenderHUD(PotionEffect effect) {
+        return true;
     }
 
     @SideOnly(Side.CLIENT)

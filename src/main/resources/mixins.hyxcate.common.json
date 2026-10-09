@@ -6,6 +6,7 @@
     "HyxcateEntityBrightnessMixin",
     "HyxcateEntityGlowingMixin",
     "HyxcateMobValidLightLevelMixin",
+    "HyxcatePotionParticlesMixin",
     "HyxcateSunBrightnessFactorMixin"
   ]
 }
