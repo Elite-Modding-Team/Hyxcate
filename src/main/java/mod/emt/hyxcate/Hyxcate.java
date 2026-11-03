@@ -31,7 +31,7 @@ public class Hyxcate {
     public static final String ID = Tags.MOD_ID;
     public static final String NAME = Tags.NAME;
     public static final String VERSION = Tags.VERSION;
-    public static final String DEPENDENCIES = "required-after:mixinbooter@[10.2,)" + ";required-after:expandedevents" + ";after:tconstruct" + ";after:conarm";
+    public static final String DEPENDENCIES = "required-after:mixinbooter@[10.2,)" + ";required-after:expandedevents@[1.3.1,)" + ";after:tconstruct" + ";after:conarm";
 
     public static final String CLIENT_PROXY = "mod.emt.hyxcate.proxy.ClientProxy";
     public static final String COMMON_PROXY = "mod.emt.hyxcate.proxy.CommonProxy";
