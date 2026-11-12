@@ -3,6 +3,8 @@
 ### Update Notes
 This is a massive update that overhauls the entire mod. The mod id has been changed with many classes renamed and moved around.
 **THIS WILL BREAK ALL NYX AND HYXCATE INTEGRATION FROM EXISTING MODS!**
+
+Datafixers have been utilized to transfer old ids into the new update, but it is still highly recommended up to backup your worlds. 
 ### Added
 - Added API features for celestial events, it should now be easier to make addons that add more events
 - Added a new particle system that will be used throughout the mod
